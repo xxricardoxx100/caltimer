@@ -1,24 +1,21 @@
 const incentives = [
   {
-    name: "Free shipping",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg",
+    name: "Servicio de Grúa",
+    imageSrc: "https://cdn-icons-png.flaticon.com/512/1048/1048318.png",
     description:
-      "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
+      "Ofrecemos servicio de grúa rápido y seguro para trasladar tu vehículo donde lo necesites.",
   },
   {
-    name: "10-year warranty",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg",
+    name: "Servicio Mecánico",
+    imageSrc: "https://cdn-icons-png.flaticon.com/512/2965/2965567.png",
     description:
-      "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
+      "Contamos con mecánicos expertos para solucionar cualquier problema de tu auto, en taller o a domicilio.",
   },
   {
-    name: "Exchanges",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg",
+    name: "Ayuda en Subastas",
+    imageSrc: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
     description:
-      "If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.",
+      "Te asesoramos y acompañamos en el proceso de compra de vehículos en subastas, facilitando cada paso.",
   },
 ];
 
@@ -29,14 +26,11 @@ export default function Incentives() {
         <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
           <div className="max-w-3xl">
             <h2 className="text-4xl font-bold tracking-tight text-gray-900">
-              We built our business on customer service
+              Nuestros Servicios
             </h2>
             <p className="mt-4 text-gray-500">
-              At the beginning at least, but then we realized we could make a
-              lot more money if we kinda stopped caring about that. Our new
-              strategy is to write a bunch of things that look really good in
-              the headlines, then clarify in the small print but hope people
-              don't actually read it.
+              Ofrecemos soluciones integrales para tu vehículo, desde asistencia
+              en carretera hasta apoyo en la compra de autos en subastas.
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">

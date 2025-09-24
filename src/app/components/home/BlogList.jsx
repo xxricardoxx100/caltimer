@@ -1,64 +1,45 @@
-const posts = [
+const reviews = [
   {
-    title: "Boost your conversion rate",
-    href: "#",
-    category: {
-      name: "Article",
-      href: "#",
-      color: "bg-indigo-100 text-indigo-800",
-    },
-    description:
-      "Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
-    author: {
-      name: "Paul York",
-      href: "#",
-      imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    readingTime: "6 min",
+    name: "Juan Pérez",
+    rating: 5,
+    comment:
+      "Excelente servicio de grúa, llegaron muy rápido y el trato fue muy profesional. ¡Recomendado!",
+    date: "04 Sep 2025",
+    imageUrl: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    title: "How to use search engine optimization to drive sales",
-    href: "#",
-    category: { name: "Video", href: "#", color: "bg-pink-100 text-pink-800" },
-    description:
-      "Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.",
-    date: "Mar 10, 2020",
-    datetime: "2020-03-10",
-    author: {
-      name: "Dessie Ryan",
-      href: "#",
-      imageUrl:
-        "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    readingTime: "4 min",
+    name: "María López",
+    rating: 4,
+    comment:
+      "El mecánico solucionó el problema de mi auto en mi casa. Muy práctico y eficiente.",
+    date: "28 Ago 2025",
+    imageUrl: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
-    title: "Improve your customer experience",
-    href: "#",
-    category: {
-      name: "Case Study",
-      href: "#",
-      color: "bg-green-100 text-green-800",
-    },
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab iure iusto fugiat commodi sequi.",
-    date: "Feb 12, 2020",
-    datetime: "2020-02-12",
-    author: {
-      name: "Easer Collins",
-      href: "#",
-      imageUrl:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    readingTime: "11 min",
+    name: "Carlos Ramírez",
+    rating: 5,
+    comment:
+      "Me ayudaron en todo el proceso de la subasta, muy atentos y profesionales.",
+    date: "15 Ago 2025",
+    imageUrl: "https://randomuser.me/api/portraits/men/65.jpg",
   },
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+function StarRating({ rating }) {
+  return (
+    <span className="flex text-yellow-400">
+      {[...Array(5)].map((_, i) => (
+        <svg
+          key={i}
+          className={`h-5 w-5 ${i < rating ? "" : "text-gray-300"}`}
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <polygon points="9.9,1.1 12.3,6.6 18.2,7.3 13.7,11.4 15,17.2 9.9,14.1 4.8,17.2 6.1,11.4 1.6,7.3 7.5,6.6 " />
+        </svg>
+      ))}
+    </span>
+  );
 }
 
 export default function BlogList() {
@@ -67,58 +48,30 @@ export default function BlogList() {
       <div className="relative mx-auto lg:mx-12 max-w-lg divide-y-2 divide-gray-200 lg:max-w-full">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Recent publications
+            Opiniones de nuestros clientes
           </h2>
           <p className="mt-3 text-xl text-gray-500 sm:mt-4">
-            Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat
-            massa dictumst amet. Sapien tortor lacus arcu.
+            Conoce la experiencia de quienes ya confiaron en nuestros servicios.
           </p>
         </div>
         <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-          {posts.map((post) => (
-            <div key={post.title}>
-              <div>
-                <a href={post.category.href} className="inline-block">
-                  <span
-                    className={classNames(
-                      post.category.color,
-                      "inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium"
-                    )}
-                  >
-                    {post.category.name}
-                  </span>
-                </a>
-              </div>
-              <a href={post.href} className="mt-4 block">
-                <p className="text-xl font-semibold text-gray-900">
-                  {post.title}
-                </p>
-                <p className="mt-3 text-base text-gray-500">
-                  {post.description}
-                </p>
-              </a>
-              <div className="mt-6 flex items-center">
-                <div className="flex-shrink-0">
-                  <a href={post.author.href}>
-                    <span className="sr-only">{post.author.name}</span>
-                    <img
-                      className="h-10 w-10 rounded-full"
-                      src={post.author.imageUrl}
-                      alt=""
-                    />
-                  </a>
-                </div>
-                <div className="ml-3">
-                  <p className="text-sm font-medium text-gray-900">
-                    <a href={post.author.href}>{post.author.name}</a>
+          {reviews.map((review, idx) => (
+            <div key={idx} className="border rounded-lg p-6 shadow-sm">
+              <div className="flex items-center mb-4">
+                <img
+                  className="h-12 w-12 rounded-full"
+                  src={review.imageUrl}
+                  alt={review.name}
+                />
+                <div className="ml-4">
+                  <p className="text-lg font-semibold text-gray-900">
+                    {review.name}
                   </p>
-                  <div className="flex space-x-1 text-sm text-gray-500">
-                    <time dateTime={post.datetime}>{post.date}</time>
-                    <span aria-hidden="true">&middot;</span>
-                    <span>{post.readingTime} read</span>
-                  </div>
+                  <StarRating rating={review.rating} />
                 </div>
               </div>
+              <p className="text-gray-700 mb-2">"{review.comment}"</p>
+              <p className="text-sm text-gray-400">{review.date}</p>
             </div>
           ))}
         </div>
