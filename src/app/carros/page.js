@@ -11,7 +11,6 @@ const Carros = () => {
       {/* <Hero /> */}
       <ImgBanner />
       <FeacturedSections />
-      <Banner />
     </div>
   );
 };

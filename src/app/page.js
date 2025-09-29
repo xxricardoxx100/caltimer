@@ -12,6 +12,7 @@ import Navbar from "./components/navigation/Navbar";
 import Layout from "./hocs/layouts/Layout";
 import { useEffect } from "react";
 import BlogList from "./components/home/BlogList";
+import { ImgBanner } from "./components/carros/ImgBanner";
 
 function Home() {
   useEffect(() => {

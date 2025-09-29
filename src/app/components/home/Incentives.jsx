@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const incentives = [
   {
     name: "Servicio de Grúa",
@@ -37,7 +39,13 @@ export default function Incentives() {
             {incentives.map((incentive) => (
               <div key={incentive.name} className="sm:flex lg:block">
                 <div className="sm:flex-shrink-0">
-                  <img className="h-16 w-16" src={incentive.imageSrc} alt="" />
+                  <Image
+                    className="h-16 w-16"
+                    src={incentive.imageSrc}
+                    alt={incentive.name}
+                    width={64}
+                    height={64}
+                  />
                 </div>
                 <div className="mt-4 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
                   <h3 className="text-sm font-medium text-gray-900">
