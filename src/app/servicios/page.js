@@ -1,14 +1,10 @@
 import React from "react";
+import UseCases from "../components/home/UseCases";
 
 const Servicios = () => {
   return (
     <div data-scroll-section className="pt-28">
-      <h1>Servicios</h1>
-      <ul>
-        <li>Servicio 1</li>
-        <li>Servicio 2</li>
-        <li>Servicio 3</li>
-      </ul>
+      <UseCases />  
     </div>
   );
 };

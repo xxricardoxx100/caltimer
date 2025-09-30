@@ -18,8 +18,14 @@ export default function ContactoPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Formulario enviado:", formData);
-    // Aquí iría la lógica para enviar el formulario
+    const mensaje = `Servicio: ${formData.servicio}
+Nombres: ${formData.nombres}
+Apellidos: ${formData.apellidos}
+Teléfono: ${formData.telefono}
+Correo electrónico: ${formData.email}
+Mensaje: ${formData.mensaje}`;
+    const url = `https://wa.me/51920818156?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
   };
 
   return (
@@ -89,22 +95,9 @@ export default function ContactoPage() {
             placeholder="Mensaje"
             value={formData.mensaje}
             onChange={handleInputChange}
-            className="border border-gray-300 rounded-md p-3 bg-white min-h-[100px] resize-none"
+            className="border border-gray-300 rounded-md p-3 bg-white min-h-[100px] resize-none w-full"
             required
           />
-          <div className="text-xs text-gray-500 leading-relaxed">
-            Vinculados del Perú S.A.C. te recuerda que tus datos personales
-            están incorporados en su banco de datos de Clientes y que son
-            utilizados para identificarte y atender tus consultas, comentarios,
-            peticiones, reclamos u otros requerimientos y actualizar tu
-            información personal, relacionados a la(s) inmobiliaria(s) que
-            registres o que se registre a tu nombre. De no continuar con el uso
-            de tus datos, para lo cual debes revisar nuestras{" "}
-            <span className="text-orange-600 font-semibold">
-              POLÍTICAS DE PRIVACIDAD WEB
-            </span>
-            .
-          </div>
           <button
             type="submit"
             className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-full font-semibold"
@@ -116,3 +109,4 @@ export default function ContactoPage() {
     </div>
   );
 }
+      

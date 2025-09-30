@@ -1,7 +1,8 @@
 "use client";
 
 import CTA from "./components/home/CTA";
-import Features from "./components/home/Features";
+import MisionVision from "./components/home/MisionVision";
+import CeoDEscripcion from "./components/home/CeoDEscripcion";
 import Header from "./components/home/Header";
 import Incentives from "./components/home/Incentives";
 import LogoCloud from "./components/home/LogoCloud";
@@ -22,9 +23,8 @@ function Home() {
     <Layout>
       <div data-scroll-section className="pt-28">
         <Header />
-        <Incentives />
-        <UseCases />
-        <Features />
+        <MisionVision />
+        <CeoDEscripcion />
         <CTA />
         <LogoCloud />
         <BlogList />

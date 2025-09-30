@@ -112,61 +112,14 @@ const Nosotros = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-              <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-                <Image
-                  className="max-h-12"
-                  src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                  alt="Workcation"
-                  width={150}
-                  height={48}
-                />
-              </div>
-              <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-                <Image
-                  className="max-h-12"
-                  src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-                  alt="Mirage"
-                  width={150}
-                  height={48}
-                />
-              </div>
-              <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-                <Image
-                  className="max-h-12"
-                  src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-                  alt="Tuple"
-                  width={150}
-                  height={48}
-                />
-              </div>
-              <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-                <Image
-                  className="max-h-12"
-                  src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg"
-                  alt="Laravel"
-                  width={150}
-                  height={48}
-                />
-              </div>
-              <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-                <Image
-                  className="max-h-12"
-                  src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-                  alt="StaticKit"
-                  width={150}
-                  height={48}
-                />
-              </div>
-              <div className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-                <Image
-                  className="max-h-12"
-                  src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg"
-                  alt="Statamic"
-                  width={150}
-                  height={48}
-                />
-              </div>
+            <div className="mt-8 lg:mt-0 flex items-center justify-center">
+              <Image
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Map_of_Lima.png/600px-Map_of_Lima.png"
+                alt="Mapa de Lima"
+                width={400}
+                height={300}
+                className="rounded-xl object-cover"
+              />
             </div>
           </div>
         </div>

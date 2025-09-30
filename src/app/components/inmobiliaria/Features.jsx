@@ -6,11 +6,11 @@ export const Features = () => {
   const [distrito, setDistrito] = useState("");
 
   return (
-    <div className="min-h-screen bg-white pt-10">
+    <div className=" bg-white pt-10">
       {/* Main content section */}
       <main className="px-6 pb-0">
         {/* Title section */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-8">
           <h1 className="text-xl md:text-5xl font-bold text-gray-900 leading-tight text-balance">
             Contamos con{" "}
             <span className="font-black">
@@ -23,7 +23,7 @@ export const Features = () => {
         </div>
 
         {/* Search section with black background */}
-        <div className="bg-gray-800 text-white py-12 px-6 -mx-6">
+        <div className="bg-gray-800 text-white py-8 px-6 -mx-6">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-6">
               {/* Left text */}

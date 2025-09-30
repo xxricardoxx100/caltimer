@@ -20,11 +20,7 @@ const solutions = [
     description: "Servicios complementarios",
     href: "/servicios",
   },
-  {
-    name: "Nosotros",
-    description: "Sobre la empresa",
-    href: "/nosotros",
-  },
+  
   {
     name: "Contacto",
     description: "Contáctanos",
@@ -42,8 +38,8 @@ function Navbar() {
     function scrollFunction() {
       if (document.getElementById("navbar")) {
         if (
-          document.body.scrollTop > 60 ||
-          document.documentElement.scrollTop > 60
+          document.body.scrollTop > 70 ||
+          document.documentElement.scrollTop > 70
         ) {
           document.getElementById("navbar").classList.add("shadow-navbar");
           document.getElementById("navbar").classList.add("bg-orange-50");
