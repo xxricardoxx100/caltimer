@@ -1,6 +1,6 @@
 const posts = [
   {
-    title: "Boost your conversion rate",
+    title: "Servicio de asesoría personalizada",
     href: "#",
     category: { name: "Article", href: "#" },
     description:
@@ -18,7 +18,7 @@ const posts = [
     },
   },
   {
-    title: "Boostfaf your conversion rate",
+    title: "Servicio de importación de repuestos",
     href: "#",
     category: { name: "Article", href: "#" },
     description:
@@ -36,7 +36,7 @@ const posts = [
     },
   },
   {
-    title: "Boossadt your conversion rate",
+    title: "Curso de tarjetas de crédito",
     href: "#",
     category: { name: "Article", href: "#" },
     description:
@@ -54,7 +54,7 @@ const posts = [
     },
   },
   {
-    title: "BoosDSDt your conversion rate",
+    title: "Curso de importación de repuestos",
     href: "#",
     category: { name: "Article", href: "#" },
     description:
@@ -72,7 +72,7 @@ const posts = [
     },
   },
   {
-    title: "How to use search engine optimization to drive sales",
+    title: "Curso de Remates judiciales, antes de remate y cesión",
     href: "#",
     category: { name: "Video", href: "#" },
     description:
@@ -90,7 +90,7 @@ const posts = [
     },
   },
   {
-    title: "Improve your customer experience",
+    title: "Servicio de inspección mecánica de vehículos",
     href: "#",
     category: { name: "Case Study", href: "#" },
     description:
