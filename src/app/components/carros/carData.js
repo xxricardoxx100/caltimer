@@ -4,27 +4,26 @@
 const dummyCarData = [
   {
     id: 1,
-    brand: "Toyota",
-    model: "Corolla",
-    year: 2022,
+    brand: "Kia",
+    model: "Soluto",
+    year: 2020,
     category: "Sedan",
-    image:
-      "/logo_caltimer.webp",
+    image:"/soluto/1.jfif",
     images: [
-      "https://cdn.sanity.io/images/90qxor39/production/d727bb2e9d8a075a43772a0080e0344a2aa72f04-800x450.jpg?q=75&fit=max&auto=format&dpr=2",
-      "https://ecoloauto.com/?attachment_id=41879",
-      "https://d1gl66oyi6i593.cloudfront.net/wp-content/uploads/2022/03/prueba-toyota-corolla-125h-style-1.jpg",
+      "/soluto/1.jfif", "/soluto/2.jfif", "/soluto/3.jfif",
+      "/soluto/4.jfif", "/soluto/5.jfif","/soluto/6.jfif",
+      "/soluto/7.jfif",
     ],
-    price: 12000,
+    price: 10200,
     isAvailable: true,
     seating_capacity: 5,
-    fuel_type: "Gasoline",
-    transmission: "Automatic",
+    fuel_type: "Gasolina / GLP",
+    transmission: "Mecanico",
     location: "Lima",
     description:
-      "Toyota Corolla 2022, cómodo y eficiente, ideal para ciudad y viajes largos.",
+      "Kia Soluto 2022. Sedan compacto y eficiente, ideal para la ciudad y viajes cortos. no presenta deuda pendientes en ninguna entidad",
   },
-  {
+  { 
     id: 2,
     brand: "Honda",
     model: "Civic",
