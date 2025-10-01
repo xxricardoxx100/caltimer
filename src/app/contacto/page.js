@@ -24,7 +24,7 @@ Apellidos: ${formData.apellidos}
 Teléfono: ${formData.telefono}
 Correo electrónico: ${formData.email}
 Mensaje: ${formData.mensaje}`;
-    const url = `https://wa.me/51920818156?text=${encodeURIComponent(mensaje)}`;
+    const url = `https://wa.me/51928430066?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
   };
 
