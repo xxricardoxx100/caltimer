@@ -1,79 +1,79 @@
 const posts = [
   {
     title: "Servicio de asesoría personalizada",
-    href: "#",
+    href: 'https://wa.link/k3nf93',
     category: { name: "Article", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+      "/servicios/service-img4.webp",
     readingTime: "6 min",
     author: {
       name: "Roel Aufderehar",
       href: "#",
       imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        "/servicios/service-img4.webp",
     },
   },
   {
     title: "Servicio de importación de repuestos",
-    href: "#",
+    href: "https://wa.link/a1sqyu ",
     category: { name: "Article", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+      "/servicios/comex1.jpg",
     readingTime: "6 min",
     author: {
       name: "Roel Aufderehar",
       href: "#",
       imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        "/servicios/comex1.jpg",
     },
   },
   {
     title: "Curso de tarjetas de crédito",
-    href: "#",
+    href: "https://wa.link/41xgx9",
     category: { name: "Article", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+      "/servicios/tarjetas-de-creditos.jpg",
     readingTime: "6 min",
     author: {
       name: "Roel Aufderehar",
       href: "#",
       imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        "/servicios/tarjetas-de-creditos.jpg",
     },
   },
   {
     title: "Curso de importación de repuestos",
-    href: "#",
+    href: "https://wa.link/h0ex1t",
     category: { name: "Article", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+      "/servicios/business.jpg",
     readingTime: "6 min",
     author: {
       name: "Roel Aufderehar",
       href: "#",
       imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        "/servicios/business.jpg",
     },
   },
   {
     title: "Curso de Remates judiciales, antes de remate y cesión",
-    href: "#",
+    href: "https://wa.link/y7p8vy",
     category: { name: "Video", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -91,20 +91,20 @@ const posts = [
   },
   {
     title: "Servicio de inspección mecánica de vehículos",
-    href: "#",
+    href: "https://wa.link/geulvh",
     category: { name: "Case Study", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
     date: "Feb 12, 2020",
     datetime: "2020-02-12",
     imageUrl:
-      "https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+      "/servicios/pexels.jpg",
     readingTime: "11 min",
     author: {
       name: "Daniela Metz",
       href: "#",
       imageUrl:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        "/servicios/pexels.jpg",
     },
   },
 ];
