@@ -2,6 +2,7 @@
 
 import CTA from "./components/home/CTA";
 import MisionVision from "./components/home/MisionVision";
+import NuestraComunidad from "./components/home/NuestraComunidad";
 import CeoDEscripcion from "./components/home/CeoDEscripcion";
 import Header from "./components/home/Header";
 import Incentives from "./components/home/Incentives";
@@ -25,6 +26,7 @@ function Home() {
         <Header />
         <MisionVision />
         <CeoDEscripcion />
+        <NuestraComunidad/>
         <CTA />
         <LogoCloud />
         <BlogList />

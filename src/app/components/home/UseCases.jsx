@@ -118,7 +118,7 @@ export default function UseCases() {
       <div className="relative mx-auto lg:mx-12 max-w-full">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            NUESTROS SERVICIOS
+            NUESTROS SERVICIOS Y CURSOS
           </h2>
         </div>
         <div className="mx-auto mt-16 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-3">

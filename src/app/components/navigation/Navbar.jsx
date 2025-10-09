@@ -42,10 +42,10 @@ function Navbar() {
           document.documentElement.scrollTop > 70
         ) {
           document.getElementById("navbar").classList.add("shadow-navbar");
-          document.getElementById("navbar").classList.add("bg-orange-50");
+          document.getElementById("navbar").classList.add("bg-[#F29F05]");
         } else {
           document.getElementById("navbar").classList.remove("shadow-navbar");
-          document.getElementById("navbar").classList.remove("bg-orange-50");
+          document.getElementById("navbar").classList.remove("bg-[#F29F05]");
         }
       }
     }

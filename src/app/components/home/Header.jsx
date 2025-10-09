@@ -1,13 +1,15 @@
+import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { FaTiktok } from "react-icons/fa";
 import Link from "next/link";
+
+const backgroundImages = [
+  "https://www.peruautos.pe/wp-content/uploads/2024/05/El-Auge-de-los-Carros-Deportivos-en-Lima-Una-Pasion-en-Crecimiento-peru-autos.pe-el-portal-oficial-de-compra-y-venta-de-autos-en-peru.jpg",
+  "/soluto/1.jfif", 
+  "/Ramv700/1.jpg",
+];	
+
 const navigation = {
-  solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
-  ],
   support: [{ name: "Contacto", href: "/contacto" }],
   company: [
     { name: "Casos", href: "/casos" },
@@ -39,57 +41,81 @@ const navigation = {
       name: "Tiktok",
       href: "https://www.tiktok.com/@jeancalderonsubastas?is_from_webapp=1&sender_device=pc",
       icon: (props) => (
-        <FaTiktok className="h-7 w-7"/>
+        <FaTiktok className="h-7 w-7" />
       ),
     },
-    
-    
-    
   ],
 };
+
 function Header() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        (prevIndex + 1) % backgroundImages.length
+      );
+    }, 3000); // Cambia cada 5 segundos
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <main>
-      <div
-        className="relative px-6 lg:px-8"
-        style={{
-          backgroundImage:
-            "url('https://www.peruautos.pe/wp-content/uploads/2024/05/El-Auge-de-los-Carros-Deportivos-en-Lima-Una-Pasion-en-Crecimiento-peru-autos.pe-el-portal-oficial-de-compra-y-venta-de-autos-en-peru.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="mx-auto max-w-full xl:mx-12 xl:pt-40 xl:pb-64 lg:pt-40 lg:pb-48 pt-24 pb-12  ">
-          <div>
+      {/* 1. SE CAMBIA h-screen por una altura (ej. h-96, h-128, o un valor de padding grande) */}
+      {/* Usamos padding vertical grande (py-40) para darle altura, además de 'relative' y 'overflow-hidden' */}
+      <div className="relative py-85 overflow-hidden"> 
+        
+        {/* Capa para las imágenes de fondo con transición */}
+        {backgroundImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
+            style={{
+              backgroundImage: `url('${image}')`,
+            }}
+          />
+        ))}
+
+        {/* Capa de overlay oscuro para mejorar la legibilidad del texto */}
+        <div className="absolute inset-0 bg-black opacity-40" /> 
+        
+        {/* Contenido del header (texto, typewriter, botones, etc.) */}
+        {/* 2. El contenido ahora solo tiene el padding lateral (px-6 lg:px-8) y se centra a sí mismo */}
+        <div className="relative z-10 px-6 lg:px-8 h-full flex items-center"> 
+          <div className="mx-auto max-w-full xl:mx-12">
             <div>
-              <h1 className="text-4xl font-semibold tracking-tight pb-16 sm:text-7xl text-white">
-                Caltimer Group <span> </span>
-                <Typewriter
-                  words={["Confianza", "Calidad", "Seguridad"]}
-                  loop={0}
-                  cursor
-                  cursorStyle="_"
-                  typeSpeed={120}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                  // onLoopDone={handleDone}
-                  // onType={handleType}
-                />
-              </h1>
-              <p className="mt-16 text-2xl max-w-3xl leading-8 text-white">
-                Impulsa hoy tu negocio con uno de nuestros servicios{" "}
-              </p>
-              <div className="absolute bottom-0 left-0 flex space-x-6 xl:mx-20 mx-6 mb-10">
-                {navigation.social.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-gray-900 hover:text-gray-800"
-                  >
-                    <span className="sr-only">{item.name}</span>
-                    <item.icon className="h-8 w-8" aria-hidden="true" />
-                  </a>
-                ))}
+              <div>
+                <h1 className="text-4xl font-semibold tracking-tight pb-8 sm:text-7xl text-white"> 
+                  Caltimer Group <span> </span>
+                  <Typewriter
+                    words={["Confianza", "Calidad", "Seguridad"]}
+                    loop={0}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={120}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
+                </h1>
+                <p className="mt-8 text-2xl max-w-3xl leading-8 text-white"> 
+                  Impulsa hoy tu negocio con uno de nuestros servicios{" "}
+                </p>
+                {/* Íconos sociales ajustados para esta nueva altura */}
+                <div className="absolute bottom-[-130px] left-0 flex space-x-6 xl:mx-20 mx-6"> 
+                  {navigation.social.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="text-white hover:text-gray-200"
+                    >
+                      <span className="sr-only">{item.name}</span>
+                      <item.icon className="h-8 w-8" aria-hidden="true" />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
