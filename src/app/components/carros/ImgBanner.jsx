@@ -8,7 +8,7 @@ export const ImgBanner = () => {
       <div className="overflow-hidden relative w-full h-[700px]">
         <div className="flex transition-transform ease-out duration-700 h-full">
           <img
-            src="https://loscoches.com/wp-content/uploads/2021/04/carros-deportivos-potencia.jpg"
+            src="/servicios/Mercedes.jpg"
             alt="Luxury car on road"
             className="w-full h-full object-cover flex-shrink-0"
             style={{ minWidth: "100%", minHeight: "100%" }}

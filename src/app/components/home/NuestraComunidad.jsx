@@ -1,6 +1,10 @@
 import React from "react";
+import { motion } from "motion/react";
+import { useScrollAnimation } from "@/app/hocs/layouts/useScrollAnimation";
 
-export default function MisionVision() {
+export default function NuestraComunidad() {
+  const { elementRef, isVisible } = useScrollAnimation(0.3);
+
   return (
     <section className="flex flex-col lg:flex-row items-center justify-center gap-30 px-8 py-16 bg-[#F2B66D] min-h-[400px]">
       <div className="max-w-lg flex flex-col items-start justify-center">
@@ -16,13 +20,19 @@ export default function MisionVision() {
           Contáctanos Ahora
         </button> 
       </div>
-      <div className="flex items-center justify-center">
-        <img
-          src="/servicios/comunidad.jpg"
-          alt="Auto en subasta"
-          className="rounded-2xl w-[550px] h-[400px] object-cover"
-        />
-      </div>
+      <motion.div
+        ref={elementRef}
+        animate={isVisible ? { x: 0, opacity: 1 } : { x: 300, opacity: 0 }}
+        transition={{ ease: "easeOut", duration: 1 }}
+      >
+        <div className="flex items-center justify-center">
+          <img
+            src="/servicios/comunidad.jpg"
+            alt="Auto en subasta"
+            className="rounded-2xl w-[550px] h-[400px] object-cover"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }

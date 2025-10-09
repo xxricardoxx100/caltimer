@@ -4,7 +4,7 @@ const posts = [
     href: 'https://wa.link/k3nf93',
     category: { name: "Article", href: "#" },
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
+      "En nuestro servicio de asesoría personalizada, te ofrecemos la oportunidad de recibir orientación experta adaptada a tus necesidades específicas. Ya sea que estés buscando mejorar tu negocio, optimizar tus procesos o desarrollar nuevas estrategias, nuestro equipo de profesionales está aquí para ayudarte a alcanzar tus objetivos. ",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     imageUrl:
@@ -22,7 +22,7 @@ const posts = [
     href: "https://wa.link/a1sqyu ",
     category: { name: "Article", href: "#" },
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
+      "En nuestro servicio de importación de repuestos, facilitamos el proceso de adquisición de piezas y componentes necesarios para mantener y reparar tus vehículos o maquinaria. Nos encargamos de gestionar todo el proceso de importación, desde la búsqueda de proveedores confiables hasta la logística de envío, asegurando que recibas los repuestos de alta calidad que necesitas en el menor tiempo posible. ",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     imageUrl:
@@ -40,7 +40,7 @@ const posts = [
     href: "https://wa.link/41xgx9",
     category: { name: "Article", href: "#" },
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
+      "En nuestro curso de tarjetas de crédito, aprenderás todo lo que necesitas saber para utilizar este instrumento financiero de manera efectiva y responsable. Desde los conceptos básicos hasta las estrategias avanzadas, nuestro curso te proporcionará las herramientas necesarias para maximizar los beneficios de las tarjetas de crédito mientras evitas las trampas comunes asociadas con su uso. ",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     imageUrl:
@@ -58,7 +58,7 @@ const posts = [
     href: "https://wa.link/h0ex1t",
     category: { name: "Article", href: "#" },
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
+      "En nuestro curso de importación de repuestos, te enseñaremos los fundamentos y las mejores prácticas para importar piezas y componentes de manera eficiente y rentable. Aprenderás sobre la selección de proveedores, la gestión de la cadena de suministro, los aspectos legales y aduaneros, y las estrategias para optimizar costos y tiempos de entrega. ",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     imageUrl:
@@ -76,7 +76,7 @@ const posts = [
     href: "https://wa.link/y7p8vy",
     category: { name: "Video", href: "#" },
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
+      "En nuestro curso de Remates Judiciales, Antes de Remate y Cesión, te proporcionaremos una comprensión completa del proceso legal y financiero involucrado en la adquisición de bienes a través de remates judiciales. Aprenderás sobre las etapas previas al remate, los procedimientos legales, y las estrategias para participar de manera efectiva en estos eventos, así como las implicaciones de la cesión de derechos. ",
     date: "Mar 10, 2020",
     datetime: "2020-03-10",
     imageUrl:
@@ -94,7 +94,7 @@ const posts = [
     href: "https://wa.link/geulvh",
     category: { name: "Case Study", href: "#" },
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+      "Nuestro servicio de inspección mecánica de vehículos está diseñado para garantizar que tu automóvil esté en óptimas condiciones de funcionamiento. Nuestros técnicos altamente capacitados realizan una evaluación exhaustiva de todos los sistemas y componentes del vehículo, identificando cualquier problema potencial antes de que se convierta en una falla costosa. ",
     date: "Feb 12, 2020",
     datetime: "2020-02-12",
     imageUrl:
@@ -134,13 +134,13 @@ export default function UseCases() {
                   alt=""
                 />
               </div>
-              <div className="flex flex-1 flex-col justify-between bg-white p-6">
+              <div className="flex flex-1 flex-col justify-between bg-[#F2B66D] p-6">
                 <div className="flex-1">
                   <a href={post.href} className="mt-2 block">
-                    <p className="text-xl font-semibold text-gray-900">
+                    <p className="text-center text-xl font-semibold text-gray-900">
                       {post.title}
-                    </p>
-                    <p className="mt-3 text-base text-gray-500">
+                    </p>  
+                    <p className="text-justify mt-3 text-base text-black">
                       {post.description}
                     </p>
                   </a>
