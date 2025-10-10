@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 const posts = [
   {
     title: "Servicio de asesoría personalizada",
@@ -109,23 +112,67 @@ const posts = [
   },
 ];
 
+
+
 export default function UseCases() {
+  // Variantes para el contenedor (controla el TIMING)
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Retraso entre cada tarjeta
+      },
+    },
+  };
+
+  // Variantes para cada tarjeta (define CÓMO se anima)
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.9 
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div className="relative bg-gray-50 px-4 pt-24 pb-32 sm:px-6 lg:px-8 lg:pt-36 lg:pb-40">
       <div className="absolute inset-0">
         <div className="h-1/3 bg-white sm:h-2/3" />
       </div>
       <div className="relative mx-auto lg:mx-12 max-w-full">
-        <div className="text-center">
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}  
+        >
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             NUESTROS SERVICIOS Y CURSOS
           </h2>
-        </div>
-        <div className="mx-auto mt-16 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-3">
+        </motion.div>
+        
+        <motion.div 
+          className="mx-auto mt-16 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {posts.map((post) => (
-            <div
+            <motion.div
               key={post.title}
               className="flex flex-col overflow-hidden rounded-lg shadow-lg"
+              variants={cardVariants}
             >
               <div className="flex-shrink-0">
                 <img
@@ -145,11 +192,10 @@ export default function UseCases() {
                     </p>
                   </a>
                 </div>
-                
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

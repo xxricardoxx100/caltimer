@@ -5,7 +5,7 @@ import { PropertyList } from "../components/inmobiliaria/PropertyList";
 
 // Data temporal para imágenes del hero
 const heroImages = [
-  "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-luxo.webp",
+  "/inmobiliaria/inmobiliaria1.jpg  ",
   "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hope.webp",
   "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hit-1.webp",
 ];

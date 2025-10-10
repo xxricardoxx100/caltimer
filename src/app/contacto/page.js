@@ -29,7 +29,7 @@ Mensaje: ${formData.mensaje}`;
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 mt-25">
+    <div className="min-h-screen flex items-center justify-center bg-[#F2B66D] mt-25">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Formulario */}
         <div>

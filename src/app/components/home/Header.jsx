@@ -88,7 +88,7 @@ function Header() {
           <div className="mx-auto max-w-full xl:mx-12">
             <div>
               <div>
-                <h1 className="text-4xl font-semibold tracking-tight pb-8 sm:text-7xl text-white"> 
+                <h1 className="text-4xl font-semibold tracking-tight pb-8 sm:text-7xl text-[#F2F2F2]"> 
                   Caltimer Group <span> </span>
                   <Typewriter
                     words={["Confianza", "Calidad", "Seguridad"]}

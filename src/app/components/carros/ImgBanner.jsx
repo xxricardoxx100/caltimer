@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import { FaCarAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export const ImgBanner = () => {
   return (
-    <main className="min-h-[700px]">
+    <main className="min-h-[700px]">    
       {/* Hero Section */}
       <div className="overflow-hidden relative w-full h-[700px]">
         <div className="flex transition-transform ease-out duration-700 h-full">
@@ -16,7 +18,12 @@ export const ImgBanner = () => {
         </div>
 
         {/* Overlay Content */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }} 
+        >
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white max-w-4xl px-6">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -35,7 +42,7 @@ export const ImgBanner = () => {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </main>
   );
