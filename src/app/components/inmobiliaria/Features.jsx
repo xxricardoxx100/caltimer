@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 export const Features = () => {
   const [estado, setEstado] = useState("");
@@ -68,7 +69,13 @@ export const Features = () => {
   return (
     <div className="bg-white pt-10">
       {/* Stats Section */}
-      <div ref={statsRef} className="px-6 py-5 bg-white">
+      <motion.div 
+        ref={statsRef} className="px-6 py-5 bg-white"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="max-w-4xl mx-auto text-center mb-12">
           <p className="text-[#591D07] text-lg leading-relaxed mb-12">
             Nuestro equipo está comprometido en brindar soluciones
@@ -117,7 +124,7 @@ export const Features = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main content section */}
       <main className="px-6 pb-0">

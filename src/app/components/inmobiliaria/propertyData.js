@@ -1,13 +1,13 @@
 const sampleProperties = [
   {
     id: 1,
-    name: "Hit",
+    name: "Residencial Perla de Huaral 1",
     sectionTitle: "Cerca de todo",
-    address: "Av. Javier Prado Este 2901",
-    minArea: "49.95",
-    district: "SAN BORJA",
-    price: "S/433,000",
-    deliveryStatus: "ENTREGA INMEDIATA",
+    address: "Huaral",
+    minArea: "120",
+    district: "HUARAL",
+    price: "S/45,600",
+    deliveryStatus: "ENTREGA INMEDIATA  ",
     image:
       "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/700x466-vista-previa-hit.jpg",
     image2:
@@ -18,9 +18,7 @@ const sampleProperties = [
       "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hit-1.webp",
     ],
     features: {
-      bedrooms: "2-3",
-      bathrooms: "2",
-      type: "Depto",
+      type: "Terreno",
     },
     description: [
       "Modernidad y juventud. Hit excitará ser el nuevo hogar para las nuevas generaciones. Sus áreas internas mezclado con sus áreas comunes va con todo este nuevo mood. Cuenta con 21 pisos y los departamentos van desde los 38 m2 hasta los 77 m2 de 1, 2 y 3 dormitorios.",
@@ -29,12 +27,12 @@ const sampleProperties = [
   },
   {
     id: 2,
-    name: "Urban Living",
-    sectionTitle: "Tu nuevo estilo de vida",
-    address: "Av. El Sol 1234",
-    minArea: "65.50",
-    district: "MIRAFLORES",
-    price: "S/580,000",
+    name: "Residencial Perla de Huaral 2",
+    sectionTitle: "Tu nuev   estilo de vida",
+    address: "Huaral",
+    minArea: "120",
+    district: "HUARAL",
+    price: "S/39,000",
     deliveryStatus: "PRE-VENTA",
     image:
       "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/700x466-vista-previa-gracia.jpg",
@@ -46,9 +44,7 @@ const sampleProperties = [
       "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hit-1.webp",
     ],
     features: {
-      bedrooms: "3",
-      bathrooms: "2",
-      type: "Depto",
+      type: "Terreno",
     },
     description: [
       "Ubicado en el corazón de Miraflores, Urban Living ofrece departamentos de 2 y 3 dormitorios con acabados de lujo. Disfruta de áreas comunes como piscina, gimnasio y sala de cine.",
