@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import Tittle from "./Tittle";
 import CarCard from "./CarCard";
 import { FaArrowRight } from "react-icons/fa";
@@ -6,27 +8,63 @@ import Link from "next/link";
 import dummyCarData from "./carData";
 
 const FeacturedSections = () => {
+  // Variantes de animación para el contenedor
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Retraso entre cada tarjeta
+      },
+    },
+  };
+
+  // Variantes de animación para cada tarjeta
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50, // Comienza 50px abajo
+      scale: 0.9 
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div className="flex flex-col items-center py-24 px-6 md:px-16 lg:px-24 xl:px-32">
       <div>
         <Tittle
-          title="Featured Vehicules"
-          subTitle="Explore our selection of premiun vehicules available for yoour next adventures"
+          title="VEHICULOS DISPONIBLES"
+          subTitle="Explora nuestra selección de vehículos premium disponibles para tus próximas aventuras."
         />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-18">
+      
+      <motion.div 
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20 mt-18"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }} // Se activa cuando el 20% es visible
+      >
         {dummyCarData.slice(0, 6).map((car) => (
-          <div key={car.id}>
+          <motion.div 
+            key={car.id}
+            variants={cardVariants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <CarCard car={car} />
-          </div>
+          </motion.div>
         ))}
-      </div>
-      <Link href="/carros" scroll={true}>
-        <button className="flex items-center justify-center gap-2 px-6 py-2 border border-black hover:bg-gray-50 rounded-md mt-18 cursor-pointer">
-          Explore all Cars <FaArrowRight />
-        </button>
-      </Link>
-    </div>
+      </motion.div>
+    </div>  
   );
 };
 

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { MdOutlineArrowForward } from "react-icons/md";
 import { MdOutlineArrowBack } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const HeroSlide = ({ images }) => {
   const [current, setCurrent] = useState(0);
@@ -12,7 +13,13 @@ const HeroSlide = ({ images }) => {
     setCurrent((curr) => (curr === images.length - 1 ? 0 : curr + 1));
 
   return (
-    <div className="overflow-hidden relative w-full h-[60vh] md:h-[80vh]">
+    <motion.div 
+      className="overflow-hidden relative w-full h-[70vh] md:h-[85vh]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5 }} 
+    >
+      {/* Slides */}
       <div
         className="flex transition-transform ease-out duration-700 h-full"
         style={{ transform: `translateX(-${current * 100}%)` }}
@@ -47,7 +54,7 @@ const HeroSlide = ({ images }) => {
           <MdOutlineArrowForward className="text-3xl font-bold" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

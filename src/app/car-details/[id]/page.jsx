@@ -30,7 +30,7 @@ function Carousel({ images }) {
             key={idx}
             src={img}
             alt={`car-img-${idx}`}
-            className="w-full h-full object-cover flex-shrink-0"
+            className="w-full h-full object-contain flex-shrink-0"
             style={{ minWidth: "100%", minHeight: "100%" }}
           />
         ))}
@@ -111,7 +111,7 @@ export default function CarDetailsPage() {
               {[
                 {
                   icon: <BsPeopleFill />,
-                  text: `${car.seating_capacity} Seats`,
+                  text: `${car.seating_capacity} Asientos`,
                 },
                 { icon: <BsFillFuelPumpFill />, text: car.fuel_type },
                 { icon: <FaCarAlt />, text: car.transmission },
@@ -129,18 +129,28 @@ export default function CarDetailsPage() {
 
             {/* description  */}
             <div>
-              <h1 className="text-xl font-medium mb-3">Description</h1>
+              <h1 className="text-xl font-medium mb-3">Descripción:</h1>
               <p className="text-gray-500">{car.description}</p>
             </div>
           </div>
         </div>
         {/* right side booking */}
         <form className="shadow-lg h-max sticky top-30 rounded-xl p-6 space-y-6 text-gray-500">
-          <p className="text-2xl text-black font-bold ">$ {car.price}</p>
-          <hr className="border-zinc-400" />
-          <button className="w-full bg-orange-300 hover:bg-orange-400 trasnition-all py-3 font-medium text-white rounded-xl cursor-pointer">
-            Contactar
-          </button>
+            {/* Título: Hacemos el texto un poco más sutil y le damos mejor contraste */}
+            <h1 className="text-2xl font-semibold text-gray-800">Precio:</h1>
+            
+            {/* Precio: Aumentamos dramáticamente el tamaño y usamos un color de acento fuerte */}
+            <p className="text-3xl text-gray-700 font-extrabold">
+                $ {car.price}
+            </p>
+            
+            {/* Línea Divisoria: Usamos un color más suave para que sea menos intrusiva */}
+            <hr className="border-gray-300" /> 
+            
+            {/* Botón: Lo mantenemos para complementar el estilo del precio */}
+            <button className="w-full bg-orange-500 hover:bg-orange-600 transition-all py-3 font-medium text-white rounded-xl cursor-pointer">
+                Contactar
+            </button>
         </form>
       </div>
     </div>

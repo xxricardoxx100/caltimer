@@ -11,7 +11,7 @@ export default function CTA() {
         <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
           <div className="inline-flex rounded-md shadow">
             <a
-              href="#"
+              href="https://wa.link/geulvh"
               className="inline-flex items-center justify-center rounded-md border border-transparent bg-orange-600 px-5 py-3 text-base font-medium text-white hover:bg-orange-700"
             >
               Solicita tu servicio
@@ -19,7 +19,7 @@ export default function CTA() {
           </div>
           <div className="ml-3 inline-flex rounded-md shadow">
             <a
-              href="#"
+              href="/servicios"
               className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-orange-600 hover:bg-indigo-50"
             >
               Conoce nuestros servicios

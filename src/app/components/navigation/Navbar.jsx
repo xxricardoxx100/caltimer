@@ -20,11 +20,7 @@ const solutions = [
     description: "Servicios complementarios",
     href: "/servicios",
   },
-  {
-    name: "Nosotros",
-    description: "Sobre la empresa",
-    href: "/nosotros",
-  },
+  
   {
     name: "Contacto",
     description: "Contáctanos",
@@ -42,14 +38,14 @@ function Navbar() {
     function scrollFunction() {
       if (document.getElementById("navbar")) {
         if (
-          document.body.scrollTop > 60 ||
-          document.documentElement.scrollTop > 60
+          document.body.scrollTop > 70 ||
+          document.documentElement.scrollTop > 70
         ) {
           document.getElementById("navbar").classList.add("shadow-navbar");
-          document.getElementById("navbar").classList.add("bg-orange-50");
+          document.getElementById("navbar").classList.add("bg-[#F29F05]");
         } else {
           document.getElementById("navbar").classList.remove("shadow-navbar");
-          document.getElementById("navbar").classList.remove("bg-orange-50");
+          document.getElementById("navbar").classList.remove("bg-[#F29F05]");
         }
       }
     }
@@ -87,7 +83,7 @@ function Navbar() {
               </Link>
             ))}
             <Link
-              href="/contacto"
+              href="https://wa.me/51928430066?text=Solicito informacion, vengo de la pagina web"
               className="inline-flex ml-12 items-center rounded-md border border-transparent bg-gray-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
             >
               WhatsApp
@@ -138,11 +134,11 @@ function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/contacto"
+                href="https://wa.me/51928430066?text=Solicito informacion, vengo de la pagina web"
                 className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 mt-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Hire Us
+                WhatsApp
                 <DotLoader
                   className="ml-3 -mr-1 h-5 w-5"
                   loading={loading}
