@@ -4,10 +4,9 @@ import { FaTiktok } from "react-icons/fa";
 
 
 const backgroundImages = [
-  "https://www.peruautos.pe/wp-content/uploads/2024/05/El-Auge-de-los-Carros-Deportivos-en-Lima-Una-Pasion-en-Crecimiento-peru-autos.pe-el-portal-oficial-de-compra-y-venta-de-autos-en-peru.jpg",
-  "/soluto/1.jfif", 
-  "/Ramv700/1.jpg",
-];	
+  "/general/bannersubasta.png",
+  "/general/bannergrupal.jpg",
+];	  
 
 const navigation = {
   support: [{ name: "Contacto", href: "/contacto" }],

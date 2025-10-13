@@ -16,7 +16,7 @@ const CarCard = ({ car }) => {
       }}
       className="group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer"
     >
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-60 overflow-hidden">
         <img
           src={car.image}
           alt={car.model}
