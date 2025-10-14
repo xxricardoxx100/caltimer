@@ -5,12 +5,12 @@ import { PropertyList } from "../components/inmobiliaria/PropertyList";
 
 // Data temporal para imágenes del hero
 const heroImages = [
-  "/inmobiliaria/inmobiliaria1.jpg  ",
-  "/inmobiliaria/tarma1.jpeg",
+  "/inmobiliaria/compramospropiedades.jpg  ",
+  "/inmobiliaria/inmobiliaria1.jpg",
 ];
 
 const Inmobiliaria = () => {
-  return (
+  return (  
     <div data-scroll-section className="pt-28">
       <HeroSlide images={heroImages} />
       <Features />
