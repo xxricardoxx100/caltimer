@@ -58,11 +58,7 @@ export default function BlogList() {
           {reviews.map((review, idx) => (
             <div key={idx} className="border rounded-lg p-6 shadow-sm">
               <div className="flex items-center mb-4">
-                <img
-                  className="h-12 w-12 rounded-full"
-                  src={review.imageUrl}
-                  alt={review.name}
-                />
+
                 <div className="ml-4">
                   <p className="text-lg font-semibold text-gray-900">
                     {review.name}
