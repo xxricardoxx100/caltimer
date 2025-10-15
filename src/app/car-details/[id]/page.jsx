@@ -13,6 +13,8 @@ import Loader from "@/app/components/carros/Loader";
 
 function Carousel({ images }) {
   const [current, setCurrent] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
 
   const prev = () =>
     setCurrent((curr) => (curr === 0 ? images.length - 1 : curr - 1));
@@ -20,54 +22,76 @@ function Carousel({ images }) {
     setCurrent((curr) => (curr === images.length - 1 ? 0 : curr + 1));
 
   return (
-    <div className="overflow-hidden relative w-full h-56 md:h-96 rounded-lg mb-6 bg-gray-100">
-      <div
-        className="flex transition-transform ease-out duration-700 h-full"
-        style={{ transform: `translateX(-${current * 100}%)` }}
-      >
-        {images.map((img, idx) => (
+    <>
+      <div className="overflow-hidden relative w-full h-56 md:h-96 rounded-lg mb-6 bg-gray-100">
+        <div
+          className="flex transition-transform ease-out duration-700 h-full"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {images.map((img, idx) => (
+            <img
+              key={idx}
+              src={img}
+              alt={`car-img-${idx}`}
+              className="w-full h-full object-contain flex-shrink-0 cursor-pointer"
+              style={{ minWidth: "100%", minHeight: "100%" }}
+              onClick={() => {
+                setModalImage(img);
+                setIsModalOpen(true);
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Controles */}
+        <button
+          type="button"
+          className="absolute top-1/2 left-4 -translate-y-1/2 z-30 bg-white/30 rounded-full p-2 hover:bg-orange-400 hover:text-white transition-colors"
+          onClick={prev}
+          aria-label="Previous"
+        >
+          <MdOutlineArrowBackIos />
+        </button>
+        <button
+          type="button"
+          className="absolute top-1/2 right-4 -translate-y-1/2 z-30 bg-white/30 rounded-full p-2 hover:bg-orange-400 hover:text-white transition-colors"
+          onClick={next}
+          aria-label="Next"
+        >
+          <MdArrowForwardIos />
+        </button>
+
+        {/* Indicadores */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              className={`w-3 h-3 rounded-full transition-all ${
+                idx === current
+                  ? "bg-orange-400 p-2"
+                  : "bg-gray-300 bg-opacity-50"
+              }`}
+              onClick={() => setCurrent(idx)}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Modal de imagen ampliada */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          onClick={() => setIsModalOpen(false)}
+        >
           <img
-            key={idx}
-            src={img}
-            alt={`car-img-${idx}`}
-            className="w-full h-full object-contain flex-shrink-0"
-            style={{ minWidth: "100%", minHeight: "100%" }}
+            src={modalImage}
+            alt="Imagen ampliada"
+            className="max-w-full max-h-full object-contain"
           />
-        ))}
-      </div>
-      {/* Controls */}
-      <button
-        type="button"
-        className="absolute top-1/2 left-4 -translate-y-1/2 z-30 bg-white/30 rounded-full p-2 hover:bg-orange-400 hover:text-white transition-colors"
-        onClick={prev}
-        aria-label="Previous"
-      >
-        <MdOutlineArrowBackIos />
-      </button>
-      <button
-        type="button"
-        className="absolute top-1/2 right-4 -translate-y-1/2 z-30 bg-white/30 rounded-full p-2 hover:bg-orange-400 hover:text-white transition-colors"
-        onClick={next}
-        aria-label="Next"
-      >
-        <MdArrowForwardIos />
-      </button>
-      {/* Indicators */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {images.map((_, idx) => (
-          <button
-            key={idx}
-            className={`w-3 h-3 rounded-full transition-all ${
-              idx === current
-                ? "bg-orange-400 p-2"
-                : "bg-gray-300 bg-opacity-50"
-            }`}
-            onClick={() => setCurrent(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
-        ))}
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 }
 
