@@ -8,11 +8,11 @@ const dummyCarData = [
     model: "Soluto",
     year: 2020,
     category: "Sedan",
-    image:"/soluto/1.jfif",
+    image:"/fotosAutos/soluto/1.jfif",
     images: [
-      "/soluto/1.jfif", "/soluto/2.jfif", "/soluto/3.jfif",
-      "/soluto/4.jfif", "/soluto/5.jfif","/soluto/6.jfif",
-      "/soluto/7.jfif",
+      "/fotosAutos/soluto/1.jfif", "/fotosAutos/soluto/2.jfif", "/fotosAutos/soluto/3.jfif",
+      "/fotosAutos/soluto/4.jfif", "fotosAutos/soluto/5.jfif","/fotosAutos/soluto/6.jfif",
+      "/fotosAutos/soluto/7.jfif",
     ],
     price: 10200,
     isAvailable: true,
@@ -30,11 +30,33 @@ const dummyCarData = [
     year: 2022,
     category: "Pickup compacta",
     image:
-      "/Ramv700/4.jpg",
+      "/fotosAutos/Ramv700/4.jpg",
     images: [
-      "/Ramv700/1.jpg", "/Ramv700/2.jpg", "/Ramv700/3.jpg",
-      "/Ramv700/4.jpg", "/Ramv700/5.jpg","/Ramv700/6.jpg",
-      "/Ramv700/7.jpg",
+      "/fotosAutos/Ramv700/1.jpg", "/fotosAutos/Ramv700/2.jpg", "/fotosAutos/Ramv700/3.jpg",
+      "/fotosAutos/Ramv700/4.jpg", "/fotosAutos/Ramv700/5.jpg","/fotosAutos/Ramv700/6.jpg",
+      "/fotosAutos/Ramv700/7.jpg",
+    ],
+    price: 7200,
+    isAvailable: true,
+    seating_capacity: 2,
+    fuel_type: "Gasolina",
+    transmission: "Manual",
+    location: "Lima",
+    description:
+      "Excelente RAM V700 año 2022, lista para el trabajo. Confiable y económica en consumo de combustible. Cuenta con 2 asientos delanteros y amplio almacenamiento. Mantenimientos al día y en perfecto estado. ¡No dejes pasar esta oportunidad!",
+  },
+  { 
+    id: 3,
+    brand: "NISSAN",
+    model: "Versa",
+    year: 2020,
+    category: "Sedan",
+    image:
+      "/fotosAutos/versa2020/9.jpeg",
+    images: [
+      "/fotosAutos/versa2020/1.jpeg", "/fotosAutos/versa2020/2 .jpeg", "/fotosAutos/versa2020/3.jpeg",
+      "/fotosAutos/versa2020/5.jpeg", "/fotosAutos/versa2020/6.jpeg","/fotosAutos/versa2020/7.jpeg",
+      "/fotosAutos/versa2020/8.jpeg","/fotosAutos/versa2020/9.jpeg","/fotosAutos/versa2020/10.jpeg"
     ],
     price: 7200,
     isAvailable: true,
