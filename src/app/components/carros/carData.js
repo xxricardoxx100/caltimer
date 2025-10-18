@@ -6,6 +6,8 @@ const dummyCarData = [
     id: 1,
     brand: "Kia",
     model: "Soluto",
+    estado: "Excelente",
+    kilometraje: 58000,
     year: 2020,
     category: "Sedan",
     image:"/fotosAutos/soluto/1.jfif",
@@ -29,6 +31,8 @@ const dummyCarData = [
     model: "V700",
     year: 2022,
     category: "Pickup compacta",
+    kilometraje: 58000,
+    estado: "Excelente",
     image:
       "/fotosAutos/Ramv700/4.jpg",
     images: [
@@ -49,6 +53,8 @@ const dummyCarData = [
     id: 3,
     brand: "NISSAN",
     model: "Versa",
+    kilometraje: 72000,
+    estado: "Excelente",
     year: 2020,
     category: "Sedan",
     image:

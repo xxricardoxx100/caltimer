@@ -167,6 +167,40 @@ export default function CarDetailsPage() {
             <p className="text-3xl text-gray-700 font-extrabold">
                 $ {car.price}
             </p>
+            <div className="border-t pt-6 space-y-4">
+                <h3 className="font-bold text-lg mb-4">Especificaciones</h3>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Año:</span>
+                  <span className="font-semibold">{car.year}</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Kilometraje:</span>
+                  <span className="font-semibold">{car.kilometraje}</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Transmisión:</span>
+                  <span className="font-semibold">{car.transmission}</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Combustible:</span>
+                  <span className="font-semibold">{car.fuel_type}</span>
+                </div>
+                
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Puertas:</span>
+                  <span className="font-semibold">{car.seating_capacity}</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Estado:</span>
+                  <span className="font-semibold">{car.estado}</span>
+                </div>
+              </div>
             
             {/* Línea Divisoria: Usamos un color más suave para que sea menos intrusiva */}
             <hr className="border-gray-300" /> 
