@@ -58,14 +58,14 @@ const dummyCarData = [
       "/fotosAutos/versa2020/5.jpeg", "/fotosAutos/versa2020/6.jpeg","/fotosAutos/versa2020/7.jpeg",
       "/fotosAutos/versa2020/8.jpeg","/fotosAutos/versa2020/9.jpeg","/fotosAutos/versa2020/10.jpeg"
     ],
-    price: 7200,
+    price: 10000,
     isAvailable: true,
-    seating_capacity: 2,
+    seating_capacity: 5,
     fuel_type: "Gasolina",
     transmission: "Manual",
     location: "Lima",
     description:
-      "Excelente RAM V700 año 2022, lista para el trabajo. Confiable y económica en consumo de combustible. Cuenta con 2 asientos delanteros y amplio almacenamiento. Mantenimientos al día y en perfecto estado. ¡No dejes pasar esta oportunidad!",
+      "Nissan Versa 2020 [Versión FULL] en venta: Sedán moderno y seguro, con bajo kilometraje [72.000 km] y un motor 1.6L eficiente. Disfruta de su amplio interior, diseño elegante, transmisión [Manual] ¡Excelente estado, listo para usar!",
   },
   
  
