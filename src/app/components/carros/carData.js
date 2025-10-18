@@ -54,7 +54,7 @@ const dummyCarData = [
     image:
       "/fotosAutos/versa2020/9.jpeg",
     images: [
-      "/fotosAutos/versa2020/1.jpeg", "/fotosAutos/versa2020/2 .jpeg", "/fotosAutos/versa2020/3.jpeg",
+      "/fotosAutos/versa2020/1.jpeg", "/fotosAutos/versa2020/2.jpeg", "/fotosAutos/versa2020/3.jpeg",
       "/fotosAutos/versa2020/5.jpeg", "/fotosAutos/versa2020/6.jpeg","/fotosAutos/versa2020/7.jpeg",
       "/fotosAutos/versa2020/8.jpeg","/fotosAutos/versa2020/9.jpeg","/fotosAutos/versa2020/10.jpeg"
     ],
