@@ -73,7 +73,29 @@ const dummyCarData = [
     description:
       "Nissan Versa 2020 [Versión FULL] en venta: Sedán moderno y seguro, con bajo kilometraje [72.000 km] y un motor 1.6L eficiente. Disfruta de su amplio interior, diseño elegante, transmisión [Manual] ¡Excelente estado, listo para usar!",
   },
-  
+  { 
+    id: 4,
+    brand: "NISSAN",
+    model: "Kicks",
+    kilometraje: 0,
+    estado: "Excelente",
+    year: 2019,
+    category: "SUV",
+    image:
+      "/fotosAutos/nissankick/3.jpeg",
+    images: [
+      "/fotosAutos/nissankick/1.jpeg", "/fotosAutos/nissankick/2.jpeg", "/fotosAutos/nissankick/3.jpeg",
+      "/fotosAutos/nissankick/4.jpeg", "/fotosAutos/nissankick/5.jpeg"
+    ],
+    price: 12000,
+    isAvailable: true,
+    seating_capacity: 5,
+    fuel_type: "Gasolina",
+    transmission: "Automatico",
+    location: "Lima",
+    description:
+      "El Nissan Kicks 2019 es un SUV compacto, moderno y eficiente, perfecto para la vida urbana. Cuenta con un motor 1.6L que ofrece excelente rendimiento de combustible, un diseño atractivo y un interior espacioso y versátil. Es ágil de manejar y viene equipado con características de seguridad esenciales, siendo una opción práctica y con estilo.",
+  },
  
 ];
 export default dummyCarData;

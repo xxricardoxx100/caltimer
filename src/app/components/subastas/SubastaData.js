@@ -1,6 +1,6 @@
 // Datos de vehículos en subasta
 export const subastaData = [
-  
+  /*
   {
     id: 1,
     marca: "Toyota",
@@ -32,5 +32,6 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+  */
   
 ];
