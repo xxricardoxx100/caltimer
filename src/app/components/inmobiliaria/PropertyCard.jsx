@@ -48,7 +48,7 @@ const PropertyCard = ({ property }) => {
 
         <div className="flex justify-between items-center">
           <div className="text-gray-900">
-            <span className="text-lg font-bold">Desde {property.price}</span>
+            <span className="text-lg font-bold"> {property.price}</span>
           </div>
         </div>
 

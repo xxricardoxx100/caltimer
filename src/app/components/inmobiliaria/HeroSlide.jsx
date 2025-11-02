@@ -14,14 +14,14 @@ const HeroSlide = ({ images }) => {
 
   return (
     <motion.div 
-      className="overflow-hidden relative w-full h-[70vh] md:h-[85vh]"
+      className="overflow-hidden relative w-full h-[70vh] md:h-[85vh] bg-[#F2B66D]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }} 
     >
       {/* Slides */}
       <div
-        className="flex transition-transform ease-out duration-700 h-full"
+        className="flex transition-transform ease-out duration-700 h-full "
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {images.map((img, idx) => (
@@ -29,7 +29,7 @@ const HeroSlide = ({ images }) => {
             key={idx}
             src={img}
             alt={`slide-${idx}`}
-            className="w-full h-full object-cover flex-shrink-0"
+            className="w-full h-full object-contain flex-shrink-0"
             style={{ minWidth: "100%", minHeight: "100%" }}
           />
         ))}

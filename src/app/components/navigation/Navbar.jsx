@@ -6,14 +6,19 @@ import DotLoader from "react-spinners/DotLoader";
 
 const solutions = [
   {
-    name: "Carros",
+    name: "Vehiculos",
     description: "Compra y venta de vehículos",
     href: "/carros",
   },
   {
-    name: "Inmobiliaria",
+    name: "Inmuebles",
     description: "Compra y venta de propiedades",
     href: "/inmobiliaria",
+  },
+  {
+    name: "Subasta",
+    description: "Compra de Vehiculos en subasta",
+    href: "/subasta",
   },
   {
     name: "Servicios",

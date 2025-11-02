@@ -4,10 +4,10 @@ import { FaTiktok } from "react-icons/fa";
 
 
 const backgroundImages = [
-  "https://www.peruautos.pe/wp-content/uploads/2024/05/El-Auge-de-los-Carros-Deportivos-en-Lima-Una-Pasion-en-Crecimiento-peru-autos.pe-el-portal-oficial-de-compra-y-venta-de-autos-en-peru.jpg",
-  "/soluto/1.jfif", 
-  "/Ramv700/1.jpg",
-];	
+  "/general/PRENDADO.png",
+  "/general/bannersubasta.png",
+  "/general/bannergrupal.jpg",
+];	  
 
 const navigation = {
   support: [{ name: "Contacto", href: "/contacto" }],
@@ -71,7 +71,7 @@ function Header() {
           <div
             key={index}
             className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
+              index === currentImageIndex ? "opacity-150" : "opacity-0"
             }`}
             style={{
               backgroundImage: `url('${image}')`,
@@ -88,7 +88,7 @@ function Header() {
           <div className="mx-auto max-w-full xl:mx-12">
             <div>
               <div>
-                <h1 className="text-4xl font-semibold tracking-tight pb-8 sm:text-7xl text-[#F2F2F2]"> 
+                <h1 className="text-4xl font-bold tracking-tight pb-8 sm:text-7xl text-[#F2F2F2]"> 
                   Caltimer Group <span> </span>
                   <Typewriter
                     words={["Confianza", "Calidad", "Seguridad"]}
@@ -100,7 +100,7 @@ function Header() {
                     delaySpeed={1000}
                   />
                 </h1>
-                <p className="mt-8 text-2xl max-w-3xl leading-8 text-white"> 
+                <p className="mt-8 text-2xl max-w-3xl leading-8 text-[#F2B66D] "> 
                   Impulsa hoy tu negocio con uno de nuestros servicios{" "}
                 </p>
                 {/* Íconos sociales ajustados para esta nueva altura */}
