@@ -1,74 +1,125 @@
 "use client";
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Tittle from "./Tittle";
 import CarCard from "./CarCard";
-import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
-import dummyCarData from "./carData";
+import { FaArrowRight } from "react-icons/fa";
+import { carService } from "@/lib/supabase/services";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+    scale: 0.9,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 const FeacturedSections = () => {
-  // Variantes de animación para el contenedor
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2, // Retraso entre cada tarjeta
-      },
-    },
-  };
+  const [cars, setCars] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
-  // Variantes de animación para cada tarjeta
-  const cardVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 50, // Comienza 50px abajo
-      scale: 0.9 
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
+  useEffect(() => {
+    let isMounted = true;
 
-  // FeacturedSections.jsx (Código modificado)
-return (
-  <div className="flex flex-col items-center py-24 px-6 md:px-16 lg:px-24 xl:px-32">
-    <div>
-      <Tittle
-        title="VEHICULOS DISPONIBLES"
-        subTitle="Explora nuestra selección de vehículos premium disponibles para tus próximas aventuras."
-      />
-    </div>
-    
-    <motion.div 
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20 mt-18"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }} // Se activa cuando el 20% es visible
-    >
-      {dummyCarData.slice(0, 6).map((car) => (
-        <motion.div 
-          key={car.id}
-          variants={cardVariants}
-          // MODIFICADO: Aumentamos la escala de 1.1 a 1.15 para que la animación sea más grande.
-          whileHover={{ scale: 1.15 }} 
-          whileTap={{ scale: 0.95 }}
-          // OPCIONAL: Podrías añadir una clase de ancho mínimo si lo necesitas.
-          // className="min-w-[320px]" 
+    const fetchCars = async () => {
+      try {
+        const fetchedCars = await carService.getCars();
+        if (isMounted) {
+          setCars(Array.isArray(fetchedCars) ? fetchedCars : []);
+          setHasError(false);
+        }
+      } catch (error) {
+        console.error("Error fetching cars:", error);
+        if (isMounted) {
+          setHasError(true);
+          setCars([]);
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    fetchCars();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const displayedCars = cars.slice(0, 6);
+
+  return (
+    <div className="flex flex-col items-center px-6 py-24 md:px-16 lg:px-24 xl:px-32">
+      <div className="text-center">
+        <Tittle
+          title="VEHICULOS DISPONIBLES"
+          subTitle="Explora nuestra seleccion de vehiculos premium disponibles para tus proximas aventuras."
+        />
+      </div>
+
+      {isLoading ? (
+        <p className="mt-10 text-sm text-neutral-500">Cargando vehiculos...</p>
+      ) : hasError ? (
+        <p className="mt-10 text-sm text-rose-500">
+          No pudimos cargar los vehiculos. Intenta nuevamente mas tarde.
+        </p>
+      ) : displayedCars.length === 0 ? (
+        <p className="mt-10 text-sm text-neutral-500">
+          Aun no hay vehiculos disponibles.
+        </p>
+      ) : (
+        <motion.div
+          className="mt-18 grid grid-cols-1 gap-20 sm:grid-cols-2 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
-          <CarCard car={car} />
+          {displayedCars.map((car) => (
+            <motion.div
+              key={car.id}
+              variants={cardVariants}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <CarCard car={car} />
+            </motion.div>
+          ))}
         </motion.div>
-      ))}
-    </motion.div>
-  </div>  
+      )}
+
+      <Link
+        href="/carros"
+        className="mt-14 inline-flex items-center gap-2 text-sm font-medium text-neutral-900 transition hover:text-neutral-600"
+      >
+        Ver todos los vehiculos
+        <FaArrowRight aria-hidden />
+      </Link>
+    </div>
   );
 };
 
