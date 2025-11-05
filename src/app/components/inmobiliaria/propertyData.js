@@ -18,18 +18,9 @@ const sampleProperties = [
       "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hope.webp",
       "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hit-1.webp",
     ],
-    features: {
-      type: "Terreno",
-    },
-    description: [
-      "𝐈𝐍𝐂𝐑𝐄𝐈𝐁𝐋𝐄 𝐏𝐄𝐑𝐎 𝐂𝐈𝐄𝐑𝐓𝐎 🔥🔥",
-      "Compra tu lote en Residencial La Perla",
-      "Huaral a S/35,000 y su revaloración será",
-      "S/45,000... ¡en solo 4 meses! 😱 aprovechando las",
-      "𝐈𝐍𝐕𝐄𝐑𝐒𝐈𝐎𝐍𝐄𝐒 𝐄𝐍 𝐕𝐄𝐍𝐓𝐀🔥",
-      "💰 ¿Tienes S/15,000? Tú también puedes ser parte de este proyecto que no para de subir.Inviertes seguro, inviertes en crecimiento.",
-      "Sus espacios brindan comodidad y amplitud lo que mejora la sensación de tranquilidad y paz. Sus acabados van con todo lo que se vio anteriormente el momento del cambio es ahora.",
-    ],
+    features: "Terreno",
+    description: 
+      "𝐈𝐍𝐂𝐑𝐄𝐈𝐁𝐋𝐄 𝐏𝐄𝐑𝐎 𝐂𝐈𝐄𝐑𝐓𝐎 🔥🔥, Compra tu lote en Residencial La Perla,Huaral a S/35,000 y su revaloración será, S/45,000... ¡en solo 4 meses! 😱 aprovechando las, 𝐈𝐍𝐕𝐄𝐑𝐒𝐈𝐎𝐍𝐄𝐒 𝐄𝐍 𝐕𝐄𝐍𝐓𝐀🔥,💰 ¿Tienes S/15,000? Tú también puedes ser parte de este proyecto que no para de subir.Inviertes seguro, inviertes en crecimiento., Sus espacios brindan comodidad y amplitud lo que mejora la sensación de tranquilidad y paz. Sus acabados van con todo lo que se vio anteriormente el momento del cambio es ahora.",
   },
   {
     id: 2,
@@ -50,13 +41,10 @@ const sampleProperties = [
       "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hope.webp",
       "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hit-1.webp",
     ],
-    features: {
-      type: "Terreno",
-    },
-    description: [
-      "",
+   features: "Terreno",
+
+    description: 
       "Lotes desde los 120 m² con alta plusvalía ubicados en Huaral servicios básicos de agua y luz entrega inmediata",
-    ],
   },
   {
     id: 3,
@@ -76,23 +64,10 @@ const sampleProperties = [
       "/inmobiliaria/tarma1.jpeg",
       
     ],
-    features: {
-      bedrooms: "5",
-      bathrooms: "5",
-      type: "Edificio",
-    },
-    description: [
-      "Oportunidad única de adquirir un inmueble con alta proyección de rentabilidad en una de las zonas con mayor crecimiento del mercado.",
+   features: "Terreno",
 
-      "📍 Ubicación estratégica:",
-      "Jirón Chanchamayo # 120 rodeado de comercios, colegios, estadio y transporte.",
-      "🏗️ Inmueble dentro de edificio con sólida infraestructura.",
-      "📈 Plusvalía asegurada gracias al desarrollo urbano de la zona.",
-      "🔑 Ideal para alquiler, oficinas o revalorización a mediano plazo.",
-
-      "💰 Precio competitivo y atractivo para inversión",
-      "Disfruta de áreas verdes, espacios de coworking y una ubicación privilegiada en San Isidro. Green Tower es más que un hogar, es un estilo de vida.",
-    ],  
+    description: 
+      "Oportunidad única: Adquiera inmueble con alta rentabilidad y plusvalía asegurada en Jirón Chanchamayo # 120 (cerca de comercios, colegios, estadio, transporte), ideal para alquiler/oficinas o revalorización a mediano plazo, dentro de edificio con sólida infraestructura y un precio competitivo; disfrute de áreas verdes, coworking y ubicación privilegiada en San Isidro (Green Tower).",
   },
   {
     id: 4,
@@ -112,16 +87,8 @@ const sampleProperties = [
       "/inmobiliaria/terreno1.jpeg",
       
     ],
-    features: {
-      bedrooms: "0",
-      bathrooms: "",
-      type: "Terreno",
-    },
-    description: [
-      "✅️ Área: 155 m²",
-      "✅ Ubicación: Av. Pacheco ",
-      "✅ Inscrito en registros públicos",
-    ],  
+   features: "Terreno",
+    description: "",
   },
 ];
 export default sampleProperties;

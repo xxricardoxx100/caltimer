@@ -104,11 +104,10 @@
                 </h2>
 
                 <div className="space-y-4 text-gray-700 text-justify">
-                  {property.description?.map((desc, idx) => (
-                    <p key={idx} className="text-x leading-relaxed">
-                      {desc}
+                    <p className="text-x leading-relaxed">
+                      {property.description}
                     </p>
-                  ))}
+                  
                 </div>
               </div>
 

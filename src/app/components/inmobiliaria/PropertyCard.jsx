@@ -54,22 +54,10 @@ const PropertyCard = ({ property }) => {
 
         {property.features && (
           <div className="mt-4 grid grid-cols-3 gap-2 text-gray-600">
-            {property.features.bedrooms && (
-              <div className="flex items-center text-sm">
-                <FaBed className="mr-1 text-gray-500" />
-                <span>{property.features.bedrooms}</span>
-              </div>
-            )}
-            {property.features.bathrooms && (
-              <div className="flex items-center text-sm">
-                <FaBath className="mr-1 text-gray-500" />
-                <span>{property.features.bathrooms}</span>
-              </div>
-            )}
-            {property.features.type && (
+            {property.features && (
               <div className="flex items-center text-sm">
                 <FaHome className="mr-1 text-gray-500" />
-                <span>{property.features.type}</span>
+                <span>{property.features}</span>
               </div>
             )}
           </div>
