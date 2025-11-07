@@ -10,13 +10,15 @@ const sampleProperties = [
     deliveryStatus: "ENTREGA INMEDIATA  ",
     mediaType:"video",
     image:
-      "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/700x466-vista-previa-hit.jpg",
+      "/general/bannerperla.jpg",
     image2:
       "/inmobiliaria/videoperla1.mp4", // Puedes cambiar la url por una imagen diferente si tienes
     moreImages: [
-      "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-luxo.webp",
-      "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hope.webp",
-      "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hit-1.webp",
+      "/general/bannerperla.jpg",
+      "/inmobiliaria/perla1/1.jpg",
+      "/inmobiliaria/perla1/2.jpg",
+      "/inmobiliaria/perla1/3.jpg",
+      "/inmobiliaria/perla1/4.jpg",
     ],
     features: "Terreno",
     description: 
@@ -33,13 +35,18 @@ const sampleProperties = [
     deliveryStatus: "PRE-VENTA",
     mediaType:"video",
     image:
-      "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/700x466-vista-previa-gracia.jpg",
+      "/inmobiliaria/perla2/4.jpg",
     image2:
       "/inmobiliaria/videoperla2.mp4", // Puedes cambiar la url por una imagen diferente si tienes
     moreImages: [
       "/inmobiliaria/planoperla2.png",
-      "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hope.webp",
-      "https://www.urbanaperu.com.pe/wp-content/uploads/2025/03/1440x600-banner-home-desk-hit-1.webp",
+      "/inmobiliaria/perla2/1.jpg",
+      "/inmobiliaria/perla2/2.jpg",
+      "/inmobiliaria/perla2/3.jpg",
+      "/inmobiliaria/perla2/4.jpg",
+      "/inmobiliaria/perla2/5.jpg",
+      "/inmobiliaria/perla2/6.jpg",
+      "/inmobiliaria/perla2/7.jpg",
     ],
    features: "Terreno",
 

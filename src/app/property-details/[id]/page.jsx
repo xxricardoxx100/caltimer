@@ -62,9 +62,7 @@
                 Precio desde:
               </h3>
               <p className="text-xl font-bold">{property.price}</p>
-              <p className="text-sm text-gray-300 mt-1">
-                *Precio referencial por {property.minArea} m² dpto 1006
-              </p>
+              
             </div>
 
             {/* Financing Section */}

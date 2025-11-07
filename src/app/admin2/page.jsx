@@ -169,13 +169,12 @@ function AdmininmobiliariaForm() {
                 <input
                   id="address"
                   name="address"
-                  type="number"
-                  min="1900"
-                  max="2100"
+                  type="text"
+                  required
                   value={formData.address}
                   onChange={handleChange}
                   className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder=""
+                  placeholder="JR, AV., Calle"
                 />
               </div>
 
@@ -184,7 +183,7 @@ function AdmininmobiliariaForm() {
                   className="text-sm font-medium text-neutral-800"
                   htmlFor="minArea"
                 >
-                  Categoría
+                  Area del inmueble
                 </label>
                 <input
                   id="minArea"
@@ -193,7 +192,7 @@ function AdmininmobiliariaForm() {
                   value={formData.minArea}
                   onChange={handleChange}
                   className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder="Sedán, SUV..."
+                  placeholder="m2 "
                 />
               </div>
 
@@ -214,7 +213,7 @@ function AdmininmobiliariaForm() {
                   value={formData.price}
                   onChange={handleChange}
                   className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder="25000"
+                  placeholder=""
                 />
               </div>
 
@@ -233,105 +232,11 @@ function AdmininmobiliariaForm() {
                   className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
                 >
                   <option value="USD">USD</option>
-                  <option value="EUR">EUR</option>
-                  <option value="COP">COP</option>
-                  <option value="MXN">MXN</option>
+                  <option value="SOLES">PEN</option>
                 </select>
               </div>
 
-              <div className="grid gap-2">
-                <label
-                  className="text-sm font-medium text-neutral-800"
-                  htmlFor="mileage"
-                >
-                  Kilometraje
-                </label>
-                <input
-                  id="mileage"
-                  name="mileage"
-                  type="number"
-                  min="0"
-                  value={formData.mileage}
-                  onChange={handleChange}
-                  className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder="45000"
-                />
-              </div>
-
-              <div className="grid gap-2">
-                <label
-                  className="text-sm font-medium text-neutral-800"
-                  htmlFor="color"
-                >
-                  Color
-                </label>
-                <input
-                  id="color"
-                  name="color"
-                  type="text"
-                  value={formData.color}
-                  onChange={handleChange}
-                  className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder="Rojo"
-                />
-              </div>
-
-              <div className="grid gap-2">
-                <label
-                  className="text-sm font-medium text-neutral-800"
-                  htmlFor="fuel_type"
-                >
-                  Tipo de combustible
-                </label>
-                <input
-                  id="fuel_type"
-                  name="fuel_type"
-                  type="text"
-                  value={formData.fuel_type}
-                  onChange={handleChange}
-                  className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder="Gasolina, Diésel..."
-                />
-              </div>
-
-              <div className="grid gap-2">
-                <label
-                  className="text-sm font-medium text-neutral-800"
-                  htmlFor="transmission"
-                >
-                  Transmisión
-                </label>
-                <select
-                  id="transmission"
-                  name="transmission"
-                  value={formData.transmission}
-                  onChange={handleChange}
-                  className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                >
-                  <option value="Automática">Automática</option>
-                  <option value="Manual">Manual</option>
-                  <option value="CVT">CVT</option>
-                </select>
-              </div>
-
-              <div className="grid gap-2">
-                <label
-                  className="text-sm font-medium text-neutral-800"
-                  htmlFor="drive_type"
-                >
-                  Tracción
-                </label>
-                <input
-                  id="drive_type"
-                  name="drive_type"
-                  type="text"
-                  value={formData.drive_type}
-                  onChange={handleChange}
-                  className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder="4x4, Delantera..."
-                />
-              </div>
-
+            
               <div className="grid gap-2 md:col-span-2">
                 <label
                   className="text-sm font-medium text-neutral-800"
