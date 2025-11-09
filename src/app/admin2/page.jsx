@@ -10,20 +10,25 @@ const initialFormData = {
   address: "",
   minArea: "",
   district: "",
-  price: "USD",
-  deliveryStatus: true,
-  mediaType: "",
-  image: "",
+  price: "",
+  currency: "USD",
+  deliveryStatus: "",
+  mediaType: "image",
   image2: "",
+  features: "",
   description: "",
 };
 
 function AdmininmobiliariaForm() {
   const [formData, setFormData] = useState(initialFormData);
   const [photoFiles, setPhotoFiles] = useState([]);
+  const [secondaryMediaFiles, setSecondaryMediaFiles] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState(null);
   const [fileInputKey, setFileInputKey] = useState(() => Date.now());
+  const [secondaryFileInputKey, setSecondaryFileInputKey] = useState(
+    () => Date.now() + 1
+  );
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -38,10 +43,34 @@ function AdmininmobiliariaForm() {
     setPhotoFiles(files);
   };
 
+  const handleSecondaryMediaChange = (event) => {
+    const files = Array.from(event.target.files || []);
+    setSecondaryMediaFiles(files);
+    if (files.length) {
+      setFormData((previous) => ({
+        ...previous,
+        image2: "",
+      }));
+    }
+  };
+
+  const handleRemoveSecondaryFile = (index) => {
+    setSecondaryMediaFiles((previous) => {
+      const next = previous.filter((_, idx) => idx !== index);
+      if (!next.length) {
+        setSecondaryFileInputKey(Date.now());
+      }
+      return next;
+    });
+  };
+
   const resetForm = () => {
-    setFormData(initialFormData);
+    setFormData({ ...initialFormData });
     setPhotoFiles([]);
-    setFileInputKey(Date.now());
+    setSecondaryMediaFiles([]);
+    const timestamp = Date.now();
+    setFileInputKey(timestamp);
+    setSecondaryFileInputKey(timestamp + 1);
   };
 
   const handleSubmit = async (event) => {
@@ -50,30 +79,57 @@ function AdmininmobiliariaForm() {
     setFeedback(null);
 
     try {
-  const photosPayload = photoFiles.map((file) => ({ file }));
-  const uploadedImageUrls = await InmobiliariaService.uploadinmobiliariaImages(photosPayload);
+      const photosPayload = photoFiles.map((file) => ({ file }));
+      const uploadedImageUrls =
+        await InmobiliariaService.uploadinmobiliariaImages(photosPayload);
+
+      const priceValue = formData.price.trim();
+      const numericLike =
+        priceValue !== "" && /^[0-9.,]+$/.test(priceValue.replace(/\s/g, ""));
+      const formattedPrice = priceValue
+        ? numericLike && formData.currency
+          ? `${formData.currency} ${priceValue}`
+          : priceValue
+        : null;
+      let secondaryMediaUrl = formData.image2.trim() || null;
+      let secondaryUploadedUrls = [];
+
+      if (secondaryMediaFiles.length) {
+        secondaryUploadedUrls =
+          await InmobiliariaService.uploadinmobiliariaImages(
+            secondaryMediaFiles.map((file) => ({ file }))
+          );
+
+        if (!secondaryMediaUrl && secondaryUploadedUrls.length) {
+          [secondaryMediaUrl] = secondaryUploadedUrls;
+        }
+      }
+      const galleryUrls = [...uploadedImageUrls, ...secondaryUploadedUrls];
 
       const inmobiliariaPayload = {
         name: formData.name.trim(),
         sectionTitle: formData.sectionTitle.trim(),
-        address: formData.address ? Number(formData.address) : null,
+        address: formData.address.trim() || null,
         minArea: formData.minArea.trim() || null,
-        price: formData.price ? Number(formData.price) : null,
-        deliveryStatus: formData.deliveryStatus || null,
-        mediaType: Boolean(formData.mediaType),
+        district: formData.district.trim() || null,
+        price: formattedPrice,
+        deliveryStatus: formData.deliveryStatus.trim() || null,
+        mediaType: formData.mediaType,
         description: formData.description.trim() || null,
         image: uploadedImageUrls[0] || null,
-        image2: formData.image2.trim() || null,
+        image2: secondaryMediaUrl,
+        features: formData.features.trim() || null,
       };
 
-      const insertedinmobiliaria = await InmobiliariaService.createinmobiliariaListing(
-        inmobiliariaPayload,
-        uploadedImageUrls
-      );
+      const insertedinmobiliaria =
+        await InmobiliariaService.createinmobiliariaListing(
+          inmobiliariaPayload,
+          galleryUrls
+        );
 
       setFeedback({
         type: "success",
-        text: `Vehículo ${insertedinmobiliaria.name} ${insertedinmobiliaria.sectionTitle} guardado correctamente.`,
+        text: `Inmueble ${insertedinmobiliaria.name} guardado correctamente.`,
       });
       resetForm();
     } catch (error) {
@@ -82,7 +138,7 @@ function AdmininmobiliariaForm() {
         type: "error",
         text:
           error?.message ||
-          "No se pudo crear el vehículo. Revisa los datos e intenta nuevamente.",
+          "No se pudo crear el inmueble. Revisa los datos e intenta nuevamente.",
       });
     } finally {
       setIsSubmitting(false);
@@ -115,11 +171,7 @@ function AdmininmobiliariaForm() {
             </div>
           )}
 
-          <form
-            onSubmit={handleSubmit}
-            className="mt-8 grid gap-8"
-            noValidate
-          >
+          <form onSubmit={handleSubmit} className="mt-8 grid gap-8" noValidate>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div className="grid gap-2">
                 <label
@@ -181,6 +233,24 @@ function AdmininmobiliariaForm() {
               <div className="grid gap-2">
                 <label
                   className="text-sm font-medium text-neutral-800"
+                  htmlFor="district"
+                >
+                  Distrito / Ciudad
+                </label>
+                <input
+                  id="district"
+                  name="district"
+                  type="text"
+                  value={formData.district}
+                  onChange={handleChange}
+                  className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
+                  placeholder="Ciudad, Provincia"
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <label
+                  className="text-sm font-medium text-neutral-800"
                   htmlFor="minArea"
                 >
                   Area del inmueble
@@ -206,53 +276,67 @@ function AdmininmobiliariaForm() {
                 <input
                   id="price"
                   name="price"
-                  type="number"
+                  type="text"
                   required
-                  min="0"
-                  step="0.01"
                   value={formData.price}
                   onChange={handleChange}
                   className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder=""
+                  placeholder='120000 o "Desde 45,600"'
                 />
               </div>
 
               <div className="grid gap-2">
                 <label
                   className="text-sm font-medium text-neutral-800"
-                  htmlFor="deliveryimage2"
+                  htmlFor="currency"
                 >
                   Moneda
                 </label>
                 <select
-                  id="deliveryimage2"
-                  name="deliveryimage2"
-                  value={formData.deliveryimage2}
+                  id="currency"
+                  name="currency"
+                  value={formData.currency}
                   onChange={handleChange}
                   className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
                 >
                   <option value="USD">USD</option>
-                  <option value="SOLES">PEN</option>
+                  <option value="PEN">PEN</option>
                 </select>
               </div>
 
-            
+              <div className="grid gap-2">
+                <label
+                  className="text-sm font-medium text-neutral-800"
+                  htmlFor="deliveryStatus"
+                >
+                  Estado del anuncio
+                </label>
+                <input
+                  id="deliveryStatus"
+                  name="deliveryStatus"
+                  type="text"
+                  value={formData.deliveryStatus}
+                  onChange={handleChange}
+                  className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
+                  placeholder="Pre-venta, Entrega inmediata..."
+                />
+              </div>
+
               <div className="grid gap-2 md:col-span-2">
                 <label
                   className="text-sm font-medium text-neutral-800"
-                  htmlFor="location"
+                  htmlFor="features"
                 >
-                  Ubicación *
+                  Características principales
                 </label>
                 <input
-                  id="location"
-                  name="location"
+                  id="features"
+                  name="features"
                   type="text"
-                  required
-                  value={formData.location}
+                  value={formData.features}
                   onChange={handleChange}
                   className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder="Ciudad, País"
+                  placeholder="Terreno, Departamento, 3 habitaciones..."
                 />
               </div>
             </div>
@@ -271,73 +355,93 @@ function AdmininmobiliariaForm() {
                 value={formData.description}
                 onChange={handleChange}
                 className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                placeholder="Añade detalles relevantes del vehículo..."
+                placeholder="Añade detalles relevantes del inmueble..."
               />
             </div>
 
-            <div className="grid gap-2 md:grid-cols-[auto_1fr] md:items-center">
-              <div className="flex items-center gap-3">
-                <input
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="grid gap-2">
+                <label
+                  className="text-sm font-medium text-neutral-800"
+                  htmlFor="mediaType"
+                >
+                  Tipo de media secundaria
+                </label>
+                <select
                   id="mediaType"
                   name="mediaType"
-                  type="checkbox"
-                  checked={formData.mediaType}
+                  value={formData.mediaType}
                   onChange={handleChange}
-                  className="h-4 w-4 rounded border-neutral-300 text-neutral-900 focus:ring-neutral-400"
-                />
-                <label
-                  htmlFor="mediaType"
-                  className="text-sm font-medium text-neutral-800"
+                  className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
                 >
-                  Disponible para venta
+                  <option value="image">Imagen</option>
+                  <option value="video">Video</option>
+                </select>
+              </div>
+
+              <div className="grid gap-2">
+                <label
+                  className="text-xs font-medium text-neutral-500"
+                  htmlFor="image2File"
+                >
+                  Suba un archivo para guardarlo como media secundaria
                 </label>
+                <input
+                  id="image2File"
+                  name="image2File"
+                  type="file"
+                  accept="image/*,video/*"
+                  key={secondaryFileInputKey}
+                  multiple
+                  onChange={handleSecondaryMediaChange}
+                  className="rounded-lg border border-dashed border-neutral-300 px-3 py-2 text-xs text-neutral-700 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
+                />
+                {secondaryMediaFiles.length > 0 && (
+                  <ul className="space-y-2 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-xs text-neutral-600">
+                    {secondaryMediaFiles.map((file, index) => (
+                      <li
+                        key={`${file.name}-${index}`}
+                        className="flex items-center justify-between gap-2"
+                      >
+                        <span className="truncate">{file.name}</span>
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveSecondaryFile(index)}
+                          className="text-rose-600 transition hover:text-rose-500"
+                        >
+                          Quitar
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
+            </div>
 
-              <div className="grid gap-2 md:grid-cols-2 md:gap-6">
-                <div className="grid gap-2">
-                  <label
-                    className="text-sm font-medium text-neutral-800"
-                    htmlFor="image2"
-                  >
-                    Estado del anuncio
-                  </label>
-                  <input
-                    id="image2"
-                    name="image2"
-                    type="text"
-                    value={formData.image2}
-                    onChange={handleChange}
-                    className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                    placeholder="Disponible, Reservado..."
-                  />
-                </div>
-
-                <div className="grid gap-2">
-                  <label
-                    className="text-sm font-medium text-neutral-800"
-                    htmlFor="photos"
-                  >
-                    Imágenes del vehículo
-                  </label>
-                  <input
-                    key={fileInputKey}
-                    id="photos"
-                    name="photos"
-                    type="file"
-                    accept="image/*"
-                    multiple
-                    onChange={handleFileChange}
-                    className="block w-full rounded-lg border border-dashed border-neutral-300 px-3 py-10 text-center text-sm text-neutral-500 shadow-sm hover:border-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  />
-                  {photoFiles.length > 0 && (
-                    <ul className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-xs text-neutral-600">
-                      {photoFiles.map((file) => (
-                        <li key={file.name}>{file.name}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
+            <div className="grid gap-2">
+              <label
+                className="text-sm font-medium text-neutral-800"
+                htmlFor="photos"
+              >
+                Imágenes del inmueble
+              </label>
+              <input
+                key={fileInputKey}
+                id="photos"
+                name="photos"
+                type="file"
+                accept="image/*"
+                multiple
+                onChange={handleFileChange}
+                className="block w-full rounded-lg border border-dashed border-neutral-300 px-3 py-10 text-center text-sm text-neutral-500 shadow-sm hover:border-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
+              />
+              {photoFiles.length > 0 && (
+                <ul className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-xs text-neutral-600">
+                  {photoFiles.map((file) => (
+                    <li key={file.name}>{file.name}</li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             <div className="flex flex-col gap-4 border-t border-neutral-200 pt-6 md:flex-row md:justify-end">
@@ -354,7 +458,7 @@ function AdmininmobiliariaForm() {
                 disabled={isSubmitting}
                 className="inline-flex items-center justify-center rounded-lg bg-neutral-900 px-5 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {isSubmitting ? "Guardando..." : "Guardar vehículo"}
+                {isSubmitting ? "Guardando..." : "Guardar inmueble"}
               </button>
             </div>
           </form>

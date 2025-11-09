@@ -111,12 +111,12 @@ export const InmobiliariaService = {
 
       if (sanitizedImageUrls.length) {
         const imagesPayload = sanitizedImageUrls.map((url) => ({
-          inmobiliaria_id: insertedinmobiliaria.id,
-          image_url: url,
+          id_inmobiliaria: insertedinmobiliaria.id,
+          url_images: url,
         }));
 
         const { error: imageError } = await supabase
-          .from("inmobiliaria_images")
+          .from("inmobiliaria_img")
           .insert(imagesPayload);
 
         if (imageError) {

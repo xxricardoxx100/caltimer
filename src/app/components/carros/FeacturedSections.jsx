@@ -70,7 +70,7 @@ const FeacturedSections = () => {
     };
   }, []);
 
-  const displayedCars = cars.slice(0, 6);
+  const displayedCars = cars;
 
   return (
     <div className="flex flex-col items-center px-6 py-24 md:px-16 lg:px-24 xl:px-32">

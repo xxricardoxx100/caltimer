@@ -2,40 +2,71 @@
 import React from "react";
 import PropertyCard from "./PropertyCard";
 import sampleProperties from "@/app/components/inmobiliaria/propertyData";
+import InmobiliariaService from "@/lib/supabase/services2";
 import { motion } from "framer-motion";
 
 const containerVariants = {
-  hidden:{opacity:0},
-  visible:{
-    opacity:1,
-    transition:{
-      staggerChildren:0.2,
-    }
-  }
-}
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 const cardVariants = {
-  hidden:{opacity:0},
-  visible:{
-    opacity:1,
-    transition:{
-      duration:0.5,
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
       ease: "easeOut",
+    },
+  },
+};
+
+useEffect(() => {
+  let isMounted = true;
+
+  const fetchCars = async () => {
+    try {
+      const fetchedCars = await carService.getCars();
+      if (isMounted) {
+        setCars(Array.isArray(fetchedCars) ? fetchedCars : []);
+        setHasError(false);
+      }
+    } catch (error) {
+      console.error("Error fetching cars:", error);
+      if (isMounted) {
+        setHasError(true);
+        setCars([]);
+      }
+    } finally {
+      if (isMounted) {
+        setIsLoading(false);
+      }
     }
-  }
-}
+  };
+
+  fetchCars();
+
+  return () => {
+    isMounted = false;
+  };
+}, []);
 
 export const PropertyList = () => {
   return (
     <div>
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.5}}
-            viewport={{ once: true , amount:0.5}}
-            >
+            transition={{ duration: 1.5 }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Nuestros Proyectos Destacados
             </h2>
@@ -44,22 +75,21 @@ export const PropertyList = () => {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            >
+          >
             {sampleProperties.map((property) => (
               <motion.div
-                key={property.id} 
+                key={property.id}
                 variants={cardVariants}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                >
-                <PropertyCard
-                  property={property} />
+              >
+                <PropertyCard property={property} />
               </motion.div>
             ))}
           </motion.div>
