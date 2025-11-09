@@ -10,7 +10,7 @@ export const ImgBanner = () => {
       <div className="overflow-hidden relative w-full h-[700px]">
         <div className="flex transition-transform ease-out duration-700 h-full">
           <img
-            src="/servicios/Mercedes.jpg"
+            src="/general/autos.jpg"
             alt="Luxury car on road"
             className="w-full h-full object-cover flex-shrink-0"
             style={{ minWidth: "100%", minHeight: "100%" }}

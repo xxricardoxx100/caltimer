@@ -62,9 +62,7 @@
                 Precio desde:
               </h3>
               <p className="text-xl font-bold">{property.price}</p>
-              <p className="text-sm text-gray-300 mt-1">
-                *Precio referencial por {property.minArea} m² dpto 1006
-              </p>
+              
             </div>
 
             {/* Financing Section */}
@@ -104,11 +102,10 @@
                 </h2>
 
                 <div className="space-y-4 text-gray-700 text-justify">
-                  {property.description?.map((desc, idx) => (
-                    <p key={idx} className="text-x leading-relaxed">
-                      {desc}
+                    <p className="text-x leading-relaxed">
+                      {property.description}
                     </p>
-                  ))}
+                  
                 </div>
               </div>
 
