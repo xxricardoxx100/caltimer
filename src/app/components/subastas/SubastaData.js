@@ -3,21 +3,20 @@ export const subastaData = [
 
   {
     id: 1,
-    marca: "Toyota",
-    modelo: "Camry",
+    marca: "Chevrolet",
+    modelo: "Colorado",
     año: 2022,
-    precio: 25000,
-    imagen: "/general/autos.jpg",
+    precio: 13000,
+    imagen: "/subasta1/1.jpeg",
     imagenes: [
-      "/general/autos.jpg",
-      "/general/banner2.png",
-      "/general/aprendesubasta.jpeg",
+      "/subasta1/1.jpeg",
+      "/subasta1/2.jpeg",
     ],  
     kilometraje: "35,000 km",
     estado: "Excelente",
     transmision: "Automática",
     combustible: "Gasolina",
-    color: "Negro",
+    color: "Blanco",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2025-11-15T18:00:00",
