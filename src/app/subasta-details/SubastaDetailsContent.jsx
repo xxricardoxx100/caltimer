@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-// Asegúrate de que la ruta a subastaData sea correcta,
-// quizás necesites un alias o ajustar la ruta:
-import { subastaData } from "../components/subastas/SubastaData"; 
+import { subastaData } from "../components/subastas/SubastaData";
+import { useSubastaUser } from "@/lib/hooks/useSubastaUser";
+import { UserNameModal } from "../components/subastas/UserNameModal";
+import { CountdownTimer, useSubastaActive } from "../components/subastas/CountdownTimer"; 
 
 // AHORA ESTE ES UN COMPONENTE SEPARADO
 export function SubastaDetailsContent() {
@@ -13,9 +14,16 @@ export function SubastaDetailsContent() {
   const id = searchParams.get("id");
   const [imagenSeleccionada, setImagenSeleccionada] = useState(0);
   const [mostrarModal, setMostrarModal] = useState(false);
+  const [mostrarModalNombre, setMostrarModalNombre] = useState(false);
+  
+  // Hook de usuario para subastas
+  const { userId, userName, isNewUser, isLoading, saveUserName, changeUserName } = useSubastaUser();
 
   // Buscar el vehículo por ID
   const vehiculo = subastaData.find(v => v.id === parseInt(id));
+  
+  // Verificar si la subasta está activa
+  const isSubastaActive = useSubastaActive(vehiculo?.fecha_fin);
 
   if (!vehiculo) {
     return (
@@ -34,6 +42,19 @@ export function SubastaDetailsContent() {
     // Todo tu JSX de detalles del vehículo va aquí
     // ... (El resto de tu código original: MODAL, Breadcrumb, Título, Grids, etc.)
     <div data-scroll-section className="pt-25 pb-16">
+      {/* MODAL DE NOMBRE DE USUARIO */}
+      <UserNameModal 
+        isOpen={isNewUser || mostrarModalNombre}
+        onSave={(name) => {
+          const success = saveUserName(name);
+          if (success) {
+            setMostrarModalNombre(false);
+          }
+          return success;
+        }}
+        currentName={userName}
+      />
+
       {/* MODAL / LIGHTBOX DE PANTALLA COMPLETA */}
       {/* ... (código del modal) ... */}
       {mostrarModal && (
@@ -140,14 +161,57 @@ export function SubastaDetailsContent() {
           {/* Columna derecha - Información y precio */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-lg p-6 sticky top-4">
+              {/* Información del usuario */}
+              {userName && (
+                <div className="mb-4 pb-4 border-b border-gray-200">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                        <span className="text-orange-600 font-semibold text-sm">
+                          {userName.charAt(0).toUpperCase()}
+                        </span>
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-500">Participando como</p>
+                        <p className="text-sm font-semibold text-gray-900">{userName}</p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => setMostrarModalNombre(true)}
+                      className="text-xs text-orange-600 hover:text-orange-700 font-medium"
+                    >
+                      Cambiar
+                    </button>
+                  </div>
+                </div>
+              )}
+
               <div className="mb-6">
                 <p className="text-gray-600 mb-2">Precio actual</p>
                 <p className="text-4xl font-bold text-orange-600 mb-4"> 
                   ${vehiculo.precio.toLocaleString()}
                 </p>
-                <button className="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition text-lg font-semibold">
-                  Hacer Oferta
+                
+                {/* Contador regresivo */}
+                <div className="mb-4">
+                  <CountdownTimer 
+                    endDate={vehiculo.fecha_fin}
+                    onExpire={() => console.log('Subasta finalizada')}
+                  />
+                </div>
+
+                <button 
+                  disabled={!isSubastaActive || !userName}
+                  className="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition text-lg font-semibold disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
+                >
+                  {!userName ? 'Ingresa tu nombre para ofertar' : !isSubastaActive ? 'Subasta Finalizada' : 'Hacer Oferta'}
                 </button>
+                
+                {!userName && isSubastaActive && (
+                  <p className="text-xs text-gray-500 text-center mt-2">
+                    Necesitas ingresar tu nombre para participar
+                  </p>
+                )}
               </div>
 
               <div className="border-t pt-6 space-y-4">
