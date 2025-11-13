@@ -186,7 +186,9 @@ export default function PropertyDetailsPage() {
               </h2>
 
               <div className="space-y-4 text-gray-700 text-justify">
-                <p className="text-x leading-relaxed">{property.description}</p>
+                <p className="text-x leading-relaxed whitespace-pre-line">
+                  {property.description}
+                </p>
               </div>
             </div>
 
