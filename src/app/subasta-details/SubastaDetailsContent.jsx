@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { subastaData } from "../components/subastas/SubastaData";
 import { useSubastaUser } from "@/lib/hooks/useSubastaUser";
+import { useSubastaOfertas } from "@/lib/hooks/useSubastaOfertas";
+import { SubastaOfertasService } from "@/lib/supabase/subasta-ofertas";
 import { UserNameModal } from "../components/subastas/UserNameModal";
 import { CountdownTimer, useSubastaActive } from "../components/subastas/CountdownTimer"; 
 
@@ -26,13 +28,45 @@ export function SubastaDetailsContent() {
   const [fechaFin, setFechaFin] = useState(vehiculo?.fecha_fin);
   const [mostrarMensajeExtension, setMostrarMensajeExtension] = useState(false);
   
+  // Cargar fecha de finalización desde Supabase y suscribirse
+  useEffect(() => {
+    if (!id || !vehiculo?.fecha_fin) return;
+
+    const cargarFecha = async () => {
+      const fechaGuardada = await SubastaOfertasService.getFechaFinActual(id);
+      if (fechaGuardada) {
+        setFechaFin(fechaGuardada);
+      }
+    };
+
+    cargarFecha();
+
+    // Suscribirse a nuevas ofertas con extensión de tiempo
+    const subscription = SubastaOfertasService.suscribirseConExtension(
+      id,
+      () => {}, // Las ofertas ya se manejan en useSubastaOfertas
+      (nuevaFechaFin) => {
+        setFechaFin(nuevaFechaFin);
+        setMostrarMensajeExtension(true);
+      }
+    );
+
+    return () => {
+      SubastaOfertasService.cancelarSuscripcion(subscription);
+    };
+  }, [id, vehiculo?.fecha_fin]);
+  
   // Verificar si la subasta está activa
   const isSubastaActive = useSubastaActive(fechaFin);
 
-  // Estado para manejar ofertas
-  const [precioActual, setPrecioActual] = useState(vehiculo?.precio || 0);
-  const [ofertas, setOfertas] = useState([]);
-  const [ultimoPostor, setUltimoPostor] = useState(null);
+  // Hook de ofertas con Supabase (reemplaza estado local)
+  const { 
+    ofertas, 
+    precioActual, 
+    ultimoPostor, 
+    isLoading: isLoadingOfertas,
+    crearOferta 
+  } = useSubastaOfertas(id, vehiculo?.precio);
 
   // useEffect para ocultar el mensaje después de 1 segundo
   useEffect(() => {
@@ -46,23 +80,22 @@ export function SubastaDetailsContent() {
   }, [mostrarMensajeExtension]);
 
   // Función para hacer una oferta
-  const hacerOferta = () => {
+  const hacerOferta = async () => {
     if (!userName || !userId || !isSubastaActive) return;
 
     const incremento = 50;
-    const nuevoPrecio = precioActual + incremento;
-    const nuevaOferta = {
-      id: Date.now(),
-      userId: userId,
-      userName: userName,
-      monto: nuevoPrecio,
-      fecha: new Date().toISOString(),
-    };
 
-    // Actualizar estados
-    setPrecioActual(nuevoPrecio);
-    setOfertas(prev => [nuevaOferta, ...prev]); // Más reciente primero
-    setUltimoPostor(userName);
+    // Crear oferta en Supabase
+    const exito = await crearOferta({
+      userId,
+      userName,
+      incremento,
+    });
+
+    if (!exito) {
+      console.error("Error al crear oferta");
+      return;
+    }
 
     // Verificar si quedan menos de 60 segundos y extender tiempo
     const ahora = new Date().getTime();
@@ -72,8 +105,20 @@ export function SubastaDetailsContent() {
     // Si quedan menos de 60 segundos (60000 ms), extender 60 segundos
     if (tiempoRestante < 60000 && tiempoRestante > 0) {
       const nuevaFechaFin = new Date(ahora + 60000).toISOString();
-      setFechaFin(nuevaFechaFin);
-      setMostrarMensajeExtension(true);
+      
+      // Crear oferta con la nueva fecha de finalización
+      const exito = await crearOferta({
+        userId,
+        userName,
+        incremento,
+        fechaFinSubasta: nuevaFechaFin, // Pasar fecha extendida
+      });
+
+      if (exito) {
+        setFechaFin(nuevaFechaFin);
+        setMostrarMensajeExtension(true);
+      }
+      return;
     }
   };
 
@@ -304,18 +349,18 @@ export function SubastaDetailsContent() {
                             index === 0 ? 'bg-green-500' : 'bg-gray-400'
                           }`}>
                             <span className="text-white text-xs font-semibold">
-                              {oferta.userName.charAt(0).toUpperCase()}
+                              {oferta.user_name.charAt(0).toUpperCase()}
                             </span>
                           </div>
                           <div>
                             <p className="text-sm font-semibold text-gray-900">
-                              {oferta.userName}
-                              {oferta.userId === userId && (
+                              {oferta.user_name}
+                              {oferta.user_id === userId && (
                                 <span className="text-xs text-orange-600 ml-1">(Tú)</span>
                               )}
                             </p>
                             <p className="text-xs text-gray-500">
-                              {new Date(oferta.fecha).toLocaleTimeString('es-ES', {
+                              {new Date(oferta.created_at).toLocaleTimeString('es-ES', {
                                 hour: '2-digit',
                                 minute: '2-digit'
                               })}
