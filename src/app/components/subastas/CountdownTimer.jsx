@@ -6,9 +6,19 @@ import { useState, useEffect } from "react";
  * Muestra días, horas, minutos y segundos restantes
  * @param {string} endDate - Fecha de finalización en formato ISO (ej: "2025-11-15T18:00:00")
  * @param {function} onExpire - Callback que se ejecuta cuando el contador llega a cero
+ * @param {boolean} showExtendedMessage - Mostrar mensaje cuando se extiende el tiempo
  */
-export function CountdownTimer({ endDate, onExpire }) {
+export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(endDate));
+  const [wasExtended, setWasExtended] = useState(false);
+
+  useEffect(() => {
+    if (showExtendedMessage) {
+      setWasExtended(true);
+      const timeout = setTimeout(() => setWasExtended(false), 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [showExtendedMessage]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,6 +51,12 @@ export function CountdownTimer({ endDate, onExpire }) {
 
   return (
     <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-4">
+      {wasExtended && (
+        <div className="mb-3 bg-green-500 text-white text-center py-2 px-3 rounded-lg text-sm font-semibold animate-pulse">
+          Puja actualizada
+        </div>
+      )}
+      
       <p className="text-center text-gray-700 font-medium mb-3 text-sm">
         ⏰ Tiempo restante
       </p>

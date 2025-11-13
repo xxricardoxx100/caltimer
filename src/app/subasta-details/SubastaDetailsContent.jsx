@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,14 +16,66 @@ export function SubastaDetailsContent() {
   const [mostrarModal, setMostrarModal] = useState(false);
   const [mostrarModalNombre, setMostrarModalNombre] = useState(false);
   
-  // Hook de usuario para subastas
+  // Hook de usuario para subastasno
   const { userId, userName, isNewUser, isLoading, saveUserName, changeUserName } = useSubastaUser();
 
   // Buscar el vehículo por ID
   const vehiculo = subastaData.find(v => v.id === parseInt(id));
   
+  // Estado para la fecha de finalización dinámica
+  const [fechaFin, setFechaFin] = useState(vehiculo?.fecha_fin);
+  const [mostrarMensajeExtension, setMostrarMensajeExtension] = useState(false);
+  
   // Verificar si la subasta está activa
-  const isSubastaActive = useSubastaActive(vehiculo?.fecha_fin);
+  const isSubastaActive = useSubastaActive(fechaFin);
+
+  // Estado para manejar ofertas
+  const [precioActual, setPrecioActual] = useState(vehiculo?.precio || 0);
+  const [ofertas, setOfertas] = useState([]);
+  const [ultimoPostor, setUltimoPostor] = useState(null);
+
+  // useEffect para ocultar el mensaje después de 1 segundo
+  useEffect(() => {
+    if (mostrarMensajeExtension) {
+      const timer = setTimeout(() => {
+        setMostrarMensajeExtension(false);
+      }, 1000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [mostrarMensajeExtension]);
+
+  // Función para hacer una oferta
+  const hacerOferta = () => {
+    if (!userName || !userId || !isSubastaActive) return;
+
+    const incremento = 50;
+    const nuevoPrecio = precioActual + incremento;
+    const nuevaOferta = {
+      id: Date.now(),
+      userId: userId,
+      userName: userName,
+      monto: nuevoPrecio,
+      fecha: new Date().toISOString(),
+    };
+
+    // Actualizar estados
+    setPrecioActual(nuevoPrecio);
+    setOfertas(prev => [nuevaOferta, ...prev]); // Más reciente primero
+    setUltimoPostor(userName);
+
+    // Verificar si quedan menos de 60 segundos y extender tiempo
+    const ahora = new Date().getTime();
+    const fin = new Date(fechaFin).getTime();
+    const tiempoRestante = fin - ahora;
+    
+    // Si quedan menos de 60 segundos (60000 ms), extender 60 segundos
+    if (tiempoRestante < 60000 && tiempoRestante > 0) {
+      const nuevaFechaFin = new Date(ahora + 60000).toISOString();
+      setFechaFin(nuevaFechaFin);
+      setMostrarMensajeExtension(true);
+    }
+  };
 
   if (!vehiculo) {
     return (
@@ -188,23 +240,41 @@ export function SubastaDetailsContent() {
 
               <div className="mb-6">
                 <p className="text-gray-600 mb-2">Precio actual</p>
-                <p className="text-4xl font-bold text-orange-600 mb-4"> 
-                  ${vehiculo.precio.toLocaleString()}
+                <p className="text-4xl font-bold text-orange-600 mb-2"> 
+                  ${precioActual.toLocaleString()}
                 </p>
+                {ultimoPostor && (
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-sm text-gray-600">Última oferta por:</span>
+                    <div className="flex items-center gap-1.5 bg-green-50 border border-green-200 rounded-full px-3 py-1">
+                      <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs font-semibold">
+                          {ultimoPostor.charAt(0).toUpperCase()}
+                        </span>
+                      </div>
+                      <span className="text-sm font-semibold text-green-700">{ultimoPostor}</span>
+                      {ultimoPostor === userName && (
+                        <span className="text-xs text-green-600">(Tú)</span>
+                      )}
+                    </div>
+                  </div>
+                )}
                 
                 {/* Contador regresivo */}
                 <div className="mb-4">
                   <CountdownTimer 
-                    endDate={vehiculo.fecha_fin}
+                    endDate={fechaFin}
                     onExpire={() => console.log('Subasta finalizada')}
+                    showExtendedMessage={mostrarMensajeExtension}
                   />
                 </div>
 
                 <button 
+                  onClick={hacerOferta}
                   disabled={!isSubastaActive || !userName}
                   className="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition text-lg font-semibold disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
                 >
-                  {!userName ? 'Ingresa tu nombre para ofertar' : !isSubastaActive ? 'Subasta Finalizada' : 'Hacer Oferta'}
+                  {!userName ? 'Ingresa tu nombre para ofertar' : !isSubastaActive ? 'Subasta Finalizada' : `Hacer Oferta (+$${50})`}
                 </button>
                 
                 {!userName && isSubastaActive && (
@@ -213,6 +283,60 @@ export function SubastaDetailsContent() {
                   </p>
                 )}
               </div>
+
+              {/* Historial de ofertas */}
+              {ofertas.length > 0 && (
+                <div className="border-t pt-6 mb-6">
+                  <h3 className="font-bold text-lg mb-3 flex items-center justify-between">
+                    <span>Historial de Ofertas</span>
+                    <span className="text-sm font-normal text-gray-500">({ofertas.length})</span>
+                  </h3>
+                  <div className="space-y-2 max-h-64 overflow-y-auto">
+                    {ofertas.map((oferta, index) => (
+                      <div 
+                        key={oferta.id}
+                        className={`flex items-center justify-between p-3 rounded-lg ${
+                          index === 0 ? 'bg-green-50 border border-green-200' : 'bg-gray-50'
+                        }`}
+                      >
+                        <div className="flex items-center gap-2">
+                          <div className={`w-7 h-7 rounded-full flex items-center justify-center ${
+                            index === 0 ? 'bg-green-500' : 'bg-gray-400'
+                          }`}>
+                            <span className="text-white text-xs font-semibold">
+                              {oferta.userName.charAt(0).toUpperCase()}
+                            </span>
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-gray-900">
+                              {oferta.userName}
+                              {oferta.userId === userId && (
+                                <span className="text-xs text-orange-600 ml-1">(Tú)</span>
+                              )}
+                            </p>
+                            <p className="text-xs text-gray-500">
+                              {new Date(oferta.fecha).toLocaleTimeString('es-ES', {
+                                hour: '2-digit',
+                                minute: '2-digit'
+                              })}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <p className={`font-bold ${
+                            index === 0 ? 'text-green-600 text-lg' : 'text-gray-700'
+                          }`}>
+                            ${oferta.monto.toLocaleString()}
+                          </p>
+                          {index === 0 && (
+                            <p className="text-xs text-green-600 font-medium">Ganando</p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="border-t pt-6 space-y-4">
                 <h3 className="font-bold text-lg mb-4">Especificaciones</h3>
