@@ -71,19 +71,41 @@ export function SubastaDetailsContent() {
 
   // Función para hacer una oferta
   const hacerOferta = async () => {
-    if (!userName || !userId || !isSubastaActive) return;
+    console.log("🎯 [COMPONENTE] hacerOferta iniciado", {
+      userName,
+      userId,
+      isSubastaActive,
+      fechaFin,
+      precioActual
+    });
+
+    if (!userName || !userId || !isSubastaActive) {
+      console.warn("⚠️ [COMPONENTE] No se puede hacer oferta", {
+        userName,
+        userId,
+        isSubastaActive
+      });
+      return;
+    }
 
     const incremento = 50;
 
     // Obtener hora del servidor para cálculos precisos
+    console.log("⏰ [COMPONENTE] Obteniendo hora del servidor...");
     const serverTime = await SubastaOfertasService.getServerTime();
     const ahora = serverTime.getTime();
     const fin = new Date(fechaFin).getTime();
     const tiempoRestante = fin - ahora;
     
+    console.log("⏱️ [COMPONENTE] Tiempo restante:", {
+      tiempoRestante: Math.floor(tiempoRestante / 1000) + " segundos",
+      necesitaExtension: tiempoRestante < 60000
+    });
+    
     // Si quedan menos de 60 segundos (60000 ms), extender 60 segundos
     if (tiempoRestante < 60000 && tiempoRestante > 0) {
       const nuevaFechaFin = new Date(ahora + 60000).toISOString();
+      console.log("🔄 [COMPONENTE] Extendiendo tiempo a:", nuevaFechaFin);
       
       // Crear oferta con la nueva fecha de finalización
       const exito = await crearOferta({
@@ -94,21 +116,27 @@ export function SubastaDetailsContent() {
       });
 
       if (exito) {
+        console.log("✅ [COMPONENTE] Oferta con extensión creada exitosamente");
         setFechaFin(nuevaFechaFin);
         setMostrarMensajeExtension(true);
+      } else {
+        console.error("❌ [COMPONENTE] Falló la creación de oferta con extensión");
       }
       return;
     }
 
     // Si no se necesita extensión, solo crear la oferta
+    console.log("📤 [COMPONENTE] Creando oferta sin extensión");
     const exito = await crearOferta({
       userId,
       userName,
       incremento,
     });
 
-    if (!exito) {
-      console.error("Error al crear oferta");
+    if (exito) {
+      console.log("✅ [COMPONENTE] Oferta creada exitosamente");
+    } else {
+      console.error("❌ [COMPONENTE] Error al crear oferta");
     }
   };
 

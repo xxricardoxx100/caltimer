@@ -11,11 +11,23 @@ export const SubastaOfertasService = {
    */
   async getOfertas(subastaId) {
     try {
+      // Intentar usar función RPC optimizada primero
+      const { data: rpcData, error: rpcError } = await supabase
+        .rpc('get_ofertas_optimizado', { p_subasta_id: subastaId });
+
+      if (!rpcError && rpcData) {
+        console.log("⚡ [OPTIMIZADO] Usando función RPC optimizada");
+        return rpcData;
+      }
+
+      // Fallback a consulta normal si RPC no existe
+      console.log("📊 [FALLBACK] Usando consulta estándar");
       const { data, error } = await supabase
         .from("subastas_ofertas")
         .select("*")
         .eq("subasta_id", subastaId)
-        .order("created_at", { ascending: false });
+        .order("created_at", { ascending: false })
+        .limit(50); // Limitar resultados para evitar sobrecarga
 
       if (error) {
         console.error("Error obteniendo ofertas:", error);
@@ -39,7 +51,17 @@ export const SubastaOfertasService = {
    * @param {string} oferta.fechaFinSubasta - Nueva fecha de finalización (opcional)
    * @returns {Promise<Object|null>} Oferta creada o null si hay error
    */
-  async crearOferta({ subastaId, userId, userName, monto, fechaFinSubasta = null }) {
+  async crearOferta({ subastaId, userId, userName, monto, fechaFinSubasta = null }, retryCount = 0) {
+    console.log("🔵 [CREAR OFERTA] Iniciando...", {
+      subastaId,
+      userId,
+      userName,
+      monto,
+      fechaFinSubasta,
+      timestamp: new Date().toISOString(),
+      intento: retryCount + 1
+    });
+
     try {
       const payload = {
         subasta_id: subastaId,
@@ -51,7 +73,10 @@ export const SubastaOfertasService = {
       // Agregar fecha_fin si se proporciona
       if (fechaFinSubasta) {
         payload.fecha_fin_subasta = fechaFinSubasta;
+        console.log("⏰ [EXTENSIÓN] Agregando nueva fecha fin:", fechaFinSubasta);
       }
+
+      console.log("📤 [SUPABASE] Enviando payload:", payload);
 
       const { data, error } = await supabase
         .from("subastas_ofertas")
@@ -60,24 +85,50 @@ export const SubastaOfertasService = {
         .single();
 
       if (error) {
-        console.error("Error creando oferta:", error);
+        // Reintentar si es error de red o timeout
+        if ((error.code === 'PGRST301' || error.message.includes('timeout')) && retryCount < 2) {
+          console.warn(`⚠️ [RETRY] Reintentando... (${retryCount + 1}/2)`);
+          await new Promise(resolve => setTimeout(resolve, 1000)); // Esperar 1 segundo
+          return this.crearOferta({ subastaId, userId, userName, monto, fechaFinSubasta }, retryCount + 1);
+        }
+
+        console.error("❌ [ERROR SUPABASE] Error creando oferta:", {
+          error,
+          code: error.code,
+          message: error.message,
+          details: error.details,
+          hint: error.hint
+        });
         return null;
       }
 
+      console.log("✅ [ÉXITO] Oferta creada en Supabase:", data);
       return data;
     } catch (err) {
-      console.error("Error en crearOferta:", err);
+      console.error("❌ [ERROR CRÍTICO] Error en crearOferta:", err);
       return null;
     }
   },
 
   /**
    * Obtener la última oferta (más alta) de una subasta
+   * Usa vista materializada para mayor velocidad
    * @param {string} subastaId - ID de la subasta
    * @returns {Promise<Object|null>} Última oferta o null
    */
   async getUltimaOferta(subastaId) {
     try {
+      // Intentar usar vista materializada optimizada
+      const { data: rpcData, error: rpcError } = await supabase
+        .rpc('get_ultima_oferta_rapida', { p_subasta_id: subastaId })
+        .single();
+
+      if (!rpcError && rpcData) {
+        console.log("⚡ [OPTIMIZADO] Usando vista materializada");
+        return rpcData;
+      }
+
+      // Fallback a consulta normal
       const { data, error } = await supabase
         .from("subastas_ofertas")
         .select("*")
@@ -184,6 +235,8 @@ export const SubastaOfertasService = {
    * @returns {Object} Suscripción de Supabase
    */
   suscribirseConExtension(subastaId, onNuevaOferta, onExtensionTiempo) {
+    console.log("🔔 [SUSCRIPCIÓN] Iniciando suscripción para subasta:", subastaId);
+
     const subscription = supabase
       .channel(`ofertas-extended-${subastaId}`)
       .on(
@@ -195,16 +248,26 @@ export const SubastaOfertasService = {
           filter: `subasta_id=eq.${subastaId}`,
         },
         (payload) => {
+          console.log("📨 [REALTIME] Evento recibido:", {
+            payload,
+            timestamp: new Date().toISOString()
+          });
+
           const nuevaOferta = payload.new;
+          console.log("📊 [NUEVA OFERTA] Datos:", nuevaOferta);
+
           onNuevaOferta(nuevaOferta);
           
           // Si la oferta incluye extensión de tiempo, notificar
           if (nuevaOferta.fecha_fin_subasta) {
+            console.log("⏰ [EXTENSIÓN DETECTADA] Nueva fecha:", nuevaOferta.fecha_fin_subasta);
             onExtensionTiempo(nuevaOferta.fecha_fin_subasta);
           }
         }
       )
-      .subscribe();
+      .subscribe((status) => {
+        console.log("🔔 [ESTADO SUSCRIPCIÓN]", status);
+      });
 
     return subscription;
   },
