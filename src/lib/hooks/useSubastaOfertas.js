@@ -8,9 +8,10 @@ import { SubastaOfertasService } from "@/lib/supabase/subasta-ofertas";
  * 
  * @param {string} subastaId - ID de la subasta
  * @param {number} precioInicial - Precio inicial del vehículo
+ * @param {Function} onExtensionTiempo - Callback cuando se extiende el tiempo
  * @returns {Object} Estado y funciones para manejar ofertas
  */
-export function useSubastaOfertas(subastaId, precioInicial = 0) {
+export function useSubastaOfertas(subastaId, precioInicial = 0, onExtensionTiempo = null) {
   const [ofertas, setOfertas] = useState([]);
   const [precioActual, setPrecioActual] = useState(precioInicial);
   const [ultimoPostor, setUltimoPostor] = useState(null);
@@ -51,13 +52,19 @@ export function useSubastaOfertas(subastaId, precioInicial = 0) {
   useEffect(() => {
     if (!subastaId) return;
 
-    const subscription = SubastaOfertasService.suscribirseAOfertas(
+    const subscription = SubastaOfertasService.suscribirseConExtension(
       subastaId,
       (nuevaOferta) => {
         // Agregar nueva oferta al inicio del array
         setOfertas((prev) => [nuevaOferta, ...prev]);
         setPrecioActual(nuevaOferta.monto);
         setUltimoPostor(nuevaOferta.user_name);
+      },
+      (nuevaFechaFin) => {
+        // Notificar extensión de tiempo si hay callback
+        if (onExtensionTiempo) {
+          onExtensionTiempo(nuevaFechaFin);
+        }
       }
     );
 
@@ -65,7 +72,7 @@ export function useSubastaOfertas(subastaId, precioInicial = 0) {
     return () => {
       SubastaOfertasService.cancelarSuscripcion(subscription);
     };
-  }, [subastaId]);
+  }, [subastaId, onExtensionTiempo]);
 
   /**
    * Crear una nueva oferta

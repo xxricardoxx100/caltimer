@@ -28,7 +28,7 @@ export function SubastaDetailsContent() {
   const [fechaFin, setFechaFin] = useState(vehiculo?.fecha_fin);
   const [mostrarMensajeExtension, setMostrarMensajeExtension] = useState(false);
   
-  // Cargar fecha de finalización desde Supabase y suscribirse
+  // Cargar fecha de finalización desde Supabase
   useEffect(() => {
     if (!id || !vehiculo?.fecha_fin) return;
 
@@ -40,20 +40,6 @@ export function SubastaDetailsContent() {
     };
 
     cargarFecha();
-
-    // Suscribirse a nuevas ofertas con extensión de tiempo
-    const subscription = SubastaOfertasService.suscribirseConExtension(
-      id,
-      () => {}, // Las ofertas ya se manejan en useSubastaOfertas
-      (nuevaFechaFin) => {
-        setFechaFin(nuevaFechaFin);
-        setMostrarMensajeExtension(true);
-      }
-    );
-
-    return () => {
-      SubastaOfertasService.cancelarSuscripcion(subscription);
-    };
   }, [id, vehiculo?.fecha_fin]);
   
   // Verificar si la subasta está activa
@@ -66,7 +52,11 @@ export function SubastaDetailsContent() {
     ultimoPostor, 
     isLoading: isLoadingOfertas,
     crearOferta 
-  } = useSubastaOfertas(id, vehiculo?.precio);
+  } = useSubastaOfertas(id, vehiculo?.precio, (nuevaFechaFin) => {
+    // Callback cuando se extiende el tiempo
+    setFechaFin(nuevaFechaFin);
+    setMostrarMensajeExtension(true);
+  });
 
   // useEffect para ocultar el mensaje después de 1 segundo
   useEffect(() => {

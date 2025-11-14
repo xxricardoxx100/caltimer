@@ -1,16 +1,31 @@
 "use client";
 import { useState, useEffect } from "react";
+import { SubastaOfertasService } from "@/lib/supabase/subasta-ofertas";
 
 /**
  * Componente de contador regresivo para subastas
  * Muestra días, horas, minutos y segundos restantes
+ * Sincronizado con el servidor para mayor precisión
  * @param {string} endDate - Fecha de finalización en formato ISO (ej: "2025-11-15T18:00:00")
  * @param {function} onExpire - Callback que se ejecuta cuando el contador llega a cero
  * @param {boolean} showExtendedMessage - Mostrar mensaje cuando se extiende el tiempo
  */
 export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(endDate));
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(endDate, 0));
   const [wasExtended, setWasExtended] = useState(false);
+  const [timeOffset, setTimeOffset] = useState(0); // Diferencia entre servidor y cliente
+
+  // Sincronizar con el servidor una vez al montar
+  useEffect(() => {
+    const syncWithServer = async () => {
+      const clientTime = Date.now();
+      const serverTime = await SubastaOfertasService.getServerTime();
+      const offset = serverTime.getTime() - clientTime;
+      setTimeOffset(offset);
+    };
+
+    syncWithServer();
+  }, []);
 
   useEffect(() => {
     if (showExtendedMessage) {
@@ -22,7 +37,7 @@ export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const newTimeLeft = calculateTimeLeft(endDate);
+      const newTimeLeft = calculateTimeLeft(endDate, timeOffset);
       setTimeLeft(newTimeLeft);
 
       // Si el tiempo se agotó, ejecutar callback
@@ -32,7 +47,7 @@ export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [endDate, onExpire]);
+  }, [endDate, onExpire, timeOffset]);
 
   // Si no hay fecha de fin, no mostrar nada
   if (!endDate) {
@@ -95,9 +110,11 @@ function TimeUnit({ value, label }) {
 
 /**
  * Calcula el tiempo restante entre ahora y la fecha de finalización
+ * @param {string} endDate - Fecha de finalización
+ * @param {number} timeOffset - Offset entre servidor y cliente en ms
  */
-function calculateTimeLeft(endDate) {
-  const now = new Date().getTime();
+function calculateTimeLeft(endDate, timeOffset = 0) {
+  const now = Date.now() + timeOffset; // Usar hora del servidor
   const end = new Date(endDate).getTime();
   const difference = end - now;
 
@@ -122,8 +139,10 @@ function calculateTimeLeft(endDate) {
 
 /**
  * Hook personalizado para saber si una subasta está activa
+ * @param {string} endDate - Fecha de finalización
+ * @param {number} timeOffset - Offset entre servidor y cliente
  */
-export function useSubastaActive(endDate) {
+export function useSubastaActive(endDate, timeOffset = 0) {
   const [isActive, setIsActive] = useState(true);
 
   useEffect(() => {
@@ -133,7 +152,7 @@ export function useSubastaActive(endDate) {
     }
 
     const checkIfActive = () => {
-      const now = new Date().getTime();
+      const now = Date.now() + timeOffset;
       const end = new Date(endDate).getTime();
       setIsActive(end > now);
     };
@@ -142,7 +161,7 @@ export function useSubastaActive(endDate) {
     const interval = setInterval(checkIfActive, 1000);
 
     return () => clearInterval(interval);
-  }, [endDate]);
+  }, [endDate, timeOffset]);
 
   return isActive;
 }

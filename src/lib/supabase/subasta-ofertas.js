@@ -129,6 +129,28 @@ export const SubastaOfertasService = {
   },
 
   /**
+   * Obtener la hora actual del servidor (Supabase)
+   * Útil para sincronizar contadores entre usuarios
+   * @returns {Promise<Date>} Fecha y hora del servidor
+   */
+  async getServerTime() {
+    try {
+      const { data, error } = await supabase.rpc('get_server_time');
+      
+      if (error) {
+        // Si falla, usar hora local como fallback
+        console.warn("Usando hora local como fallback");
+        return new Date();
+      }
+      
+      return new Date(data);
+    } catch (err) {
+      console.warn("Error obteniendo hora del servidor, usando hora local");
+      return new Date();
+    }
+  },
+
+  /**
    * Obtener la última fecha de finalización de una subasta
    * @param {string} subastaId - ID de la subasta
    * @returns {Promise<string|null>} Fecha de finalización o null
