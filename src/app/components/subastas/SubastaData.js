@@ -19,7 +19,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-11-13T18:59:00",
+    fecha_fin: "2025-11-13T19:25:00",
     descripcion: "Vehículo en excelentes condiciones, mantenimiento al día, un solo dueño. Motor V6, aire acondicionado, sistema de sonido premium, asientos de cuero, cámara de reversa y mucho más.",
     caracteristicas: [
       "Aire acondicionado",
