@@ -208,4 +208,15 @@ export const SubastaOfertasService = {
 
     return subscription;
   },
+
+  /**
+   * Cancelar una suscripción de Supabase
+   * @param {Object} subscription - Suscripción a cancelar
+   * @returns {Promise<void>}
+   */
+  async cancelarSuscripcion(subscription) {
+    if (subscription) {
+      await supabase.removeChannel(subscription);
+    }
+  },
 };
