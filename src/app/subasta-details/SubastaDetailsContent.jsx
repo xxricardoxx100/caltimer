@@ -75,20 +75,9 @@ export function SubastaDetailsContent() {
 
     const incremento = 50;
 
-    // Crear oferta en Supabase
-    const exito = await crearOferta({
-      userId,
-      userName,
-      incremento,
-    });
-
-    if (!exito) {
-      console.error("Error al crear oferta");
-      return;
-    }
-
-    // Verificar si quedan menos de 60 segundos y extender tiempo
-    const ahora = new Date().getTime();
+    // Obtener hora del servidor para cálculos precisos
+    const serverTime = await SubastaOfertasService.getServerTime();
+    const ahora = serverTime.getTime();
     const fin = new Date(fechaFin).getTime();
     const tiempoRestante = fin - ahora;
     
@@ -109,6 +98,17 @@ export function SubastaDetailsContent() {
         setMostrarMensajeExtension(true);
       }
       return;
+    }
+
+    // Si no se necesita extensión, solo crear la oferta
+    const exito = await crearOferta({
+      userId,
+      userName,
+      incremento,
+    });
+
+    if (!exito) {
+      console.error("Error al crear oferta");
     }
   };
 

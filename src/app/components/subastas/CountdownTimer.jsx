@@ -15,17 +15,19 @@ export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
   const [wasExtended, setWasExtended] = useState(false);
   const [timeOffset, setTimeOffset] = useState(0); // Diferencia entre servidor y cliente
 
-  // Sincronizar con el servidor una vez al montar
+  // Sincronizar con el servidor al montar y cuando cambie endDate
   useEffect(() => {
     const syncWithServer = async () => {
       const clientTime = Date.now();
       const serverTime = await SubastaOfertasService.getServerTime();
       const offset = serverTime.getTime() - clientTime;
       setTimeOffset(offset);
+      // Actualizar inmediatamente con el nuevo offset
+      setTimeLeft(calculateTimeLeft(endDate, offset));
     };
 
     syncWithServer();
-  }, []);
+  }, [endDate]); // Agregado endDate como dependencia
 
   useEffect(() => {
     if (showExtendedMessage) {
