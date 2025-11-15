@@ -1,6 +1,6 @@
 // Datos de vehículos en subasta
 export const subastaData = [
-
+/*
   {
     id: 1,
     marca: "Chevrolet",
@@ -32,6 +32,47 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+  {
+    id: 2,
+    marca: "Kia",
+    modelo: "Sorento",
+    año: 2023,
+    precio: 25000,
+    imagen: "/subasta2/3.jpeg",
+    imagenes: [
+      "/subasta2/1.jpeg",
+      "/subasta2/2.jpeg",
+      "/subasta2/3.jpeg",
+      "/subasta2/4.jpeg",
+      "/subasta2/5.jpeg",
+      "/subasta2/6.jpeg",
+      "/subasta2/7.jpeg",
+      "/subasta2/8.jpeg",
+      "/subasta2/9.jpeg",
+      "/subasta2/10.jpeg",
+      "/subasta2/11.jpeg",
+    ],  
+    kilometraje: "35,000 km",
+    estado: "Excelente",
+    transmision: "Automática",
+    combustible: "Gasolina",
+    color: "Blanco",
+    puertas: 4,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2025-11-14T20:19:00",
+    descripcion: "Vehiculo con daños en carroceria, ademas presenta papeletas en Lima y callao.",
+    caracteristicas: [
+      "Aire acondicionado",
+      "Sistema de sonido premium",
+      "Asientos de cuero",
+      "Cámara de reversa",
+      "Bluetooth",
+      "Control crucero",
+      "Llantas nuevas",
+      "SunRoof",
+      "Frenos ABS"
+    ]
+  },
 
-  
+*/
 ];
