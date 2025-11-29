@@ -1,6 +1,6 @@
 // Datos de vehículos en subasta
 export const subastaData = [
-/*
+
   {
     id: 1,
     marca: "Chevrolet",
@@ -19,7 +19,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-11-14T20:19:00",
+    fecha_fin: "2025-12-05T20:19:00",
     descripcion: "Vehículo en excelentes condiciones, mantenimiento al día, un solo dueño. Motor V6, aire acondicionado, sistema de sonido premium, asientos de cuero, cámara de reversa y mucho más.",
     caracteristicas: [
       "Aire acondicionado",
@@ -52,14 +52,14 @@ export const subastaData = [
       "/subasta2/10.jpeg",
       "/subasta2/11.jpeg",
     ],  
-    kilometraje: "35,000 km",
+    kilometraje: "67,500 km",
     estado: "Excelente",
     transmision: "Automática",
     combustible: "Gasolina",
     color: "Blanco",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-11-14T20:19:00",
+    fecha_fin: "2025-12-05T20:19:00",
     descripcion: "Vehiculo con daños en carroceria, ademas presenta papeletas en Lima y callao.",
     caracteristicas: [
       "Aire acondicionado",
@@ -74,5 +74,5 @@ export const subastaData = [
     ]
   },
 
-*/
+
 ];

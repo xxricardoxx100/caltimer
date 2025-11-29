@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { SubastaOfertasService } from "@/lib/supabase/subasta-ofertas";
 
 /**
@@ -11,9 +11,17 @@ import { SubastaOfertasService } from "@/lib/supabase/subasta-ofertas";
  * @param {boolean} showExtendedMessage - Mostrar mensaje cuando se extiende el tiempo
  */
 export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
+  const [isMounted, setIsMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(endDate, 0));
   const [wasExtended, setWasExtended] = useState(false);
-  const [timeOffset, setTimeOffset] = useState(0); // Diferencia entre servidor y cliente
+  const [timeOffset, setTimeOffset] = useState(0);
+  
+  // Estabilizar endDate para evitar cambios en dependencias
+  const stableEndDate = useMemo(() => endDate, [endDate]);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Sincronizar con el servidor al montar y cuando cambie endDate
   useEffect(() => {
@@ -22,12 +30,11 @@ export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
       const serverTime = await SubastaOfertasService.getServerTime();
       const offset = serverTime.getTime() - clientTime;
       setTimeOffset(offset);
-      // Actualizar inmediatamente con el nuevo offset
-      setTimeLeft(calculateTimeLeft(endDate, offset));
+      setTimeLeft(calculateTimeLeft(stableEndDate, offset));
     };
 
     syncWithServer();
-  }, [endDate]); // Agregado endDate como dependencia
+  }, [stableEndDate]);
 
   useEffect(() => {
     if (showExtendedMessage) {
@@ -39,21 +46,49 @@ export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const newTimeLeft = calculateTimeLeft(endDate, timeOffset);
+      const newTimeLeft = calculateTimeLeft(stableEndDate, timeOffset);
       setTimeLeft(newTimeLeft);
 
-      // Si el tiempo se agotó, ejecutar callback
       if (newTimeLeft.total <= 0 && onExpire) {
         onExpire();
       }
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [endDate, onExpire, timeOffset]);
+  }, [stableEndDate, onExpire, timeOffset]);
 
   // Si no hay fecha de fin, no mostrar nada
   if (!endDate) {
     return null;
+  }
+
+  // Placeholder durante SSR
+  if (!isMounted) {
+    return (
+      <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-4">
+        <p className="text-center text-gray-700 font-medium mb-3 text-sm">
+          ⏰ Tiempo restante
+        </p>
+        <div className="grid grid-cols-4 gap-2">
+          <div className="bg-white rounded-lg p-2 text-center animate-pulse">
+            <div className="h-8 bg-gray-200 rounded mb-1"></div>
+            <div className="h-3 bg-gray-200 rounded"></div>
+          </div>
+          <div className="bg-white rounded-lg p-2 text-center animate-pulse">
+            <div className="h-8 bg-gray-200 rounded mb-1"></div>
+            <div className="h-3 bg-gray-200 rounded"></div>
+          </div>
+          <div className="bg-white rounded-lg p-2 text-center animate-pulse">
+            <div className="h-8 bg-gray-200 rounded mb-1"></div>
+            <div className="h-3 bg-gray-200 rounded"></div>
+          </div>
+          <div className="bg-white rounded-lg p-2 text-center animate-pulse">
+            <div className="h-8 bg-gray-200 rounded mb-1"></div>
+            <div className="h-3 bg-gray-200 rounded"></div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   // Si el tiempo se agotó
