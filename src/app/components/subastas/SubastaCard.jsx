@@ -84,18 +84,9 @@ const SubastaCard = ({ vehiculo }) => {
         <h3 className="text-xl font-bold mb-2">
           {vehiculo.marca} {vehiculo.modelo}
         </h3>
-        <p className="text-gray-600 mb-3">Año {vehiculo.año}</p>
+        <p className="text-gray-600 mb-3">Año: {vehiculo.año}</p>
         
-        <div className="space-y-2 mb-4">
-          <div className="flex justify-between text-sm">
-            <span className="text-gray-600">Kilometraje:</span>
-            <span className="font-semibold">{vehiculo.kilometraje}</span>
-          </div>
-          <div className="flex justify-between text-sm">
-            <span className="text-gray-600">Estado:</span>
-            <span className="font-semibold">{vehiculo.estado}</span>
-          </div>
-        </div>
+        
         
         {/* Fecha de finalización */}
         <div className="bg-orange-50 border border-orange-200 rounded-lg p-2 mb-4">
@@ -105,7 +96,7 @@ const SubastaCard = ({ vehiculo }) => {
         </div>
         
         <div className="border-t pt-3">
-          <p className="text-sm text-gray-600">Precio inicial</p>   
+          <p className="text-sm text-gray-600">Precio base:</p>   
           <p className="text-2xl font-bold text-[#591D07]">
             ${vehiculo.precio.toLocaleString()}
           </p>
