@@ -59,7 +59,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-12-05T20:19:00",
+    fecha_fin: "2025-12-05T17:19:00",
     descripcion: "Vehiculo con daños en carroceria, ademas presenta papeletas en Lima y callao.",
     caracteristicas: [
       "Aire acondicionado",
@@ -71,6 +71,83 @@ export const subastaData = [
       "Llantas nuevas",
       "SunRoof",
       "Frenos ABS"
+    ]
+  },
+  {
+    id: 3,
+    marca: "Brilliance",
+    modelo: "H220",
+    año: 2015,
+    precio: 2400,
+    imagen: "/brilliance/1.jpeg",
+    imagenes: [
+      "/brilliance/1.jpeg",
+      "/brilliance/2.jpeg",
+      "/brilliance/3.jpeg",
+      "/brilliance/4.jpeg",
+      "/brilliance/5.jpeg",
+      "/brilliance/6.jpeg",
+      "/brilliance/7.jpeg",
+      "/brilliance/8.jpeg",
+      "/brilliance/9.jpeg",
+      "/brilliance/10.jpeg",
+    ],  
+    kilometraje: "170,000 km",
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina/GLP",
+    color: "Anaranjado",
+    puertas: 4,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2025-12-05T17:19:00",
+    descripcion: "Vehiculo con daños en carroceria, ademas presenta papeletas en callao.",
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Tela",
+      "Cámara de reversa",
+      "Aros de aleacion", 
+      "GLP",
+      "Transmision mecanica",
+      "Frenos ABS"
+    ]
+  },
+  {
+    id: 4,
+    marca: "BYD",
+    modelo: "f3",
+    año: 2017,
+    precio: 2700,
+    imagen: "/BydF3/4.jpeg",
+    imagenes: [
+      "/BydF3/1.jpeg",
+      "/BydF3/2.jpeg",
+      "/BydF3/3.jpeg",
+      "/BydF3/4.jpeg",
+      "/BydF3/5.jpeg",
+      "/BydF3/6.jpeg",
+      "/BydF3/7.jpeg",
+      "/BydF3/8.jpeg",
+      "/BydF3/9.jpeg",
+      "/BydF3/10.jpeg",
+    ],  
+    kilometraje: "230,000 km",
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina/GNV",
+    color: "Negro",
+    puertas: 4,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2025-12-05T17:19:00",
+    descripcion: "Vehiculo con daños en carroceria y pintura.",
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Cámara de reversa",
+      "Aros de aleacion", 
+      "GNV",
+      "Transmision mecanica",
+      "Frenos ABS",
+      "pantalla touch"
     ]
   },
 
