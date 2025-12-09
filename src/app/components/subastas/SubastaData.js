@@ -19,7 +19,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-12-05T20:19:00",
+    fecha_fin: "2025-12-11T15:00:00",
     descripcion: "Vehículo en excelentes condiciones, mantenimiento al día, un solo dueño. Motor V6, aire acondicionado, sistema de sonido premium, asientos de cuero, cámara de reversa y mucho más.",
     caracteristicas: [
       "Aire acondicionado",
@@ -59,7 +59,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-12-05T17:19:00",
+    fecha_fin: "2025-12-11T15:15:00",
     descripcion: "Vehiculo con daños en carroceria, ademas presenta papeletas en Lima y callao.",
     caracteristicas: [
       "Aire acondicionado",
@@ -99,7 +99,7 @@ export const subastaData = [
     color: "Anaranjado",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-12-05T17:19:00",
+    fecha_fin: "2025-12-11T15:30:00",
     descripcion: "Vehiculo con daños en carroceria, ademas presenta papeletas en callao.",
     caracteristicas: [
       "Sistema de sonido premium",
@@ -137,7 +137,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-12-05T17:19:00",
+    fecha_fin: "2025-12-11T15:45:00",
     descripcion: "Vehiculo con daños en carroceria y pintura.",
     caracteristicas: [
       "Sistema de sonido premium",
