@@ -116,7 +116,7 @@ export const subastaData = [
     marca: "BYD",
     modelo: "f3",
     año: 2017,
-    precio: 2700,
+    precio: 2100,
     imagen: "/bydF3/4.jpeg",
     imagenes: [
       "/bydF3/1.jpeg",
