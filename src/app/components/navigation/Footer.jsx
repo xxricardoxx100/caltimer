@@ -80,6 +80,17 @@ function Footer() {
                 </a>
               ))}
             </div>
+            <a
+              href="/libro-reclamaciones"
+              aria-label="Libro de Reclamaciones"
+              className="inline-flex items-center justify-center rounded-md bg-white p-3 shadow-sm ring-1 ring-inset ring-white/40 transition hover:bg-[#fdebc4] focus-visible:ring-2 focus-visible:ring-[#c87f04] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+            >
+              <img
+                src="/librodereclamaciones.jpg"
+                alt="Libro de Reclamaciones"
+                className="h-16 w-auto"
+              />
+            </a>
           </div>
           <div className="mt-12 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
             <div>

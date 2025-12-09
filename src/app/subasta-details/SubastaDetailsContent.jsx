@@ -261,7 +261,15 @@ export function SubastaDetailsContent() {
             {/* Descripción */}
             <div className="bg-white rounded-lg shadow-lg p-6 mt-6">
               <h2 className="text-2xl font-bold mb-4">Descripción</h2>
-              <p className="text-gray-700 leading-relaxed">{vehiculo.descripcion}</p>
+              <div className="space-y-3 text-sm md:text-base text-gray-700 leading-7 tracking-wide">
+                {vehiculo.descripcion
+                  .trim()
+                  .split("\n")
+                  .filter((linea) => linea.trim().length > 0)
+                  .map((linea, index) => (
+                    <p key={index} dangerouslySetInnerHTML={{ __html: linea }} />
+                  ))}
+              </div>
             </div>
 
             {/* Características */}

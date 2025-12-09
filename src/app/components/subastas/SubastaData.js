@@ -1,80 +1,7 @@
 // Datos de vehículos en subasta
 export const subastaData = [
-
   {
     id: 1,
-    marca: "Chevrolet",
-    modelo: "Colorado",
-    año: 2022,
-    precio: 13000,
-    imagen: "/subasta1/1.jpeg",
-    imagenes: [
-      "/subasta1/1.jpeg",
-      "/subasta1/2.jpeg",
-    ],  
-    kilometraje: "35,000 km",
-    estado: "Excelente",
-    transmision: "Automática",
-    combustible: "Gasolina",
-    color: "Blanco",
-    puertas: 4,
-    // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-12-11T15:00:01",
-    descripcion: "Vehículo en excelentes condiciones, mantenimiento al día, un solo dueño. Motor V6, aire acondicionado, sistema de sonido premium, asientos de cuero, cámara de reversa y mucho más.",
-    caracteristicas: [
-      "Aire acondicionado",
-      "Sistema de sonido premium",
-      "Asientos de cuero",
-      "Cámara de reversa",
-      "Bluetooth",
-      "Control crucero",
-      "Llantas nuevas",
-      "Frenos ABS"
-    ]
-  },
-  {
-    id: 2,
-    marca: "Kia",
-    modelo: "Sorento",
-    año: 2023,
-    precio: 25000,
-    imagen: "/subasta2/3.jpeg",
-    imagenes: [
-      "/subasta2/1.jpeg",
-      "/subasta2/2.jpeg",
-      "/subasta2/3.jpeg",
-      "/subasta2/4.jpeg",
-      "/subasta2/5.jpeg",
-      "/subasta2/6.jpeg",
-      "/subasta2/7.jpeg",
-      "/subasta2/8.jpeg",
-      "/subasta2/9.jpeg",
-      "/subasta2/10.jpeg",
-      "/subasta2/11.jpeg",
-    ],  
-    kilometraje: "67,500 km",
-    estado: "Excelente",
-    transmision: "Automática",
-    combustible: "Gasolina",
-    color: "Blanco",
-    puertas: 4,
-    // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-12-11T15:15:00",
-    descripcion: "Vehiculo con daños en carroceria, ademas presenta papeletas en Lima y callao.",
-    caracteristicas: [
-      "Aire acondicionado",
-      "Sistema de sonido premium",
-      "Asientos de cuero",
-      "Cámara de reversa",
-      "Bluetooth",
-      "Control crucero",
-      "Llantas nuevas",
-      "SunRoof",
-      "Frenos ABS"
-    ]
-  },
-  {
-    id: 3,
     marca: "Brilliance",
     modelo: "H220",
     año: 2015,
@@ -100,7 +27,17 @@ export const subastaData = [
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2025-12-11T15:30:00",
-    descripcion: "Vehiculo con daños en carroceria, ademas presenta papeletas en callao.",
+    descripcion:  [
+      "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio incluye IGV. Debe agregar 10% de comisión al precio mostrado."
+    ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Tela",
@@ -112,7 +49,7 @@ export const subastaData = [
     ]
   },
   {
-    id: 4,
+    id: 2,
     marca: "BYD",
     modelo: "f3",
     año: 2017,
@@ -138,7 +75,17 @@ export const subastaData = [
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2025-12-11T15:45:00",
-    descripcion: "Vehiculo con daños en carroceria y pintura.",
+    descripcion:  [
+      "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio incluye IGV. Debe agregar 10% de comisión al precio mostrado."
+    ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
