@@ -78,7 +78,7 @@ export const subastaData = [
     marca: "Brilliance",
     modelo: "H220",
     año: 2015,
-    precio: 2400,
+    precio: 2100,
     imagen: "/brilliance/1.jpeg",
     imagenes: [
       "/brilliance/1.jpeg",
