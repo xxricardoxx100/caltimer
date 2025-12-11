@@ -327,7 +327,7 @@ export function SubastaDetailsContent() {
                     {hasAnexo ? (
                       <div className="flex flex-col gap-2">
                         <span className="text-sm text-gray-600">
-                          Archivo disponible:
+                          Archivos disponible:
                         </span>
                         <a
                           href={anexoUrl}
