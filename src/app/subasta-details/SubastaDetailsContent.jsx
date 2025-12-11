@@ -166,12 +166,19 @@ export function SubastaDetailsContent() {
     }
 
     if (primerNombre.length === 1) {
-      return `${primerNombre}***`;
+      return `${primerNombre}****`;
     }
 
     const primeraLetra = primerNombre.charAt(0);
-    const ultimaLetra = primerNombre.charAt(primerNombre.length - 1) || primeraLetra;
-    return `${primeraLetra}****${ultimaLetra}`;
+    const ultimasDosLetras = primerNombre.length >= 2
+      ? primerNombre.slice(-2)
+      : primeraLetra;
+
+    if (primerNombre.length === 2) {
+      return `${primeraLetra}****${ultimasDosLetras.charAt(1)}`;
+    }
+
+    return `${primeraLetra}****${ultimasDosLetras}`;
   };
 
   return (
