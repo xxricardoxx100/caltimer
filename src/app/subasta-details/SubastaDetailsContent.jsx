@@ -156,6 +156,24 @@ export function SubastaDetailsContent() {
   const anexoUrl = hasAnexo ? encodeURI(vehiculo.anexoUrl) : "";
   const anexoFileName = hasAnexo ? vehiculo.anexoUrl.split("/").pop() : "";
 
+  const formatBidderName = (nombre, puedeVerCompleto = false) => {
+    if (!nombre) return "";
+    const primerNombre = nombre.trim().split(/\s+/)[0] || "";
+    if (!primerNombre) return "";
+
+    if (puedeVerCompleto) {
+      return primerNombre;
+    }
+
+    if (primerNombre.length === 1) {
+      return `${primerNombre}***`;
+    }
+
+    const primeraLetra = primerNombre.charAt(0);
+    const ultimaLetra = primerNombre.charAt(primerNombre.length - 1) || primeraLetra;
+    return `${primeraLetra}****${ultimaLetra}`;
+  };
+
   return (
     // Todo tu JSX de detalles del vehículo va aquí
     // ... (El resto de tu código original: MODAL, Breadcrumb, Título, Grids, etc.)
@@ -459,7 +477,9 @@ export function SubastaDetailsContent() {
                           {ultimoPostor.charAt(0).toUpperCase()}
                         </span>
                       </div>
-                      <span className="text-sm font-semibold text-green-700">{ultimoPostor}</span>
+                      <span className="text-sm font-semibold text-green-700">
+                        {formatBidderName(ultimoPostor, ultimoPostor === userName)}
+                      </span>
                       {ultimoPostor === userName && (
                         <span className="text-xs text-green-600">(Tú)</span>
                       )}
@@ -529,7 +549,7 @@ export function SubastaDetailsContent() {
                           </div>
                           <div>
                             <p className="text-sm font-semibold text-gray-900">
-                              {oferta.user_name}
+                              {formatBidderName(oferta.user_name, oferta.user_id === userId)}
                               {oferta.user_id === userId && (
                                 <span className="text-xs text-orange-600 ml-1">(Tú)</span>
                               )}
