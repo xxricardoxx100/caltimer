@@ -599,7 +599,7 @@ export function SubastaDetailsContent() {
 
               <div className="border-t mt-6 pt-6">
                 <a
-                  href="https://wa.me/51928430066"
+                  href="https://wa.me/51928430066?text=Hola%20vengo%20de%20su%20p%C3%A1gina%20para%20que%20me%20den%20el%20acceso"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex w-full items-center justify-center rounded-lg bg-green-500 py-2 text-sm font-semibold text-white transition hover:bg-green-600 focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
