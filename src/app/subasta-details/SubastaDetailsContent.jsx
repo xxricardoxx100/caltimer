@@ -17,6 +17,7 @@ export function SubastaDetailsContent() {
   const [imagenSeleccionada, setImagenSeleccionada] = useState(0);
   const [mostrarModal, setMostrarModal] = useState(false);
   const [mostrarAuthModal, setMostrarAuthModal] = useState(false);
+  const [activeDetailTab, setActiveDetailTab] = useState("descripcion");
   
   // Hook de usuario con autenticación completa
   const { 
@@ -151,6 +152,9 @@ export function SubastaDetailsContent() {
   }
 
   const imagenActual = vehiculo.imagenes[imagenSeleccionada];
+  const hasAnexo = Boolean(vehiculo.anexoUrl);
+  const anexoUrl = hasAnexo ? encodeURI(vehiculo.anexoUrl) : "";
+  const anexoFileName = hasAnexo ? vehiculo.anexoUrl.split("/").pop() : "";
 
   return (
     // Todo tu JSX de detalles del vehículo va aquí
@@ -258,17 +262,89 @@ export function SubastaDetailsContent() {
               ))}
             </div>
 
-            {/* Descripción */}
+            {/* Descripción y anexo */}
             <div className="bg-white rounded-lg shadow-lg p-6 mt-6">
-              <h2 className="text-2xl font-bold mb-4">Descripción</h2>
-              <div className="space-y-3 text-sm md:text-base text-gray-700 leading-7 tracking-wide">
-                {vehiculo.descripcion
-                  .trim()
-                  .split("\n")
-                  .filter((linea) => linea.trim().length > 0)
-                  .map((linea, index) => (
-                    <p key={index} dangerouslySetInnerHTML={{ __html: linea }} />
-                  ))}
+              <div
+                role="tablist"
+                aria-label="Detalles del vehículo"
+                className="flex flex-wrap gap-2 border-b border-gray-200 pb-2"
+              >
+                <button
+                  type="button"
+                  role="tab"
+                  id="tab-descripcion"
+                  aria-controls="panel-descripcion"
+                  aria-selected={activeDetailTab === "descripcion"}
+                  onClick={() => setActiveDetailTab("descripcion")}
+                  className={`rounded-md px-4 py-2 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-[#F29F05] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+                    activeDetailTab === "descripcion"
+                      ? "bg-[#F29F05] text-white shadow"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  Descripción
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="tab-anexo"
+                  aria-controls="panel-anexo"
+                  aria-selected={activeDetailTab === "anexo"}
+                  onClick={() => setActiveDetailTab("anexo")}
+                  className={`rounded-md px-4 py-2 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-[#F29F05] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+                    activeDetailTab === "anexo"
+                      ? "bg-[#F29F05] text-white shadow"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  Anexo
+                </button>
+              </div>
+
+              <div className="mt-6">
+                {activeDetailTab === "descripcion" ? (
+                  <div
+                    id="panel-descripcion"
+                    role="tabpanel"
+                    aria-labelledby="tab-descripcion"
+                    className="space-y-3 text-sm md:text-base text-gray-700 leading-7 tracking-wide"
+                  >
+                    {vehiculo.descripcion
+                      .trim()
+                      .split("\n")
+                      .filter((linea) => linea.trim().length > 0)
+                      .map((linea, index) => (
+                        <p key={index} dangerouslySetInnerHTML={{ __html: linea }} />
+                      ))}
+                  </div>
+                ) : (
+                  <div
+                    id="panel-anexo"
+                    role="tabpanel"
+                    aria-labelledby="tab-anexo"
+                    className="space-y-4 text-sm md:text-base text-gray-700 leading-7 tracking-wide"
+                  >
+                    {hasAnexo ? (
+                      <div className="flex flex-col gap-2">
+                        <span className="text-sm text-gray-600">
+                          Archivo disponible:
+                        </span>
+                        <a
+                          href={anexoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-fit text-sm font-semibold text-[#F29F05] underline transition hover:text-[#d88604] focus-visible:ring-2 focus-visible:ring-[#F29F05] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                        >
+                          {anexoFileName || "Anexo.pdf"}
+                        </a>
+                      </div>
+                    ) : (
+                      <div className="rounded-md border border-dashed border-gray-300 bg-gray-50 p-6 text-center text-sm text-gray-600">
+                        El documento anexo estará disponible próximamente.
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -347,7 +423,7 @@ export function SubastaDetailsContent() {
                         <span className="text-yellow-600 text-sm">⚠️</span>
                         <div>
                           <p className="text-xs font-semibold text-yellow-700">Garantía Pendiente</p>
-                          <p className="text-xs text-yellow-600">Contacta al admin para pujar</p>
+                          <p className="text-xs text-yellow-600">Contacta al administrador para pujar</p>
                         </div>
                       </div>
                     </div>
@@ -522,9 +598,14 @@ export function SubastaDetailsContent() {
               </div>
 
               <div className="border-t mt-6 pt-6">
-                <button className="w-full bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition">
-                  Contactar Vendedor
-                </button>
+                <a
+                  href="https://wa.me/51928430066"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center rounded-lg bg-green-500 py-2 text-sm font-semibold text-white transition hover:bg-green-600 focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                >
+                  Contactar al Administrador
+                </a>
               </div>
             </div>
           </div>

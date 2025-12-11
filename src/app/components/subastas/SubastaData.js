@@ -27,6 +27,7 @@ export const subastaData = [
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2025-12-11T15:30:00",
+    anexoUrl: "/anexo TyC.pdf",
     descripcion:  [
       "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
@@ -36,7 +37,8 @@ export const subastaData = [
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
-      "El precio incluye IGV. Debe agregar 10% de comisión al precio mostrado."
+      "El precio incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 50$ en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
@@ -75,6 +77,7 @@ export const subastaData = [
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2025-12-11T15:45:00",
+    anexoUrl: "/anexo TyC.pdf",
     descripcion:  [
       "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
@@ -84,7 +87,8 @@ export const subastaData = [
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
-      "El precio incluye IGV. Debe agregar 10% de comisión al precio mostrado."
+      "El precio incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 50$ en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
