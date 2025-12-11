@@ -37,7 +37,7 @@ export const subastaData = [
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
-      "El precio incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
+      "El precio no incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
       "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 50$ en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
@@ -87,7 +87,7 @@ export const subastaData = [
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
-      "El precio incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
+      "El precio no incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
       "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 50$ en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
