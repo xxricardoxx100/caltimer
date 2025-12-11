@@ -73,6 +73,15 @@ export function SubastaDetailsContent() {
     setMostrarMensajeExtension(true);
   });
 
+  const precioEnCarga = precioActual === null && isLoadingOfertas;
+  const valorPrecio = precioActual ?? vehiculo?.precio ?? 0;
+  const numeroPrecio = Number(valorPrecio);
+  const precioFormateado = precioEnCarga
+    ? "Actualizando..."
+    : isMounted
+    ? `$${numeroPrecio.toLocaleString()}`
+    : `$${numeroPrecio}`;
+
   // useEffect para ocultar el mensaje después de 1 segundo
   useEffect(() => {
     if (mostrarMensajeExtension) {
@@ -120,21 +129,26 @@ export function SubastaDetailsContent() {
     const fin = new Date(fechaFin).getTime();
     const tiempoRestante = fin - ahora;
     
-    // Si quedan menos de 60 segundos, extender 60 segundos
+    // Si quedan menos de 120 segundos, extender 120 segundos
     let nuevaFechaFin = null;
-    if (tiempoRestante < 60000 && tiempoRestante > 0) {
-      nuevaFechaFin = new Date(ahora + 60000).toISOString();
-      console.log("🔄 Extendiendo subasta 60 segundos");
+    if (tiempoRestante < 120000 && tiempoRestante > 0) {
+      nuevaFechaFin = new Date(ahora + 120000).toISOString();
+      console.log("🔄 Extendiendo subasta 120 segundos");
     }
 
-    const exito = await crearOferta({
+    const resultado = await crearOferta({
       userId,
       userName,
       incremento,
       fechaFinSubasta: nuevaFechaFin,
     });
 
-    if (exito && nuevaFechaFin) {
+    if (resultado === "duplicate") {
+      alert("Ya existe una oferta con ese monto. Intentalo de nuevo");
+      return;
+    }
+
+    if (resultado && nuevaFechaFin) {
       setFechaFin(nuevaFechaFin);
       setMostrarMensajeExtension(true);
     }
@@ -473,9 +487,9 @@ export function SubastaDetailsContent() {
               <div className="mb-6">
                 <p className="text-gray-600 mb-2">Precio actual</p>
                 <p className="text-4xl font-bold text-orange-600 mb-2"> 
-                  {isMounted ? `$${precioActual.toLocaleString()}` : `$${precioActual}`}
+                  {precioFormateado}
                 </p>
-                {ultimoPostor && (
+                {ultimoPostor && !precioEnCarga && (
                   <div className="flex items-center gap-2 mb-4">
                     <span className="text-sm text-gray-600">Última oferta por:</span>
                     <div className="flex items-center gap-1.5 bg-green-50 border border-green-200 rounded-full px-3 py-1">
@@ -539,13 +553,15 @@ export function SubastaDetailsContent() {
                     <span className="text-sm font-normal text-gray-500">({ofertas.length})</span>
                   </h3>
                   <div className="space-y-2 max-h-64 overflow-y-auto">
-                    {ofertas.map((oferta, index) => (
-                      <div 
-                        key={oferta.id}
-                        className={`flex items-center justify-between p-3 rounded-lg ${
-                          index === 0 ? 'bg-green-50 border border-green-200' : 'bg-gray-50'
-                        }`}
-                      >
+                    {ofertas.map((oferta, index) => {
+                      const ofertaKey = oferta.id ?? `${oferta.subasta_id}-${oferta.created_at}-${index}`;
+                      return (
+                        <div 
+                          key={ofertaKey}
+                          className={`flex items-center justify-between p-3 rounded-lg ${
+                            index === 0 ? 'bg-green-50 border border-green-200' : 'bg-gray-50'
+                          }`}
+                        >
                         <div className="flex items-center gap-2">
                           <div className={`w-7 h-7 rounded-full flex items-center justify-center ${
                             index === 0 ? 'bg-green-500' : 'bg-gray-400'
@@ -579,8 +595,9 @@ export function SubastaDetailsContent() {
                             <p className="text-xs text-green-600 font-medium">Ganando</p>
                           )}
                         </div>
-                      </div>
-                    ))}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}

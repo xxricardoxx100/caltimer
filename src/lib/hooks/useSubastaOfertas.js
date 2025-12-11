@@ -14,14 +14,122 @@ import { SubastaOfertasService } from "@/lib/supabase/subasta-ofertas";
  */
 export function useSubastaOfertas(subastaId, precioInicial = 0, onExtensionTiempo = null) {
   const [ofertas, setOfertas] = useState([]);
-  const [precioActual, setPrecioActual] = useState(precioInicial);
+  const [precioActual, setPrecioActual] = useState(null);
   const [ultimoPostor, setUltimoPostor] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  // Refs para prevenir actualizaciones duplicadas
-  const ofertasIdsRef = useRef(new Set());
+  // Refs para mantener estabilidad en timestamps generados en cliente
   const debounceTimerRef = useRef(null);
+  const extensionCallbackRef = useRef(onExtensionTiempo);
+
+  useEffect(() => {
+    extensionCallbackRef.current = onExtensionTiempo;
+  }, [onExtensionTiempo]);
+
+  const normalizeOferta = (rawOferta) => {
+    if (!rawOferta) return null;
+
+    const oferta = { ...rawOferta };
+
+    const montoNumero = Number(oferta.monto);
+    oferta.monto = Number.isFinite(montoNumero) ? montoNumero : 0;
+
+    if (oferta.created_at) {
+      const isoDate = new Date(oferta.created_at).toISOString();
+      oferta.created_at = isoDate;
+      oferta.__clientCreatedAt = isoDate;
+    } else if (oferta.__clientCreatedAt) {
+      oferta.created_at = oferta.__clientCreatedAt;
+    } else {
+      const fallback = new Date().toISOString();
+      oferta.__clientCreatedAt = fallback;
+      oferta.created_at = fallback;
+    }
+
+    if (!oferta.subasta_id && subastaId) {
+      oferta.subasta_id = subastaId;
+    }
+
+    return oferta;
+  };
+
+  const buildUniqueId = (oferta) => {
+    if (!oferta) return "";
+    if (oferta.id) return oferta.id;
+
+    const baseSubasta = oferta.subasta_id || subastaId || "subasta";
+    return `${baseSubasta}-${oferta.__clientCreatedAt || oferta.created_at}`;
+  };
+
+  const mergeOfertas = (entrantes = [], anteriores = []) => {
+    const dedupeMap = new Map();
+
+    anteriores.forEach((existente) => {
+      const normalizada = normalizeOferta(existente);
+      if (!normalizada) return;
+      dedupeMap.set(buildUniqueId(normalizada), normalizada);
+    });
+
+    entrantes.forEach((nueva) => {
+      const normalizada = normalizeOferta(nueva);
+      if (!normalizada) return;
+      dedupeMap.set(buildUniqueId(normalizada), normalizada);
+    });
+
+    const ordenadas = Array.from(dedupeMap.values()).sort((a, b) => {
+      const fechaA = new Date(a.created_at).getTime();
+      const fechaB = new Date(b.created_at).getTime();
+      return fechaB - fechaA;
+    });
+
+    const vistosPorClave = new Map();
+    const depuradas = [];
+
+    ordenadas.forEach((item) => {
+      const identificadorUsuario = item.user_id || item.user_name || "";
+      const clave = `${item.monto}-${identificadorUsuario}`;
+      const existente = vistosPorClave.get(clave);
+
+      if (!existente) {
+        vistosPorClave.set(clave, item);
+        depuradas.push(item);
+        return;
+      }
+
+      // Priorizar registros con ID (datos oficiales desde Supabase)
+      if (!existente.id && item.id) {
+        vistosPorClave.set(clave, item);
+        const indice = depuradas.indexOf(existente);
+        if (indice !== -1) {
+          depuradas.splice(indice, 1, item);
+        }
+      }
+    });
+
+    return depuradas.sort((a, b) => {
+      const fechaA = new Date(a.created_at).getTime();
+      const fechaB = new Date(b.created_at).getTime();
+      return fechaB - fechaA;
+    });
+  };
+
+  const upsertOferta = (oferta) => {
+    if (!oferta) return;
+    setOfertas((prev) => mergeOfertas([oferta], prev));
+  };
+
+  const syncUltimaOferta = async () => {
+    if (!subastaId) return;
+    try {
+      const ultimaOfertaServidor = await SubastaOfertasService.getUltimaOferta(subastaId);
+      if (ultimaOfertaServidor) {
+        upsertOferta(ultimaOfertaServidor);
+      }
+    } catch (syncError) {
+      console.warn("⚠️ [HOOK] No se pudo sincronizar la última oferta", syncError);
+    }
+  };
 
   // Cargar ofertas existentes al montar el componente
   useEffect(() => {
@@ -31,20 +139,12 @@ export function useSubastaOfertas(subastaId, precioInicial = 0, onExtensionTiemp
       setIsLoading(true);
       try {
         const ofertasData = await SubastaOfertasService.getOfertas(subastaId);
-        
+
         if (ofertasData.length > 0) {
-          setOfertas(ofertasData);
-          // Guardar IDs en el Set para deduplicación
-          ofertasIdsRef.current = new Set(ofertasData.map(o => o.id));
-          
-          // La oferta más reciente (primera en el array) tiene el precio más alto
-          const ultimaOferta = ofertasData[0];
-          setPrecioActual(ultimaOferta.monto);
-          setUltimoPostor(ultimaOferta.user_name);
+          setOfertas(mergeOfertas(ofertasData));
         } else {
-          // Si no hay ofertas, usar precio inicial
-          setPrecioActual(precioInicial);
-          ofertasIdsRef.current = new Set();
+          setOfertas([]);
+          setUltimoPostor(null);
         }
       } catch (err) {
         console.error("Error cargando ofertas:", err);
@@ -66,12 +166,6 @@ export function useSubastaOfertas(subastaId, precioInicial = 0, onExtensionTiemp
     const subscription = SubastaOfertasService.suscribirseConExtension(
       subastaId,
       (nuevaOferta) => {
-        // Prevenir duplicados
-        if (ofertasIdsRef.current.has(nuevaOferta.id)) {
-          console.log("⚠️ [DEDUP] Oferta duplicada ignorada:", nuevaOferta.id);
-          return;
-        }
-
         console.log("🔄 [HOOK] Actualizando estado con nueva oferta:", nuevaOferta);
         
         // Debouncing: cancelar actualización anterior si existe
@@ -80,29 +174,25 @@ export function useSubastaOfertas(subastaId, precioInicial = 0, onExtensionTiemp
         }
 
         debounceTimerRef.current = setTimeout(() => {
-          // Agregar ID al Set
-          ofertasIdsRef.current.add(nuevaOferta.id);
-          
-          // Agregar nueva oferta al inicio del array
-          setOfertas((prev) => {
-            console.log("📋 [ESTADO] Ofertas anteriores:", prev.length);
-            const nuevasOfertas = [nuevaOferta, ...prev];
-            console.log("📋 [ESTADO] Nuevas ofertas:", nuevasOfertas.length);
-            return nuevasOfertas;
-          });
-          
-          setPrecioActual(nuevaOferta.monto);
-          console.log("💰 [ESTADO] Precio actualizado a:", nuevaOferta.monto);
-          
-          setUltimoPostor(nuevaOferta.user_name);
-          console.log("👤 [ESTADO] Último postor actualizado a:", nuevaOferta.user_name);
+          upsertOferta(nuevaOferta);
+
+          SubastaOfertasService.getOfertas(subastaId)
+            .then((ofertasServidor) => {
+              if (!Array.isArray(ofertasServidor)) {
+                return;
+              }
+              setOfertas(mergeOfertas(ofertasServidor));
+            })
+            .catch((refreshError) => {
+              console.warn("⚠️ [HOOK] No se pudo refrescar ofertas tras evento realtime", refreshError);
+            });
         }, 100); // Debounce de 100ms
       },
       (nuevaFechaFin) => {
         console.log("⏰ [HOOK] Extensión de tiempo recibida:", nuevaFechaFin);
         // Notificar extensión de tiempo si hay callback
-        if (onExtensionTiempo) {
-          onExtensionTiempo(nuevaFechaFin);
+        if (extensionCallbackRef.current) {
+          extensionCallbackRef.current(nuevaFechaFin);
         }
       }
     );
@@ -115,7 +205,19 @@ export function useSubastaOfertas(subastaId, precioInicial = 0, onExtensionTiemp
       }
       SubastaOfertasService.cancelarSuscripcion(subscription);
     };
-  }, [subastaId, onExtensionTiempo]);
+  }, [subastaId]);
+
+  useEffect(() => {
+    if (ofertas.length > 0) {
+      const mejorOferta = ofertas[0];
+      const montoNumero = Number(mejorOferta.monto);
+      setPrecioActual(Number.isFinite(montoNumero) ? montoNumero : precioInicial);
+      setUltimoPostor(mejorOferta.user_name || null);
+    } else if (!isLoading) {
+      setPrecioActual(precioInicial);
+      setUltimoPostor(null);
+    }
+  }, [ofertas, precioInicial, isLoading]);
 
   /**
    * Crear una nueva oferta
@@ -145,7 +247,22 @@ export function useSubastaOfertas(subastaId, precioInicial = 0, onExtensionTiemp
       return false;
     }
 
-    const nuevoMonto = precioActual + incremento;
+    let baseMonto = precioActual ?? precioInicial;
+    try {
+      const ultimaOfertaServidor = await SubastaOfertasService.getUltimaOferta(subastaId);
+      if (ultimaOfertaServidor) {
+        const montoServidor = Number(ultimaOfertaServidor.monto);
+        baseMonto = Math.max(baseMonto, Number.isFinite(montoServidor) ? montoServidor : precioInicial);
+        upsertOferta(ultimaOfertaServidor);
+      } else {
+        baseMonto = Math.max(baseMonto, precioInicial);
+      }
+    } catch (fetchError) {
+      console.warn("⚠️ [HOOK] No se pudo sincronizar con la última oferta, usando estado local", fetchError);
+      baseMonto = Math.max(baseMonto, precioInicial);
+    }
+
+    const nuevoMonto = baseMonto + incremento;
     console.log("💰 [HOOK] Nuevo monto calculado:", nuevoMonto);
 
     try {
@@ -157,8 +274,15 @@ export function useSubastaOfertas(subastaId, precioInicial = 0, onExtensionTiemp
         fechaFinSubasta,
       });
 
+      if (ofertaCreada?.duplicate) {
+        console.warn("⚠️ [HOOK] Oferta duplicada detectada para el monto", nuevoMonto);
+        await syncUltimaOferta();
+        return "duplicate";
+      }
+
       if (ofertaCreada) {
         console.log("✅ [HOOK] Oferta creada exitosamente, esperando actualización vía Realtime");
+        await syncUltimaOferta();
         // La actualización del estado se hará automáticamente
         // a través de la suscripción de Realtime
         return true;

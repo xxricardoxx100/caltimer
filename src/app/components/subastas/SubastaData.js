@@ -1,5 +1,6 @@
 // Datos de vehículos en subasta
 export const subastaData = [
+  /*
   {
     id: 1,
     marca: "Brilliance",
@@ -76,7 +77,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2025-12-11T16:20:00",
+    fecha_fin: "2025-12-11T16:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     descripcion:  [
       "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
@@ -101,5 +102,6 @@ export const subastaData = [
       "pantalla touch"
     ]
   },
+  */
 
 ];

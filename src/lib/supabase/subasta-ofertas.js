@@ -85,6 +85,13 @@ export const SubastaOfertasService = {
         .single();
 
       if (error) {
+        if (error.code === '23505') {
+          console.warn("⚠️ [UNIQUE] Oferta duplicada detectada", {
+            subastaId,
+            monto,
+          });
+          return { duplicate: true };
+        }
         // Reintentar si es error de red o timeout
         if ((error.code === 'PGRST301' || error.message.includes('timeout')) && retryCount < 2) {
           console.warn(`⚠️ [RETRY] Reintentando... (${retryCount + 1}/2)`);
@@ -118,17 +125,7 @@ export const SubastaOfertasService = {
    */
   async getUltimaOferta(subastaId) {
     try {
-      // Intentar usar vista materializada optimizada
-      const { data: rpcData, error: rpcError } = await supabase
-        .rpc('get_ultima_oferta_rapida', { p_subasta_id: subastaId })
-        .single();
-
-      if (!rpcError && rpcData) {
-        console.log("⚡ [OPTIMIZADO] Usando vista materializada");
-        return rpcData;
-      }
-
-      // Fallback a consulta normal
+      // Consulta directa para garantizar consistencia inmediata
       const { data, error } = await supabase
         .from("subastas_ofertas")
         .select("*")
@@ -137,16 +134,29 @@ export const SubastaOfertasService = {
         .limit(1)
         .single();
 
-      if (error) {
-        // Si no hay ofertas, esto es normal
-        if (error.code === "PGRST116") {
-          return null;
-        }
-        console.error("Error obteniendo última oferta:", error);
-        return null;
+      if (!error && data) {
+        return data;
       }
 
-      return data;
+      if (error && error.code !== "PGRST116") {
+        console.error("Error obteniendo última oferta (consulta directa):", error);
+      }
+
+      // Fallback a función RPC solo si no existe en tabla base
+      const { data: rpcData, error: rpcError } = await supabase
+        .rpc('get_ultima_oferta_rapida', { p_subasta_id: subastaId })
+        .single();
+
+      if (!rpcError && rpcData) {
+        console.log("⚡ [FALLBACK] Usando vista materializada para última oferta");
+        return rpcData;
+      }
+
+      if (rpcError && rpcError.code !== "PGRST116") {
+        console.error("Error en get_ultima_oferta_rapida:", rpcError);
+      }
+
+      return null;
     } catch (err) {
       console.error("Error en getUltimaOferta:", err);
       return null;
