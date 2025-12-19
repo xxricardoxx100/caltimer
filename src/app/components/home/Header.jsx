@@ -4,7 +4,7 @@ import { FaTiktok } from "react-icons/fa";
 
 
 const backgroundImages = [
-  "/general/PRENDADO.png",
+  "/general/compramos2.png",
   "/general/bannersubasta.png",
   "/general/bannergrupal.jpg",
 ];	  
