@@ -1,11 +1,11 @@
 const navigation = {
-  support: [{ name: "Contacto", href: "/contacto" }],
+  support: [{ name: "Eventos", href: "/eventos" }],
   company: [
     { name: "Carros", href: "/carros" },
     { name: "Inmobiliaria", href: "/inmobiliaria" },
     { name: "Servicios", href: "/servicios" },
+    { name: "Eventos", href: "/eventos" },
     { name: "Nosotros", href: "/nosotros" },
-    { name: "Contacto", href: "/contacto" },
   ],
   legal: [
     { name: "Servicio de Asesoria personalizada", href: "#" },
@@ -94,7 +94,7 @@ function Footer() {
           </div>
           <div className="mt-12 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
             <div>
-              <h3 className="text-base font-bold text-gray-900">Contacto</h3>
+              <h3 className="text-base font-bold text-gray-900">Eventos</h3>
               <ul role="list" className="mt-4 space-y-4">
                 {navigation.support.map((item) => (
                   <li key={item.name}>

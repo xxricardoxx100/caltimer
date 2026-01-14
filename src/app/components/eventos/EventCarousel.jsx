@@ -1,0 +1,132 @@
+"use client";
+import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
+import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
+
+const defaultSlides = [
+  {
+    id: 1,
+    title: "Capacitación Presencial de Subastas Vehiculares y Bienes Raíces",
+    description:
+      "Se parte de nuestro próximo taller presencial y aprende de los expertos. Este 24 de Enero en La Molina, Lima.",
+    cta: "Inscribite ahora",
+    image: "/eventos/eventopresencial1.jfif",
+  },
+  {
+    id: 2,
+    title: "Capacitación Virtual de Subastas Vehiculares y Bienes Raíces",
+    description: "Se parte de nuestro próximo taller virtual y aprende de los expertos. Este 31 de Enero via ZOOM.",
+    cta: "Inscribite ahora",
+    image: "/eventos/zoom.png",
+  },
+  {
+    id: 3,
+    title: "Proxima 2° Subasta Virtual de Vehículos",
+    description: "Conectate a nuestra plataforma y participa en la segunda subasta virtual de vehículos a cargo de la empresa CALTIMER.",
+    cta: "Unirme",
+    image: "/eventos/subastadeautos.jpg",
+  },
+];
+
+const dotBaseClasses =
+  "h-2 w-2 rounded-full bg-white/60 hover:bg-white transition";
+
+const waNumber = "51931516694";
+const buildWaUrl = (bannerIndex) => {
+  const message = `Quiero informacion de su proximo evento`;
+  return `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+};
+
+export default function EventCarousel({ slides = defaultSlides, intervalMs = 12000 }) {
+  const sanitized = useMemo(
+    () =>
+      slides
+        .filter((s) => s && s.image)
+        .map((s) => ({
+          ...s,
+          image: buildOptimizedImageUrl(s.image, { width: 1600, quality: 80 }),
+        })),
+    [slides]
+  );
+
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!sanitized.length) return undefined;
+    const id = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % sanitized.length);
+    }, intervalMs);
+    return () => clearInterval(id);
+  }, [sanitized.length, intervalMs]);
+
+  if (!sanitized.length) return null;
+
+  const goTo = (idx) => setCurrent((idx + sanitized.length) % sanitized.length);
+
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-r from-[#e03131] to-[#f55f4e] text-white rounded-3xl shadow-2xl">
+      <div className="grid gap-0 lg:grid-cols-2">
+        <div className="p-8 md:p-12 flex flex-col justify-center space-y-6">
+          <p className="text-sm uppercase tracking-[0.25rem] text-white/80">Próximos eventos</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
+            {sanitized[current].title}
+          </h2>
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl">
+            {sanitized[current].description}
+          </p>
+          <a
+            href={buildWaUrl(current + 1)}
+            target="_blank"
+            rel="noreferrer"
+            className="self-start rounded-full bg-white text-[#e03131] px-5 py-3 font-semibold shadow-lg hover:-translate-y-0.5 transition"
+          >
+            {sanitized[current].cta}
+          </a>
+          <div className="flex items-center gap-3 pt-2">
+            {sanitized.map((slide, idx) => (
+              <button
+                key={slide.id ?? idx}
+                aria-label={`Ir al slide ${idx + 1}`}
+                className={`${dotBaseClasses} ${idx === current ? "!bg-white scale-110" : "opacity-80"}`}
+                onClick={() => goTo(idx)}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="relative min-h-[320px] lg:min-h-[460px]">
+          {sanitized.map((slide, idx) => (
+            <Image
+              key={slide.id ?? idx}
+              src={slide.image}
+              alt={slide.title}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className={`object-cover transition-opacity duration-700 ${
+                idx === current ? "opacity-100" : "opacity-0"
+              }`}
+              priority={idx === 0}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          <div className="absolute inset-y-0 left-4 right-4 flex items-center justify-between pointer-events-none">
+            <button
+              aria-label="Anterior"
+              className="pointer-events-auto h-11 w-11 rounded-full bg-white/80 text-[#e03131] hover:bg-white shadow"
+              onClick={() => goTo(current - 1)}
+            >
+              ◀
+            </button>
+            <button
+              aria-label="Siguiente"
+              className="pointer-events-auto h-11 w-11 rounded-full bg-white/80 text-[#e03131] hover:bg-white shadow"
+              onClick={() => goTo(current + 1)}
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

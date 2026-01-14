@@ -1,11 +1,13 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { MdAttachMoney, MdHome } from "react-icons/md";
 import { LuMapPinned } from "react-icons/lu";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import HeroSlide from "@/app/components/inmobiliaria/HeroSlide";
 import { InmobiliariaService } from "@/lib/supabase/services2";
+import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 
 export default function PropertyDetailsPage() {
   const { id } = useParams();
@@ -66,9 +68,15 @@ export default function PropertyDetailsPage() {
   }, [id]);
 
   const heroImages = useMemo(() => {
-    if (galleryImages.length) return galleryImages;
-    if (property?.image) return [property.image];
-    return [];
+    const baseList = galleryImages.length
+      ? galleryImages
+      : property?.image
+      ? [property.image]
+      : [];
+
+    return baseList.map((img) =>
+      buildOptimizedImageUrl(img, { width: 1600, quality: 80 })
+    );
   }, [galleryImages, property?.image]);
 
   if (isLoading) {
@@ -106,12 +114,16 @@ export default function PropertyDetailsPage() {
       {/* Image Section with Overlay */}
       <div className="overflow-hidden relative w-full h-[60vh] md:h-[80vh]">
         <div className="flex transition-transform ease-out duration-700 h-full">
-          <img
-            src={heroImages[0] || property.image || "/placeholder.svg"}
-            alt={property.name}
-            className="w-full h-full object-cover flex-shrink-0"
-            style={{ minWidth: "100%", minHeight: "100%" }}
-          />
+          <div className="relative w-full h-full" style={{ minWidth: "100%", minHeight: "100%" }}>
+            <Image
+              src={heroImages[0] || property.image || "/placeholder.svg"}
+              alt={property.name}
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
 
         {/* Overlay Content */}
@@ -200,11 +212,20 @@ export default function PropertyDetailsPage() {
                   className="w-full h-[600px] object-contain rounded-lg shadow-lg"
                 />
               ) : (
-                <img
-                  src={property.image2 || "/placeholder.svg"}
-                  alt={property.name}
-                  className="w-full h-full object-contain rounded-lg shadow-lg"
-                />
+                <div className="relative w-full h-full min-h-[300px]">
+                  <Image
+                    src={
+                      buildOptimizedImageUrl(property.image2, {
+                        width: 1400,
+                        quality: 80,
+                      }) || "/placeholder.svg"
+                    }
+                    alt={property.name}
+                    fill
+                    sizes="(min-width: 1024px) 800px, 100vw"
+                    className="object-contain rounded-lg shadow-lg"
+                  />
+                </div>
               )}
             </div>
           </div>

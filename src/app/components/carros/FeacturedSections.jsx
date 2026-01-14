@@ -99,14 +99,14 @@ const FeacturedSections = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {displayedCars.map((car) => (
+          {displayedCars.map((car, idx) => (
             <motion.div
               key={car.id}
               variants={cardVariants}
               whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.95 }}
             >
-              <CarCard car={car} />
+              <CarCard car={car} priority={idx === 0} />
             </motion.div>
           ))}
         </motion.div>

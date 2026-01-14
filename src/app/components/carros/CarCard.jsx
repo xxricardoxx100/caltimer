@@ -1,13 +1,20 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { BsPeopleFill } from "react-icons/bs";
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import { FaCarAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
+import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 
-const CarCard = ({ car }) => {
+const CarCard = ({ car, priority = false }) => {
   const router = useRouter();
+  const imageSrc = useMemo(
+    () => buildOptimizedImageUrl(car.image, { width: 800, quality: 70 }),
+    [car.image]
+  );
+
   return (
     <div
       onClick={() => {
@@ -17,10 +24,15 @@ const CarCard = ({ car }) => {
       className="group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer"
     >
       <div className="relative h-60 overflow-hidden">
-        <img
-          src={car.image}
+        <Image
+          src={imageSrc || "/placeholder.svg"}
           alt={car.model}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          fill
+          sizes="(min-width: 1024px) 400px, 100vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          loading={priority ? "eager" : "lazy"}
+          priority={priority}
+          placeholder="empty"
         />
         {car.isAvailable && (
           <p className="absolute top-4 left-4 bg-orange-400 text-white text-xs px-2.5 py-1 rounded-full">

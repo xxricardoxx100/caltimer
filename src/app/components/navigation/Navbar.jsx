@@ -25,11 +25,10 @@ const solutions = [
     description: "Servicios complementarios",
     href: "/servicios",
   },
-  
   {
-    name: "Contacto",
-    description: "Contáctanos",
-    href: "/contacto",
+    name: "Eventos",
+    description: "Próximos eventos y actividades",
+    href: "/eventos",
   },
 ];
 

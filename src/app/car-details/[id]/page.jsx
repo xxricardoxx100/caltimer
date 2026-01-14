@@ -2,6 +2,7 @@
 
 import { useParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { FaArrowLeft } from "react-icons/fa";
 import { MdOutlineArrowBackIos, MdArrowForwardIos, MdLocationPin } from "react-icons/md";
 import { BsPeopleFill, BsFillFuelPumpFill } from "react-icons/bs";
@@ -9,12 +10,15 @@ import { FaCarAlt } from "react-icons/fa";
 
 import Loader from "@/app/components/carros/Loader";
 import { carService } from "@/lib/supabase/services";
+import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 
 function Carousel({ images }) {
-  const sanitizedImages = useMemo(
-    () => (Array.isArray(images) && images.length ? images.filter(Boolean) : []),
-    [images]
-  );
+  const sanitizedImages = useMemo(() => {
+    if (!Array.isArray(images) || !images.length) return [];
+    return images
+      .filter(Boolean)
+      .map((img) => buildOptimizedImageUrl(img, { width: 1600, quality: 80 }));
+  }, [images]);
 
   const [current, setCurrent] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,17 +51,24 @@ function Carousel({ images }) {
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {sanitizedImages.map((img, idx) => (
-            <img
-              key={img}
-              src={img}
-              alt={`car-img-${idx}`}
-              className="h-full w-full flex-shrink-0 cursor-pointer object-contain"
+            <div
+              key={`${img}-${idx}`}
+              className="relative h-full w-full flex-shrink-0"
               style={{ minWidth: "100%", minHeight: "100%" }}
-              onClick={() => {
-                setModalImage(img);
-                setIsModalOpen(true);
-              }}
-            />
+            >
+              <Image
+                src={img || "/placeholder.svg"}
+                alt={`car-img-${idx}`}
+                fill
+                sizes="(min-width: 1024px) 900px, 100vw"
+                className="object-contain cursor-pointer"
+                loading={idx === 0 ? "eager" : "lazy"}
+                onClick={() => {
+                  setModalImage(img);
+                  setIsModalOpen(true);
+                }}
+              />
+            </div>
           ))}
         </div>
 
@@ -102,11 +113,16 @@ function Carousel({ images }) {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
           onClick={() => setIsModalOpen(false)}
         >
-          <img
-            src={modalImage ?? ""}
-            alt="Imagen ampliada"
-            className="max-h-full max-w-full object-contain"
-          />
+          <div className="relative max-h-full max-w-full w-full h-full">
+            <Image
+              src={modalImage ?? "/placeholder.svg"}
+              alt="Imagen ampliada"
+              fill
+              sizes="100vw"
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
       )}
     </>

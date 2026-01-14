@@ -10,10 +10,11 @@ const backgroundImages = [
 ];	  
 
 const navigation = {
-  support: [{ name: "Contacto", href: "/contacto" }],
+  support: [{ name: "Eventos", href: "/eventos" }],
   company: [
     { name: "Casos", href: "/casos" },
     { name: "Servicios", href: "/servicios" },
+    { name: "Eventos", href: "/eventos" },
     { name: "Nosotros", href: "/nosotros" },
     { name: "Carreras", href: "/carreras" },
     { name: "Blog", href: "/blog" },

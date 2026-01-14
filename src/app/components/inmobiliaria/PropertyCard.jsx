@@ -1,10 +1,18 @@
 "use client";
+import { useMemo } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { MdLocationPin } from "react-icons/md";
 import { FaHome, FaBed, FaBath } from "react-icons/fa";
+import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 
 const PropertyCard = ({ property }) => {
   const router = useRouter();
+  const imageSrc = useMemo(
+    () => buildOptimizedImageUrl(property.image, { width: 800, quality: 70 }),
+    [property.image]
+  );
+
   return (
     <div
       onClick={() => {
@@ -14,10 +22,14 @@ const PropertyCard = ({ property }) => {
       className="group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer bg-white"
     >
       <div className="relative h-48 overflow-hidden">
-        <img
-          src={property.image || "/placeholder.svg"}
+        <Image
+          src={imageSrc || "/placeholder.svg"}
           alt={property.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          fill
+          sizes="(min-width: 1024px) 400px, 100vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          placeholder="empty"
         />
         {property.deliveryStatus && (
           <div className="absolute top-4 left-4 bg-orange-500 text-white text-xs px-3 py-1.5 rounded-sm font-medium">
