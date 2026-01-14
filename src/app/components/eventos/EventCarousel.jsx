@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 
 const defaultSlides = [
@@ -64,9 +65,21 @@ export default function EventCarousel({ slides = defaultSlides, intervalMs = 120
   const goTo = (idx) => setCurrent((idx + sanitized.length) % sanitized.length);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-[#e03131] to-[#f55f4e] text-white rounded-3xl shadow-2xl">
+    <motion.section
+      className="relative overflow-hidden bg-gradient-to-r from-[#e03131] to-[#f55f4e] text-white rounded-3xl shadow-2xl"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+    >
       <div className="grid gap-0 lg:grid-cols-2">
-        <div className="p-8 md:p-12 flex flex-col justify-center space-y-6">
+        <motion.div
+          className="p-8 md:p-12 flex flex-col justify-center space-y-6"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.4 }}
+        >
           <p className="text-sm uppercase tracking-[0.25rem] text-white/80">Próximos eventos</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
             {sanitized[current].title}
@@ -92,23 +105,34 @@ export default function EventCarousel({ slides = defaultSlides, intervalMs = 120
               />
             ))}
           </div>
-        </div>
+        </motion.div>
 
         <div className="relative min-h-[320px] lg:min-h-[460px]">
-          {sanitized.map((slide, idx) => (
-            <Image
-              key={slide.id ?? idx}
-              src={slide.image}
-              alt={slide.title}
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className={`object-cover transition-opacity duration-700 ${
-                idx === current ? "opacity-100" : "opacity-0"
-              }`}
-              priority={idx === 0}
-            />
-          ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          <AnimatePresence mode="wait">
+            {sanitized.map((slide, idx) =>
+              idx === current ? (
+                <motion.div
+                  key={slide.id ?? idx}
+                  className="absolute inset-0"
+                  initial={{ opacity: 0, scale: 1.02 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                    priority={idx === 0}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                </motion.div>
+              ) : null
+            )}
+          </AnimatePresence>
+
           <div className="absolute inset-y-0 left-4 right-4 flex items-center justify-between pointer-events-none">
             <button
               aria-label="Anterior"
@@ -127,6 +151,6 @@ export default function EventCarousel({ slides = defaultSlides, intervalMs = 120
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,1 +1,5 @@
-// Página contacto eliminada; se mantiene archivo vacío para evitar importaciones rotas.
+export const metadata = { title: "Contacto" };
+
+export default function Contacto() {
+	return null;
+}
