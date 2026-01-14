@@ -11,7 +11,7 @@ const defaultSlides = [
     description:
       "Se parte de nuestro próximo taller presencial y aprende de los expertos. Este 24 de Enero en La Molina, Lima.",
     cta: "Inscribite ahora",
-    image: "/eventos/eventopresencial1.jfif",
+    image: "/eventos/eventopresencial1.jpg",
   },
   {
     id: 2,
