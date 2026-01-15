@@ -1,6 +1,6 @@
 // Datos de vehículos en subasta
 export const subastaData = [
-/*
+
   {
     id: 1,
     marca: "Brilliance",
@@ -102,6 +102,6 @@ export const subastaData = [
       "pantalla touch"
     ]
   },
-*/
+
 
 ];
