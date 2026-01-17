@@ -15,9 +15,37 @@ const initialFormData = {
   deliveryStatus: "",
   mediaType: "image",
   image2: "",
-  features: "",
+  features: "Casa o edificio",
   description: "",
 };
+
+const departamentosPeru = [
+  "Amazonas",
+  "Áncash",
+  "Apurímac",
+  "Arequipa",
+  "Ayacucho",
+  "Cajamarca",
+  "Callao",
+  "Cusco",
+  "Huancavelica",
+  "Huánuco",
+  "Ica",
+  "Junín",
+  "La Libertad",
+  "Lambayeque",
+  "Lima",
+  "Loreto",
+  "Madre de Dios",
+  "Moquegua",
+  "Pasco",
+  "Piura",
+  "Puno",
+  "San Martín",
+  "Tacna",
+  "Tumbes",
+  "Ucayali",
+];
 
 function AdmininmobiliariaForm() {
   const [formData, setFormData] = useState(initialFormData);
@@ -235,17 +263,22 @@ function AdmininmobiliariaForm() {
                   className="text-sm font-medium text-neutral-800"
                   htmlFor="district"
                 >
-                  Distrito / Ciudad
+                  Departamento
                 </label>
-                <input
+                <select
                   id="district"
                   name="district"
-                  type="text"
                   value={formData.district}
                   onChange={handleChange}
                   className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder="Ciudad, Provincia"
-                />
+                >
+                  <option value="">Selecciona un departamento</option>
+                  {departamentosPeru.map((departamento) => (
+                    <option key={departamento} value={departamento}>
+                      {departamento}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div className="grid gap-2">
@@ -327,17 +360,20 @@ function AdmininmobiliariaForm() {
                   className="text-sm font-medium text-neutral-800"
                   htmlFor="features"
                 >
-                  Características principales
+                  Tipo de inmueble
                 </label>
-                <input
+                <select
                   id="features"
                   name="features"
-                  type="text"
+                  required
                   value={formData.features}
                   onChange={handleChange}
                   className="rounded-lg border border-neutral-300 px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-200"
-                  placeholder="Terreno, Departamento, 3 habitaciones..."
-                />
+                >
+                  <option value="Casa o edificio">Casa o edificio</option>
+                  <option value="Departamento">Departamento</option>
+                  <option value="Terrenos">Terrenos</option>
+                </select>
               </div>
             </div>
 

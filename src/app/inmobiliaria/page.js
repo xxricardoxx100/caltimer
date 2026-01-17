@@ -1,20 +1,27 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import HeroSlide from "../components/inmobiliaria/HeroSlide";
 import { Features } from "../components/inmobiliaria/Features";
 import { PropertyList } from "../components/inmobiliaria/PropertyList";
 
-// Data temporal para imágenes del hero
+// Imágenes del hero (originales)
 const heroImages = [
-  "/inmobiliaria/compramospropiedades.jpg  ",
+  "/inmobiliaria/compramospropiedades.jpg",
   "/inmobiliaria/inmobiliaria1.jpg",
 ];
 
 const Inmobiliaria = () => {
+  const [filters, setFilters] = useState({
+    category: "",
+    district: "",
+  });
+
   return (  
     <div data-scroll-section className="pt-28">
       <HeroSlide images={heroImages} />
-      <Features />
-      <PropertyList />
+      <Features filters={filters} onFiltersChange={setFilters} />
+      <PropertyList filters={filters} />
     </div>
   );
 };

@@ -1,10 +1,36 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export const Features = () => {
-  const [estado, setEstado] = useState("");
-  const [distrito, setDistrito] = useState("");
+const departamentosPeru = [
+  "Amazonas",
+  "Áncash",
+  "Apurímac",
+  "Arequipa",
+  "Ayacucho",
+  "Cajamarca",
+  "Callao",
+  "Cusco",
+  "Huancavelica",
+  "Huánuco",
+  "Ica",
+  "Junín",
+  "La Libertad",
+  "Lambayeque",
+  "Lima",
+  "Loreto",
+  "Madre de Dios",
+  "Moquegua",
+  "Pasco",
+  "Piura",
+  "Puno",
+  "San Martín",
+  "Tacna",
+  "Tumbes",
+  "Ucayali",
+];
+
+export const Features = ({ filters, onFiltersChange }) => {
   const [hasAnimated, setHasAnimated] = useState(false);
   const statsRef = useRef(null);
 
@@ -63,7 +89,14 @@ export const Features = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log("Buscando:", { estado, distrito });
+    onFiltersChange?.(filters);
+  };
+
+  const handleFilterChange = (key, value) => {
+    onFiltersChange?.({
+      ...filters,
+      [key]: value,
+    });
   };
 
   return (
@@ -141,32 +174,30 @@ export const Features = () => {
 
               {/* Search controls */}
               <div className="flex flex-col sm:flex-row gap-4 lg:flex-none">
-                {/* Project status selector */}
+                {/* Category selector */}
                 <select
-                  value={estado}
-                  onChange={(e) => setEstado(e.target.value)}
+                  value={filters?.category || ""}
+                  onChange={(e) => handleFilterChange("category", e.target.value)}
                   className="w-full sm:w-64 bg-white text-gray-900 border-0 h-12 px-4 rounded-md focus:outline-none"
                 >
-                  <option value="">Elegir por estado del proyecto</option>
-                  <option value="en-construccion">En construcción</option>
-                  <option value="pre-venta">Pre-venta</option>
-                  <option value="entrega-inmediata">Entrega inmediata</option>
-                  <option value="terminado">Terminado</option>
+                  <option value="">Tipo de inmueble</option>
+                  <option value="Casa o edificio">Casa o edificio</option>
+                  <option value="Departamento">Departamento</option>
+                  <option value="Terrenos">Terrenos</option>
                 </select>
 
                 {/* District selector */}
                 <select
-                  value={distrito}
-                  onChange={(e) => setDistrito(e.target.value)}
+                  value={filters?.district || ""}
+                  onChange={(e) => handleFilterChange("district", e.target.value)}
                   className="w-full sm:w-64 bg-white text-gray-900 border-0 h-12 px-4 rounded-md focus:outline-none"
                 >
-                  <option value="">Elegir el distrito</option>
-                  <option value="miraflores">Miraflores</option>
-                  <option value="san-isidro">San Isidro</option>
-                  <option value="barranco">Barranco</option>
-                  <option value="surco">Surco</option>
-                  <option value="la-molina">La Molina</option>
-                  <option value="san-borja">San Borja</option>
+                  <option value="">Elegir departamento</option>
+                  {departamentosPeru.map((departamento) => (
+                    <option key={departamento} value={departamento}>
+                      {departamento}
+                    </option>
+                  ))}
                 </select>
 
                 {/* Search button */}

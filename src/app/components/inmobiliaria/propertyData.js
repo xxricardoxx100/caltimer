@@ -20,7 +20,7 @@ const sampleProperties = [
       "/inmobiliaria/perla1/3.jpg",
       "/inmobiliaria/perla1/4.jpg",
     ],
-    features: "Terreno",
+    features: "Terrenos",
     description: 
       "𝐈𝐍𝐂𝐑𝐄𝐈𝐁𝐋𝐄 𝐏𝐄𝐑𝐎 𝐂𝐈𝐄𝐑𝐓𝐎 🔥🔥, Compra tu lote en Residencial La Perla,Huaral a S/35,000 y su revaloración será, S/45,000... ¡en solo 4 meses! 😱 aprovechando las, 𝐈𝐍𝐕𝐄𝐑𝐒𝐈𝐎𝐍𝐄𝐒 𝐄𝐍 𝐕𝐄𝐍𝐓𝐀🔥,💰 ¿Tienes S/15,000? Tú también puedes ser parte de este proyecto que no para de subir.Inviertes seguro, inviertes en crecimiento., Sus espacios brindan comodidad y amplitud lo que mejora la sensación de tranquilidad y paz. Sus acabados van con todo lo que se vio anteriormente el momento del cambio es ahora.",
   },
@@ -48,7 +48,7 @@ const sampleProperties = [
       "/inmobiliaria/perla2/6.jpg",
       "/inmobiliaria/perla2/7.jpg",
     ],
-   features: "Terreno",
+  features: "Terrenos",
 
     description: 
       "Lotes desde los 120 m² con alta plusvalía ubicados en Huaral servicios básicos de agua y luz entrega inmediata",
@@ -71,7 +71,7 @@ const sampleProperties = [
       "/inmobiliaria/tarma1.jpeg",
       
     ],
-   features: "Terreno",
+  features: "Terrenos",
 
     description: 
       "Oportunidad única: Adquiera inmueble con alta rentabilidad y plusvalía asegurada en Jirón Chanchamayo # 120 (cerca de comercios, colegios, estadio, transporte), ideal para alquiler/oficinas o revalorización a mediano plazo, dentro de edificio con sólida infraestructura y un precio competitivo; disfrute de áreas verdes, coworking y ubicación privilegiada en San Isidro (Green Tower).",
@@ -94,7 +94,7 @@ const sampleProperties = [
       "/inmobiliaria/terreno1.jpeg",
       
     ],
-   features: "Terreno",
+  features: "Terrenos",
     description: "",
   },
 ];
