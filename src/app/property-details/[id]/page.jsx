@@ -75,7 +75,7 @@ export default function PropertyDetailsPage() {
       : [];
 
     return baseList.map((img) =>
-      buildOptimizedImageUrl(img, { width: 1600, quality: 80 })
+      buildOptimizedImageUrl(img, { width: 1400, quality: 70 })
     );
   }, [galleryImages, property?.image]);
 
@@ -216,8 +216,8 @@ export default function PropertyDetailsPage() {
                   <Image
                     src={
                       buildOptimizedImageUrl(property.image2, {
-                        width: 1400,
-                        quality: 80,
+                        width: 1200,
+                        quality: 70,
                       }) || "/placeholder.svg"
                     }
                     alt={property.name}

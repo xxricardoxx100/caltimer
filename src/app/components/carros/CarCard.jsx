@@ -10,10 +10,7 @@ import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 
 const CarCard = ({ car, priority = false }) => {
   const router = useRouter();
-  const imageSrc = useMemo(
-    () => buildOptimizedImageUrl(car.image, { width: 800, quality: 70 }),
-    [car.image]
-  );
+  const imageSrc = useMemo(() => car.image, [car.image]);
 
   return (
     <div
@@ -23,13 +20,13 @@ const CarCard = ({ car, priority = false }) => {
       }}
       className="group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer"
     >
-      <div className="relative h-60 overflow-hidden">
+      <div className="relative w-full h-60 overflow-hidden">
         <Image
           src={imageSrc || "/placeholder.svg"}
           alt={car.model}
           fill
           sizes="(min-width: 1024px) 400px, 100vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
           loading={priority ? "eager" : "lazy"}
           priority={priority}
           placeholder="empty"

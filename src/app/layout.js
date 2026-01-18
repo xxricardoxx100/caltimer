@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Footer from "./components/navigation/Footer";
 import Navbar from "./components/navigation/Navbar";
+import VirtualAgent from "./components/VirtualAgent";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <VirtualAgent />
         <Footer />
       </body>
     </html>

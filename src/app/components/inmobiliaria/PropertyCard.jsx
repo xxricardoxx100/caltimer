@@ -9,7 +9,14 @@ import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 const PropertyCard = ({ property }) => {
   const router = useRouter();
   const imageSrc = useMemo(
-    () => buildOptimizedImageUrl(property.image, { width: 800, quality: 70 }),
+    () =>
+      buildOptimizedImageUrl(property.image, {
+        width: 640,
+        height: 480,
+        quality: 60,
+        fit: "cover",
+        position: "center",
+      }),
     [property.image]
   );
 
@@ -21,13 +28,14 @@ const PropertyCard = ({ property }) => {
       }}
       className="group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer bg-white"
     >
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative w-full aspect-[4/3] overflow-hidden">
         <Image
           src={imageSrc || "/placeholder.svg"}
           alt={property.name}
           fill
           sizes="(min-width: 1024px) 400px, 100vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          style={{ objectPosition: "center 20%" }}
           loading="lazy"
           placeholder="empty"
         />

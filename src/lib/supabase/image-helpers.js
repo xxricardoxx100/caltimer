@@ -6,7 +6,7 @@ const transformEnabled =
 // Helper to build optimized Supabase render URLs for images
 export const buildOptimizedImageUrl = (
   url,
-  { width = 800, quality = 70, format = "webp" } = {}
+  { width = 800, height, quality = 70, format, fit, position } = {}
 ) => {
   if (!url || typeof url !== "string") return url;
 
@@ -28,8 +28,11 @@ export const buildOptimizedImageUrl = (
     );
 
     if (width) parsed.searchParams.set("width", String(width));
+    if (height) parsed.searchParams.set("height", String(height));
     if (quality) parsed.searchParams.set("quality", String(quality));
     if (format) parsed.searchParams.set("format", format);
+    if (fit) parsed.searchParams.set("fit", fit);
+    if (position) parsed.searchParams.set("position", position);
 
     return parsed.toString();
   } catch (err) {

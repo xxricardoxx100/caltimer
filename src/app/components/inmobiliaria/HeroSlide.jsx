@@ -1,11 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
+import Image from "next/image";
+import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 import { MdOutlineArrowForward } from "react-icons/md";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { motion } from "framer-motion";
 
 const HeroSlide = ({ images }) => {
   const [current, setCurrent] = useState(0);
+
+  const currentImage = images?.[current] || images?.[0] || "/placeholder.svg";
+  const optimizedImage = useMemo(
+    () => buildOptimizedImageUrl(currentImage, { width: 1400, quality: 70 }),
+    [currentImage]
+  );
 
   const prev = () =>
     setCurrent((curr) => (curr === 0 ? images.length - 1 : curr - 1));
@@ -20,24 +28,16 @@ const HeroSlide = ({ images }) => {
       transition={{ duration: 1.5 }} 
     >
       {/* Slides */}
-      <div
-        className="flex transition-transform ease-out duration-700 h-full "
-        style={{ transform: `translateX(-${current * 100}%)` }}
-      >
-        {images.map((img, idx) => (
-          <div
-            key={idx}
-            className="relative w-full h-full flex-shrink-0"
-            style={{ minWidth: "100%", minHeight: "100%" }}
-          >
-            <img
-              src={img}
-              alt={`slide-${idx}`}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/20 via-slate-900/10 to-transparent" />
-          </div>
-        ))}
+      <div className="relative h-full w-full">
+        <Image
+          src={optimizedImage}
+          alt={`slide-${current}`}
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority={current === 0}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/20 via-slate-900/10 to-transparent" />
       </div>
       {/* Controls */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4">

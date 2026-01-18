@@ -17,7 +17,7 @@ function Carousel({ images }) {
     if (!Array.isArray(images) || !images.length) return [];
     return images
       .filter(Boolean)
-      .map((img) => buildOptimizedImageUrl(img, { width: 1600, quality: 80 }));
+      .map((img) => buildOptimizedImageUrl(img, { width: 1200, quality: 70 }));
   }, [images]);
 
   const [current, setCurrent] = useState(0);
@@ -46,30 +46,19 @@ function Carousel({ images }) {
   return (
     <>
       <div className="relative mb-6 h-56 w-full overflow-hidden rounded-lg bg-gray-100 md:h-96">
-        <div
-          className="flex h-full transition-transform ease-out duration-700"
-          style={{ transform: `translateX(-${current * 100}%)` }}
-        >
-          {sanitizedImages.map((img, idx) => (
-            <div
-              key={`${img}-${idx}`}
-              className="relative h-full w-full flex-shrink-0"
-              style={{ minWidth: "100%", minHeight: "100%" }}
-            >
-              <Image
-                src={img || "/placeholder.svg"}
-                alt={`car-img-${idx}`}
-                fill
-                sizes="(min-width: 1024px) 900px, 100vw"
-                className="object-contain cursor-pointer"
-                loading={idx === 0 ? "eager" : "lazy"}
-                onClick={() => {
-                  setModalImage(img);
-                  setIsModalOpen(true);
-                }}
-              />
-            </div>
-          ))}
+        <div className="relative h-full w-full">
+          <Image
+            src={sanitizedImages[current] || "/placeholder.svg"}
+            alt={`car-img-${current}`}
+            fill
+            sizes="(min-width: 1024px) 900px, 100vw"
+            className="object-contain cursor-pointer"
+            priority={current === 0}
+            onClick={() => {
+              setModalImage(sanitizedImages[current]);
+              setIsModalOpen(true);
+            }}
+          />
         </div>
 
         {sanitizedImages.length > 1 && (
