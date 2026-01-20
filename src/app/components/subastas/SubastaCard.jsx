@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 const SubastaCard = ({ vehiculo }) => {
   const router = useRouter();
   const [tiempoRestante, setTiempoRestante] = useState("");
+  const [finalizada, setFinalizada] = useState(false);
 
   const handleClick = () => {
     router.push(`/subasta-details?id=${vehiculo.id}`);
@@ -54,11 +55,14 @@ const SubastaCard = ({ vehiculo }) => {
   // Actualizar tiempo restante cada minuto
   useEffect(() => {
     // Actualizar inmediatamente
-    setTiempoRestante(formatearFechaFin(vehiculo.fecha_fin));
+    const fechaISO = vehiculo.fecha_fin;
+    setTiempoRestante(formatearFechaFin(fechaISO));
+    setFinalizada(new Date(fechaISO) <= new Date());
     
     // Actualizar cada minuto
     const interval = setInterval(() => {
       setTiempoRestante(formatearFechaFin(vehiculo.fecha_fin));
+      setFinalizada(new Date(vehiculo.fecha_fin) <= new Date());
     }, 60000); // 60 segundos
 
     return () => clearInterval(interval);
@@ -75,8 +79,14 @@ const SubastaCard = ({ vehiculo }) => {
           alt={`${vehiculo.marca} ${vehiculo.modelo}`}
           className="w-full h-48 object-cover"
         />
-        <div className="absolute top-2 right-2 bg-[#BF9056] text-white px-3 py-1 rounded-full text-sm font-semibold">
-          En Subasta
+        <div
+          className={
+            finalizada
+              ? "absolute top-2 right-2 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
+              : "absolute top-2 right-2 bg-[#BF9056] text-white px-3 py-1 rounded-full text-sm font-semibold"
+          }
+        >
+          {finalizada ? "Finalizado" : "En Subasta"}
         </div>
       </div>
       

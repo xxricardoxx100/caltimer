@@ -233,6 +233,8 @@ export function SubastaDetailsContent() {
               src={imagenActual} 
               alt="Imagen en pantalla completa" 
               fill
+              sizes="100vw"
+              quality={85}
               className="object-contain"
             />
             <button
@@ -277,6 +279,9 @@ export function SubastaDetailsContent() {
                 src={imagenActual}
                 alt={`${vehiculo.marca} ${vehiculo.modelo}`}
                 fill 
+                sizes="(min-width: 1024px) 66vw, 100vw"
+                quality={80}
+                priority
                 className="object-contain" 
               />
             </div>
@@ -295,6 +300,9 @@ export function SubastaDetailsContent() {
                     src={img}
                     alt={`Vista ${index + 1}`}
                     fill 
+                    sizes="(min-width: 1024px) 140px, (min-width: 768px) 120px, 33vw"
+                    quality={60}
+                    loading="lazy"
                     className="object-cover" 
                   />
                 </div>
