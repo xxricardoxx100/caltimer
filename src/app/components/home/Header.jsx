@@ -1,29 +1,15 @@
 import { useEffect, useState } from "react";
-import { Typewriter } from "react-simple-typewriter";
+import Image from "next/image";
+import Link from "next/link";
 import { FaTiktok } from "react-icons/fa";
-
 
 const backgroundImages = [
   "/general/compramos2.png",
   "/general/bannersubasta.png",
   "/general/bannergrupal.jpg",
-];	  
+];
 
 const navigation = {
-  support: [{ name: "Eventos", href: "/eventos" }],
-  company: [
-    { name: "Casos", href: "/casos" },
-    { name: "Servicios", href: "/servicios" },
-    { name: "Eventos", href: "/eventos" },
-    { name: "Nosotros", href: "/nosotros" },
-    { name: "Carreras", href: "/carreras" },
-    { name: "Blog", href: "/blog" },
-  ],
-  legal: [
-    { name: "Claim", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-  ],
   social: [
     {
       name: "Facebook",
@@ -41,9 +27,7 @@ const navigation = {
     {
       name: "Tiktok",
       href: "https://www.tiktok.com/@jeancalderonsubastas?is_from_webapp=1&sender_device=pc",
-      icon: (props) => (
-        <FaTiktok className="h-7 w-7" />
-      ),
+      icon: (props) => <FaTiktok className="h-5 w-5" {...props} />,
     },
   ],
 };
@@ -56,67 +40,80 @@ function Header() {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % backgroundImages.length
       );
-    }, 3000); // Cambia cada 5 segundos
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, []);
 
   return (
     <main>
-      {/* 1. SE CAMBIA h-screen por una altura (ej. h-96, h-128, o un valor de padding grande) */}
-      {/* Usamos padding vertical grande (py-40) para darle altura, además de 'relative' y 'overflow-hidden' */}
-      <div className="relative py-85 overflow-hidden"> 
-        
-        {/* Capa para las imágenes de fondo con transición */}
-        {backgroundImages.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
-              index === currentImageIndex ? "opacity-150" : "opacity-0"
-            }`}
-            style={{
-              backgroundImage: `url('${image}')`,
-            }}
-          />
-        ))}
-
-        {/* Capa de overlay oscuro para mejorar la legibilidad del texto */}
-        <div className="absolute inset-0 bg-black opacity-40" /> 
-        
-        {/* Contenido del header (texto, typewriter, botones, etc.) */}
-        {/* 2. El contenido ahora solo tiene el padding lateral (px-6 lg:px-8) y se centra a sí mismo */}
-        <div className="relative z-10 px-6 lg:px-8 h-full flex items-center"> 
-          <div className="mx-auto max-w-full xl:mx-12">
-            <div>
-              <div>
-                <h1 className="text-4xl font-bold tracking-tight pb-8 sm:text-7xl text-[#F2F2F2]"> 
-                  Caltimer Group <span> </span>
-                  <Typewriter
-                    words={["Confianza", "Calidad", "Seguridad"]}
-                    loop={0}
-                    cursor
-                    cursorStyle="_"
-                    typeSpeed={120}
-                    deleteSpeed={50}
-                    delaySpeed={1000}
-                  />
-                </h1>
-                <p className="mt-8 text-2xl max-w-3xl leading-8 text-[#F2B66D] "> 
-                  Impulsa hoy tu negocio con uno de nuestros servicios{" "}
+      <div className="relative min-h-[52vh] overflow-hidden bg-gradient-to-br from-[#1a2436] via-[#212c42] to-[#2a3650] pt-20">
+        <div className="absolute inset-0 opacity-60">
+          <div className="absolute -left-10 -top-10 h-60 w-60 rounded-full bg-[#F29F05]/18 blur-[120px]" />
+          <div className="absolute right-0 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[#9fb4ff]/18 blur-[150px]" />
+        </div>
+        <div className="relative z-10 px-6 lg:px-10 py-8 lg:py-10 min-h-[52vh]">
+          <div className="mx-auto w-full max-w-[1400px]">
+            <div className="grid items-center gap-50 lg:gap-24 lg:grid-cols-[minmax(0,3.1fr)_minmax(0,8.9fr)]">
+              <div className="w-full max-w-[500px] rounded-3xl border border-white/10 bg-black/45 p-6 sm:p-8 backdrop-blur-xl shadow-[0_25px_80px_-40px_rgba(0,0,0,0.8)]">
+                <p className="text-[11px] uppercase tracking-[0.26em] text-orange-200/90">
+                  Caltimer Group
                 </p>
-                {/* Íconos sociales ajustados para esta nueva altura */}
-                <div className="absolute bottom-[-130px] left-0 flex space-x-6 xl:mx-20 mx-6"> 
+                <h1 className="mt-3 text-[28px] sm:text-[34px] lg:text-[35px] font-semibold tracking-tight text-white">
+                  Seguridad y confianza en cada operación
+                </h1>
+                <p className="mt-4 text-[13px] sm:text-[14px] text-white/80 leading-6">
+                  Servicios integrales para compra, venta y subastas con procesos claros,
+                  respaldo legal y atención personalizada.
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link
+                    href="/subasta"
+                    className="inline-flex items-center justify-center rounded-xl bg-[#F29F05] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#d98904]"
+                  >
+                    Ver subastas
+                  </Link>
+                  <Link
+                    href="/servicios"
+                    className="inline-flex items-center justify-center rounded-xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white/90 transition hover:border-white/60 hover:text-white"
+                  >
+                    Conocer servicios
+                  </Link>
+                </div>
+
+                <div className="mt-8 flex items-center gap-4 text-white/80">
                   {navigation.social.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
-                      className="text-white hover:text-gray-200"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 transition hover:border-white/60 hover:text-white"
                     >
                       <span className="sr-only">{item.name}</span>
-                      <item.icon className="h-8 w-8" aria-hidden="true" />
+                      <item.icon className="h-5 w-5" aria-hidden="true" />
                     </a>
                   ))}
                 </div>
+              </div>
+
+              <div className="relative h-[360px] sm:h-[480px] lg:h-[560px] w-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_45px_130px_-80px_rgba(0,0,0,0.95)] lg:ml-20">
+                {backgroundImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                      index === currentImageIndex ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <Image
+                      src={image}
+                      alt="Imagen destacada"
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                  </div>
+                ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
               </div>
             </div>
           </div>

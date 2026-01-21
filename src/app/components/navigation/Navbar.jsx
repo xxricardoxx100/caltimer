@@ -2,7 +2,6 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import DotLoader from "react-spinners/DotLoader";
 
 const solutions = [
   {
@@ -33,36 +32,26 @@ const solutions = [
 ];
 
 function Navbar() {
-  const [loading, setLoading] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    window.onscroll = function () {
-      scrollFunction();
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 70;
+      setScrolled(isScrolled);
     };
-    function scrollFunction() {
-      if (document.getElementById("navbar")) {
-        if (
-          document.body.scrollTop > 70 ||
-          document.documentElement.scrollTop > 70
-        ) {
-          document.getElementById("navbar").classList.add("shadow-navbar");
-          document.getElementById("navbar").classList.add("bg-[#F29F05]");
-        } else {
-          document.getElementById("navbar").classList.remove("shadow-navbar");
-          document.getElementById("navbar").classList.remove("bg-[#F29F05]");
-        }
-      }
-    }
-  }, []);
 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <nav
       data-scroll
       data-scroll-id="hey"
       id="navbar"
-      className="w-full py-6 top-0 transition duration-300 ease-in-out z-40 fixed"
+      style={{ backgroundColor: '#F8FAFC' }}
+      className={`w-full py-4 top-0 transition-all duration-300 ease-in-out z-40 fixed ${scrolled ? 'shadow-lg' : ''}`}
     >
       <div className="px-4 sm:px-6">
         {/* Desktop Navbar */}
@@ -81,23 +70,11 @@ function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-orange-500 transition duration-300 ease-in-out mx-4"
+                className="text-lg inline-flex font-medium leading-6 text-[#002060] border-b-2 border-[#c06500] hover:scale-110 hover:text-[#E36C09] hover:border-[#E36C09]transition-all duration-300 ease-in-out mx-4"
               >
                 {item.name}
               </Link>
             ))}
-            <Link
-              href="https://wa.me/51928430066?text=Solicito informacion, vengo de la pagina web"
-              className="inline-flex ml-12 items-center rounded-md border border-transparent bg-gray-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-            >
-              WhatsApp
-              <DotLoader
-                className="ml-3 -mr-1 h-5 w-5"
-                loading={loading}
-                size={20}
-                color="#f2f2f2"
-              />
-            </Link>
           </div>
         </div>
         {/* Mobile Navbar */}
@@ -117,9 +94,9 @@ function Navbar() {
             aria-label="Abrir menú"
           >
             {mobileMenuOpen ? (
-              <XMarkIcon className="h-8 w-8 text-gray-900" />
+              <XMarkIcon className="h-8 w-8 text-white" />
             ) : (
-              <Bars3Icon className="h-8 w-8 text-gray-900" />
+              <Bars3Icon className="h-8 w-8 text-white" />
             )}
           </button>
         </div>
@@ -137,19 +114,6 @@ function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <Link
-                href="https://wa.me/51928430066?text=Solicito informacion, vengo de la pagina web"
-                className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 mt-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                WhatsApp
-                <DotLoader
-                  className="ml-3 -mr-1 h-5 w-5"
-                  loading={loading}
-                  size={20}
-                  color="#f2f2f2"
-                />
-              </Link>
             </nav>
           </div>
         )}

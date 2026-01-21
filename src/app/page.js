@@ -22,7 +22,7 @@ function Home() {
   }, []);
   return (
     <Layout>
-      <div data-scroll-section className="pt-28">
+      <div data-scroll-section>
         <Header />
         <MisionVision />
         <CeoDEscripcion />

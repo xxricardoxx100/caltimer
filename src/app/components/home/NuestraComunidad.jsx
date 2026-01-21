@@ -6,14 +6,14 @@ export default function NuestraComunidad() {
   const { elementRef, isVisible } = useScrollAnimation(0.3);
   
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-center gap-30 px-8 py-16 bg-[#F2B66D] min-h-[400px]">
+    <section className="flex flex-col lg:flex-row items-center justify-center gap-30 px-8 py-16 bg-[#F8FAFC] min-h-[400px]">
       <motion.div
         ref={elementRef}
         animate={isVisible ? { x: 0, opacity: 1, rotate:0 } : { x: -300, opacity: 0, rotate:-180 }}
         transition={{ ease: "easeOut", duration: 1 }}
       >
         <div className="max-w-lg flex flex-col items-start justify-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-[#002060] mb-4">
             Nuestra Comunidad
           </h2>
           <p className="text-justify  p-4 mb-4">
