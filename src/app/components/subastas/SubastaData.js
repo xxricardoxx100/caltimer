@@ -200,4 +200,50 @@ export const subastaData = [
       "Frenos ABS",
     ]
   },
+  {
+    id: 5,
+    marca: "Toyota",
+    modelo: "Agya",
+    año: 2021,
+    precio: 7499,
+    imagen: "/agya/1.jpeg",
+    imagenes: [
+      "/agya/1.jpeg",
+      "/agya/2.jpeg",
+      "/agya/3.jpeg",
+      "/agya/4.jpeg",
+      "/agya/5.jpeg",
+      "/agya/6.jpeg",
+    ],  
+    kilometraje: "000,000 km",
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Plateado",
+    puertas: 4,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-01-23T18:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    descripcion:  [
+      "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Tela",
+      "Cámara de reversa",
+      "Aros de aleacion", 
+      "Gasolina",
+      "Transmision mecanica",
+      "Frenos ABS"
+    ]
+  },
 ];
