@@ -206,8 +206,9 @@ export const subastaData = [
     modelo: "Agya",
     año: 2021,
     precio: 7499,
-    imagen: "/agya/1.jpeg",
+    imagen: "/agya/7.jpeg",
     imagenes: [
+      "/agya/7.jpeg",
       "/agya/1.jpeg",
       "/agya/2.jpeg",
       "/agya/3.jpeg",
