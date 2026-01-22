@@ -34,10 +34,10 @@ export const ImgBanner2 = () => {
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 PARTICIPA POR TU
                 <br />
-                COCHE SOÑADO
+                AUTO SOÑADO
               </h1>
               <p className="text-lg md:text-xl mb- opacity-90 max-w-2xl mx-auto">
-                Desde autos deportivos hasta autos para el día a día, encuentra autos premium 
+                Desde autos deportivos ha sta autos para el día a día, encuentra autos premium 
                 que se adaptan a tu estilo de vida.
               </p>
               
