@@ -102,6 +102,7 @@ export const subastaData = [
       "pantalla touch"
     ]
   },
+
   {
     id: 3,
     marca: "Kia",
@@ -127,7 +128,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-01-22T16:30:00",
+    fecha_fin: "2026-01-23T17:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     descripcion:  [
       "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
