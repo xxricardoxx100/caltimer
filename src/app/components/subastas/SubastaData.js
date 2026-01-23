@@ -177,7 +177,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 2,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-01-23T18:00:00",
+    fecha_fin: "2026-01-23T18:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     descripcion:  [
       "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
@@ -223,7 +223,7 @@ export const subastaData = [
     color: "Plateado",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-01-23T18:30:00",
+    fecha_fin: "2026-01-23T18:45:00",
     anexoUrl: "/anexo/TyC.pdf",
     descripcion:  [
       "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
