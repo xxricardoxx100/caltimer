@@ -38,8 +38,8 @@ export const subastaData = [
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
-      "El precio no incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ en la cuenta bancaria indicada por la empresa."
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ o s/300.00 en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
@@ -88,8 +88,8 @@ export const subastaData = [
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
-      "El precio no incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ en la cuenta bancaria indicada por la empresa."
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ s/300.00 en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
@@ -139,8 +139,8 @@ export const subastaData = [
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
-      "El precio no incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ en la cuenta bancaria indicada por la empresa."
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ s/300.00 en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
@@ -188,8 +188,8 @@ export const subastaData = [
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
-      "El precio no incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ en la cuenta bancaria indicada por la empresa."
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ s/300.00 en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
@@ -234,8 +234,8 @@ export const subastaData = [
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
-      "El precio no incluye IGV. Debe agregar 3% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ en la cuenta bancaria indicada por la empresa."
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depostado su garantia de 75$ s/300.00 en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
@@ -245,6 +245,61 @@ export const subastaData = [
       "Gasolina",
       "Transmision mecanica",
       "Frenos ABS"
+    ]
+  },
+  {
+    id: 6,
+    marca: "Apple",
+    modelo: "Macbook Pro",
+    año: 2018,
+    precio: 119,
+    imagen: "/macbook/1.png",
+    imagenes: [
+      "/macbook/1.png",
+      "/macbook/2.png",
+      "/macbook/3.png",
+      "/macbook/4.png",
+    ],  
+    kilometraje: "000,000 km",
+    estado: "Bueno",
+    transmision: "-",
+    combustible: "-",
+    color: "Plateado",
+    puertas: 0,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-01-30T18:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    descripcion:  [
+      "Macbook pro 2019. Operativo con pocos detalles esteticos",
+    ].join("\n"),
+    caracteristicas: [
+    ]
+  },
+  {
+    id: 7,
+    marca: "Apple",
+    modelo: "Iphone 14 pro 128GB ",
+    año: 2022,
+    precio: 119,
+    imagen: "/iphone/1.png",
+    imagenes: [
+      "/iphone/1.png",
+      "/iphone/2.png",
+      "/iphone/3.png",
+    ],  
+    kilometraje: "000,000 km",
+    estado: "Bueno",
+    transmision: "-",
+    combustible: "-",
+    color: "Plateado",
+    puertas: 0,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-01-30T18:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    descripcion:  [
+      "Iphone 14 pro 128GB. Operativo sin detalles esteticos",
+    ].join("\n"),
+    caracteristicas: [
     ]
   },
 ];
