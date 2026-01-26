@@ -2,7 +2,7 @@
 
 function Layout({ children }) {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {children}
     </div>
   );

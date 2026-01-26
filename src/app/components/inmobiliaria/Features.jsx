@@ -100,7 +100,7 @@ export const Features = ({ filters, onFiltersChange }) => {
   };
 
   return (
-    <div className="bg-white pt-10">
+    <div className="bg-[#F8FAFC]">
       {/* Stats Section */}
       <motion.div 
         ref={statsRef} className="px-6 py-5 bg-white"
@@ -110,7 +110,7 @@ export const Features = ({ filters, onFiltersChange }) => {
         viewport={{ once: true, amount: 0.3 }}
       >
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <p className="text-[#591D07] text-lg leading-relaxed mb-12">
+          <p className="text-[#E36C09] text-lg leading-relaxed mb-12">
             Nuestro equipo está comprometido en brindar soluciones
             personalizadas a cada uno de nuestros clientes, garantizando su
             satisfacción y confianza en nosotros.
@@ -119,39 +119,39 @@ export const Features = ({ filters, onFiltersChange }) => {
           <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16">
             {/* Years of Experience */}
             <div className="flex flex-col items-center">
-              <div className="text-5xl md:text-6xl font-bold text-[#BF9056] mb-2">
+              <div className="text-5xl md:text-6xl font-bold text-[#E36C09] mb-2">
                 +{years}
               </div>
-              <div className="text-base md:text-lg font-semibold text-[#BF9056]">
+              <div className="text-base md:text-lg font-semibold text-[#E36C09]">
                 Años de
               </div>
-              <div className="text-base md:text-lg font-semibold text-[#BF9056]">
+              <div className="text-base md:text-lg font-semibold text-[#E36C09]">
                 Experiencia
               </div>
             </div>
 
             {/* Real Estate Projects */}
             <div className="flex flex-col items-center">
-              <div className="text-5xl md:text-6xl font-bold text-[#BF9056] mb-2">
+              <div className="text-5xl md:text-6xl font-bold text-[#E36C09] mb-2">
                 +{projects}
               </div>
-              <div className="text-base md:text-lg font-semibold text-[#BF9056]">
+              <div className="text-base md:text-lg font-semibold text-[#E36C09]">
                 Proyectos
               </div>
-              <div className="text-base md:text-lg font-semibold text-[#BF9056]">
+              <div className="text-base md:text-lg font-semibold text-[#E36C09]">
                 Inmobiliarios
               </div>
             </div>
 
             {/* Properties Delivered */}
             <div className="flex flex-col items-center">
-              <div className="text-5xl md:text-6xl font-bold text-[#BF9056] mb-2">
+              <div className="text-5xl md:text-6xl font-bold text-[#E36C09] mb-2">
                 +{properties}
               </div>
-              <div className="text-base md:text-lg font-semibold text-[#BF9056]">
+              <div className="text-base md:text-lg font-semibold text-[#E36C09]">
                 Terrenos
               </div>
-              <div className="text-base md:text-lg font-semibold text-[#BF9056]">
+              <div className="text-base md:text-lg font-semibold text-[#E36C09]">
                 Entregados
               </div>
             </div>

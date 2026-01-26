@@ -1,6 +1,6 @@
 export default function LogoCloud() {
   return (
-    <div className="bg-white">
+    <div className="bg-[#F8FAFC]">
       <div className="mx-auto lg:mx-12 max-w-full py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">

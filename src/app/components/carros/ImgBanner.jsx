@@ -25,7 +25,7 @@ export const ImgBanner = () => {
           transition={{ duration: 1.5 }} 
         >
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white max-w-4xl px-6">
+            <div className="text-center text-[white] max-w-4xl px-6">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 COMPRA TU
                 <br />
@@ -35,11 +35,7 @@ export const ImgBanner = () => {
                 Desde autos deportivos hasta autos para el día a día, encuentra autos premium 
                 que se adaptan a tu estilo de vida. Concesionarios verificados y precios competitivos garantizados.
               </p>
-              <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-md transition-colors duration-200 inline-flex items-center justify-center mt-8">
-                {/* Puedes poner un ícono SVG aquí si lo deseas */}
-                <FaCarAlt className="mr-2" />
-                VER TODOS LOS COCHES
-              </button>
+              
             </div>
           </div>
         </motion.div>

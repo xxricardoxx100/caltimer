@@ -18,7 +18,7 @@ const CarCard = ({ car, priority = false }) => {
         router.push(`/car-details/${car.id}`);
         window.scrollTo(0, 0);
       }}
-      className="group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer"
+      className="group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 hover:bg-[#F29F05] transition-all duration-500 cursor-pointer"
     >
       <div className="relative w-full h-60 overflow-hidden">
         <Image
@@ -42,32 +42,32 @@ const CarCard = ({ car, priority = false }) => {
         </div>
       </div>
 
-      <div className="p-4 sm:p-5">
+      <div className="p-4 sm:p-5 group-hover:text-white transition-colors duration-500">
         <div className="flex justify-between items-start mb-2">
           <div>
             <h3 className="text-lg font-medium">
               {car.brand} {car.model}
             </h3>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground text-sm group-hover:text-white/90">
               {car.category} • {car.year}
             </p>
           </div>
         </div>
-        <div className="mt-4 grid grid-cols-2 gap-y-2 text-gray-600">
-          <div className="flex items-center text-sm text-muted-foreground">
+        <div className="mt-4 grid grid-cols-2 gap-y-2 text-gray-600 group-hover:text-white">
+          <div className="flex items-center text-sm text-muted-foreground group-hover:text-white/90">
             <BsPeopleFill className="mr-2" />
             <span>{car.seating_capacity} Asientos</span>
           </div>
 
-          <div className="flex items-center text-sm text-muted-foreground">
+          <div className="flex items-center text-sm text-muted-foreground group-hover:text-white/90">
             <BsFillFuelPumpFill className="mr-2" />
             <span>{car.fuel_type}</span>
           </div>
-          <div className="flex items-center text-sm text-muted-foreground">
+          <div className="flex items-center text-sm text-muted-foreground group-hover:text-white/90">
             <FaCarAlt className="mr-2" />
             <span>{car.transmission} </span>
           </div>
-          <div className="flex items-center text-sm text-muted-foreground">
+          <div className="flex items-center text-sm text-muted-foreground group-hover:text-white/90">
             <MdLocationPin className="mr-2" />
             <span>{car.location} </span>
           </div>

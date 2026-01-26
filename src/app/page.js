@@ -27,7 +27,6 @@ function Home() {
         <MisionVision />
         <CeoDEscripcion />
         <NuestraComunidad/>
-        <CTA />
         <LogoCloud />
         <BlogList />
       </div>

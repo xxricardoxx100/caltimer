@@ -18,7 +18,7 @@ const Inmobiliaria = () => {
   });
 
   return (  
-    <div data-scroll-section className="pt-28">
+    <div data-scroll-section className="pt-20">
       <HeroSlide images={heroImages} />
       <Features filters={filters} onFiltersChange={setFilters} />
       <PropertyList filters={filters} />

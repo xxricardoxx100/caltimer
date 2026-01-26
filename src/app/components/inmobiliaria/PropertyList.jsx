@@ -168,10 +168,10 @@ export const PropertyList = ({ filters }) => {
           transition={{ duration: 1.2 }}
           viewport={{ once: true, amount: 0.4 }}
         >
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+          <h2 className="mb-4 text-3xl font-bold text-[#002060] md:text-4xl">
             Nuestros Proyectos Destacados
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-[#002060]">
             Selecciona una categoría para ver sus inmuebles.
           </p>
 

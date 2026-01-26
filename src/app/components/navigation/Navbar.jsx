@@ -94,9 +94,9 @@ function Navbar() {
             aria-label="Abrir menú"
           >
             {mobileMenuOpen ? (
-              <XMarkIcon className="h-8 w-8 text-white" />
+              <XMarkIcon className="h-8 w-8 text-[#002060]" />
             ) : (
-              <Bars3Icon className="h-8 w-8 text-white" />
+              <Bars3Icon className="h-8 w-8 text-[#002060]" />
             )}
           </button>
         </div>

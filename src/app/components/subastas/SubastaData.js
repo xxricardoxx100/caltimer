@@ -216,7 +216,7 @@ export const subastaData = [
       "/agya/5.jpeg",
       "/agya/6.jpeg",
     ],  
-    kilometraje: "000,000 km",
+    kilometraje: "000,000 km",  
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",

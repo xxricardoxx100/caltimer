@@ -73,8 +73,8 @@ const FeacturedSections = () => {
   const displayedCars = cars;
 
   return (
-    <div className="flex flex-col items-center px-6 py-24 md:px-16 lg:px-24 xl:px-32">
-      <div className="text-center">
+    <div className="flex flex-col items-center px-6 py-24 md:px-16 lg:px-24 xl:px-32 bg-[#F8FAFC]">
+      <div className="text-center text-[#002060]">
         <Tittle
           title="VEHICULOS DISPONIBLES"
           subTitle="Explora nuestra seleccion de vehiculos premium disponibles para tus proximas aventuras."
@@ -112,13 +112,7 @@ const FeacturedSections = () => {
         </motion.div>
       )}
 
-      <Link
-        href="/carros"
-        className="mt-14 inline-flex items-center gap-2 text-sm font-medium text-neutral-900 transition hover:text-neutral-600"
-      >
-        Ver todos los vehiculos
-        <FaArrowRight aria-hidden />
-      </Link>
+      
     </div>
   );
 };

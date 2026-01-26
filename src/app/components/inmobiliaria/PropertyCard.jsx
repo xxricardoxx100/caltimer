@@ -26,7 +26,7 @@ const PropertyCard = ({ property }) => {
         router.push(`/property-details/${property.id}`);
         window.scrollTo(0, 0);
       }}
-      className="group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer bg-white"
+      className="group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 hover:bg-[#F29F05] transition-all duration-500 cursor-pointer bg-white"
     >
       <div className="relative w-full aspect-[4/3] overflow-hidden">
         <Image
@@ -46,37 +46,37 @@ const PropertyCard = ({ property }) => {
         )}
       </div>
 
-      <div className="p-5">
+      <div className="p-5 group-hover:text-white transition-colors duration-500">
         <div className="mb-3">
-          <h3 className="text-xl font-bold text-gray-900 mb-1">
+          <h3 className="text-xl font-bold text-gray-900 group-hover:text-white mb-1">
             {property.name}
           </h3>
-          <div className="flex items-center text-gray-600 text-sm mb-2">
-            <MdLocationPin className="mr-1 text-gray-500" />
+          <div className="flex items-center text-gray-600 group-hover:text-white/90 text-sm mb-2">
+            <MdLocationPin className="mr-1 text-gray-500 group-hover:text-white" />
             <span>{property.address}</span>
           </div>
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 group-hover:text-white/90 text-sm">
             M2 desde {property.minArea} m²
           </p>
         </div>
 
         <div className="mb-4">
-          <p className="text-orange-500 font-semibold text-lg">
+          <p className="text-orange-500 group-hover:text-white font-semibold text-lg">
             {property.district}
           </p>
         </div>
 
         <div className="flex justify-between items-center">
-          <div className="text-gray-900">
+          <div className="text-gray-900 group-hover:text-white">
             <span className="text-lg font-bold"> {property.price}</span>
           </div>
         </div>
 
         {property.features && (
-          <div className="mt-4 grid grid-cols-3 gap-2 text-gray-600">
+          <div className="mt-4 grid grid-cols-3 gap-2 text-gray-600 group-hover:text-white/90">
             {property.features && (
               <div className="flex items-center text-sm">
-                <FaHome className="mr-1 text-gray-500" />
+                <FaHome className="mr-1 text-gray-500 group-hover:text-white" />
                 <span>{property.features}</span>
               </div>
             )}
