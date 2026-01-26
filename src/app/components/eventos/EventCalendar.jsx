@@ -4,14 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { FaCalendarAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+// ============================================
+// AGREGAR O QUITAR EVENTOS AQUÍ
+// ============================================
 const eventos = [
   {
     id: 1,
-    fecha: "2026-01-24",
+    fecha: "2026-01-31", // Formato: YYYY-MM-DD
     titulo: "Capacitación Presencial de Subastas Vehiculares y Bienes Raíces",
-    descripcion: "Se parte de nuestro próximo taller presencial y aprende de los expertos. Este 24 de Enero en La Molina, Lima.",
+    descripcion: "Se parte de nuestro próximo taller presencial y aprende de los expertos. Este 31 de Enero en La Molina, Lima.",
     imagen: "/eventos/eventopresencial1.jpg",
-    hora: "18:00 PM",
+    hora: "19:00 PM",
     lugar: "La Molina, Lima",
   },
   {
@@ -32,7 +35,9 @@ const eventos = [
     hora: "10:00 AM",
     lugar: "Plataforma Virtual",
   },
+  // Agrega más eventos aquí siguiendo el mismo formato
 ];
+// ============================================
 
 const waNumber = "51931516694";
 const buildWaUrl = (evento) => {
@@ -128,7 +133,7 @@ export default function EventCalendar() {
 
   return (
     <motion.div
-      className="bg-gradient-to-r from-[#e03131] to-[#f55f4e] rounded-3xl shadow-2xl overflow-hidden"
+      className="bg-gradient-to-r from-[#F29F05] to-[#E36C09] rounded-3xl shadow-2xl overflow-hidden"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
@@ -139,7 +144,7 @@ export default function EventCalendar() {
         <div className="p-8 md:p-12 bg-white text-gray-900">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-              <FaCalendarAlt className="text-[#e03131]" />
+              <FaCalendarAlt className="text-[#F29F05]" />
               Calendario de Eventos
             </h3>
           </div>
@@ -194,7 +199,7 @@ export default function EventCalendar() {
                       className={`w-full h-full rounded-lg flex items-center justify-center text-sm font-medium transition ${
                         hayEvento
                           ? esSeleccionado
-                            ? "bg-[#e03131] text-white scale-105 shadow-lg"
+                            ? "bg-[#F29F05] text-white scale-105 shadow-lg"
                             : "bg-orange-100 text-orange-700 hover:bg-orange-200 hover:scale-105 cursor-pointer"
                           : esDiaActual
                           ? "bg-gray-200 text-gray-900 font-bold"
@@ -218,14 +223,14 @@ export default function EventCalendar() {
               <span className="text-gray-600">Con evento</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 rounded bg-[#e03131]"></div>
+              <div className="w-4 h-4 rounded bg-[#F29F05]"></div>
               <span className="text-gray-600">Seleccionado</span>
             </div>
           </div>
         </div>
 
         {/* Evento - Lado Derecho */}
-        <div className="relative min-h-[500px] lg:min-h-[600px] bg-gradient-to-br from-[#e03131] to-[#f55f4e]">
+        <div className="relative min-h-[500px] lg:min-h-[600px] bg-gradient-to-br from-[#F29F05] to-[#E36C09]">
           <AnimatePresence mode="wait">
             {eventoMostrado ? (
               <motion.div
@@ -281,7 +286,7 @@ export default function EventCalendar() {
                       href={buildWaUrl(eventoMostrado)}
                       target="_blank"
                       rel="noreferrer"
-                      className="block text-center rounded-full bg-white text-[#e03131] px-6 py-3 font-semibold shadow-lg hover:-translate-y-0.5 transition"
+                      className="block text-center rounded-full bg-white text-[#F29F05] px-6 py-3 font-semibold shadow-lg hover:-translate-y-0.5 transition"
                     >
                       Inscríbete ahora
                     </a>
