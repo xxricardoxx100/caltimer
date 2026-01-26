@@ -8,23 +8,15 @@ import { FaCalendarAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 // AGREGAR O QUITAR EVENTOS AQUÍ
 // ============================================
 const eventos = [
-  {
-    id: 1,
-    fecha: "2026-01-31", // Formato: YYYY-MM-DD
-    titulo: "Capacitación Presencial de Subastas Vehiculares y Bienes Raíces",
-    descripcion: "Se parte de nuestro próximo taller presencial y aprende de los expertos. Este 31 de Enero en La Molina, Lima.",
-    imagen: "/eventos/eventopresencial1.jpg",
-    hora: "19:00 PM",
-    lugar: "La Molina, Lima",
-  },
+
   {
     id: 2,
     fecha: "2026-01-31",
-    titulo: "Capacitación Virtual de Subastas Vehiculares y Bienes Raíces",
+    titulo: "Capacitación Virtual y Presencial de Subastas Vehiculares y Bienes Raíces",
     descripcion: "Se parte de nuestro próximo taller virtual y aprende de los expertos. Este 31 de Enero via ZOOM.",
     imagen: "/eventos/zoom.png",
     hora: "19:00 PM",
-    lugar: "Vía ZOOM",
+    lugar: "Vía ZOOM (Presencial en La Molina, Lima)",
   },
   {
     id: 3,
