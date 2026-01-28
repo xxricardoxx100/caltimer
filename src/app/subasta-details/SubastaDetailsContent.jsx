@@ -169,6 +169,10 @@ export function SubastaDetailsContent() {
   const hasAnexo = Boolean(vehiculo.anexoUrl);
   const anexoUrl = hasAnexo ? encodeURI(vehiculo.anexoUrl) : "";
   const anexoFileName = hasAnexo ? vehiculo.anexoUrl.split("/").pop() : "";
+  
+  const hasBoletaInformativa = Boolean(vehiculo.boletaInformativaUrl);
+  const boletaInformativaUrl = hasBoletaInformativa ? encodeURI(vehiculo.boletaInformativaUrl) : "";
+  const boletaInformativaFileName = hasBoletaInformativa ? vehiculo.boletaInformativaUrl.split("/").pop() : "";
 
   const formatBidderName = (nombre, puedeVerCompleto = false) => {
     if (!nombre) return "";
@@ -371,19 +375,31 @@ export function SubastaDetailsContent() {
                     aria-labelledby="tab-anexo"
                     className="space-y-4 text-sm md:text-base text-gray-700 leading-7 tracking-wide"
                   >
-                    {hasAnexo ? (
-                      <div className="flex flex-col gap-2">
+                    {hasAnexo || hasBoletaInformativa ? (
+                      <div className="flex flex-col gap-4">
                         <span className="text-sm text-gray-600">
                           Archivos disponible:
                         </span>
-                        <a
-                          href={anexoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-fit text-sm font-semibold text-[#F29F05] underline transition hover:text-[#d88604] focus-visible:ring-2 focus-visible:ring-[#F29F05] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                        >
-                          {anexoFileName || "Anexo.pdf"}
-                        </a>
+                        {hasAnexo && (
+                          <a
+                            href={anexoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-fit text-sm font-semibold text-[#F29F05] underline transition hover:text-[#d88604] focus-visible:ring-2 focus-visible:ring-[#F29F05] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                          >
+                            {anexoFileName || "TyC.pdf"}
+                          </a>
+                        )}
+                        {hasBoletaInformativa && (
+                          <a
+                            href={boletaInformativaUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-fit text-sm font-semibold text-[#F29F05] underline transition hover:text-[#d88604] focus-visible:ring-2 focus-visible:ring-[#F29F05] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                          >
+                            {boletaInformativaFileName || "Boleta Informativa"}
+                          </a>
+                        )}
                       </div>
                     ) : (
                       <div className="rounded-md border border-dashed border-gray-300 bg-gray-50 p-6 text-center text-sm text-gray-600">
