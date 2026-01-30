@@ -209,7 +209,7 @@ export const subastaData = [
     marca: "Toyota",
     modelo: "Agya",
     año: 2021,
-    precio: 7499,
+    precio: 6900,
     imagen: "/agya/7.jpeg",
     imagenes: [
       "/agya/7.jpeg",
