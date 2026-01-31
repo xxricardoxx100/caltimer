@@ -209,7 +209,7 @@ export const subastaData = [
     marca: "Toyota",
     modelo: "Agya",
     año: 2021,
-    precio: 7499,
+    precio: 6900,
     imagen: "/agya/7.jpeg",
     imagenes: [
       "/agya/7.jpeg",
@@ -227,7 +227,7 @@ export const subastaData = [
     color: "Plateado",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-01-31T18:00:00",
+    fecha_fin: "2026-01-31T20:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
@@ -257,7 +257,7 @@ export const subastaData = [
     marca: "Chevrolet",
     modelo: "Sail",
     año: 2016,
-    precio: 3500,
+    precio: 2100,
     imagen: "/Autos/Sail01/1.jpeg",
     imagenes: [
       "/Autos/Sail01/1.jpeg",
@@ -274,7 +274,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-01-31T17:30:00",
+    fecha_fin: "2026-01-31T19:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Sail01/AYG-065.pdf",
     descripcion:  [
