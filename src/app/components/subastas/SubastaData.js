@@ -274,7 +274,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-01-31T19:30:00",
+    fecha_fin: "2026-01-31T20:40:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Sail01/AYG-065.pdf",
     descripcion:  [
