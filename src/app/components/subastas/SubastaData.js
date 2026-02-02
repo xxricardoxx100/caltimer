@@ -130,7 +130,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-01-23T17:30:00",
+    fecha_fin: "2026-01-23T17:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/kiario/ATQ-598.pdf",
     descripcion:  [
