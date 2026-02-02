@@ -10,7 +10,7 @@ import PrestamosFAQ from "../components/prestamos/PrestamosFAQ";
 
 export default function Prestamos() {
   return (
-    <div data-scroll-section className="pt-28 bg-[#F6F1E8]">
+    <div data-scroll-section>
       <PrestamosHero />
       <PrestamosBeneficios />
       <PrestamosProceso />

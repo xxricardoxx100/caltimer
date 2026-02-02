@@ -11,7 +11,7 @@ export default function PrestamosHero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-[#1F3F58] via-[#2A5270] to-[#1F3F58] text-white overflow-hidden">
+    <section className="relative bg-gradient-to-br from-[#1F3F58] via-[#2A5270] to-[#1F3F58] text-white overflow-hidden pt-28">
       {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-72 h-72 bg-[#E36C09] rounded-full blur-3xl"></div>
