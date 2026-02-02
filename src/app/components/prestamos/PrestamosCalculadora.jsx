@@ -10,7 +10,7 @@ export default function PrestamosCalculadora() {
 
   // Cálculos
   const montoPrestamo = (valorVehiculo * porcentaje) / 100;
-  const tasaMensual = 0.035; // 3.5% mensual (ejemplo)
+  const tasaMensual = 0.05; // 3.5% mensual (ejemplo)
   const cuotaMensual = (montoPrestamo * tasaMensual * Math.pow(1 + tasaMensual, plazoMeses)) / 
                        (Math.pow(1 + tasaMensual, plazoMeses) - 1);
   const totalPagar = cuotaMensual * plazoMeses;
@@ -178,7 +178,7 @@ export default function PrestamosCalculadora() {
                 <div className="border-t border-white/20 pt-6 space-y-3">
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-300">Tasa mensual estimada:</span>
-                    <span className="font-semibold">3.5%</span>
+                    <span className="font-semibold">5%</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-300">Porcentaje del vehículo:</span>
