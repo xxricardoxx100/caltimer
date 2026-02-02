@@ -20,9 +20,9 @@ const solutions = [
     href: "/subasta",
   },
   {
-    name: "Servicios",
-    description: "Servicios complementarios",
-    href: "/servicios",
+    name: "Préstamos",
+    description: "Préstamos con garantía vehicular",
+    href: "/prestamos",
   },
   {
     name: "Eventos",

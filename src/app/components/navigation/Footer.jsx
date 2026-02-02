@@ -3,7 +3,7 @@ const navigation = {
   company: [
     { name: "Carros", href: "/carros" },
     { name: "Inmobiliaria", href: "/inmobiliaria" },
-    { name: "Servicios", href: "/servicios" },
+    { name: "Préstamos", href: "/prestamos" },
     { name: "Eventos", href: "/eventos" },
     { name: "Nosotros", href: "/nosotros" },
   ],

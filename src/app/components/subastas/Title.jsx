@@ -7,7 +7,7 @@ import { MdVerified } from "react-icons/md";
 const Title = () => {
   return (
     <motion.div 
-      className="container mx-auto px-4 py-12"
+      className="container mx-auto px-4 pt-6 pb-0"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}

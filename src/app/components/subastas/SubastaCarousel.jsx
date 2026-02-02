@@ -7,23 +7,23 @@ import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 const defaultSlides = [
   {
     id: 1,
-    title: "Capacitación Presencial de Subastas Vehiculares y Bienes Raíces",
+    title: "<span style='color: #002060;'>Capacitación Presencial</span> de Subastas Vehiculares y Bienes Raíces",
     description:
-      "Se parte de nuestro próximo taller presencial y aprende de los expertos. Este 24 de Enero en La Molina, Lima.",
+      "Se parte de nuestro próximo taller presencial y aprende de los expertos. Este 28 de Febrero en La Molina, Lima.",
     cta: "Inscribite ahora",
     image: "/eventos/eventopresencial1.jpg",
   },
   {
     id: 2,
-    title: "Capacitación Virtual de Subastas Vehiculares y Bienes Raíces",
-    description: "Se parte de nuestro próximo taller virtual y aprende de los expertos. Este 31 de Enero via ZOOM.",
+    title: "<span style='color: #002060;'>Capacitación Virtual</span> de Subastas Vehiculares y Bienes Raíces",
+    description: "Se parte de nuestro próximo taller virtual y aprende de los expertos. Este 28 de Febrero via ZOOM.",
     cta: "Inscribite ahora",
     image: "/eventos/zoom.png",
   },
   {
     id: 3,
-    title: "Proxima 3° Subasta Virtual de Vehículos",
-    description: "Conectate a nuestra plataforma y participa en la segunda subasta virtual de vehículos a cargo de la empresa CALTIMER.",
+    title: "Proxima <span style='color: #002060;'>4° Subasta</span> Virtual de Vehículos",
+    description: "Conectate a nuestra plataforma y participa en la cuarta subasta virtual de vehículos a cargo de la empresa CALTIMER.",
     cta: "Unirme",
     image: "/eventos/subastadeautos.jpg",
   },
@@ -82,7 +82,7 @@ export default function SubastaCarousel({ slides = defaultSlides, intervalMs = 1
         >
           <p className="text-sm uppercase tracking-[0.25rem] text-[#002060]">Próximos eventos</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
-            {sanitized[current].title}
+            <span dangerouslySetInnerHTML={{ __html: sanitized[current].title }} />
           </h2>
           <p className="text-lg md:text-xl text-[#002060] max-w-2xl">
             {sanitized[current].description}
@@ -91,7 +91,7 @@ export default function SubastaCarousel({ slides = defaultSlides, intervalMs = 1
             href={buildWaUrl(current + 1)}
             target="_blank"
             rel="noreferrer"
-            className="self-start rounded-full bg-white text-[#E36C09] px-5 py-3 font-semibold shadow-lg hover:-translate-y-0.5 transition"
+            className="self-start rounded-full bg-[#1F3F58] text-[#ffffff] px-5 py-3 font-semibold shadow-lg hover:-translate-y-0.5 transition"
           >
             {sanitized[current].cta}
           </a>
@@ -100,7 +100,7 @@ export default function SubastaCarousel({ slides = defaultSlides, intervalMs = 1
               <button
                 key={slide.id ?? idx}
                 aria-label={`Ir al slide ${idx + 1}`}
-                className={`${dotBaseClasses} ${idx === current ? "!bg-white scale-110" : "opacity-80"}`}
+                className={`${dotBaseClasses} ${idx === current ? "!bg-[#002060] scale-110" : "opacity-80"}`}
                 onClick={() => goTo(idx)}
               />
             ))}
