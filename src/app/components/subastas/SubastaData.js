@@ -209,7 +209,7 @@ export const subastaData = [
     marca: "Toyota",
     modelo: "Agya",
     año: 2021,
-    precio: 6900,
+    precio: 6490,
     imagen: "/Autos/agya/7.jpeg",
     imagenes: [
       "/Autos/agya/7.jpeg",
@@ -320,7 +320,7 @@ export const subastaData = [
     color: "Plateado",
     puertas: 0,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-06T18:30:00",
+    fecha_fin: "2026-02-12T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     descripcion:  [
       "Macbook pro 2019. Operativo con pocos detalles esteticos",
@@ -347,7 +347,7 @@ export const subastaData = [
     color: "Plateado",
     puertas: 0,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-06T18:30:00",
+    fecha_fin: "2026-02-12T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     descripcion:  [
       "Iphone 14 pro 128GB. Operativo sin detalles esteticos",
