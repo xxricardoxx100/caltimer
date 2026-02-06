@@ -31,7 +31,7 @@ export const subastaData = [
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
-      "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
       "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
       "Los datos y fotografías son referenciales.",
@@ -82,7 +82,7 @@ export const subastaData = [
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
-      "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
       "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
       "Los datos y fotografías son referenciales.",
@@ -134,7 +134,7 @@ export const subastaData = [
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/kiario/ATQ-598.pdf",
     descripcion:  [
-      "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
       "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
       "Los datos y fotografías son referenciales.",
@@ -184,7 +184,7 @@ export const subastaData = [
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
-      "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
       "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
       "Los datos y fotografías son referenciales.",
@@ -231,8 +231,11 @@ export const subastaData = [
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
-      "<strong>Nota importante:</strong> el comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>PLACA: V0S118</strong>",
       "",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "<strong>UBICACION: El vehiculo se encuentra en Lima.</strong>",
       "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
@@ -278,7 +281,9 @@ export const subastaData = [
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Sail01/AYG-065.pdf",
     descripcion:  [
+      "<strong>PLACA: AYG065</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong style='color: red;'>DEUDA DEIMPUESTO VEHICULAR EN LIMA: S/4412.00</strong>",
       "<strong>UBICACION: El vehiculo se encuentra en ILAVE, Puno.</strong>",
       "",
       "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
@@ -323,6 +328,7 @@ export const subastaData = [
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
+      "<strong>PLACA: 1534FD</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Lima.</strong>",
       "",
@@ -338,6 +344,10 @@ export const subastaData = [
     caracteristicas: [
       "Pantalla Digital",
       "Aros de Serie", 
+      "Llaves: Si", 
+      "Gasolina", 
+      "Transmision mecanica", 
+      "SOAT: No", 
     ]
   },
   {
@@ -361,6 +371,7 @@ export const subastaData = [
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/sail02/ADM-571.pdf",
     descripcion:  [
+      "<strong>PLACA: ADM571</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Lima.</strong>",
       "",
