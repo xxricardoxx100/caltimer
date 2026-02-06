@@ -42,8 +42,7 @@ export default function PrestamosHero() {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              Convierte tu vehículo en liquidez inmediata. Préstamos rápidos, seguros y flexibles sin complicaciones. 
-              Mantén tu auto mientras pagas el préstamo.
+              Convierte tu vehículo en liquidez inmediata. Préstamos rápidos, seguros y flexibles sin complicaciones.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">

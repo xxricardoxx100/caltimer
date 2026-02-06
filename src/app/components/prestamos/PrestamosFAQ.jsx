@@ -9,10 +9,6 @@ const faqs = [
     respuesta: "El proceso de evaluación toma entre 2 a 24 horas. Una vez aprobado, el dinero se desembolsa el mismo día mediante transferencia bancaria o efectivo."
   },
   {
-    pregunta: "¿Puedo seguir usando mi vehículo durante el préstamo?",
-    respuesta: "Sí, absolutamente. Tu vehículo queda como garantía pero tú mantienes la posesión y puedes seguir usándolo normalmente. Solo debes mantener al día el pago de tus cuotas."
-  },
-  {
     pregunta: "¿Qué pasa si estoy en centrales de riesgo?",
     respuesta: "No es un problema. A diferencia de los préstamos bancarios tradicionales, nosotros no revisamos tu historial crediticio. La garantía es tu vehículo, por lo que tu situación en centrales de riesgo no afecta la aprobación."
   },

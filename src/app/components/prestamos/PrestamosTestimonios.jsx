@@ -8,7 +8,7 @@ const testimonios = [
     nombre: "Carlos Mendoza",
     ubicacion: "Lima, Perú",
     rating: 5,
-    comentario: "Necesitaba dinero urgente para una emergencia médica. En menos de 24 horas tenía el efectivo en mi cuenta. El proceso fue transparente y pude seguir usando mi auto. ¡Excelente servicio!",
+    comentario: "Necesitaba dinero urgente para una emergencia médica. En menos de 24 horas tenía el efectivo en mi cuenta. El proceso fue transparente y rápido. ¡Excelente servicio!",
     vehiculo: "Toyota Corolla 2018"
   },
   {

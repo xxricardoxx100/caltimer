@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { FaBolt, FaShieldAlt, FaHandHoldingUsd, FaChartLine, FaClock, FaCheckCircle } from "react-icons/fa";
+import { FaBolt, FaHandHoldingUsd, FaChartLine, FaClock, FaCheckCircle } from "react-icons/fa";
 
 const beneficios = [
   {
@@ -13,11 +13,6 @@ const beneficios = [
     icon: FaHandHoldingUsd,
     title: "Hasta 80% del valor",
     description: "Préstamos de hasta el 80% del valor comercial de tu vehículo."
-  },
-  {
-    icon: FaShieldAlt,
-    title: "Mantén tu vehículo",
-    description: "Sigue usando tu auto mientras pagas el préstamo mensualmente."
   },
   {
     icon: FaChartLine,

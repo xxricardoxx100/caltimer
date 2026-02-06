@@ -132,12 +132,6 @@ export default function PrestamosRequisitos() {
                   </motion.li>
                 ))}
               </ul>
-
-              <div className="mt-8 pt-8 border-t border-white/20">
-                <p className="text-center text-sm text-gray-300">
-                  <strong className="text-[#E36C09]">Nota importante:</strong> El vehículo quedará como garantía pero podrás seguir usándolo normalmente durante el préstamo.
-                </p>
-              </div>
             </div>
 
             {/* Box informativo */}
