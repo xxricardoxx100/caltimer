@@ -367,7 +367,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-06T19:00:00",
+    fecha_fin: "2026-02-06T19:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/sail02/ADM-571.pdf",
     descripcion:  [
