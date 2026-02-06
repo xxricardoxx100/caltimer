@@ -355,7 +355,7 @@ export const subastaData = [
     marca: "Chevrolet",
     modelo: "Sail",
     año: 2014,
-    precio: 900,
+    precio: 1999,
     imagen: "/Autos/sail2/1.jpeg",
     imagenes: [
       "/Autos/sail2/1.jpeg",
