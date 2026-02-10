@@ -79,8 +79,8 @@ export function SubastaDetailsContent() {
   const precioFormateado = precioEnCarga
     ? "Actualizando..."
     : isMounted
-    ? `$${numeroPrecio.toLocaleString()}`
-    : `$${numeroPrecio}`;
+    ? `$${numeroPrecio.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+    : `$${numeroPrecio.toFixed(2)}`;
 
   // useEffect para ocultar el mensaje después de 1 segundo
   useEffect(() => {
@@ -123,7 +123,8 @@ export function SubastaDetailsContent() {
       return;
     }
 
-    const incremento = 50;
+    // Usar incremento configurado en el producto, o 50 por defecto
+    const incremento = vehiculo?.incremento_puja || 50;
     const serverTime = await SubastaOfertasService.getServerTime();
     const ahora = serverTime.getTime();
     const fin = new Date(fechaFin).getTime();
@@ -552,7 +553,7 @@ export function SubastaDetailsContent() {
                     ? '🔑 Iniciar Sesión para Pujar'
                     : !garantiaPagada
                     ? '🔒 Garantía Requerida'
-                    : `Hacer Oferta (+$${50})`
+                    : `Hacer Oferta (+$ ${(vehiculo?.incremento_puja || 50).toFixed(2)})`
                   }
                 </button>
                 

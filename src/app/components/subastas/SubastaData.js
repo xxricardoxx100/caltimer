@@ -7,6 +7,7 @@ export const subastaData = [
     modelo: "H220",
     año: 2015,
     precio: 2100,
+    incremento_puja: 50, // Incremento de puja en USD
     imagen: "/Autos/brilliance/1.jpeg",
     imagenes: [
       "/Autos/brilliance/1.jpeg",
@@ -58,6 +59,7 @@ export const subastaData = [
     modelo: "f3",
     año: 2017,
     precio: 2100,
+    incremento_puja: 50, // Incremento de puja en USD
     imagen: "/Autos/bydF3/4.jpeg",
     imagenes: [
       "/Autos/bydF3/1.jpeg",
@@ -111,6 +113,7 @@ export const subastaData = [
     modelo: "Rio",
     año: 2017,  
     precio: 4500,
+    incremento_puja: 50, // Incremento de puja en USD
     imagen: "/Autos/kiario/1.jpg",
     imagenes: [
       "/Autos/kiario/1.jpg",
@@ -162,6 +165,7 @@ export const subastaData = [
     modelo: "v700",
     año: 2022,  
     precio: 5300,
+    incremento_puja: 50, // Incremento de puja en USD
     imagen: "/Autos/ramv700/1.jpeg",
     imagenes: [
       "/Autos/ramv700/1.jpeg",
@@ -210,6 +214,7 @@ export const subastaData = [
     modelo: "Agya",
     año: 2021,
     precio: 6490,
+    incremento_puja: 50, // Incremento de puja en USD
     imagen: "/Autos/agya/7.jpeg",
     imagenes: [
       "/Autos/agya/7.jpeg",
@@ -261,6 +266,7 @@ export const subastaData = [
     modelo: "Sail",
     año: 2016,
     precio: 2100,
+    incremento_puja: 50, // Incremento de puja en USD
     imagen: "/Autos/Sail01/1.jpeg",
     imagenes: [
       "/Autos/Sail01/1.jpeg",
@@ -311,6 +317,7 @@ export const subastaData = [
     modelo: "Hunk 125R",
     año: 2026,
     precio: 1500,
+    incremento_puja: 25, // Incremento de puja en USD (moto)
     imagen: "/Autos/Hunk/1.jpeg",
     imagenes: [
       "/Autos/Hunk/1.jpeg",
@@ -356,6 +363,7 @@ export const subastaData = [
     modelo: "Sail",
     año: 2014,
     precio: 1999,
+    incremento_puja: 50, 
     imagen: "/Autos/sail2/1.jpeg",
     imagenes: [
       "/Autos/sail2/1.jpeg",
@@ -399,13 +407,16 @@ export const subastaData = [
     marca: "Apple",
     modelo: "Macbook Pro",
     año: 2018,
-    precio: 119,
-    imagen: "/Autos/macbook/1.png",
+    precio: 250,
+    incremento_puja: 5,
+    imagen: "/Autos/macbook/1.WEBP",
     imagenes: [
-      "/Autos/macbook/1.png",
-      "/Autos/macbook/2.png",
-      "/Autos/macbook/3.png",
-      "/Autos/macbook/4.png",
+      "/Autos/macbook/1.WEBP",
+      "/Autos/macbook/2.WEBP",
+      "/Autos/macbook/3.WEBP",
+      "/Autos/macbook/4.WEBP",
+      "/Autos/macbook/5.WEBP",
+      "/Autos/macbook/6.WEBP",
     ],  
     kilometraje: "000,000 km",
     estado: "Bueno",
@@ -417,37 +428,16 @@ export const subastaData = [
     fecha_fin: "2026-02-12T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     descripcion:  [
-      "Macbook pro 2019. Operativo con pocos detalles esteticos",
+      "<strong>NOTA: El equipo se entregara despues de 14 dias habiles, una ves finalizada la subasta.</strong>",
+      "MACBOOK PRO A1708 13\" 2017 CORE I5 2.3GHZ 8GB 256GB",
+      "MacOs Ventura 13.4.1",
+      "Ciclos de carga: 396",
+      "Cargador original incluido",
+      "2560 x1600 RETINA DISPLAY IRIS PLUS GRAPHICS ",
+      "WEBCAM, BLUETOOTH, BACKLIGHT KB, WIFI"
     ].join("\n"),
     caracteristicas: [
     ]
-  },
-  {
-    id: 10,
-    marca: "Apple",
-    modelo: "Iphone 14 pro 128GB ",
-    año: 2022,
-    precio: 119,
-    imagen: "/Autos/iphone/1.png",
-    imagenes: [
-      "/Autos/iphone/1.png",
-      "/Autos/iphone/2.png",
-      "/Autos/iphone/3.png",
-    ],  
-    kilometraje: "000,000 km",
-    estado: "Bueno",
-    transmision: "-",
-    combustible: "-",
-    color: "Plateado",
-    puertas: 0,
-    // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-12T18:30:00",
-    anexoUrl: "/anexo/TyC.pdf",
-    descripcion:  [
-      "Iphone 14 pro 128GB. Operativo sin detalles esteticos",
-    ].join("\n"),
-    caracteristicas: [
-    ]
-  },
+  }
   
 ];
