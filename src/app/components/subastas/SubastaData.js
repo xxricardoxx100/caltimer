@@ -444,7 +444,7 @@ export const subastaData = [
     marca: "Chevrolet",
     modelo: "Sail",
     año: 2016,
-    precio: 1999,
+    precio: 1099,
     incremento_puja: 50, 
     imagen: "/Autos/sail3/1.jpeg",
     imagenes: [
@@ -497,7 +497,7 @@ export const subastaData = [
     marca: "Susuki",
     modelo: "Ciaz",
     año: 2019,
-    precio: 6500,
+    precio: 4500,
     incremento_puja: 50, 
     imagen: "/Autos/Ciaz/1.jpeg",
     imagenes: [
@@ -549,7 +549,7 @@ export const subastaData = [
     marca: "Kia",
     modelo: "Rio",
     año: 2014,
-    precio: 5500,
+    precio: 3500,
     incremento_puja: 50, 
     imagen: "/Autos/kiario2/1.jpeg",
     imagenes: [
@@ -603,7 +603,7 @@ export const subastaData = [
     marca: "Chevrolet",
     modelo: "Cobalt",
     año: 2018,
-    precio: 7000,
+    precio: 4000,
     incremento_puja: 50, 
     imagen: "/Autos/Cobalt/1.jpeg",
     imagenes: [
@@ -654,7 +654,7 @@ export const subastaData = [
     marca: "Honda",
     modelo: "Civic",
     año: 2016,
-    precio: 13500,
+    precio: 9500,
     incremento_puja: 50, 
     imagen: "/Autos/civic/1.jpeg",
     imagenes: [
