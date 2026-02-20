@@ -13,6 +13,11 @@ export function parseSubastaDateToMs(dateValue) {
   }
 
   const normalized = String(dateValue).trim();
+  const hasExplicitTimezone = /([zZ]|[+-]\d{2}:?\d{2})$/.test(normalized);
+  if (hasExplicitTimezone) {
+    return new Date(normalized).getTime();
+  }
+
   const match = normalized.match(/^(\d{4})-(\d{2})-(\d{2})[T\s](\d{2}):(\d{2})(?::(\d{2}))?/);
 
   if (match) {

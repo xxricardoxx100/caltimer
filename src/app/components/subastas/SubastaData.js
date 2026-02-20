@@ -724,7 +724,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-20T17:04:00",
+    fecha_fin: "2026-02-20T19:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/cherytiggo3/M4P-609.pdf",
     descripcion:  [
