@@ -7,6 +7,7 @@ import { subastaData } from "../components/subastas/SubastaData";
 import { useSubastaUser } from "@/lib/hooks/useSubastaUser";
 import { useSubastaOfertas } from "@/lib/hooks/useSubastaOfertas";
 import { SubastaOfertasService } from "@/lib/supabase/subasta-ofertas";
+import { parseSubastaDateToMs } from "@/lib/utils";
 import { AuthModal } from "../components/subastas/AuthModal";
 import { CountdownTimer, useSubastaActive } from "../components/subastas/CountdownTimer"; 
 
@@ -125,7 +126,7 @@ export function SubastaDetailsContent() {
     const incremento = vehiculo?.incremento_puja || 50;
     const serverTime = await SubastaOfertasService.getServerTime();
     const ahora = serverTime.getTime();
-    const fin = new Date(fechaFin).getTime();
+    const fin = parseSubastaDateToMs(fechaFin);
     const tiempoRestante = fin - ahora;
     
     // Si quedan menos de 120 segundos, extender 120 segundos

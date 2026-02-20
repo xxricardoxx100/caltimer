@@ -1,4 +1,5 @@
 import { supabase } from "./server.js";
+import { parseSubastaDateToMs } from "@/lib/utils";
 
 /**
  * Servicio para manejar ofertas de subastas en Supabase
@@ -233,8 +234,8 @@ export const SubastaOfertasService = {
       }
 
       const fechaDevuelta = data.fecha_fin_subasta;
-      const ahora = new Date();
-      if (new Date(fechaDevuelta) <= ahora) {
+      const ahora = Date.now();
+      if (parseSubastaDateToMs(fechaDevuelta) <= ahora) {
         // Si la fecha guardada ya pasó, usar la original
         return fechaOriginal;
       }

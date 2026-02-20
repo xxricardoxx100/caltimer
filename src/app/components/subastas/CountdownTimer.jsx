@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import { SubastaOfertasService } from "@/lib/supabase/subasta-ofertas";
+import { parseSubastaDateToMs } from "@/lib/utils";
 
 /**
  * Componente de contador regresivo para subastas
@@ -152,7 +153,7 @@ function TimeUnit({ value, label }) {
  */
 function calculateTimeLeft(endDate, timeOffset = 0) {
   const now = Date.now() + timeOffset; // Usar hora del servidor
-  const end = new Date(endDate).getTime();
+  const end = parseSubastaDateToMs(endDate);
   const difference = end - now;
 
   if (difference <= 0) {
@@ -190,7 +191,7 @@ export function useSubastaActive(endDate, timeOffset = 0) {
 
     const checkIfActive = () => {
       const now = Date.now() + timeOffset;
-      const end = new Date(endDate).getTime();
+      const end = parseSubastaDateToMs(endDate);
       setIsActive(end > now);
     };
 
