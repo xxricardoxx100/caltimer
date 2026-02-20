@@ -140,7 +140,7 @@ export function SubastaDetailsContent() {
       userId,
       userName,
       incremento,
-      fechaFinSubasta: nuevaFechaFin || fechaFin,
+      fechaFinSubasta: nuevaFechaFin,
     });
 
     if (resultado === "duplicate") {
