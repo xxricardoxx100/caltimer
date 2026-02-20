@@ -232,7 +232,14 @@ export const SubastaOfertasService = {
         return fechaOriginal;
       }
 
-      return data.fecha_fin_subasta;
+      const fechaDevuelta = data.fecha_fin_subasta;
+      const ahora = new Date();
+      if (new Date(fechaDevuelta) <= ahora) {
+        // Si la fecha guardada ya pasó, usar la original
+        return fechaOriginal;
+      }
+
+      return fechaDevuelta;
     } catch (err) {
       return fechaOriginal;
     }
