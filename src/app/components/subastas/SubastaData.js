@@ -464,7 +464,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-20T16:30:00",
+    fecha_fin: "2026-02-20T17:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/sail3/AYZ-667.pdf",
     descripcion:  [
@@ -515,7 +515,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-20T17:00:00",
+    fecha_fin: "2026-02-20T18:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
@@ -570,7 +570,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-20T17:20:00",
+    fecha_fin: "2026-02-20T18:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
@@ -621,7 +621,7 @@ export const subastaData = [
     color: "Plateado",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-20T17:40:00",
+    fecha_fin: "2026-02-20T18:40:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
@@ -670,7 +670,7 @@ export const subastaData = [
     color: "Nardo Gray",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-20T18:00:00",
+    fecha_fin: "2026-02-20T19:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
@@ -724,7 +724,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-20T18:00:00",
+    fecha_fin: "2026-02-20T19:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/cherytiggo3/M4P-609.pdf",
     descripcion:  [
