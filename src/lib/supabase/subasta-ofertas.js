@@ -126,24 +126,22 @@ export const SubastaOfertasService = {
    */
   async getUltimaOferta(subastaId) {
     try {
-      // Consulta directa para garantizar consistencia inmediata
-      const { data, error } = await supabase
-        .from("subastas_ofertas")
+      // Fuente principal: vista de estado consolidado por subasta
+      const { data: viewData, error: viewError } = await supabase
+        .from("ultima_oferta_por_subasta")
         .select("*")
         .eq("subasta_id", subastaId)
-        .order("created_at", { ascending: false })
-        .limit(1)
         .single();
 
-      if (!error && data) {
-        return data;
+      if (!viewError && viewData) {
+        return viewData;
       }
 
-      if (error && error.code !== "PGRST116") {
-        console.error("Error obteniendo última oferta (consulta directa):", error);
+      if (viewError && viewError.code !== "PGRST116") {
+        console.error("Error obteniendo última oferta (vista):", viewError);
       }
 
-      // Fallback a función RPC solo si no existe en tabla base
+      // Fallback: RPC rápida si la vista no está disponible
       const { data: rpcData, error: rpcError } = await supabase
         .rpc('get_ultima_oferta_rapida', { p_subasta_id: subastaId })
         .single();
@@ -155,6 +153,23 @@ export const SubastaOfertasService = {
 
       if (rpcError && rpcError.code !== "PGRST116") {
         console.error("Error en get_ultima_oferta_rapida:", rpcError);
+      }
+
+      // Último fallback: tabla base (historial)
+      const { data: directData, error: directError } = await supabase
+        .from("subastas_ofertas")
+        .select("*")
+        .eq("subasta_id", subastaId)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .single();
+
+      if (!directError && directData) {
+        return directData;
+      }
+
+      if (directError && directError.code !== "PGRST116") {
+        console.error("Error obteniendo última oferta (tabla base):", directError);
       }
 
       return null;
@@ -220,20 +235,13 @@ export const SubastaOfertasService = {
    */
   async getFechaFinActual(subastaId, fechaOriginal) {
     try {
-      const { data, error } = await supabase
-        .from("subastas_ofertas")
-        .select("fecha_fin_subasta")
-        .eq("subasta_id", subastaId)
-        .not("fecha_fin_subasta", "is", null)
-        .order("created_at", { ascending: false })
-        .limit(1)
-        .single();
+      const ultimaOferta = await this.getUltimaOferta(subastaId);
 
-      if (error || !data) {
+      if (!ultimaOferta || !ultimaOferta.fecha_fin_subasta) {
         return fechaOriginal;
       }
 
-      const fechaDevuelta = data.fecha_fin_subasta;
+      const fechaDevuelta = ultimaOferta.fecha_fin_subasta;
       const ahora = Date.now();
       if (parseSubastaDateToMs(fechaDevuelta) <= ahora) {
         // Si la fecha guardada ya pasó, usar la original

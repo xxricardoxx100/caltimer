@@ -68,7 +68,20 @@ export function SubastaDetailsContent() {
     crearOferta 
   } = useSubastaOfertas(id, vehiculo?.precio, (nuevaFechaFin) => {
     // Callback cuando se extiende el tiempo
-    setFechaFin(nuevaFechaFin);
+    setFechaFin((fechaActual) => {
+      const actualMs = parseSubastaDateToMs(fechaActual);
+      const nuevaMs = parseSubastaDateToMs(nuevaFechaFin);
+
+      if (!Number.isFinite(nuevaMs)) {
+        return fechaActual;
+      }
+
+      if (!Number.isFinite(actualMs) || nuevaMs >= actualMs) {
+        return nuevaFechaFin;
+      }
+
+      return fechaActual;
+    });
     setMostrarMensajeExtension(true);
   });
 
