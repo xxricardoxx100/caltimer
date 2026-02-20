@@ -455,7 +455,6 @@ export const subastaData = [
       "/Autos/sail3/5.jpeg",
       "/Autos/sail3/6.jpeg",
       "/Autos/sail3/7.jpeg",
-      "/Autos/sail3/8.jpeg",
       "/Autos/sail3/9.jpeg",
     ],  
     kilometraje: "69,000 km",  
@@ -467,7 +466,7 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-02-20T16:30:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/sail02/AYZ-667.pdf",
+    boletaInformativaUrl: "/Autos/sail3/AYZ-667.pdf",
     descripcion:  [
       "<strong>PLACA: AYZ667</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
@@ -695,6 +694,61 @@ export const subastaData = [
       "Aros de Serie", 
       "Gasolina",
       "Turbo",
+      "Transmision automatica CVT ",
+      "Frenos ABS"
+    ]
+  },
+  {
+    id: 15,
+    marca: "Chery",
+    modelo: "Tiggo 3",
+    año: 2018,
+    precio: 6500,
+    incremento_puja: 50, 
+    imagen: "/Autos/cherytiggo3/1.jpeg",
+    imagenes: [
+      "/Autos/cherytiggo3/1.jpeg",
+      "/Autos/cherytiggo3/2.jpeg",
+      "/Autos/cherytiggo3/3.jpeg",
+      "/Autos/cherytiggo3/4.jpeg",
+      "/Autos/cherytiggo3/5.jpeg",
+      "/Autos/cherytiggo3/6.jpeg",
+      "/Autos/cherytiggo3/7.jpeg",
+      "/Autos/cherytiggo3/8.jpeg",
+      "/Autos/cherytiggo3/9.jpeg",
+    ],  
+    kilometraje: "87,000 km",  
+    estado: "Bueno",
+    transmision: "Automatica",
+    combustible: "Gasolina",
+    color: "Negro",
+    puertas: 4,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-02-20T18:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/cherytiggo3/M4P-609.pdf",
+    descripcion:  [
+      "<strong>PLACA: M4P609</strong>",
+      "<strong style='color: red;'>IMPORTANTE: Vehiculo adjudicado en Acceso Crediticio. El vehiculo saldra al nombre del nuevo adjudicatario. Entrega aproximanda de 2 semanas</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en Lima, Almacen Villa el Savador.</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Sunroof Panoramico",
       "Transmision automatica CVT ",
       "Frenos ABS"
     ]
