@@ -214,9 +214,10 @@ export const SubastaOfertasService = {
   /**
    * Obtener la última fecha de finalización de una subasta
    * @param {string} subastaId - ID de la subasta
+   * @param {string} fechaOriginal - Fecha original de la subasta
    * @returns {Promise<string|null>} Fecha de finalización o null
    */
-  async getFechaFinActual(subastaId) {
+  async getFechaFinActual(subastaId, fechaOriginal) {
     try {
       const { data, error } = await supabase
         .from("subastas_ofertas")
@@ -228,12 +229,12 @@ export const SubastaOfertasService = {
         .single();
 
       if (error || !data) {
-        return null;
+        return fechaOriginal;
       }
 
       return data.fecha_fin_subasta;
     } catch (err) {
-      return null;
+      return fechaOriginal;
     }
   },
 

@@ -48,10 +48,8 @@ export function SubastaDetailsContent() {
     if (!id || !vehiculo?.fecha_fin) return;
 
     const cargarFecha = async () => {
-      const fechaGuardada = await SubastaOfertasService.getFechaFinActual(id);
-      if (fechaGuardada) {
-        setFechaFin(fechaGuardada);
-      }
+      const fechaGuardada = await SubastaOfertasService.getFechaFinActual(id, vehiculo.fecha_fin);
+      setFechaFin(fechaGuardada);
     };
 
     cargarFecha();
@@ -141,7 +139,7 @@ export function SubastaDetailsContent() {
       userId,
       userName,
       incremento,
-      fechaFinSubasta: nuevaFechaFin,
+      fechaFinSubasta: nuevaFechaFin || fechaFin,
     });
 
     if (resultado === "duplicate") {
