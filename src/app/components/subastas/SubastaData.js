@@ -846,7 +846,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-03-20T18:30:00",
+    fecha_fin: "2026-03-20T18:30:01",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/etios/BBS-471.pdf",
     descripcion:  [
