@@ -820,6 +820,59 @@ export const subastaData = [
     ]
   },
   
+  {
+    id: 17,
+    marca: "Toyota",
+    modelo: "Etios",
+    año: 2018,
+    precio: 4500,
+    incremento_puja: 50, 
+    imagen: "/Autos/etios/1.jpeg",
+    imagenes: [
+      "/Autos/etios/1.jpeg",
+      "/Autos/etios/2.jpeg",
+      "/Autos/etios/3.jpeg",
+      "/Autos/etios/4.jpeg",
+      "/Autos/etios/5.jpeg",
+      "/Autos/etios/6.jpeg",
+      "/Autos/etios/7.jpeg",
+      "/Autos/etios/8.jpeg",
+      "/Autos/etios/9.jpeg",
+    ],  
+    kilometraje: "186,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Plata",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-03-20T18:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/etios/BBS-471.pdf",
+    descripcion:  [
+      "<strong>PLACA: BBS471</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra DIPROVE HUANCAYO,Huancayo.</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },
 ];
 
 

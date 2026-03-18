@@ -10,6 +10,10 @@ export const buildOptimizedImageUrl = (
 ) => {
   if (!url || typeof url !== "string") return url;
 
+  // Local/public paths (e.g. /inmobiliaria/image.jpg) are valid for Next/Image,
+  // but they are not absolute URLs and cannot be parsed by URL().
+  if (!/^https?:\/\//i.test(url)) return url;
+
   // If transforms are not explicitly enabled, return original URL to avoid 400s
   if (!transformEnabled) return url;
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import Tittle from "./Tittle";
 import CarCard from "./CarCard";
@@ -70,7 +70,25 @@ const FeacturedSections = () => {
     };
   }, []);
 
-  const displayedCars = cars;
+  const displayedCars = useMemo(() => {
+    return [...cars].sort((a, b) => {
+      const aAvailable =
+        typeof a?.is_available === "boolean"
+          ? a.is_available
+          : typeof a?.isAvailable === "boolean"
+          ? a.isAvailable
+          : true;
+      const bAvailable =
+        typeof b?.is_available === "boolean"
+          ? b.is_available
+          : typeof b?.isAvailable === "boolean"
+          ? b.isAvailable
+          : true;
+
+      if (aAvailable === bAvailable) return 0;
+      return aAvailable ? -1 : 1;
+    });
+  }, [cars]);
 
   return (
     <div className="flex flex-col items-center px-6 py-24 md:px-16 lg:px-24 xl:px-32 bg-[#F8FAFC]">

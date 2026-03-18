@@ -11,6 +11,13 @@ import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 const CarCard = ({ car, priority = false }) => {
   const router = useRouter();
   const imageSrc = useMemo(() => car.image, [car.image]);
+  const isAvailable =
+    typeof car.is_available === "boolean"
+      ? car.is_available
+      : typeof car.isAvailable === "boolean"
+      ? car.isAvailable
+      : true;
+  const isSold = isAvailable === false;
 
   return (
     <div
@@ -31,7 +38,15 @@ const CarCard = ({ car, priority = false }) => {
           priority={priority}
           placeholder="empty"
         />
-        {car.isAvailable && (
+        {isSold && (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
+            <div className="w-[170%] -rotate-[28deg] bg-red-600/85 py-2 text-center text-3xl font-extrabold uppercase tracking-wider text-white shadow-lg md:py-3 md:text-4xl">
+              Vendido
+            </div>
+          </div>
+        )}
+
+        {isAvailable && (
           <p className="absolute top-4 left-4 bg-orange-400 text-white text-xs px-2.5 py-1 rounded-full">
             Available Now
           </p>

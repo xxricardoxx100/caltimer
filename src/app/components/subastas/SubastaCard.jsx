@@ -79,15 +79,17 @@ const SubastaCard = ({ vehiculo }) => {
           alt={`${vehiculo.marca} ${vehiculo.modelo}`}
           className="w-full h-48 object-cover"
         />
-        <div
-          className={
-            finalizada
-              ? "absolute top-2 right-2 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              : "absolute top-2 right-2 bg-[#BF9056] text-white px-3 py-1 rounded-full text-sm font-semibold"
-          }
-        >
-          {finalizada ? "Finalizado" : "En Subasta"}
-        </div>
+        {finalizada ? (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
+            <div className="w-[170%] -rotate-[28deg] bg-red-600/85 py-2 text-center text-3xl font-extrabold uppercase tracking-wider text-white shadow-lg md:py-3 md:text-4xl">
+              Vendido
+            </div>
+          </div>
+        ) : (
+          <div className="absolute top-2 right-2 bg-[#BF9056] text-white px-3 py-1 rounded-full text-sm font-semibold">
+            En Subasta
+          </div>
+        )}
       </div>
       
       <div className="p-4">
