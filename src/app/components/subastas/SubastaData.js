@@ -53,6 +53,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
   {
     id: 2,
     marca: "BYD",
@@ -159,6 +160,7 @@ export const subastaData = [
       "pantalla touch"
     ]
   },
+
   {
     id: 4,
     marca: "RAM",
@@ -208,6 +210,7 @@ export const subastaData = [
       "Frenos ABS",
     ]
   },
+
   {
     id: 5,
     marca: "Toyota",
@@ -260,6 +263,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
   {
     id: 6,
     marca: "Chevrolet",
@@ -311,6 +315,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
   {
     id: 7,
     marca: "Hero",
@@ -357,6 +362,7 @@ export const subastaData = [
       "SOAT: No", 
     ]
   },
+
   {
     id: 8,
     marca: "Chevrolet",
@@ -402,6 +408,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
   {
     id: 9,
     marca: "Apple",
@@ -439,6 +446,7 @@ export const subastaData = [
     caracteristicas: [
     ]
   },
+
   {
     id: 10,
     marca: "Chevrolet",
@@ -491,6 +499,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
   {
     id: 11,
     marca: "Susuki",
@@ -543,6 +552,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
   {
     id: 12,
     marca: "Kia",
@@ -597,6 +607,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
   {
     id: 13,
     marca: "Chevrolet",
@@ -648,6 +659,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
   {
     id: 14,
     marca: "Honda",
@@ -698,6 +710,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
   {
     id: 15,
     marca: "Chery",
@@ -753,5 +766,61 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
+  {
+    id: 16,
+    marca: "Hyundai",
+    modelo: "Accent",
+    año: 2016,
+    precio: 3500,
+    incremento_puja: 50, 
+    imagen: "/Autos/accenthuancayo/1.jpeg",
+    imagenes: [
+      "/Autos/accenthuancayo/1.jpeg",
+      "/Autos/accenthuancayo/2.jpeg",
+      "/Autos/accenthuancayo/3.jpeg",
+      "/Autos/accenthuancayo/4.jpeg",
+      "/Autos/accenthuancayo/5.jpeg",
+      "/Autos/accenthuancayo/6.jpeg",
+      "/Autos/accenthuancayo/7.jpeg",
+      "/Autos/accenthuancayo/8.jpeg",
+    ],  
+    kilometraje: "72,900 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "BIcombustible GLP",
+    color: "Plata",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-03-20T18:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/accenthuancayo/ASA-022.pdf",
+    descripcion:  [
+      "<strong>PLACA: ASA022</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en El tambo,Huancayo.</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina - GLP",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },
   
 ];
+
+
+

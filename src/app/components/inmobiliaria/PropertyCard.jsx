@@ -8,6 +8,9 @@ import { buildOptimizedImageUrl } from "@/lib/supabase/image-helpers";
 
 const PropertyCard = ({ property }) => {
   const router = useRouter();
+  const isSold =
+    typeof property.deliveryStatus === "string" &&
+    property.deliveryStatus.toLowerCase().includes("vendido");
   const imageSrc = useMemo(
     () =>
       buildOptimizedImageUrl(property.image, {
@@ -39,7 +42,14 @@ const PropertyCard = ({ property }) => {
           loading="lazy"
           placeholder="empty"
         />
-        {property.deliveryStatus && (
+        {isSold && (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
+            <div className="w-[170%] -rotate-[28deg] bg-red-600/85 py-3 text-center text-4xl font-extrabold uppercase tracking-wider text-white shadow-lg md:py-4 md:text-5xl">
+              {property.deliveryStatus}
+            </div>
+          </div>
+        )}
+        {property.deliveryStatus && !isSold && (
           <div className="absolute top-4 left-4 bg-orange-500 text-white text-xs px-3 py-1.5 rounded-sm font-medium">
             {property.deliveryStatus}
           </div>
