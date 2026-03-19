@@ -432,10 +432,10 @@ export const subastaData = [
     color: "Plateado",
     puertas: 0,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-12T18:30:00",
+    fecha_fin: "2026-03-20T19:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     descripcion:  [
-      "<strong>NOTA: El equipo se entregara despues de 14 dias habiles, una ves finalizada la subasta.</strong>",
+      "<strong>NOTA: El equipo se entregara inmediatamente, una ves finalizada la subasta.</strong>",
       "MACBOOK PRO A1708 13\" 2017 CORE I5 2.3GHZ 8GB 256GB",
       "MacOs Ventura 13.4.1",
       "Ciclos de carga: 396",
@@ -797,6 +797,7 @@ export const subastaData = [
     boletaInformativaUrl: "/Autos/accenthuancayo/ASA-022.pdf",
     descripcion:  [
       "<strong>PLACA: ASA022</strong>",
+      "<strong style='color: red;'>Nota importante: El vehiculo circulaba con una placa CLONADA que pertenecia a otro vehiculo, La placa correcta se encuentra en anexos y en esta descripcion</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en El tambo,Huancayo.</strong>",
       "",
@@ -851,6 +852,7 @@ export const subastaData = [
     boletaInformativaUrl: "/Autos/etios/BBS-471.pdf",
     descripcion:  [
       "<strong>PLACA: BBS471</strong>",
+      "<strong style='color: red;'>Nota importante: El vehiculo circulaba con una placa CLONADA que pertenecia a otro vehiculo, La placa correcta se encuentra en anexos y en esta descripcion</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra DIPROVE HUANCAYO,Huancayo.</strong>",
       "",
