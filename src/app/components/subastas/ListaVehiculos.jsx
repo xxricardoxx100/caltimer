@@ -1,15 +1,28 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import SubastaCard from "./SubastaCard";
 import { subastaData } from "./SubastaData";
 
+const GRACE_PERIOD_MS = 2 * 60 * 60 * 1000;
+
 const ListaVehiculos = () => {
-  const ahora = useMemo(() => new Date(), []);
+  const [ahora, setAhora] = useState(() => new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAhora(new Date());
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const proximas = useMemo(
     () =>
       subastaData
-        .filter((item) => new Date(item.fecha_fin) >= ahora)
+        .filter(
+          (item) =>
+            new Date(item.fecha_fin).getTime() + GRACE_PERIOD_MS >= ahora.getTime()
+        )
         .sort((a, b) => new Date(a.fecha_fin) - new Date(b.fecha_fin)),
     [ahora]
   );
@@ -17,7 +30,10 @@ const ListaVehiculos = () => {
   const finalizadas = useMemo(
     () =>
       subastaData
-        .filter((item) => new Date(item.fecha_fin) < ahora)
+        .filter(
+          (item) =>
+            new Date(item.fecha_fin).getTime() + GRACE_PERIOD_MS < ahora.getTime()
+        )
         .sort((a, b) => new Date(b.fecha_fin) - new Date(a.fecha_fin)),
     [ahora]
   );

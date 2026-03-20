@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+const GRACE_PERIOD_MS = 2 * 60 * 60 * 1000;
+
 const SubastaCard = ({ vehiculo }) => {
   const router = useRouter();
   const [tiempoRestante, setTiempoRestante] = useState("");
@@ -54,15 +56,20 @@ const SubastaCard = ({ vehiculo }) => {
 
   // Actualizar tiempo restante cada minuto
   useEffect(() => {
+    const getIsFinalizadaForDisplay = (fechaISO) => {
+      const finMs = new Date(fechaISO).getTime();
+      return Date.now() > finMs + GRACE_PERIOD_MS;
+    };
+
     // Actualizar inmediatamente
     const fechaISO = vehiculo.fecha_fin;
     setTiempoRestante(formatearFechaFin(fechaISO));
-    setFinalizada(new Date(fechaISO) <= new Date());
+    setFinalizada(getIsFinalizadaForDisplay(fechaISO));
     
     // Actualizar cada minuto
     const interval = setInterval(() => {
       setTiempoRestante(formatearFechaFin(vehiculo.fecha_fin));
-      setFinalizada(new Date(vehiculo.fecha_fin) <= new Date());
+      setFinalizada(getIsFinalizadaForDisplay(vehiculo.fecha_fin));
     }, 60000); // 60 segundos
 
     return () => clearInterval(interval);
