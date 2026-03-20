@@ -822,7 +822,7 @@ export const subastaData = [
   },
   
   {
-    id: 17,
+    id: 18,
     marca: "Toyota",
     modelo: "Etios",
     año: 2018,
@@ -847,7 +847,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-03-20T18:30:01",
+    fecha_fin: "2026-03-20T18:50:01",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/etios/BBS-471.pdf",
     descripcion:  [
