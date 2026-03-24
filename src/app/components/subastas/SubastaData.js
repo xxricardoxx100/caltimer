@@ -822,7 +822,7 @@ export const subastaData = [
   },
   
   {
-    id: 18,
+    id: 17,
     marca: "Toyota",
     modelo: "Etios",
     año: 2018,
@@ -873,6 +873,82 @@ export const subastaData = [
       "Gasolina",
       "Transmision mecanica ",
       "Frenos ABS"
+    ]
+  },
+  {
+    id: 18,
+    marca: "Ancel",
+    modelo: "DS200 Escanner Automotriz Profesional",
+    año: 2026,
+    precio: 250,
+    incremento_puja: 5,
+    imagen: "/Autos/Escanner/1.jpg",
+    imagenes: [
+      "/Autos/Escanner/1.jpg",
+      "/Autos/Escanner/2.jpg",
+      "/Autos/Escanner/3.jpg",
+      "/Autos/Escanner/4.jpg",
+      "/Autos/Escanner/5.jpg",
+      "/Autos/Escanner/6.jpg",
+      "/Autos/Escanner/7.jpg",
+      "/Autos/Escanner/8.jpg",
+      "/Autos/Escanner/9.jpg",
+      "/Autos/Escanner/10.jpg",
+    ],  
+    kilometraje: "000,000 km",
+    estado: "Nuevo-sellado",
+    transmision: "-",
+    combustible: "-",
+    color: "-",
+    puertas: 0,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-03T19:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    descripcion:  [
+      "<strong>NOTA: El equipo se entregara inmediatamente, una ves finalizada la subasta.</strong>",
+      "Escanner profesional para diagnostico automotriz, compatible con la mayoria de marcas y modelos del mercado, con funciones avanzadas de lectura y borrado de codigos de falla, visualizacion de datos en tiempo real, pruebas de actuadores y mas.",
+      "Actualizaciones gratuitas de por vida, soporte tecnico dedicado y garantia de 1 año. Ideal para talleres, mecanicos y entusiastas del automovilismo que buscan una herramienta confiable y facil de usar para el mantenimiento y reparacion de vehiculos.",
+      "Cargador original incluido",
+      "Pantalla LCD a color de alta resolucion, interfaz intuitiva y diseño compacto para un manejo comodo y eficiente.",
+      "Compatible con sistemas OBDII, EOBD y CAN, cubriendo la mayoria de los vehiculos fabricados a partir del 1996."
+    ].join("\n"),
+    caracteristicas: [
+    ]
+  },
+  {
+    id: 19,
+    marca: "Google Pixel Watch",
+    modelo: "3",
+    año: 2022,
+    precio: 200,
+    incremento_puja: 5,
+    imagen: "/Autos/pixelwatch/1.jpg",
+    imagenes: [
+      "/Autos/pixelwatch/1.jpg",
+      "/Autos/pixelwatch/2.jpg",
+      "/Autos/pixelwatch/3.jpg",
+      "/Autos/pixelwatch/4.jpg",
+      "/Autos/pixelwatch/5.jpg",
+    ],  
+    kilometraje: "000,000 km",
+    estado: "Bueno",
+    transmision: "-",
+    combustible: "-",
+    color: "Plateado",
+    puertas: 0,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-03T19:15:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    descripcion:  [
+      "<strong>NOTA: El equipo se entregara inmediatamente, una ves finalizada la subasta.</strong>",
+      "Google Pixel Watch 3, el smartwatch oficial de Google con Wear OS, diseñado para ofrecer una experiencia fluida y personalizada a los usuarios de Android. Con su diseño elegante y moderno, el Pixel Watch 3 combina estilo y funcionalidad en un dispositivo compacto y cómodo de llevar.",
+      "Equipado con una pantalla AMOLED de alta resolución, el Pixel Watch 3 ofrece una visualización clara y vibrante de notificaciones, aplicaciones y contenido multimedia. Su procesador potente y eficiente garantiza un rendimiento rápido y fluido, mientras que su batería de larga duración permite un uso prolongado sin preocupaciones.",
+      "Con Wear OS, el Pixel Watch 3 ofrece acceso a una amplia gama de aplicaciones y servicios de Google, como Google Assistant, Google Fit y Google Maps, brindando a los usuarios una experiencia integrada y personalizada. Además, su resistencia al agua y su diseño duradero lo hacen ideal para el uso diario y actividades al aire libre.",
+      "Funciones de salud y bienestar, como monitoreo de frecuencia cardíaca, seguimiento del sueño y detección de actividad física, permiten a los usuarios mantenerse activos y saludables. El Pixel Watch 3 también ofrece opciones de personalización con correas intercambiables y esferas de reloj personalizables para adaptarse al estilo de cada usuario.",
+      "Puede responder llamadas y mensajes directamente desde la muñeca, controlar la música y acceder a aplicaciones compatibles, lo que lo convierte en un compañero ideal para mantenerse conectado y organizado durante todo el día.",
+      "Cargador original incluido",
+    ].join("\n"),
+    caracteristicas: [
     ]
   },
 ];

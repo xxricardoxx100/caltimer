@@ -127,11 +127,13 @@ export const SubastaOfertasService = {
   async getUltimaOferta(subastaId) {
     try {
       // Fuente principal: vista de estado consolidado por subasta
-      const { data: viewData, error: viewError } = await supabase
+      const { data: viewRows, error: viewError } = await supabase
         .from("ultima_oferta_por_subasta")
         .select("*")
         .eq("subasta_id", subastaId)
-        .single();
+        .limit(1);
+
+      const viewData = Array.isArray(viewRows) ? viewRows[0] : viewRows;
 
       if (!viewError && viewData) {
         return viewData;
@@ -142,9 +144,10 @@ export const SubastaOfertasService = {
       }
 
       // Fallback: RPC rápida si la vista no está disponible
-      const { data: rpcData, error: rpcError } = await supabase
-        .rpc('get_ultima_oferta_rapida', { p_subasta_id: subastaId })
-        .single();
+      const { data: rpcRawData, error: rpcError } = await supabase
+        .rpc('get_ultima_oferta_rapida', { p_subasta_id: subastaId });
+
+      const rpcData = Array.isArray(rpcRawData) ? rpcRawData[0] : rpcRawData;
 
       if (!rpcError && rpcData) {
         console.log("⚡ [FALLBACK] Usando vista materializada para última oferta");
@@ -161,11 +164,12 @@ export const SubastaOfertasService = {
         .select("*")
         .eq("subasta_id", subastaId)
         .order("created_at", { ascending: false })
-        .limit(1)
-        .single();
+        .limit(1);
 
-      if (!directError && directData) {
-        return directData;
+      const directRow = Array.isArray(directData) ? directData[0] : directData;
+
+      if (!directError && directRow) {
+        return directRow;
       }
 
       if (directError && directError.code !== "PGRST116") {
