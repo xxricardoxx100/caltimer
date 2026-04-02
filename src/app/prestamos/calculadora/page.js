@@ -1,14 +1,21 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const PROYECTOS = ["Perla de Huaral 1", "Perla de Huaral 2"];
+const LISTA_PRECIOS_FILE = "/inmobiliaria/lotes-propuesta.json";
 
 export default function PrestamosCalculadoraPage() {
   const [proyecto, setProyecto] = useState("Perla de Huaral 2");
   const [primeraCuotaFecha, setPrimeraCuotaFecha] = useState("");
+  const [lotes, setLotes] = useState([]);
+  const [cargandoLotes, setCargandoLotes] = useState(true);
+  const [manzanaSeleccionada, setManzanaSeleccionada] = useState("");
+  const [loteSeleccionado, setLoteSeleccionado] = useState("");
   const [precioLote, setPrecioLote] = useState("");
   const [metrosCuadrados, setMetrosCuadrados] = useState("");
+  const [ubicacionLote, setUbicacionLote] = useState("");
+  const [nombreCliente, setNombreCliente] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [adelanto, setAdelanto] = useState("");
   const [meses, setMeses] = useState("");
@@ -26,6 +33,18 @@ export default function PrestamosCalculadoraPage() {
   }, [precioNumerico, adelantoNumerico]);
 
   const mesesSeguros = Math.min(Number(meses) || 0, 36);
+  const manzanasDisponibles = useMemo(
+    () => [...new Set(lotes.map((lote) => lote.manzana))].filter(Boolean),
+    [lotes]
+  );
+  const lotesDeManzana = useMemo(
+    () => lotes.filter((lote) => lote.manzana === manzanaSeleccionada),
+    [lotes, manzanaSeleccionada]
+  );
+  const loteActual = useMemo(
+    () => lotes.find((lote) => lote.loteCompleto === loteSeleccionado) || null,
+    [lotes, loteSeleccionado]
+  );
 
   const formatearSoles = (valor) => {
     return new Intl.NumberFormat("es-PE", {
@@ -43,6 +62,72 @@ export default function PrestamosCalculadoraPage() {
       year: "numeric",
     }).format(fecha);
   };
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const cargarLotes = async () => {
+      try {
+        setCargandoLotes(true);
+        const response = await fetch(LISTA_PRECIOS_FILE);
+        if (!response.ok) {
+          throw new Error("No se pudo cargar la lista de lotes");
+        }
+
+        const data = await response.json();
+        const lotesNormalizados = Array.isArray(data)
+          ? data.filter((lote) => lote?.manzana && lote?.loteCompleto)
+          : [];
+
+        if (!isMounted) return;
+
+        setLotes(lotesNormalizados);
+
+        const primerLote = lotesNormalizados[0] || null;
+        if (primerLote) {
+          setManzanaSeleccionada(primerLote.manzana);
+          setLoteSeleccionado(primerLote.loteCompleto);
+          setPrecioLote(String(primerLote.precioFinanciamiento || ""));
+          setMetrosCuadrados(String(primerLote.area || ""));
+          setUbicacionLote(primerLote.ubicacion || "");
+          setAdelanto(String(primerLote.inicial || ""));
+        }
+      } catch {
+        if (isMounted) {
+          setError("No se pudo cargar la lista de precios propuesta del proyecto.");
+        }
+      } finally {
+        if (isMounted) {
+          setCargandoLotes(false);
+        }
+      }
+    };
+
+    cargarLotes();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!lotesDeManzana.length) return;
+
+    const loteValido = lotesDeManzana.some((lote) => lote.loteCompleto === loteSeleccionado);
+    if (!loteValido) {
+      setLoteSeleccionado(lotesDeManzana[0].loteCompleto);
+    }
+  }, [loteSeleccionado, lotesDeManzana]);
+
+  useEffect(() => {
+    const loteEncontrado = lotes.find((lote) => lote.loteCompleto === loteSeleccionado);
+    if (!loteEncontrado) return;
+
+    setPrecioLote(String(loteEncontrado.precioFinanciamiento || ""));
+    setMetrosCuadrados(String(loteEncontrado.area || ""));
+    setUbicacionLote(loteEncontrado.ubicacion || "");
+    setAdelanto(String(loteEncontrado.inicial || ""));
+  }, [loteSeleccionado, lotes]);
 
   const crearNombreArchivo = () => {
     const fecha = new Date();
@@ -98,6 +183,12 @@ export default function PrestamosCalculadoraPage() {
     doc.text(`Fecha: ${formatearFecha(new Date())}`, 14, 38);
 
     const resumenBody = [
+      ["Proyecto", resultado.proyecto],
+      ["Cliente", resultado.nombreCliente || "No especificado"],
+      ["Manzana", resultado.manzana || ""],
+      ["Lote", resultado.lote || ""],
+      ["Ubicacion", resultado.ubicacion || ""],
+      ["Area", `${resultado.area || 0} m2`],
       ["Precio por m2", formatearSoles(resultado.precioMetroCuadrado)],
       ["Precio total del terreno", formatearSoles(resultado.precioLote)],
       ["Adelanto pagado", formatearSoles(resultado.adelanto)],
@@ -240,6 +331,7 @@ export default function PrestamosCalculadoraPage() {
     const metrosNumerico = Number(metrosCuadrados) || 0;
     const interesAnualNumerico = Number(interesAnual) || 0;
     const tasaMensual = incluirInteres && interesAnualNumerico > 0 ? interesAnualNumerico / 12 / 100 : 0;
+    const loteEncontrado = loteActual;
     let cuotaMensual = 0;
     let totalPagar = 0;
     const tablaPagos = [];
@@ -290,6 +382,12 @@ export default function PrestamosCalculadoraPage() {
 
     setResultado({
       proyecto,
+      nombreCliente,
+      manzana: loteEncontrado?.manzana || manzanaSeleccionada,
+      lote: loteEncontrado?.loteCompleto || loteSeleccionado,
+      ubicacion: loteEncontrado?.ubicacion || ubicacionLote,
+      area: loteEncontrado?.area || metrosNumerico,
+      precioContado: loteEncontrado?.precioContado || 0,
       precioLote: precioNumerico,
       metrosCuadrados: metrosNumerico,
       precioMetroCuadrado: metrosNumerico > 0 ? precioNumerico / metrosNumerico : 0,
@@ -349,6 +447,72 @@ export default function PrestamosCalculadoraPage() {
 
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
+              <label className="mb-2 block text-sm font-semibold text-slate-800">Manzana</label>
+              <select
+                value={manzanaSeleccionada}
+                onChange={(e) => setManzanaSeleccionada(e.target.value)}
+                disabled={cargandoLotes || !manzanasDisponibles.length}
+                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-[#1f3f58] focus:ring-2 focus:ring-[#1f3f58]/20 disabled:bg-slate-100"
+              >
+                {cargandoLotes ? (
+                  <option value="">Cargando lotes...</option>
+                ) : (
+                  manzanasDisponibles.map((manzana) => (
+                    <option key={manzana} value={manzana}>
+                      {manzana}
+                    </option>
+                  ))
+                )}
+              </select>
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-semibold text-slate-800">Lote</label>
+              <select
+                value={loteSeleccionado}
+                onChange={(e) => setLoteSeleccionado(e.target.value)}
+                disabled={cargandoLotes || !lotesDeManzana.length}
+                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-[#1f3f58] focus:ring-2 focus:ring-[#1f3f58]/20 disabled:bg-slate-100"
+              >
+                {cargandoLotes ? (
+                  <option value="">Cargando lotes...</option>
+                ) : (
+                  lotesDeManzana.map((lote) => (
+                    <option key={lote.loteCompleto} value={lote.loteCompleto}>
+                      {lote.loteCompleto}
+                    </option>
+                  ))
+                )}
+              </select>
+            </div>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-3">
+            <div>
+              <label className="mb-2 block text-sm font-semibold text-slate-800">Área del lote</label>
+              <input
+                type="number"
+                min="0"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                value={metrosCuadrados}
+                onChange={(e) => setMetrosCuadrados(e.target.value)}
+                placeholder="Ej: 140"
+                className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-[#1f3f58] focus:ring-2 focus:ring-[#1f3f58]/20"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-semibold text-slate-800">Ubicación</label>
+              <input
+                type="text"
+                value={ubicacionLote}
+                readOnly
+                className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none"
+              />
+            </div>
+
+            <div>
               <label className="mb-2 block text-sm font-semibold text-slate-800">Precio del lote</label>
               <input
                 type="number"
@@ -358,25 +522,31 @@ export default function PrestamosCalculadoraPage() {
                 pattern="[0-9]*[.,]?[0-9]*"
                 value={precioLote}
                 onChange={(e) => setPrecioLote(e.target.value)}
-                placeholder="Ej: 250000.00"
+                placeholder="Ej: 44800.00"
                 className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-[#1f3f58] focus:ring-2 focus:ring-[#1f3f58]/20"
               />
               <p className="mt-1 text-xs text-slate-500">Formato: S/ 0.00</p>
             </div>
+          </div>
 
-            <div>
-              <label className="mb-2 block text-sm font-semibold text-slate-800">Metros cuadrados del lote</label>
-              <input
-                type="number"
-                min="0"
-                inputMode="numeric"
-                pattern="[0-9]*"
-                value={metrosCuadrados}
-                onChange={(e) => setMetrosCuadrados(e.target.value)}
-                placeholder="Ej: 120"
-                className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-[#1f3f58] focus:ring-2 focus:ring-[#1f3f58]/20"
-              />
-            </div>
+          <details className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <summary className="cursor-pointer text-sm font-medium text-slate-700">
+              Ver precio al contado (solo lectura)
+            </summary>
+            <p className="mt-2 text-base font-semibold text-[#0f6a42]">
+              {formatearSoles(loteActual?.precioContado || 0)}
+            </p>
+          </details>
+
+          <div>
+            <label className="mb-2 block text-sm font-semibold text-slate-800">Nombre del cliente</label>
+            <input
+              type="text"
+              value={nombreCliente}
+              onChange={(e) => setNombreCliente(e.target.value)}
+              placeholder="Ej: Juan Perez"
+              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-[#1f3f58] focus:ring-2 focus:ring-[#1f3f58]/20"
+            />
           </div>
 
           <div>
@@ -472,6 +642,26 @@ export default function PrestamosCalculadoraPage() {
                   <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
                     <span>Proyecto:</span>
                     <span className="font-semibold text-[#0f6a42]">{resultado.proyecto}</span>
+                  </p>
+                  <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
+                    <span>Cliente:</span>
+                    <span className="font-semibold text-[#0f6a42]">{resultado.nombreCliente || "No especificado"}</span>
+                  </p>
+                  <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
+                    <span>Manzana:</span>
+                    <span className="font-semibold text-[#0f6a42]">{resultado.manzana}</span>
+                  </p>
+                  <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
+                    <span>Lote:</span>
+                    <span className="font-semibold text-[#0f6a42]">{resultado.lote}</span>
+                  </p>
+                  <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
+                    <span>Ubicación:</span>
+                    <span className="font-semibold text-[#0f6a42]">{resultado.ubicacion}</span>
+                  </p>
+                  <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
+                    <span>Área:</span>
+                    <span className="font-semibold text-[#0f6a42]">{resultado.area} m2</span>
                   </p>
                   <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
                     <span>Precio por m²:</span>
