@@ -3,7 +3,29 @@
 import { useEffect, useMemo, useState } from "react";
 
 const PROYECTOS = ["Perla de Huaral 1", "Perla de Huaral 2"];
-const LISTA_PRECIOS_FILE = "/inmobiliaria/lotes-propuesta.json";
+const LISTA_PRECIOS_FILES = {
+  "Perla de Huaral 1": "/inmobiliaria/precios_perla1.json",
+  "Perla de Huaral 2": "/inmobiliaria/lotes-propuesta.json",
+};
+
+const obtenerArchivoProyecto = (nombreProyecto) => {
+  return LISTA_PRECIOS_FILES[nombreProyecto] || LISTA_PRECIOS_FILES["Perla de Huaral 2"];
+};
+
+const normalizarLote = (lote, nombreProyecto) => {
+  const loteCompleto = String(lote?.loteCompleto || lote?.lote || "").trim();
+  const ubicacion =
+    nombreProyecto === "Perla de Huaral 1" ? "" : String(lote?.ubicacion || "").trim();
+
+  return {
+    manzana: String(lote?.manzana || "").trim(),
+    loteCompleto,
+    area: Number(lote?.area) || 0,
+    ubicacion,
+    precioLote: Number(lote?.precioReal ?? lote?.precioFinanciamiento ?? 0) || 0,
+    precioContado: Number(lote?.precioLista ?? lote?.precioContado ?? 0) || 0,
+  };
+};
 
 export default function PrestamosCalculadoraPage() {
   const [proyecto, setProyecto] = useState("Perla de Huaral 2");
@@ -13,6 +35,7 @@ export default function PrestamosCalculadoraPage() {
   const [manzanaSeleccionada, setManzanaSeleccionada] = useState("");
   const [loteSeleccionado, setLoteSeleccionado] = useState("");
   const [precioLote, setPrecioLote] = useState("");
+  const [precioContadoLote, setPrecioContadoLote] = useState("");
   const [metrosCuadrados, setMetrosCuadrados] = useState("");
   const [ubicacionLote, setUbicacionLote] = useState("");
   const [nombreCliente, setNombreCliente] = useState("");
@@ -69,14 +92,25 @@ export default function PrestamosCalculadoraPage() {
     const cargarLotes = async () => {
       try {
         setCargandoLotes(true);
-        const response = await fetch(LISTA_PRECIOS_FILE);
+        setError("");
+        setLotes([]);
+        setManzanaSeleccionada("");
+        setLoteSeleccionado("");
+        setPrecioLote("");
+        setPrecioContadoLote("");
+        setMetrosCuadrados("");
+        setUbicacionLote("");
+
+        const response = await fetch(obtenerArchivoProyecto(proyecto));
         if (!response.ok) {
           throw new Error("No se pudo cargar la lista de lotes");
         }
 
         const data = await response.json();
         const lotesNormalizados = Array.isArray(data)
-          ? data.filter((lote) => lote?.manzana && lote?.loteCompleto)
+          ? data
+              .map((lote) => normalizarLote(lote, proyecto))
+              .filter((lote) => lote.manzana && lote.loteCompleto)
           : [];
 
         if (!isMounted) return;
@@ -87,10 +121,10 @@ export default function PrestamosCalculadoraPage() {
         if (primerLote) {
           setManzanaSeleccionada(primerLote.manzana);
           setLoteSeleccionado(primerLote.loteCompleto);
-          setPrecioLote(String(primerLote.precioFinanciamiento || ""));
+          setPrecioLote(String(primerLote.precioLote || ""));
+          setPrecioContadoLote(String(primerLote.precioContado || ""));
           setMetrosCuadrados(String(primerLote.area || ""));
           setUbicacionLote(primerLote.ubicacion || "");
-          setAdelanto(String(primerLote.inicial || ""));
         }
       } catch {
         if (isMounted) {
@@ -108,7 +142,7 @@ export default function PrestamosCalculadoraPage() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [proyecto]);
 
   useEffect(() => {
     if (!lotesDeManzana.length) return;
@@ -123,10 +157,10 @@ export default function PrestamosCalculadoraPage() {
     const loteEncontrado = lotes.find((lote) => lote.loteCompleto === loteSeleccionado);
     if (!loteEncontrado) return;
 
-    setPrecioLote(String(loteEncontrado.precioFinanciamiento || ""));
+    setPrecioLote(String(loteEncontrado.precioLote || ""));
+    setPrecioContadoLote(String(loteEncontrado.precioContado || ""));
     setMetrosCuadrados(String(loteEncontrado.area || ""));
     setUbicacionLote(loteEncontrado.ubicacion || "");
-    setAdelanto(String(loteEncontrado.inicial || ""));
   }, [loteSeleccionado, lotes]);
 
   const crearNombreArchivo = () => {
@@ -189,8 +223,8 @@ export default function PrestamosCalculadoraPage() {
       ["Lote", resultado.lote || ""],
       ["Ubicacion", resultado.ubicacion || ""],
       ["Area", `${resultado.area || 0} m2`],
-      ["Precio por m2", formatearSoles(resultado.precioMetroCuadrado)],
       ["Precio total del terreno", formatearSoles(resultado.precioLote)],
+      ["Precio al contado", formatearSoles(resultado.precioContado)],
       ["Adelanto pagado", formatearSoles(resultado.adelanto)],
       ["Monto a financiar", formatearSoles(resultado.capital)],
       ["Interes anual", `${resultado.interes}%`],
@@ -385,12 +419,11 @@ export default function PrestamosCalculadoraPage() {
       nombreCliente,
       manzana: loteEncontrado?.manzana || manzanaSeleccionada,
       lote: loteEncontrado?.loteCompleto || loteSeleccionado,
-      ubicacion: loteEncontrado?.ubicacion || ubicacionLote,
-      area: loteEncontrado?.area || metrosNumerico,
-      precioContado: loteEncontrado?.precioContado || 0,
+      ubicacion: ubicacionLote,
+      area: metrosNumerico,
+      precioContado: Number(precioContadoLote) || 0,
       precioLote: precioNumerico,
       metrosCuadrados: metrosNumerico,
-      precioMetroCuadrado: metrosNumerico > 0 ? precioNumerico / metrosNumerico : 0,
       descripcion,
       adelanto: adelantoNumerico,
       primeraCuota: formatearFecha(fechaPrimeraCuota),
@@ -507,8 +540,8 @@ export default function PrestamosCalculadoraPage() {
               <input
                 type="text"
                 value={ubicacionLote}
-                readOnly
-                className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none"
+                onChange={(e) => setUbicacionLote(e.target.value)}
+                className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-[#1f3f58] focus:ring-2 focus:ring-[#1f3f58]/20"
               />
             </div>
 
@@ -531,11 +564,22 @@ export default function PrestamosCalculadoraPage() {
 
           <details className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
             <summary className="cursor-pointer text-sm font-medium text-slate-700">
-              Ver precio al contado (solo lectura)
+              Ver/editar precio al contado
             </summary>
-            <p className="mt-2 text-base font-semibold text-[#0f6a42]">
-              {formatearSoles(loteActual?.precioContado || 0)}
-            </p>
+            <div className="mt-2 sm:max-w-xs">
+              <input
+                type="number"
+                min="0"
+                step="0.01"
+                inputMode="decimal"
+                pattern="[0-9]*[.,]?[0-9]*"
+                value={precioContadoLote}
+                onChange={(e) => setPrecioContadoLote(e.target.value)}
+                placeholder="Ej: 42000.00"
+                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-[#1f3f58] focus:ring-2 focus:ring-[#1f3f58]/20"
+              />
+              <p className="mt-1 text-xs text-slate-500">Formato: S/ 0.00</p>
+            </div>
           </details>
 
           <div>
@@ -664,12 +708,12 @@ export default function PrestamosCalculadoraPage() {
                     <span className="font-semibold text-[#0f6a42]">{resultado.area} m2</span>
                   </p>
                   <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
-                    <span>Precio por m²:</span>
-                    <span className="font-semibold text-[#0f6a42]">{formatearSoles(resultado.precioMetroCuadrado)}</span>
-                  </p>
-                  <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
                     <span>Precio total del terreno:</span>
                     <span className="font-semibold text-[#0f6a42]">{formatearSoles(resultado.precioLote)}</span>
+                  </p>
+                  <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
+                    <span>Precio al contado:</span>
+                    <span className="font-semibold text-[#0f6a42]">{formatearSoles(resultado.precioContado)}</span>
                   </p>
                   <p className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
                     <span>Adelanto pagado:</span>
