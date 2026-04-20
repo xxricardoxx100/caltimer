@@ -922,7 +922,7 @@ export const subastaData = [
     marca: "CHEVROLET",
     modelo: "TRACKER",
     año: 2024,
-    precio: 3300,
+    precio: "Oferta Directa",
     incremento_puja: 50, 
     imagen: "/Autos/santander/CLS585/1.png",
     imagenes: [
@@ -971,7 +971,7 @@ export const subastaData = [
     marca: "KIA",
     modelo: "SOLUTO",
     año: 2023,
-    precio: 4500,
+    precio: "Oferta Directa",
     incremento_puja: 50, 
     imagen: "/Autos/santander/CDP234/1.png",
     imagenes: [
@@ -1022,7 +1022,7 @@ export const subastaData = [
     marca: "CHERY",
     modelo: "TIGGO 2 PRO",
     año: 2024,
-    precio: 5200,
+    precio: "Oferta Directa",
     incremento_puja: 50, 
     imagen: "/Autos/santander/CMX430/1.png",
     imagenes: [
@@ -1072,7 +1072,7 @@ export const subastaData = [
     marca: "KIA",
     modelo: "RIO",
     año: 2018,
-    precio: 2750,
+    precio: "Oferta Directa",
     incremento_puja: 50, 
     imagen: "/Autos/santander/BUC012/1.png",
     imagenes: [
@@ -1122,7 +1122,7 @@ export const subastaData = [
     marca: "KIA",
     modelo: "PICANTO",
     año: 2024,
-    precio: 5100,
+    precio: "Oferta Directa",
     incremento_puja: 50, 
     imagen: "/Autos/santander/CPI023/1.png",
     imagenes: [
@@ -1170,7 +1170,7 @@ export const subastaData = [
     marca: "CHEVROLET",
     modelo: "ONIX JOY",
     año: 2022,
-    precio: 5000,
+    precio: "Oferta Directa",
     incremento_puja: 50, 
     imagen: "/Autos/santander/BYQ417/1.png",
     imagenes: [
@@ -1221,7 +1221,7 @@ export const subastaData = [
     marca: "KIA",
     modelo: "K3 1.4 MT-LX",
     año: 2024,
-    precio: 7000,
+    precio: "Oferta Directa",
     incremento_puja: 50, 
     imagen: "/Autos/santander/VBU382/1.png",
     imagenes: [

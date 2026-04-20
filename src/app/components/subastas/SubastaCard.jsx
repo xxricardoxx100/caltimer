@@ -115,9 +115,11 @@ const SubastaCard = ({ vehiculo }) => {
         </div>
         
         <div className="border-t pt-3">
-          <p className="text-sm text-gray-600">Precio base:</p>   
-          <p className="text-2xl font-bold text-[#591D07]">
-            ${vehiculo.precio.toLocaleString()}
+          <p className="text-sm text-gray-600">{typeof vehiculo.precio === 'number' ? 'Precio base:' : ''}</p>   
+          <p className={`text-2xl font-bold ${typeof vehiculo.precio === 'string' ? 'text-red-600 text-center' : 'text-[#591D07]'}`}>
+            {typeof vehiculo.precio === 'number' 
+              ? `$${vehiculo.precio.toLocaleString()}` 
+              : vehiculo.precio}
           </p>
         </div>
         
