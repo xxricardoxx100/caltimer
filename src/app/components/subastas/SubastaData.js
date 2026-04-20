@@ -875,6 +875,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },
+
   {
     id: 18,
     marca: "Ancel",
@@ -915,42 +916,355 @@ export const subastaData = [
     caracteristicas: [
     ]
   },
+  
   {
     id: 19,
-    marca: "Google Pixel Watch",
-    modelo: "3",
-    año: 2022,
-    precio: 200,
-    incremento_puja: 5,
-    imagen: "/Autos/pixelwatch/1.jpg",
+    marca: "CHEVROLET",
+    modelo: "TRACKER",
+    año: 2024,
+    precio: 3300,
+    incremento_puja: 50, 
+    imagen: "/Autos/santander/CLS585/1.png",
     imagenes: [
-      "/Autos/pixelwatch/1.jpg",
-      "/Autos/pixelwatch/2.jpg",
-      "/Autos/pixelwatch/3.jpg",
-      "/Autos/pixelwatch/4.jpg",
-      "/Autos/pixelwatch/5.jpg",
+      "/Autos/santander/CLS585/1.png",
+      "/Autos/santander/CLS585/2.png",
+      "/Autos/santander/CLS585/3.png",
+      "/Autos/santander/CLS585/4.png",
+      "/Autos/santander/CLS585/5.png",
     ],  
-    kilometraje: "000,000 km",
+    kilometraje: "186,000 km",  
     estado: "Bueno",
-    transmision: "-",
-    combustible: "-",
-    color: "Plateado",
-    puertas: 0,
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Negro",
+    puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-04-03T19:15:00",
+    fecha_fin: "2026-04-20T19:00:00",
     anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/santander/CLSS585/CLS-585.pdf",
     descripcion:  [
-      "<strong>NOTA: El equipo se entregara inmediatamente, una ves finalizada la subasta.</strong>",
-      "Google Pixel Watch 3, el smartwatch oficial de Google con Wear OS, diseñado para ofrecer una experiencia fluida y personalizada a los usuarios de Android. Con su diseño elegante y moderno, el Pixel Watch 3 combina estilo y funcionalidad en un dispositivo compacto y cómodo de llevar.",
-      "Equipado con una pantalla AMOLED de alta resolución, el Pixel Watch 3 ofrece una visualización clara y vibrante de notificaciones, aplicaciones y contenido multimedia. Su procesador potente y eficiente garantiza un rendimiento rápido y fluido, mientras que su batería de larga duración permite un uso prolongado sin preocupaciones.",
-      "Con Wear OS, el Pixel Watch 3 ofrece acceso a una amplia gama de aplicaciones y servicios de Google, como Google Assistant, Google Fit y Google Maps, brindando a los usuarios una experiencia integrada y personalizada. Además, su resistencia al agua y su diseño duradero lo hacen ideal para el uso diario y actividades al aire libre.",
-      "Funciones de salud y bienestar, como monitoreo de frecuencia cardíaca, seguimiento del sueño y detección de actividad física, permiten a los usuarios mantenerse activos y saludables. El Pixel Watch 3 también ofrece opciones de personalización con correas intercambiables y esferas de reloj personalizables para adaptarse al estilo de cada usuario.",
-      "Puede responder llamadas y mensajes directamente desde la muñeca, controlar la música y acceder a aplicaciones compatibles, lo que lo convierte en un compañero ideal para mantenerse conectado y organizado durante todo el día.",
-      "Cargador original incluido",
+      "<strong>PLACA: CLSS585</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
     ]
-  },
+  },//19
+
+  {
+    id: 20,
+    marca: "KIA",
+    modelo: "SOLUTO",
+    año: 2023,
+    precio: 4500,
+    incremento_puja: 50, 
+    imagen: "/Autos/santander/CDP234/1.png",
+    imagenes: [
+      "/Autos/santander/CDP234/1.png",
+      "/Autos/santander/CDP234/2.png",
+      "/Autos/santander/CDP234/3.png",
+      "/Autos/santander/CDP234/4.png",
+      "/Autos/santander/CDP234/5.png",
+      "/Autos/santander/CDP234/6.png",
+      "/Autos/santander/CDP234/7.png",
+    ],  
+    kilometraje: "98,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Negro",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-20T19:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/santander/CDP234/CDP-234.pdf",
+    descripcion:  [
+      "<strong>PLACA: CDP234</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//20
+  
+  {
+    id: 21,
+    marca: "CHERY",
+    modelo: "TIGGO 2 PRO",
+    año: 2024,
+    precio: 5200,
+    incremento_puja: 50, 
+    imagen: "/Autos/santander/CMX430/1.png",
+    imagenes: [
+      "/Autos/santander/CMX430/1.png",
+      "/Autos/santander/CMX430/2.png",
+      "/Autos/santander/CMX430/3.png",
+      "/Autos/santander/CMX430/4.png",
+      "/Autos/santander/CMX430/5.png",
+      "/Autos/santander/CMX430/6.png",
+    ],  
+    kilometraje: "75,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "BLANCO",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-20T19:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/santander/CMX430/CMX-430.pdf",
+    descripcion:  [
+      "<strong>PLACA: CMX430</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//21
+
+  {
+    id: 22,
+    marca: "KIA",
+    modelo: "RIO",
+    año: 2018,
+    precio: 2750,
+    incremento_puja: 50, 
+    imagen: "/Autos/santander/BUC012/1.png",
+    imagenes: [
+      "/Autos/santander/BUC012/1.png",
+      "/Autos/santander/BUC012/2.png",
+      "/Autos/santander/BUC012/3.png",
+      "/Autos/santander/BUC012/4.png",
+      "/Autos/santander/BUC012/5.png",
+      "/Autos/santander/BUC012/6.png",
+    ],  
+    kilometraje: "205,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "ROJO",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-20T19:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/santander/BUC012/BUC-012.pdf",
+    descripcion:  [
+      "<strong>PLACA: BUC012</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//22
+
+  {
+    id: 23,
+    marca: "KIA",
+    modelo: "PICANTO",
+    año: 2024,
+    precio: 5100,
+    incremento_puja: 50, 
+    imagen: "/Autos/santander/CPI023/1.png",
+    imagenes: [
+      "/Autos/santander/CPI023/1.png",
+      "/Autos/santander/CPI023/2.png",
+      "/Autos/santander/CPI023/3.png",
+      "/Autos/santander/CPI023/4.png",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "PLATA",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-20T19:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/santander/CPI023/CPI-023.pdf",
+    descripcion:  [
+      "<strong>PLACA: CPI023</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//23
+
+  {
+    id: 24,
+    marca: "CHEVROLET",
+    modelo: "ONIX JOY",
+    año: 2022,
+    precio: 5000,
+    incremento_puja: 50, 
+    imagen: "/Autos/santander/BYQ417/1.png",
+    imagenes: [
+      "/Autos/santander/BYQ417/1.png",
+      "/Autos/santander/BYQ417/2.png",
+      "/Autos/santander/BYQ417/3.png",
+      "/Autos/santander/BYQ417/4.png",
+      "/Autos/santander/BYQ417/5.png",
+      "/Autos/santander/BYQ417/6.png",
+      "/Autos/santander/BYQ417/7.png",
+    ],  
+    kilometraje: "11,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "PLATA",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-20T19:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/santander/BYQ417/BYQ-417.pdf",
+    descripcion:  [
+      "<strong>PLACA: BYQ417</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//24
+
+  {
+    id: 25,
+    marca: "KIA",
+    modelo: "K3 1.4 MT-LX",
+    año: 2024,
+    precio: 7000,
+    incremento_puja: 50, 
+    imagen: "/Autos/santander/VBU382/1.png",
+    imagenes: [
+      "/Autos/santander/VBU382/1.png",
+      "/Autos/santander/VBU382/2.png",
+      "/Autos/santander/VBU382/3.png",
+      "/Autos/santander/VBU382/4.png",
+      "/Autos/santander/VBU382/5.png",
+
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "ROJO",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-20T19:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/santander/VBU382/VBU-382.pdf",
+    descripcion:  [
+      "<strong>PLACA: VBU382</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//25
 ];
 
 
