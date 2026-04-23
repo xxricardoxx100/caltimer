@@ -976,7 +976,7 @@ export const subastaData = [
     marca: "VolskWagen",
     modelo: "Worker",
     año: 2004,
-    precio: 22000,
+    precio: 6000,
     incremento_puja: 50, 
     imagen: "/Autos/Volkswagen/BSG794/1.png",
     imagenes: [
@@ -1020,6 +1020,148 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//20
+
+  {
+    id: 21,
+    marca: "Chevrolet",
+    modelo: "N300",
+    año: 2013,
+    precio: 1500,
+    incremento_puja: 50, 
+    imagen: "/Autos/Chevrolet/D4R223/1.png",
+    imagenes: [
+      "/Autos/Chevrolet/D4R223/1.png",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Blanco",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-24T18:20:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/Chevrolet/D4R223/D4R-.pdf",
+    descripcion:  [
+      "<strong>PLACA: </strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina - GLP",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//21
+
+  {
+    id: 22,
+    marca: "Audi",
+    modelo: "A4",
+    año: 2008,
+    precio: 1500,
+    incremento_puja: 50, 
+    imagen: "/Autos/Audi/A6E141/1.png",
+    imagenes: [
+      "/Autos/Audi/A6E141/1.png",
+      "/Autos/Audi/A6E141/2.png",
+      "/Autos/Audi/A6E141/3.jpeg",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Plata",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-24T18:20:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/Audi/A6E141/A6E-.pdf",
+    descripcion:  [
+      "<strong>PLACA: </strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina - GLP",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//22
+
+  {
+    id: 23,
+    marca: "FAW",
+    modelo: "HongQi HQ300",
+    año: 2008,
+    precio: 1500,
+    incremento_puja: 50, 
+    imagen: "/Autos/FAW/BLN219/1.png",
+    imagenes: [
+      "/Autos/FAW/BLN219/1.png",
+      "/Autos/FAW/BLN219/2.png",
+      "/Autos/FAW/BLN219/3.jpeg",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Negro",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-04-24T18:20:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/FAW/BLN219/BLN-.pdf",
+    descripcion:  [
+      "<strong>PLACA: </strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina - GLP",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//23
 ];
 
 
