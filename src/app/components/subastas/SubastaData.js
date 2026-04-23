@@ -1125,8 +1125,7 @@ export const subastaData = [
     imagen: "/Autos/FAW/BLN219/1.png",
     imagenes: [
       "/Autos/FAW/BLN219/1.png",
-      "/Autos/FAW/BLN219/2.png",
-      "/Autos/FAW/BLN219/3.jpeg",
+      "/Autos/FAW/BLN219/3.PNG",
     ],  
     kilometraje: "000,000 km",  
     estado: "Bueno",
