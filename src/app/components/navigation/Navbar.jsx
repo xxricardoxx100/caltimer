@@ -20,6 +20,11 @@ const solutions = [
     href: "/subasta",
   },
   {
+    name: "Sorteos",
+    description: "Sorteos y premios de Caltimer",
+    href: "/sorteos",
+  },
+  {
     name: "Eventos",
     description: "Próximos eventos y actividades",
     href: "/eventos",

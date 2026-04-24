@@ -1161,6 +1161,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//23
+  
 ];
 
 
