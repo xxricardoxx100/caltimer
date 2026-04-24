@@ -989,7 +989,7 @@ export const subastaData = [
     marca: "¡¡¡¡¡¡¡¡¡¡¡ SORTEO !!!!!!!!!!!",
     modelo: "",
     año: "Hero Hunk 125R 2026" ,
-    precio: 1500,
+    precio: 20,
     incremento_puja: 50, 
     imagen: "/Autos/Hunk/1.jpeg",
     imagenes: [
