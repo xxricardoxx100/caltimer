@@ -8,18 +8,18 @@ export const subastaData = [
     año: 2015,
     precio: 2100,
     incremento_puja: 50, // Incremento de puja en USD
-    imagen: "/Autos/brilliance/1.jpeg",
+    imagen: "/Autos/brilliance/ALQ424/1.jpeg",
     imagenes: [
-      "/Autos/brilliance/1.jpeg",
-      "/Autos/brilliance/2.jpeg",
-      "/Autos/brilliance/3.jpeg",
-      "/Autos/brilliance/4.jpeg",
-      "/Autos/brilliance/5.jpeg",
-      "/Autos/brilliance/6.jpeg",
-      "/Autos/brilliance/7.jpeg",
-      "/Autos/brilliance/8.jpeg",
-      "/Autos/brilliance/9.jpeg",
-      "/Autos/brilliance/10.jpeg",
+      "/Autos/brilliance/ALQ424/1.jpeg",
+      "/Autos/brilliance/ALQ424/2.jpeg",
+      "/Autos/brilliance/ALQ424/3.jpeg",
+      "/Autos/brilliance/ALQ424/4.jpeg",
+      "/Autos/brilliance/ALQ424/5.jpeg",
+      "/Autos/brilliance/ALQ424/6.jpeg",
+      "/Autos/brilliance/ALQ424/7.jpeg",
+      "/Autos/brilliance/ALQ424/8.jpeg",
+      "/Autos/brilliance/ALQ424/9.jpeg",
+      "/Autos/brilliance/ALQ424/10.jpeg",
     ],  
     kilometraje: "170,000 km",
     estado: "Bueno",
@@ -52,7 +52,7 @@ export const subastaData = [
       "Transmision mecanica",
       "Frenos ABS"
     ]
-  },
+  },//1 brilliance
 
   {
     id: 2,
@@ -61,18 +61,18 @@ export const subastaData = [
     año: 2017,
     precio: 2100,
     incremento_puja: 50, // Incremento de puja en USD
-    imagen: "/Autos/bydF3/4.jpeg",
+    imagen: "/Autos/Byd/BCK439/4.jpeg",
     imagenes: [
-      "/Autos/bydF3/1.jpeg",
-      "/Autos/bydF3/2.jpeg",
-      "/Autos/bydF3/3.jpeg",
-      "/Autos/bydF3/4.jpeg",
-      "/Autos/bydF3/5.jpeg",
-      "/Autos/bydF3/6.jpeg",
-      "/Autos/bydF3/7.jpeg",
-      "/Autos/bydF3/8.jpeg",
-      "/Autos/bydF3/9.jpeg",
-      "/Autos/bydF3/10.jpeg",
+      "/Autos/Byd/BCK439/1.jpeg",
+      "/Autos/Byd/BCK439/2.jpeg",
+      "/Autos/Byd/BCK439/3.jpeg",
+      "/Autos/Byd/BCK439/4.jpeg",
+      "/Autos/Byd/BCK439/5.jpeg",
+      "/Autos/Byd/BCK439/6.jpeg",
+      "/Autos/Byd/BCK439/7.jpeg",
+      "/Autos/Byd/BCK439/8.jpeg",
+      "/Autos/Byd/BCK439/9.jpeg",
+      "/Autos/Byd/BCK439/10.jpeg",
     ],  
     kilometraje: "230,000 km",
     estado: "Bueno",
@@ -106,7 +106,7 @@ export const subastaData = [
       "Frenos ABS",
       "pantalla touch"
     ]
-  },
+  },//2 byd
 
   {
     id: 3,
@@ -115,17 +115,17 @@ export const subastaData = [
     año: 2017,  
     precio: 4500,
     incremento_puja: 50, // Incremento de puja en USD
-    imagen: "/Autos/kiario/1.jpg",
+    imagen: "/Autos/Kia/ATQ598/1.jpg",
     imagenes: [
-      "/Autos/kiario/1.jpg",
-      "/Autos/kiario/2.jpg",
-      "/Autos/kiario/3.jpg",
-      "/Autos/kiario/4.jpg",
-      "/Autos/kiario/5.jpg",
-      "/Autos/kiario/6.jpg",
-      "/Autos/kiario/7.jpg",
-      "/Autos/kiario/8.jpg",
-      "/Autos/kiario/9.jpg",
+      "/Autos/Kia/ATQ598/1.jpg",
+      "/Autos/Kia/ATQ598/2.jpg",
+      "/Autos/Kia/ATQ598/3.jpg",
+      "/Autos/Kia/ATQ598/4.jpg",
+      "/Autos/Kia/ATQ598/5.jpg",
+      "/Autos/Kia/ATQ598/6.jpg",
+      "/Autos/Kia/ATQ598/7.jpg",
+      "/Autos/Kia/ATQ598/8.jpg",
+      "/Autos/Kia/ATQ598/9.jpg",
     ],  
     kilometraje: "100,000 km",
     estado: "Bueno",
@@ -159,7 +159,7 @@ export const subastaData = [
       "Frenos ABS",
       "pantalla touch"
     ]
-  },
+  },//3 kia
 
   {
     id: 4,
@@ -168,16 +168,16 @@ export const subastaData = [
     año: 2022,  
     precio: 5300,
     incremento_puja: 50, // Incremento de puja en USD
-    imagen: "/Autos/ramv700/1.jpeg",
+    imagen: "/Autos/Ram/BNF724/1.jpeg",
     imagenes: [
-      "/Autos/ramv700/1.jpeg",
-      "/Autos/ramv700/2.jpeg",
-      "/Autos/ramv700/3.jpeg",
-      "/Autos/ramv700/4.jpeg",
-      "/Autos/ramv700/5.jpeg",
-      "/Autos/ramv700/6.jpeg",
-      "/Autos/ramv700/7.jpeg",
-      "/Autos/ramv700/8.jpeg",
+      "/Autos/Ram/BNF724/1.jpeg",
+      "/Autos/Ram/BNF724/2.jpeg",
+      "/Autos/Ram/BNF724/3.jpeg",
+      "/Autos/Ram/BNF724/4.jpeg",
+      "/Autos/Ram/BNF724/5.jpeg",
+      "/Autos/Ram/BNF724/6.jpeg",
+      "/Autos/Ram/BNF724/7.jpeg",
+      "/Autos/Ram/BNF724/8.jpeg",
     ],  
     kilometraje: "61,000 km",
     estado: "Bueno",
@@ -209,7 +209,7 @@ export const subastaData = [
       "Transmision mecanica",
       "Frenos ABS",
     ]
-  },
+  },//4 ram
 
   {
     id: 5,
@@ -218,15 +218,15 @@ export const subastaData = [
     año: 2021,
     precio: 6490,
     incremento_puja: 50, // Incremento de puja en USD
-    imagen: "/Autos/agya/7.jpeg",
+    imagen: "/Autos/Toyota/V0S118/7.jpeg",
     imagenes: [
-      "/Autos/agya/7.jpeg",
-      "/Autos/agya/1.jpeg",
-      "/Autos/agya/2.jpeg",
-      "/Autos/agya/3.jpeg",
-      "/Autos/agya/4.jpeg",
-      "/Autos/agya/5.jpeg",
-      "/Autos/agya/6.jpeg",
+      "/Autos/Toyota/V0S118/7.jpeg",
+      "/Autos/Toyota/V0S118/1.jpeg",
+      "/Autos/Toyota/V0S118/2.jpeg",
+      "/Autos/Toyota/V0S118/3.jpeg",
+      "/Autos/Toyota/V0S118/4.jpeg",
+      "/Autos/Toyota/V0S118/5.jpeg",
+      "/Autos/Toyota/V0S118/6.jpeg",
     ],  
     kilometraje: "000,000 km",  
     estado: "Bueno",
@@ -262,7 +262,7 @@ export const subastaData = [
       "Transmision mecanica",
       "Frenos ABS"
     ]
-  },
+  },//5 toyota
 
   {
     id: 6,
@@ -271,14 +271,14 @@ export const subastaData = [
     año: 2016,
     precio: 2100,
     incremento_puja: 50, // Incremento de puja en USD
-    imagen: "/Autos/Sail01/1.jpeg",
+    imagen: "/Autos/Chevrolet/AYG065/1.jpeg",
     imagenes: [
-      "/Autos/Sail01/1.jpeg",
-      "/Autos/Sail01/2.jpeg",
-      "/Autos/Sail01/3.jpeg",
-      "/Autos/Sail01/4.jpeg",
-      "/Autos/Sail01/5.jpeg",
-      "/Autos/Sail01/6.jpeg",
+      "/Autos/Chevrolet/AYG065/1.jpeg",
+      "/Autos/Chevrolet/AYG065/2.jpeg",
+      "/Autos/Chevrolet/AYG065/3.jpeg",
+      "/Autos/Chevrolet/AYG065/4.jpeg",
+      "/Autos/Chevrolet/AYG065/5.jpeg",
+      "/Autos/Chevrolet/AYG065/6.jpeg",
     ],  
     kilometraje: "125,000 km",  
     estado: "Bueno",
@@ -314,7 +314,7 @@ export const subastaData = [
       "Transmision mecanica",
       "Frenos ABS"
     ]
-  },
+  },//6 chevrolet
 
   {
     id: 7,
@@ -361,7 +361,7 @@ export const subastaData = [
       "Transmision mecanica", 
       "SOAT: No", 
     ]
-  },
+  },//7 hero
 
   {
     id: 8,
@@ -370,9 +370,9 @@ export const subastaData = [
     año: 2014,
     precio: 1999,
     incremento_puja: 50, 
-    imagen: "/Autos/sail2/1.jpeg",
+    imagen: "/Autos/Chevrolet/ADM571/1.jpeg",
     imagenes: [
-      "/Autos/sail2/1.jpeg",
+      "/Autos/Chevrolet/ADM571/1.jpeg",
     ],  
     kilometraje: "125,000 km",  
     estado: "Bueno",
@@ -383,7 +383,7 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-02-06T19:15:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/sail02/ADM-571.pdf",
+    boletaInformativaUrl: "/Autos/Chevrolet/ADM571/ADM-571.pdf",
     descripcion:  [
       "<strong>PLACA: ADM571</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
@@ -407,45 +407,7 @@ export const subastaData = [
       "Transmision mecanica",
       "Frenos ABS"
     ]
-  },
-
-  {
-    id: 9,
-    marca: "Apple",
-    modelo: "Macbook Pro",
-    año: 2018,
-    precio: 250,
-    incremento_puja: 5,
-    imagen: "/Autos/macbook/1.jpeg",
-    imagenes: [
-      "/Autos/macbook/1.jpeg",
-      "/Autos/macbook/2.jpeg",
-      "/Autos/macbook/3.jpeg",
-      "/Autos/macbook/4.jpeg",
-      "/Autos/macbook/5.jpeg",
-      "/Autos/macbook/6.jpeg",
-    ],  
-    kilometraje: "000,000 km",
-    estado: "Bueno",
-    transmision: "-",
-    combustible: "-",
-    color: "Plateado",
-    puertas: 0,
-    // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-03-20T19:00:00",
-    anexoUrl: "/anexo/TyC.pdf",
-    descripcion:  [
-      "<strong>NOTA: El equipo se entregara inmediatamente, una ves finalizada la subasta.</strong>",
-      "MACBOOK PRO A1708 13\" 2017 CORE I5 2.3GHZ 8GB 256GB",
-      "MacOs Ventura 13.4.1",
-      "Ciclos de carga: 396",
-      "Cargador original incluido",
-      "2560 x1600 RETINA DISPLAY IRIS PLUS GRAPHICS ",
-      "WEBCAM, BLUETOOTH, BACKLIGHT KB, WIFI"
-    ].join("\n"),
-    caracteristicas: [
-    ]
-  },
+  },//8 chevrolet
 
   {
     id: 10,
@@ -454,16 +416,16 @@ export const subastaData = [
     año: 2016,
     precio: 1099,
     incremento_puja: 50, 
-    imagen: "/Autos/sail3/1.jpeg",
+    imagen: "/Autos/Chevrolet/AYZ667/1.jpeg",
     imagenes: [
-      "/Autos/sail3/1.jpeg",
-      "/Autos/sail3/2.jpeg",
-      "/Autos/sail3/3.jpeg",
-      "/Autos/sail3/4.jpeg",
-      "/Autos/sail3/5.jpeg",
-      "/Autos/sail3/6.jpeg",
-      "/Autos/sail3/7.jpeg",
-      "/Autos/sail3/9.jpeg",
+      "/Autos/Chevrolet/AYZ667/1.jpeg",
+      "/Autos/Chevrolet/AYZ667/2.jpeg",
+      "/Autos/Chevrolet/AYZ667/3.jpeg",
+      "/Autos/Chevrolet/AYZ667/4.jpeg",
+      "/Autos/Chevrolet/AYZ667/5.jpeg",
+      "/Autos/Chevrolet/AYZ667/6.jpeg",
+      "/Autos/Chevrolet/AYZ667/7.jpeg",
+      "/Autos/Chevrolet/AYZ667/9.jpeg",
     ],  
     kilometraje: "69,000 km",  
     estado: "Bueno",
@@ -474,7 +436,7 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-02-20T17:30:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/sail3/AYZ-667.pdf",
+    boletaInformativaUrl: "/Autos/Chevrolet/AYZ667/AYZ-667.pdf",
     descripcion:  [
       "<strong>PLACA: AYZ667</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
@@ -498,7 +460,7 @@ export const subastaData = [
       "Transmision mecanica",
       "Frenos ABS"
     ]
-  },
+  },//10 chevrolet
 
   {
     id: 11,
@@ -551,7 +513,7 @@ export const subastaData = [
       "Transmision mecanica",
       "Frenos ABS"
     ]
-  },
+  },//11 suzuki
 
   {
     id: 12,
@@ -560,18 +522,18 @@ export const subastaData = [
     año: 2014,
     precio: 3500,
     incremento_puja: 50, 
-    imagen: "/Autos/kiario2/1.jpeg",
+    imagen: "/Autos/Kia/AEC329/1.jpeg",
     imagenes: [
-      "/Autos/kiario2/1.jpeg",
-      "/Autos/kiario2/2.jpeg",
-      "/Autos/kiario2/3.jpeg",
-      "/Autos/kiario2/4.jpeg",
-      "/Autos/kiario2/5.jpeg",
-      "/Autos/kiario2/6.jpeg",
-      "/Autos/kiario2/7.jpeg",
-      "/Autos/kiario2/8.jpeg",
-      "/Autos/kiario2/9.jpeg",
-      "/Autos/kiario2/10.jpeg",
+      "/Autos/Kia/AEC329/1.jpeg",
+      "/Autos/Kia/AEC329/2.jpeg",
+      "/Autos/Kia/AEC329/3.jpeg",
+      "/Autos/Kia/AEC329/4.jpeg",
+      "/Autos/Kia/AEC329/5.jpeg",
+      "/Autos/Kia/AEC329/6.jpeg",
+      "/Autos/Kia/AEC329/7.jpeg",
+      "/Autos/Kia/AEC329/8.jpeg",
+      "/Autos/Kia/AEC329/9.jpeg",
+      "/Autos/Kia/AEC329/10.jpeg",
     ],  
     kilometraje: "233,000 km",  
     estado: "Bueno",
@@ -606,110 +568,7 @@ export const subastaData = [
       "Transmision mecanica",
       "Frenos ABS"
     ]
-  },
-
-  {
-    id: 13,
-    marca: "Chevrolet",
-    modelo: "Cobalt",
-    año: 2018,
-    precio: 4000,
-    incremento_puja: 50, 
-    imagen: "/Autos/Cobalt/1.jpeg",
-    imagenes: [
-      "/Autos/Cobalt/1.jpeg",
-      "/Autos/Cobalt/2.jpeg",
-      "/Autos/Cobalt/3.jpeg",
-      "/Autos/Cobalt/4.jpeg",
-      "/Autos/Cobalt/5.jpeg",
-      "/Autos/Cobalt/6.jpeg",
-      "/Autos/Cobalt/7.jpeg",
-    ],  
-    kilometraje: "80,000 km",  
-    estado: "Bueno",
-    transmision: "Mecanica",
-    combustible: "Gasolina",
-    color: "Plateado",
-    puertas: 4,
-    // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-20T18:40:00",
-    anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: null,
-    descripcion:  [
-      "<strong>PLACA: BFU005</strong>",
-      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
-      "<strong>UBICACION: El vehiculo se encuentra en CUSCO.</strong>",
-      "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
-      "Los datos y fotografías son referenciales.",
-      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
-      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
-      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
-      "",
-      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
-    ].join("\n"),
-    caracteristicas: [
-      "Sistema de sonido premium",
-      "Asientos de Tela",
-      "Pantalla Digital",
-      "Aros de Serie", 
-      "Gasolina",
-      "Transmision mecanica",
-      "Frenos ABS"
-    ]
-  },
-
-  {
-    id: 14,
-    marca: "Honda",
-    modelo: "Civic",
-    año: 2016,
-    precio: 9500,
-    incremento_puja: 50, 
-    imagen: "/Autos/civic/1.jpeg",
-    imagenes: [
-      "/Autos/civic/1.jpeg",
-      "/Autos/civic/2.jpeg",
-      "/Autos/civic/3.jpeg",
-      "/Autos/civic/4.jpeg",
-      "/Autos/civic/5.jpeg",
-    ],  
-    kilometraje: "115,000 km",  
-    estado: "Bueno",
-    transmision: "Automatica",
-    combustible: "Gasolina",
-    color: "Nardo Gray",
-    puertas: 4,
-    // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-20T19:00:00",
-    anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: null,
-    descripcion:  [
-      "<strong>PLACA: AUC103</strong>",
-      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
-      "<strong>UBICACION: El vehiculo se encuentra en CUSCO.</strong>",
-      "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
-      "Los datos y fotografías son referenciales.",
-      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
-      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
-      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
-      "",
-      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
-    ].join("\n"),
-    caracteristicas: [
-      "Sistema de sonido premium",
-      "Asientos de Tela",
-      "Pantalla Digital",
-      "Aros de Serie", 
-      "Gasolina",
-      "Turbo",
-      "Transmision automatica CVT ",
-      "Frenos ABS"
-    ]
-  },
+  },//12 kia
 
   {
     id: 15,
@@ -765,7 +624,7 @@ export const subastaData = [
       "Transmision automatica CVT ",
       "Frenos ABS"
     ]
-  },
+  },//15 chery
 
   {
     id: 16,
@@ -774,16 +633,16 @@ export const subastaData = [
     año: 2016,
     precio: 3500,
     incremento_puja: 50, 
-    imagen: "/Autos/accenthuancayo/1.jpeg",
+    imagen: "/Autos/Hyundai/ASA022/1.jpeg",
     imagenes: [
-      "/Autos/accenthuancayo/1.jpeg",
-      "/Autos/accenthuancayo/2.jpeg",
-      "/Autos/accenthuancayo/3.jpeg",
-      "/Autos/accenthuancayo/4.jpeg",
-      "/Autos/accenthuancayo/5.jpeg",
-      "/Autos/accenthuancayo/6.jpeg",
-      "/Autos/accenthuancayo/7.jpeg",
-      "/Autos/accenthuancayo/8.jpeg",
+      "/Autos/Hyundai/ASA022/1.jpeg",
+      "/Autos/Hyundai/ASA022/2.jpeg",
+      "/Autos/Hyundai/ASA022/3.jpeg",
+      "/Autos/Hyundai/ASA022/4.jpeg",
+      "/Autos/Hyundai/ASA022/5.jpeg",
+      "/Autos/Hyundai/ASA022/6.jpeg",
+      "/Autos/Hyundai/ASA022/7.jpeg",
+      "/Autos/Hyundai/ASA022/8.jpeg",
     ],  
     kilometraje: "72,900 km",  
     estado: "Bueno",
@@ -819,7 +678,7 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  },//16
+  },//16 hyundai
   
   {
     id: 17,
@@ -828,17 +687,17 @@ export const subastaData = [
     año: 2018,
     precio: 4500,
     incremento_puja: 50, 
-    imagen: "/Autos/etios/1.jpeg",
+    imagen: "/Autos/Toyota/BBS471/1.jpeg",
     imagenes: [
-      "/Autos/etios/1.jpeg",
-      "/Autos/etios/2.jpeg",
-      "/Autos/etios/3.jpeg",
-      "/Autos/etios/4.jpeg",
-      "/Autos/etios/5.jpeg",
-      "/Autos/etios/6.jpeg",
-      "/Autos/etios/7.jpeg",
-      "/Autos/etios/8.jpeg",
-      "/Autos/etios/9.jpeg",
+      "/Autos/Toyota/BBS471/1.jpeg",
+      "/Autos/Toyota/BBS471/2.jpeg",
+      "/Autos/Toyota/BBS471/3.jpeg",
+      "/Autos/Toyota/BBS471/4.jpeg",
+      "/Autos/Toyota/BBS471/5.jpeg",
+      "/Autos/Toyota/BBS471/6.jpeg",
+      "/Autos/Toyota/BBS471/7.jpeg",
+      "/Autos/Toyota/BBS471/8.jpeg",
+      "/Autos/Toyota/BBS471/9.jpeg",
     ],  
     kilometraje: "186,000 km",  
     estado: "Bueno",
@@ -849,7 +708,7 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-03-20T18:50:01",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/etios/BBS-471.pdf",
+    boletaInformativaUrl: "/Autos/Toyota/BBS471/BBS-471.pdf",
     descripcion:  [
       "<strong>PLACA: BBS471</strong>",
       "<strong style='color: red;'>Nota importante: El vehiculo circulaba con una placa CLONADA que pertenecia a otro vehiculo, La placa correcta se encuentra en anexos y en esta descripcion</strong>",
@@ -874,48 +733,7 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  }, //17
-
-  {
-    id: 18,
-    marca: "Ancel",
-    modelo: "DS200 Escanner Automotriz Profesional",
-    año: 2026,
-    precio: 250,
-    incremento_puja: 5,
-    imagen: "/Autos/Escanner/1.jpg",
-    imagenes: [
-      "/Autos/Escanner/1.jpg",
-      "/Autos/Escanner/2.jpg",
-      "/Autos/Escanner/3.jpg",
-      "/Autos/Escanner/4.jpg",
-      "/Autos/Escanner/5.jpg",
-      "/Autos/Escanner/6.jpg",
-      "/Autos/Escanner/7.jpg",
-      "/Autos/Escanner/8.jpg",
-      "/Autos/Escanner/9.jpg",
-      "/Autos/Escanner/10.jpg",
-    ],  
-    kilometraje: "000,000 km",
-    estado: "Nuevo-sellado",
-    transmision: "-",
-    combustible: "-",
-    color: "-",
-    puertas: 0,
-    // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-04-03T19:00:00",
-    anexoUrl: "/anexo/TyC.pdf",
-    descripcion:  [
-      "<strong>NOTA: El equipo se entregara inmediatamente, una ves finalizada la subasta.</strong>",
-      "Escanner profesional para diagnostico automotriz, compatible con la mayoria de marcas y modelos del mercado, con funciones avanzadas de lectura y borrado de codigos de falla, visualizacion de datos en tiempo real, pruebas de actuadores y mas.",
-      "Actualizaciones gratuitas de por vida, soporte tecnico dedicado y garantia de 1 año. Ideal para talleres, mecanicos y entusiastas del automovilismo que buscan una herramienta confiable y facil de usar para el mantenimiento y reparacion de vehiculos.",
-      "Cargador original incluido",
-      "Pantalla LCD a color de alta resolucion, interfaz intuitiva y diseño compacto para un manejo comodo y eficiente.",
-      "Compatible con sistemas OBDII, EOBD y CAN, cubriendo la mayoria de los vehiculos fabricados a partir del 1996."
-    ].join("\n"),
-    caracteristicas: [
-    ]
-  }, //18
+  }, //17 Toyota
   
   {
     id: 19,
@@ -943,7 +761,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-04-24T18:00:00",
+    fecha_fin: "2026-04-24T19:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/AUB135/AUB-135.pdf",
     descripcion:  [
@@ -969,7 +787,7 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  },//19
+  },//19 chevrolet
  
   {
     id: 20,
@@ -986,14 +804,14 @@ export const subastaData = [
       "/Autos/Volkswagen/BSG794/4.png",
       "/Autos/Volkswagen/BSG794/5.png",
     ],  
-    kilometraje: "000,000 km",  
+    kilometraje: "147,000 km",  
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Diesel",
     color: "Blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-04-24T18:20:00",
+    fecha_fin: "2026-04-24T18:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Volkswagen/BSG794/BSG-794.pdf",
     descripcion:  [
@@ -1019,7 +837,7 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  },//20
+  },//20 VW
 
   {
     id: 21,
@@ -1031,6 +849,8 @@ export const subastaData = [
     imagen: "/Autos/Chevrolet/D4R223/1.png",
     imagenes: [
       "/Autos/Chevrolet/D4R223/1.png",
+      "/Autos/Chevrolet/D4R223/2.png",
+      "/Autos/Chevrolet/D4R223/3.png",
     ],  
     kilometraje: "000,000 km",  
     estado: "Bueno",
@@ -1041,9 +861,9 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-04-24T18:20:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/Chevrolet/D4R223/D4R-.pdf",
+    boletaInformativaUrl: "/Autos/Chevrolet/D4R223/D4R-223.pdf",
     descripcion:  [
-      "<strong>PLACA: </strong>",
+      "<strong>PLACA: D4R223</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
       "",
@@ -1065,7 +885,7 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  },//21
+  },//21 Chevrolet
 
   {
     id: 22,
@@ -1079,19 +899,20 @@ export const subastaData = [
       "/Autos/Audi/A6E141/1.png",
       "/Autos/Audi/A6E141/2.png",
       "/Autos/Audi/A6E141/3.jpeg",
+      "/Autos/Audi/A6E141/4.png",
     ],  
-    kilometraje: "000,000 km",  
+    kilometraje: "168,000 km",  
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-04-24T18:20:00",
+    fecha_fin: "2026-04-24T18:40:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/Audi/A6E141/A6E-.pdf",
+    boletaInformativaUrl: "/Autos/Audi/A6E141/A6E-141.pdf",
     descripcion:  [
-      "<strong>PLACA: </strong>",
+      "<strong>PLACA: A6E141</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
       "",
@@ -1113,7 +934,7 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  },//22
+  },//22 audi
 
   {
     id: 23,
@@ -1125,20 +946,21 @@ export const subastaData = [
     imagen: "/Autos/FAW/BLN219/1.png",
     imagenes: [
       "/Autos/FAW/BLN219/1.png",
-      "/Autos/FAW/BLN219/3.PNG",
+      "/Autos/FAW/BLN219/3.png",
+      "/Autos/FAW/BLN219/4.png",
     ],  
-    kilometraje: "000,000 km",  
+    kilometraje: "89,000 km",  
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
     color: "Negro",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-04-24T18:20:00",
+    fecha_fin: "2026-04-24T19:00:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/FAW/BLN219/BLN-.pdf",
+    boletaInformativaUrl: "/Autos/FAW/BLN219/BLN-219.pdf",
     descripcion:  [
-      "<strong>PLACA: </strong>",
+      "<strong>PLACA: BLN219</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
       "",
@@ -1160,8 +982,56 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  },//23
+  },//23 faw
   
+  {
+    id: 24,
+    marca: "¡¡¡¡¡¡¡¡¡¡¡ SORTEO !!!!!!!!!!!",
+    modelo: "",
+    año: "Hero Hunk 125R 2026" ,
+    precio: 1500,
+    incremento_puja: 50, 
+    imagen: "/Autos/Hunk/1.jpeg",
+    imagenes: [
+      "/Autos/Hunk/1.jpeg",
+      "/Autos/Hunk/2.jpeg",
+      "/Autos/Hunk/3.jpeg",
+    ],  
+    kilometraje: "00,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Negro",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-05-01T19:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/Hunk/1534FD.pdf",
+    descripcion:  [
+      "<strong>PLACA: 1534FD</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina - GLP",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//24 Hero
+
 ];
 
 
