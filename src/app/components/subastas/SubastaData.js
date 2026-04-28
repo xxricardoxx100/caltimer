@@ -1033,7 +1033,7 @@ export const subastaData = [
   },//24 Hero
 
   {
-    id: 24,
+    id: 25,
     marca: "Chevrolet",
     modelo: "Sail",
     año: 2016,
@@ -1084,6 +1084,6 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  },//24 chevrolet ica
+  },//25 chevrolet ica
 ];
 
