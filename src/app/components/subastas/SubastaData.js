@@ -1004,7 +1004,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-05-01T19:00:00",
+    fecha_fin: "2026-05-09T19:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Hunk/1534FD.pdf",
     descripcion:  [
@@ -1032,7 +1032,58 @@ export const subastaData = [
     ]
   },//24 Hero
 
+  {
+    id: 24,
+    marca: "Chevrolet",
+    modelo: "Sail",
+    año: 2016,
+    precio: 1700,
+    incremento_puja: 50, 
+    imagen: "/Autos/Chevrolet/AMQ320/1.png",
+    imagenes: [
+      "/Autos/Chevrolet/AMQ320/1.png",
+      "/Autos/Chevrolet/AMQ320/2.png",
+      "/Autos/Chevrolet/AMQ320/3.png",
+      "/Autos/Chevrolet/AMQ320/4.png",
+      "/Autos/Chevrolet/AMQ320/5.png",
+      "/Autos/Chevrolet/AMQ320/6.png",
+      "/Autos/Chevrolet/AMQ320/7.png",
+      "/Autos/Chevrolet/AMQ320/8.png",
+
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Negro",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-05-01T18:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/Chevrolet/AMQ320/AMQ-320.pdf",
+    descripcion:  [
+      "<strong>PLACA: AMQ320</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en  COMISARIAS LOS AQUIJES - CIUDAD DE ICA </strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina - GLP",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//24 chevrolet ica
 ];
-
-
 

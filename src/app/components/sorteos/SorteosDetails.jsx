@@ -31,7 +31,7 @@ const SorteosDetails = () => {
 
         <div className="mt-6 rounded-2xl border border-[#f6cf97] bg-[#fff7ec] p-4">
           <p className="text-sm font-medium leading-relaxed text-[#7c4300]">
-            El sorteo se realizará el sábado 01 de mayo. Cada ticket cuesta 20 soles y aumenta tus
+            El sorteo se realizará el sábado 09 de mayo. Cada ticket cuesta 20 soles y aumenta tus
             oportunidades de participar por la moto Hunk.
           </p>
         </div>

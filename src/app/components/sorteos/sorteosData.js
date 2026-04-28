@@ -1,6 +1,6 @@
 export const heroPills = [
   "Ticket: S/ 20",
-  "Sorteo: sábado 01 de mayo",
+  "Sorteo: sábado 09 de mayo",
   "Premio: Moto Hunk 0 km",
 ];
 
@@ -37,11 +37,11 @@ export const flyerImages = [
 export const raffleHighlights = [
   { label: "Premio", value: "Moto Hunk nueva 0 km" },
   { label: "Ticket", value: "S/ 20" },
-  { label: "Fecha", value: "Sábado 01 de mayo" },
+  { label: "Fecha", value: "Sábado 09 de mayo" },
 ];
 
 export const participationSteps = [
   "Compra tu ticket por S/ 20.",
   "Registra tus datos con Caltimer Group.",
-  "Espera el sorteo del sábado 01 de mayo.",
+  "Espera el sorteo del sábado 09 de mayo.",
 ];
