@@ -1058,7 +1058,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-05-01T18:00:00",
+    fecha_fin: "2026-04-29T18:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/AMQ320/AMQ-320.pdf",
     descripcion:  [
