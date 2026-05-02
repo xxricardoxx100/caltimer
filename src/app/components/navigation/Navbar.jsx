@@ -25,8 +25,8 @@ const solutions = [
     href: "/sorteos",
   },
   {
-    name: "Eventos",
-    description: "Próximos eventos y actividades",
+    name: "Venta con garantia",
+    description: "Vende tu vehiculo con inicial y financiamiento",
     href: "/eventos",
   },
 ];
