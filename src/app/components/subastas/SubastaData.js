@@ -1085,5 +1085,58 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//25 chevrolet ica
+  {
+    id: 26,
+    marca: "Chevrolet",
+    modelo: "Sail",
+    año: 2017,
+    precio: 1800,
+    incremento_puja: 50, 
+    imagen: "/Autos/Chevrolet/BFE008/1.png",
+    imagenes: [
+      "/Autos/Chevrolet/BFE008/1.png",
+      "/Autos/Chevrolet/BFE008/2.png",
+      "/Autos/Chevrolet/BFE008/3.png",
+      "/Autos/Chevrolet/BFE008/4.png",
+      "/Autos/Chevrolet/BFE008/5.png",
+      "/Autos/Chevrolet/BFE008/6.png",
+      "/Autos/Chevrolet/BFE008/7.png",
+      "/Autos/Chevrolet/BFE008/8.png",
+
+    ],  
+    kilometraje: "322,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Blanco",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-05-08T18:15:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/Chevrolet/BFE008/BFE-008.pdf",
+    descripcion:  [
+      "<strong>PLACA: BFE008</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina - GLP",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//26 chevrolet Lima
 ];
 
