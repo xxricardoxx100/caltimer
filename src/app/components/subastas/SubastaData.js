@@ -1166,7 +1166,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-05-08T19:15:00",
+    fecha_fin: "2026-05-08T19:35:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Toyota/W1K738/W1K-738.pdf",
     descripcion:  [
@@ -1193,5 +1193,59 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//28 toyota huaral
+
+  {
+    id: 29,
+    marca: "Chevrolet",
+    modelo: "Sail",
+    año: 2016,
+    precio: 1500,
+    incremento_puja: 50, 
+    imagen: "/Autos/Chevrolet/AYZ362/1.png",
+    imagenes: [
+      "/Autos/Chevrolet/AYZ362/1.png",
+      "/Autos/Chevrolet/AYZ362/2.png",
+      "/Autos/Chevrolet/AYZ362/3.png",
+      "/Autos/Chevrolet/AYZ362/4.png",
+      "/Autos/Chevrolet/AYZ362/5.png",
+      "/Autos/Chevrolet/AYZ362/6.png",
+      "/Autos/Chevrolet/AYZ362/7.png",
+
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina -GNV",
+    color: "Negro",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-05-08T19:15:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/Chevrolet/AYZ362/AYZ-362.pdf",
+    descripcion:  [
+      "<strong>PLACA: AYZ362</strong>",
+      "<strong style=\"color: red;\">Vehiculo no esta operativo o no enciende. Si tiene llave</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina - GNV",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//29 chevrolet Taller
 ];
 
