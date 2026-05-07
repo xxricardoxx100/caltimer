@@ -1199,12 +1199,12 @@ export const subastaData = [
     año: 0x0,
     precio: 1500,
     incremento_puja: 50, 
-    imagen: "/Autos/Toyota/W1k738/1.png",
+    imagen: "/Autos/Toyota/W1K738/1.png",
     imagenes: [
-      "/Autos/Toyota/W1k738/1.png",
-      "/Autos/Toyota/W1k738/2.png",
-      "/Autos/Toyota/W1k738/3.png",
-      "/Autos/Toyota/W1k738/4.png",
+      "/Autos/Toyota/W1K738/1.png",
+      "/Autos/Toyota/W1K738/2.png",
+      "/Autos/Toyota/W1K738/3.png",
+      "/Autos/Toyota/W1K738/4.png",
 
     ],  
     kilometraje: "000,000 km",  
@@ -1216,9 +1216,9 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-05-08T19:15:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/Toyota/W1k738/W1k-738.pdf",
+    boletaInformativaUrl: "/Autos/Toyota/W1K738/W1K-738.pdf",
     descripcion:  [
-      "<strong>PLACA: W1k738</strong>",
+      "<strong>PLACA: W1K738</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Huaral</strong>",
       "",
