@@ -3,6 +3,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+const showSorteos = false;
+
 const solutions = [
   {
     name: "Vehiculos",
@@ -19,11 +21,15 @@ const solutions = [
     description: "Compra de Vehiculos en subasta",
     href: "/subasta",
   },
-  {
-    name: "Sorteos",
-    description: "Sorteos y premios de Caltimer",
-    href: "/sorteos",
-  },
+  ...(showSorteos
+    ? [
+        {
+          name: "Sorteos",
+          description: "Sorteos y premios de Caltimer",
+          href: "/sorteos",
+        },
+      ]
+    : []),
   {
     name: "Venta con garantia",
     description: "Vende tu vehiculo con inicial y financiamiento",
