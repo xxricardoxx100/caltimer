@@ -1,45 +1,99 @@
+const testimonials = [
+  {
+    name: "Nefi Rodriguez",
+    detail: "Chevrolet Prisma 2020",
+    location: "Lima",
+    image: "/testimonios/1.jpeg",
+    className: "lg:col-span-2 lg:row-span-2",
+  },
+  {
+    name: "Luis A.",
+    detail: "Chevrolet Sail 2016",
+    location: "Lima",
+    image: "/testimonios/2.png",
+  },
+  {
+    name: "Maria P.",
+    detail: "Ram v700 2021",
+    location: "Lima",
+    image: "/testimonios/3.jpeg",
+  },
+  {
+    name: "Roger R.",
+    detail: "Kia Cerato",
+    location: "Lima",
+    image: "/testimonios/4.png",
+  },
+  {
+    name: "Paul M.",
+    detail: "Brilliance",
+    location: "Lima",
+    image: "/testimonios/5.png",
+  },
+  {
+    name: "Richard P.",
+    detail: "Toyota Hilux 2023",
+    location: "Cusco",
+    image: "/testimonios/6.png",
+  },
+  {
+    name: "Angel V.",
+    detail: "Kia Rio 2018",
+    location: "Lima",
+    image: "/testimonios/7.png",
+  },
+  {
+    name: "Raul V.",
+    detail: "Hyundai Accent 2016",
+    location: "Lima",
+    image: "/testimonios/8.png",
+  },
+];
+
 export default function LogoCloud() {
   return (
-    <div className="bg-[#F8FAFC]">
-      <div className="mx-auto lg:mx-12 max-w-full py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <img
-              className="h-12"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Toyota_logo_%28Red%29.svg/2560px-Toyota_logo_%28Red%29.svg.png"
-              alt="Toyota"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <img
-              className="h-8"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hyundai_Motor_Company_logo.svg/1280px-Hyundai_Motor_Company_logo.svg.png"
-              alt="Hyundai"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <img
-              className="h-12"
-              src="https://upload.wikimedia.org/wikipedia/commons/4/47/KIA_logo2.svg"
-              alt="KIA"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-            <img
-              className="h-12"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/2560px-Ford_logo_flat.svg.png"
-              alt="Ford"
-            />
-          </div>
-          <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
-            <img
-              className="h-12"
-              src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Mitsubishi_logo.svg"
-              alt="Mitsubishi"
-            />
-          </div>
+    <section className="relative overflow-hidden bg-[#141915] text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_#223127,_#111311_60%)]" />
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-200/70">
+            Testimonios
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+            Historias de nuestra comunidad
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-white/70 sm:text-base">
+            Cada imagen es un logro personal. Las fotos de los miembros de nuestra comunidad que
+            ya confiaron en nosotros y muestran su historia con orgullo.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[180px]">
+          {testimonials.map((item) => (
+            <figure
+              key={item.name}
+              className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.45)] ${
+                item.className || ""
+              }`}
+            >
+              <div className="relative h-full w-full">
+                <img
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  src={item.image}
+                  alt={`Foto de ${item.name}`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
+              </div>
+              <figcaption className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="text-sm font-semibold text-white">{item.name}</p>
+                <p className="text-xs text-white/75">
+                  {item.detail} · {item.location}
+                </p>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -1166,7 +1166,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-05-08T19:35:00",
+    fecha_fin: "2026-05-15T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Toyota/W1K738/W1K-738.pdf",
     descripcion:  [
