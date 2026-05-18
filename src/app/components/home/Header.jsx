@@ -60,7 +60,7 @@ function Header() {
                   Caltimer Group
                 </p>
                 <h1 className="mt-3 text-[28px] sm:text-[34px] lg:text-[35px] font-semibold tracking-tight text-white">
-                  Seguridad y confianza en cada operación
+                  Participa en nuestras subastas
                 </h1>
                 <p className="mt-4 text-[13px] sm:text-[14px] text-white/80 leading-6">
                   Servicios integrales para compra, venta y subastas con procesos claros,

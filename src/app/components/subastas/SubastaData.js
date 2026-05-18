@@ -1166,7 +1166,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-05-15T18:30:00",
+    fecha_fin: "2026-05-22T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Toyota/W1K738/W1K-738.pdf",
     descripcion:  [
@@ -1247,5 +1247,60 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//29 chevrolet Taller
+  
+  {
+    id: 30,
+    marca: "Hyundai",
+    modelo: "Verna",
+    año: 2020,
+    precio: 4500,
+    incremento_puja: 50, 
+    imagen: "/Autos/Hyundai/BSB485/1.png",
+    imagenes: [
+      "/Autos/Hyundai/BSB485/1.png",
+      "/Autos/Hyundai/BSB485/2.png",
+      "/Autos/Hyundai/BSB485/3.png",
+      "/Autos/Hyundai/BSB485/4.png",
+      "/Autos/Hyundai/BSB485/5.png",
+      "/Autos/Hyundai/BSB485/6.png",
+      "/Autos/Hyundai/BSB485/7.png",
+      "/Autos/Hyundai/BSB485/8.png",
+      "/Autos/Hyundai/BSB485/9.png",
+      "/Autos/Hyundai/BSB485/10.png",
+    ],  
+    kilometraje: "74,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina -GNV",
+    color: "Negro",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-05-22T18:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/Hyundai/BSB485/BSB-485.pdf",
+    descripcion:  [
+      "<strong>PLACA: BSB485</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en  COMISARIA PNP CESAR LLATAS - CIUDAD DE CHICAYO</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina - GNV",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//30 hyundai VERNA
 ];
 
