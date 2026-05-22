@@ -336,7 +336,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-02-06T18:30:00",
+    fecha_fin: "2026-05-22T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
