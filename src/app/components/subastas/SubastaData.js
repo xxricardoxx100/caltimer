@@ -358,7 +358,7 @@ export const subastaData = [
       "Aros de Serie", 
       "Llaves: Si", 
       "Gasolina", 
-      "Transmision mecanica", 
+      "Transmisión mecanica", 
       "SOAT: No", 
     ]
   },//7 hero
