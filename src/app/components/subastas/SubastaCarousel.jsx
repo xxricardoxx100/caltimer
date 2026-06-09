@@ -9,14 +9,14 @@ const defaultSlides = [
     id: 1,
     title: "<span style='color: #002060;'>Capacitación Presencial</span> de Subastas Vehiculares y Bienes Raíces",
     description:
-      "Se parte de nuestro próximo taller presencial y aprende de los expertos. Este 30 de Mayo en La Molina, Lima.",
+      "Se parte de nuestro próximo taller presencial y aprende de los expertos. En La Molina, Lima.",
     cta: "Inscribite ahora",
     image: "/eventos/eventopresencial1.jpg",
   },
   {
     id: 2,
     title: "<span style='color: #002060;'>Capacitación Virtual</span> de Subastas Vehiculares y Bienes Raíces",
-    description: "Se parte de nuestro próximo taller virtual y aprende de los expertos. Este 30 de Mayo via ZOOM.",
+    description: "Se parte de nuestro próximo taller virtual y aprende de los expertos. via ZOOM.",
     cta: "Inscribite ahora",
     image: "/eventos/zoom.png",
   },

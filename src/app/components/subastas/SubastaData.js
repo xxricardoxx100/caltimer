@@ -1316,7 +1316,6 @@ export const subastaData = [
       "/Autos/Hyundai/AWE310/2.png",
       "/Autos/Hyundai/AWE310/3.png",
       "/Autos/Hyundai/AWE310/4.png",
-      "/Autos/Hyundai/AWE310/5.png",
       "/Autos/Hyundai/AWE310/6.png",
     ],  
     kilometraje: "000,000 km",  
