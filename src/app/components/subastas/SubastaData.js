@@ -1385,7 +1385,7 @@ export const subastaData = [
     descripcion:  [
       "<strong>PLACA: V8V574</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
-      "<strong>UBICACION: El vehiculo se encuentra en Lima</strong>",
+      "<strong>UBICACION: El vehiculo se encuentra en Comisaria Jose Leonardo Ortiz, Chiclayo</strong>",
       "",
       "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
       "Los datos y fotografías son referenciales.",
