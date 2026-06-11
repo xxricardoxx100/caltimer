@@ -1308,7 +1308,7 @@ export const subastaData = [
     marca: "Hyundai",
     modelo: "Accentt",
     año: 2017,
-    precio: 2600,
+    precio: 1600,
     incremento_puja: 50, 
     imagen: "/Autos/Hyundai/AWE310/1.png",
     imagenes: [
