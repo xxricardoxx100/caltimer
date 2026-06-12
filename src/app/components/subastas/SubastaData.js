@@ -1339,6 +1339,7 @@ export const subastaData = [
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+    ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
