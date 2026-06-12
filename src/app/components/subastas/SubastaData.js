@@ -1,6 +1,5 @@
 // Datos de vehículos en subasta
 export const subastaData = [
-
   {
     id: 1,
     marca: "Brilliance",
@@ -20,7 +19,7 @@ export const subastaData = [
       "/Autos/brilliance/ALQ424/8.jpeg",
       "/Autos/brilliance/ALQ424/9.jpeg",
       "/Autos/brilliance/ALQ424/10.jpeg",
-    ],  
+    ],
     kilometraje: "170,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
@@ -31,28 +30,28 @@ export const subastaData = [
     fecha_fin: "2025-12-11T16:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
-    descripcion:  [
+    descripcion: [
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Tela",
       "Cámara de reversa",
-      "Aros de aleacion", 
+      "Aros de aleacion",
       "GLP",
       "Transmision mecanica",
-      "Frenos ABS"
-    ]
-  },//1 brilliance
+      "Frenos ABS",
+    ],
+  }, //1 brilliance
 
   {
     id: 2,
@@ -73,7 +72,7 @@ export const subastaData = [
       "/Autos/Byd/BCK439/8.jpeg",
       "/Autos/Byd/BCK439/9.jpeg",
       "/Autos/Byd/BCK439/10.jpeg",
-    ],  
+    ],
     kilometraje: "230,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
@@ -84,35 +83,35 @@ export const subastaData = [
     fecha_fin: "2025-12-11T16:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
-    descripcion:  [
+    descripcion: [
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Cámara de reversa",
-      "Aros de aleacion", 
+      "Aros de aleacion",
       "GNV",
       "Transmision mecanica",
       "Frenos ABS",
-      "pantalla touch"
-    ]
-  },//2 byd
+      "pantalla touch",
+    ],
+  }, //2 byd
 
   {
     id: 3,
     marca: "Kia",
     modelo: "Rio",
-    año: 2017,  
+    año: 2017,
     precio: 4500,
     incremento_puja: 50, // Incremento de puja en USD
     imagen: "/Autos/Kia/ATQ598/1.jpg",
@@ -126,7 +125,7 @@ export const subastaData = [
       "/Autos/Kia/ATQ598/7.jpg",
       "/Autos/Kia/ATQ598/8.jpg",
       "/Autos/Kia/ATQ598/9.jpg",
-    ],  
+    ],
     kilometraje: "100,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
@@ -137,35 +136,35 @@ export const subastaData = [
     fecha_fin: "2026-01-23T17:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/kiario/ATQ-598.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Cámara de reversa",
-      "Aros de aleacion", 
+      "Aros de aleacion",
       "GNV",
       "Transmision mecanica",
       "Frenos ABS",
-      "pantalla touch"
-    ]
-  },//3 kia
+      "pantalla touch",
+    ],
+  }, //3 kia
 
   {
     id: 4,
     marca: "RAM",
     modelo: "v700",
-    año: 2022,  
+    año: 2022,
     precio: 5300,
     incremento_puja: 50, // Incremento de puja en USD
     imagen: "/Autos/Ram/BNF724/1.jpeg",
@@ -178,7 +177,7 @@ export const subastaData = [
       "/Autos/Ram/BNF724/6.jpeg",
       "/Autos/Ram/BNF724/7.jpeg",
       "/Autos/Ram/BNF724/8.jpeg",
-    ],  
+    ],
     kilometraje: "61,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
@@ -189,27 +188,27 @@ export const subastaData = [
     fecha_fin: "2026-01-23T18:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
-    descripcion:  [
+    descripcion: [
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "No Cámara de reversa",
-      "Aros de aleacion", 
+      "Aros de aleacion",
       "Transmision mecanica",
       "Frenos ABS",
-    ]
-  },//4 ram
+    ],
+  }, //4 ram
 
   {
     id: 5,
@@ -227,8 +226,8 @@ export const subastaData = [
       "/Autos/Toyota/V0S118/4.jpeg",
       "/Autos/Toyota/V0S118/5.jpeg",
       "/Autos/Toyota/V0S118/6.jpeg",
-    ],  
-    kilometraje: "000,000 km",  
+    ],
+    kilometraje: "000,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -238,31 +237,31 @@ export const subastaData = [
     fecha_fin: "2026-02-06T17:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: V0S118</strong>",
       "",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "",
       "<strong>UBICACION: El vehiculo se encuentra en Lima.</strong>",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Tela",
       "Cámara de reversa",
-      "Aros de aleacion", 
+      "Aros de aleacion",
       "Gasolina",
       "Transmision mecanica",
-      "Frenos ABS"
-    ]
-  },//5 toyota
+      "Frenos ABS",
+    ],
+  }, //5 toyota
 
   {
     id: 6,
@@ -279,8 +278,8 @@ export const subastaData = [
       "/Autos/Chevrolet/AYG065/4.jpeg",
       "/Autos/Chevrolet/AYG065/5.jpeg",
       "/Autos/Chevrolet/AYG065/6.jpeg",
-    ],  
-    kilometraje: "125,000 km",  
+    ],
+    kilometraje: "125,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -290,31 +289,31 @@ export const subastaData = [
     fecha_fin: "2026-02-06T18:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Sail01/AYG-065.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: AYG065</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong style='color: red;'>DEUDA DEIMPUESTO VEHICULAR EN LIMA: S/4412.00</strong>",
       "<strong>UBICACION: El vehiculo se encuentra en ILAVE, Puno.</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Tela",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina",
       "Transmision mecanica",
-      "Frenos ABS"
-    ]
-  },//6 chevrolet
+      "Frenos ABS",
+    ],
+  }, //6 chevrolet
 
   {
     id: 7,
@@ -328,8 +327,8 @@ export const subastaData = [
       "/Autos/Hunk/1.jpeg",
       "/Autos/Hunk/2.jpeg",
       "/Autos/Hunk/3.jpeg",
-    ],  
-    kilometraje: "16 km",  
+    ],
+    kilometraje: "16 km",
     estado: "Excelente",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -339,29 +338,29 @@ export const subastaData = [
     fecha_fin: "2026-05-22T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: 1534FD</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Lima.</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Pantalla Digital",
-      "Aros de Serie", 
-      "Llaves: Si", 
-      "Gasolina", 
-      "Transmisión mecanica", 
-      "SOAT: No", 
-    ]
-  },//7 hero
+      "Aros de Serie",
+      "Llaves: Si",
+      "Gasolina",
+      "Transmisión mecanica",
+      "SOAT: No",
+    ],
+  }, //7 hero
 
   {
     id: 8,
@@ -369,12 +368,10 @@ export const subastaData = [
     modelo: "Sail",
     año: 2014,
     precio: 1999,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Chevrolet/ADM571/1.jpeg",
-    imagenes: [
-      "/Autos/Chevrolet/ADM571/1.jpeg",
-    ],  
-    kilometraje: "125,000 km",  
+    imagenes: ["/Autos/Chevrolet/ADM571/1.jpeg"],
+    kilometraje: "125,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -384,30 +381,30 @@ export const subastaData = [
     fecha_fin: "2026-02-06T19:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/ADM571/ADM-571.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: ADM571</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Lima.</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Tela",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina",
       "Transmision mecanica",
-      "Frenos ABS"
-    ]
-  },//8 chevrolet
+      "Frenos ABS",
+    ],
+  }, //8 chevrolet
 
   {
     id: 10,
@@ -415,7 +412,7 @@ export const subastaData = [
     modelo: "Sail",
     año: 2016,
     precio: 1099,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Chevrolet/AYZ667/1.jpeg",
     imagenes: [
       "/Autos/Chevrolet/AYZ667/1.jpeg",
@@ -426,8 +423,8 @@ export const subastaData = [
       "/Autos/Chevrolet/AYZ667/6.jpeg",
       "/Autos/Chevrolet/AYZ667/7.jpeg",
       "/Autos/Chevrolet/AYZ667/9.jpeg",
-    ],  
-    kilometraje: "69,000 km",  
+    ],
+    kilometraje: "69,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -437,30 +434,30 @@ export const subastaData = [
     fecha_fin: "2026-02-20T17:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/AYZ667/AYZ-667.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: AYZ667</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en COMISARIA CHURCAMPA, LA MERCED DE CHUPAS, HUANCAVELICA.</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Tela",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina",
       "Transmision mecanica",
-      "Frenos ABS"
-    ]
-  },//10 chevrolet
+      "Frenos ABS",
+    ],
+  }, //10 chevrolet
 
   {
     id: 11,
@@ -468,7 +465,7 @@ export const subastaData = [
     modelo: "Ciaz",
     año: 2019,
     precio: 4500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Ciaz/1.jpeg",
     imagenes: [
       "/Autos/Ciaz/1.jpeg",
@@ -478,8 +475,8 @@ export const subastaData = [
       "/Autos/Ciaz/5.jpeg",
       "/Autos/Ciaz/6.jpeg",
       "/Autos/Ciaz/7.jpeg",
-    ],  
-    kilometraje: "00,000 km",  
+    ],
+    kilometraje: "00,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina/GLP",
@@ -489,31 +486,31 @@ export const subastaData = [
     fecha_fin: "2026-02-20T18:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: BFY343</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Lima.</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Tela",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina",
       "GLP",
       "Transmision mecanica",
-      "Frenos ABS"
-    ]
-  },//11 suzuki
+      "Frenos ABS",
+    ],
+  }, //11 suzuki
 
   {
     id: 12,
@@ -521,7 +518,7 @@ export const subastaData = [
     modelo: "Rio",
     año: 2014,
     precio: 3500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Kia/AEC329/1.jpeg",
     imagenes: [
       "/Autos/Kia/AEC329/1.jpeg",
@@ -534,8 +531,8 @@ export const subastaData = [
       "/Autos/Kia/AEC329/8.jpeg",
       "/Autos/Kia/AEC329/9.jpeg",
       "/Autos/Kia/AEC329/10.jpeg",
-    ],  
-    kilometraje: "233,000 km",  
+    ],
+    kilometraje: "233,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina/GNV",
@@ -545,30 +542,30 @@ export const subastaData = [
     fecha_fin: "2026-02-20T18:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: AEC329</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Lima.</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Tela",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina/GNV",
       "Transmision mecanica",
-      "Frenos ABS"
-    ]
-  },//12 kia
+      "Frenos ABS",
+    ],
+  }, //12 kia
 
   {
     id: 15,
@@ -576,7 +573,7 @@ export const subastaData = [
     modelo: "Tiggo 3",
     año: 2018,
     precio: 6500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/cherytiggo3/1.jpeg",
     imagenes: [
       "/Autos/cherytiggo3/1.jpeg",
@@ -588,8 +585,8 @@ export const subastaData = [
       "/Autos/cherytiggo3/7.jpeg",
       "/Autos/cherytiggo3/8.jpeg",
       "/Autos/cherytiggo3/9.jpeg",
-    ],  
-    kilometraje: "87,000 km",  
+    ],
+    kilometraje: "87,000 km",
     estado: "Bueno",
     transmision: "Automatica",
     combustible: "Gasolina",
@@ -599,32 +596,32 @@ export const subastaData = [
     fecha_fin: "2026-02-20T19:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/cherytiggo3/M4P-609.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: M4P609</strong>",
       "<strong style='color: red;'>IMPORTANTE: Vehiculo adjudicado en Acceso Crediticio. El vehiculo saldra al nombre del nuevo adjudicatario. Entrega aproximanda de 2 semanas</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Lima, Almacen Villa el Savador.</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina",
       "Sunroof Panoramico",
       "Transmision automatica CVT ",
-      "Frenos ABS"
-    ]
-  },//15 chery
+      "Frenos ABS",
+    ],
+  }, //15 chery
 
   {
     id: 16,
@@ -632,7 +629,7 @@ export const subastaData = [
     modelo: "Accent",
     año: 2016,
     precio: 3500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Hyundai/ASA022/1.jpeg",
     imagenes: [
       "/Autos/Hyundai/ASA022/1.jpeg",
@@ -643,8 +640,8 @@ export const subastaData = [
       "/Autos/Hyundai/ASA022/6.jpeg",
       "/Autos/Hyundai/ASA022/7.jpeg",
       "/Autos/Hyundai/ASA022/8.jpeg",
-    ],  
-    kilometraje: "72,900 km",  
+    ],
+    kilometraje: "72,900 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "BIcombustible GLP",
@@ -654,39 +651,39 @@ export const subastaData = [
     fecha_fin: "2026-03-20T18:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/accenthuancayo/ASA-022.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: ASA022</strong>",
       "<strong style='color: red;'>Nota importante: El vehiculo circulaba con una placa CLONADA que pertenecia a otro vehiculo, La placa correcta se encuentra en anexos y en esta descripcion</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en El tambo,Huancayo.</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GLP",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//16 hyundai
-  
+      "Frenos ABS",
+    ],
+  }, //16 hyundai
+
   {
     id: 17,
     marca: "Toyota",
     modelo: "Etios",
     año: 2018,
     precio: 4500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Toyota/BBS471/1.jpeg",
     imagenes: [
       "/Autos/Toyota/BBS471/1.jpeg",
@@ -698,8 +695,8 @@ export const subastaData = [
       "/Autos/Toyota/BBS471/7.jpeg",
       "/Autos/Toyota/BBS471/8.jpeg",
       "/Autos/Toyota/BBS471/9.jpeg",
-    ],  
-    kilometraje: "186,000 km",  
+    ],
+    kilometraje: "186,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -709,39 +706,39 @@ export const subastaData = [
     fecha_fin: "2026-03-20T18:50:01",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Toyota/BBS471/BBS-471.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: BBS471</strong>",
       "<strong style='color: red;'>Nota importante: El vehiculo circulaba con una placa CLONADA que pertenecia a otro vehiculo, La placa correcta se encuentra en anexos y en esta descripcion</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra DIPROVE HUANCAYO,Huancayo.</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
+      "Frenos ABS",
+    ],
   }, //17 Toyota
-  
+
   {
     id: 19,
     marca: "Chevrolet",
     modelo: "Sail",
     año: 2016,
     precio: 1600,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Chevrolet/AUB135/1.png",
     imagenes: [
       "/Autos/Chevrolet/AUB135/1.png",
@@ -753,8 +750,8 @@ export const subastaData = [
       "/Autos/Chevrolet/AUB135/7.png",
       "/Autos/Chevrolet/AUB135/8.png",
       "/Autos/Chevrolet/AUB135/9.png",
-    ],  
-    kilometraje: "72,900 km",  
+    ],
+    kilometraje: "72,900 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "BIcombustible GNV",
@@ -764,38 +761,38 @@ export const subastaData = [
     fecha_fin: "2026-04-24T19:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/AUB135/AUB-135.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: AUB135</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  SECPIRV PUNO, PNP PUNO</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GLP",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//19 chevrolet
- 
+      "Frenos ABS",
+    ],
+  }, //19 chevrolet
+
   {
     id: 20,
     marca: "VolskWagen",
     modelo: "Worker",
     año: 2004,
     precio: 6000,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Volkswagen/BSG794/1.png",
     imagenes: [
       "/Autos/Volkswagen/BSG794/1.png",
@@ -803,8 +800,8 @@ export const subastaData = [
       "/Autos/Volkswagen/BSG794/3.png",
       "/Autos/Volkswagen/BSG794/4.png",
       "/Autos/Volkswagen/BSG794/5.png",
-    ],  
-    kilometraje: "147,000 km",  
+    ],
+    kilometraje: "147,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Diesel",
@@ -814,30 +811,30 @@ export const subastaData = [
     fecha_fin: "2026-04-24T18:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Volkswagen/BSG794/BSG-794.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: BSG794</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GLP",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//20 VW
+      "Frenos ABS",
+    ],
+  }, //20 VW
 
   {
     id: 21,
@@ -845,14 +842,14 @@ export const subastaData = [
     modelo: "N300",
     año: 2013,
     precio: 1500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Chevrolet/D4R223/1.png",
     imagenes: [
       "/Autos/Chevrolet/D4R223/1.png",
       "/Autos/Chevrolet/D4R223/2.png",
       "/Autos/Chevrolet/D4R223/3.png",
-    ],  
-    kilometraje: "000,000 km",  
+    ],
+    kilometraje: "000,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -862,30 +859,30 @@ export const subastaData = [
     fecha_fin: "2026-04-24T18:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/D4R223/D4R-223.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: D4R223</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GLP",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//21 Chevrolet
+      "Frenos ABS",
+    ],
+  }, //21 Chevrolet
 
   {
     id: 22,
@@ -893,15 +890,15 @@ export const subastaData = [
     modelo: "A4",
     año: 2008,
     precio: 1500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Audi/A6E141/1.png",
     imagenes: [
       "/Autos/Audi/A6E141/1.png",
       "/Autos/Audi/A6E141/2.png",
       "/Autos/Audi/A6E141/3.jpeg",
       "/Autos/Audi/A6E141/4.png",
-    ],  
-    kilometraje: "168,000 km",  
+    ],
+    kilometraje: "168,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -911,30 +908,30 @@ export const subastaData = [
     fecha_fin: "2026-04-24T18:40:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Audi/A6E141/A6E-141.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: A6E141</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GLP",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//22 audi
+      "Frenos ABS",
+    ],
+  }, //22 audi
 
   {
     id: 23,
@@ -942,14 +939,14 @@ export const subastaData = [
     modelo: "HongQi HQ300",
     año: 2008,
     precio: 1500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/FAW/BLN219/1.png",
     imagenes: [
       "/Autos/FAW/BLN219/1.png",
       "/Autos/FAW/BLN219/3.png",
       "/Autos/FAW/BLN219/4.png",
-    ],  
-    kilometraje: "89,000 km",  
+    ],
+    kilometraje: "89,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -959,30 +956,30 @@ export const subastaData = [
     fecha_fin: "2026-04-24T19:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/FAW/BLN219/BLN-219.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: BLN219</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GLP",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//23 faw
+      "Frenos ABS",
+    ],
+  }, //23 faw
 
   {
     id: 25,
@@ -990,7 +987,7 @@ export const subastaData = [
     modelo: "Sail",
     año: 2016,
     precio: 1700,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Chevrolet/AMQ320/1.png",
     imagenes: [
       "/Autos/Chevrolet/AMQ320/1.png",
@@ -1001,9 +998,8 @@ export const subastaData = [
       "/Autos/Chevrolet/AMQ320/6.png",
       "/Autos/Chevrolet/AMQ320/7.png",
       "/Autos/Chevrolet/AMQ320/8.png",
-
-    ],  
-    kilometraje: "000,000 km",  
+    ],
+    kilometraje: "000,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -1013,30 +1009,30 @@ export const subastaData = [
     fecha_fin: "2026-05-01T18:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/AMQ320/AMQ-320.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: AMQ320</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  COMISARIAS LOS AQUIJES - CIUDAD DE ICA </strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GLP",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//25 chevrolet ica
+      "Frenos ABS",
+    ],
+  }, //25 chevrolet ica
 
   {
     id: 26,
@@ -1044,7 +1040,7 @@ export const subastaData = [
     modelo: "Sail",
     año: 2017,
     precio: 1800,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Chevrolet/BFE008/1.png",
     imagenes: [
       "/Autos/Chevrolet/BFE008/1.png",
@@ -1055,9 +1051,8 @@ export const subastaData = [
       "/Autos/Chevrolet/BFE008/6.png",
       "/Autos/Chevrolet/BFE008/7.png",
       "/Autos/Chevrolet/BFE008/8.png",
-
-    ],  
-    kilometraje: "322,000 km",  
+    ],
+    kilometraje: "322,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -1067,30 +1062,30 @@ export const subastaData = [
     fecha_fin: "2026-05-08T18:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/BFE008/BFE-008.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: BFE008</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GLP",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//26 chevrolet Lima
+      "Frenos ABS",
+    ],
+  }, //26 chevrolet Lima
 
   {
     id: 27,
@@ -1098,7 +1093,7 @@ export const subastaData = [
     modelo: "Soluto",
     año: 2020,
     precio: 3800,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Kia/BRJ620/1.png",
     imagenes: [
       "/Autos/Kia/BRJ620/1.png",
@@ -1108,9 +1103,8 @@ export const subastaData = [
       "/Autos/Kia/BRJ620/5.png",
       "/Autos/Kia/BRJ620/6.png",
       "/Autos/Kia/BRJ620/7.png",
-
-    ],  
-    kilometraje: "80,000 km",  
+    ],
+    kilometraje: "80,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -1120,29 +1114,29 @@ export const subastaData = [
     fecha_fin: "2026-05-08T18:45:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Kia/BRJ620/BRJ-620.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: BRJ620</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  COMISARIA TALAVERA - CIUDAD DE ANDAHUAYLAS</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//27 kia Andahuaylas
+      "Frenos ABS",
+    ],
+  }, //27 kia Andahuaylas
 
   {
     id: 28,
@@ -1150,16 +1144,15 @@ export const subastaData = [
     modelo: "Hiace",
     año: 0x0,
     precio: 1500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Toyota/W1K738/1.png",
     imagenes: [
       "/Autos/Toyota/W1K738/1.png",
       "/Autos/Toyota/W1K738/2.png",
       "/Autos/Toyota/W1K738/3.png",
       "/Autos/Toyota/W1K738/4.png",
-
-    ],  
-    kilometraje: "000,000 km",  
+    ],
+    kilometraje: "000,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Diesel",
@@ -1169,30 +1162,30 @@ export const subastaData = [
     fecha_fin: "2026-05-22T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Toyota/W1K738/W1K-738.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: W1K738</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Huaral</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GLP",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//28 toyota huaral
+      "Frenos ABS",
+    ],
+  }, //28 toyota huaral
 
   {
     id: 29,
@@ -1200,7 +1193,7 @@ export const subastaData = [
     modelo: "Sail",
     año: 2016,
     precio: 1500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Chevrolet/AYZ362/1.png",
     imagenes: [
       "/Autos/Chevrolet/AYZ362/1.png",
@@ -1210,9 +1203,8 @@ export const subastaData = [
       "/Autos/Chevrolet/AYZ362/5.png",
       "/Autos/Chevrolet/AYZ362/6.png",
       "/Autos/Chevrolet/AYZ362/7.png",
-
-    ],  
-    kilometraje: "000,000 km",  
+    ],
+    kilometraje: "000,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina -GNV",
@@ -1222,39 +1214,39 @@ export const subastaData = [
     fecha_fin: "2026-05-08T19:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/AYZ362/AYZ-362.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: AYZ362</strong>",
-      "<strong style=\"color: red;\">Vehiculo no esta operativo o no enciende. Si tiene llave</strong>",
+      '<strong style="color: red;">Vehiculo no esta operativo o no enciende. Si tiene llave</strong>',
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa.",
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GNV",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//29 chevrolet Taller
-  
+      "Frenos ABS",
+    ],
+  }, //29 chevrolet Taller
+
   {
     id: 30,
     marca: "Hyundai",
     modelo: "Verna",
     año: 2020,
     precio: 4500,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Hyundai/BSB485/1.png",
     imagenes: [
       "/Autos/Hyundai/BSB485/1.png",
@@ -1267,8 +1259,8 @@ export const subastaData = [
       "/Autos/Hyundai/BSB485/8.png",
       "/Autos/Hyundai/BSB485/9.png",
       "/Autos/Hyundai/BSB485/10.png",
-    ],  
-    kilometraje: "74,000 km",  
+    ],
+    kilometraje: "74,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina -GNV",
@@ -1278,12 +1270,12 @@ export const subastaData = [
     fecha_fin: "2026-05-22T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Hyundai/BSB485/BSB-485.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: BSB485</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  COMISARIA PNP CESAR LLATAS - CIUDAD DE CHICAYO</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
@@ -1295,12 +1287,12 @@ export const subastaData = [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GNV",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//30 hyundai VERNA
+      "Frenos ABS",
+    ],
+  }, //30 hyundai VERNA
 
   {
     id: 31,
@@ -1308,7 +1300,7 @@ export const subastaData = [
     modelo: "Accentt",
     año: 2017,
     precio: 1600,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Hyundai/AWE310/1.png",
     imagenes: [
       "/Autos/Hyundai/AWE310/1.png",
@@ -1316,8 +1308,8 @@ export const subastaData = [
       "/Autos/Hyundai/AWE310/3.png",
       "/Autos/Hyundai/AWE310/4.png",
       "/Autos/Hyundai/AWE310/6.png",
-    ],  
-    kilometraje: "000,000 km",  
+    ],
+    kilometraje: "000,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina -GNV",
@@ -1327,12 +1319,13 @@ export const subastaData = [
     fecha_fin: "2026-06-12T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Hyundai/AWE310/AWE-310.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: AWE310</strong>",
+      '<strong style="color: red;">Nota importante: El vehiculo cuenta con 2 GRAVAMENES</strong>',
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  PNP Chosica, Lima</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
@@ -1344,12 +1337,12 @@ export const subastaData = [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GNV",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//31 hyundai accent
+      "Frenos ABS",
+    ],
+  }, //31 hyundai accent
 
   {
     id: 32,
@@ -1357,7 +1350,7 @@ export const subastaData = [
     modelo: "Accentt",
     año: 2017,
     precio: 2600,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Hyundai/V8V574/1.png",
     imagenes: [
       "/Autos/Hyundai/V8V574/1.png",
@@ -1369,8 +1362,8 @@ export const subastaData = [
       "/Autos/Hyundai/V8V574/7.png",
       "/Autos/Hyundai/V8V574/8.png",
       "/Autos/Hyundai/V8V574/9.png",
-    ],  
-    kilometraje: "000,000 km",  
+    ],
+    kilometraje: "000,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina -GNV",
@@ -1380,12 +1373,12 @@ export const subastaData = [
     fecha_fin: "2026-06-12T19:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Hyundai/V8V574/V8V-574.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: V8V574</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Comisaria Jose Leonardo Ortiz, Chiclayo</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
@@ -1397,27 +1390,28 @@ export const subastaData = [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Aros de Serie", 
+      "Aros de Serie",
       "Gasolina - GNV",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//32 hyundai accent
+      "Frenos ABS",
+    ],
+  }, //32 hyundai accent
+
   {
     id: 33,
     marca: "Kia",
     modelo: "Sorento",
     año: 2020,
     precio: 12000,
-    incremento_puja: 50, 
+    incremento_puja: 50,
     imagen: "/Autos/Kia/BN0528/1.png",
     imagenes: [
       "/Autos/Kia/BN0528/1.png",
       "/Autos/Kia/BN0528/2.png",
       "/Autos/Kia/BN0528/3.png",
       "/Autos/Kia/BN0528/4.png",
-    ],  
-    kilometraje: "60,000 km",  
+    ],
+    kilometraje: "60,000 km",
     estado: "Bueno",
     transmision: "Mecanica",
     combustible: "Gasolina",
@@ -1427,12 +1421,12 @@ export const subastaData = [
     fecha_fin: "2026-06-12T19:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Kia/BN0528/BNO-528.pdf",
-    descripcion:  [
+    descripcion: [
       "<strong>PLACA: BNO528</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Lima</strong>",
       "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      'La venta de los vehículos se realiza en la modalidad de "donde está y como está".',
       "Los datos y fotografías son referenciales.",
       "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
       "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
@@ -1444,13 +1438,12 @@ export const subastaData = [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Version full 2020 ", 
+      "Version full 2020 ",
       "sunroof panoramico",
       "4x4 motor v6 3.5",
       "Gasolina",
       "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//33 kia sorento
+      "Frenos ABS",
+    ],
+  }, //33 kia sorento
 ];
-
