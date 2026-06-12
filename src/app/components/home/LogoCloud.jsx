@@ -107,9 +107,9 @@ const realEstateTestimonials = [
 function TestimonialsGrid({ items }) {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[180px]">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <figure
-          key={item.name}
+          key={`${item.name}-${item.location}-${index}`}
           className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.45)] ${
             item.className || ""
           }`}
