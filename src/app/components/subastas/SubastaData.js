@@ -1426,7 +1426,7 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-06-12T19:15:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/Kia/BN0528/BN-528.pdf",
+    boletaInformativaUrl: "/Autos/Kia/BN0528/BNO-528.pdf",
     descripcion:  [
       "<strong>PLACA: BNO528</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
