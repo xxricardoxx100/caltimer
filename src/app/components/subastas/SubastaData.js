@@ -1290,7 +1290,6 @@ export const subastaData = [
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
@@ -1340,8 +1339,6 @@ export const subastaData = [
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
-    ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
       "Asientos de Cuero",
@@ -1394,7 +1391,6 @@ export const subastaData = [
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
     ].join("\n"),
     caracteristicas: [
       "Sistema de sonido premium",
