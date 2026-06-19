@@ -1426,7 +1426,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-19T18:30:00",
+    fecha_fin: "2026-06-19T18:45:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Kia/BN0528/BNO-527.pdf",
     descripcion:  [
@@ -1479,7 +1479,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-19T18:45:00",
+    fecha_fin: "2026-06-19T9:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Renault/harry/BNO-527.pdf",
     descripcion:  [
