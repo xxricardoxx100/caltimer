@@ -1483,7 +1483,7 @@ export const subastaData = [
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Renault/harry/BNO-527.pdf",
     descripcion:  [
-      "<strong>PLACA: </strong>",
+      "<strong>PLACA: BXB536</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Lima</strong>",
       "",
@@ -1499,7 +1499,7 @@ export const subastaData = [
       "Sistema de sonido premium",
       "Asientos de Cuero",
       "Pantalla Digital",
-      "Version full 2020 ", 
+      "Version full 2022 ", 
       "sunroof panoramico",
       "4x4 motor v6 3.5",
       "Gasolina",
