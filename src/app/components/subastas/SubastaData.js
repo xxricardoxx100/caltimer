@@ -321,7 +321,7 @@ export const subastaData = [
     marca: "Hero",
     modelo: "Hunk 125R",
     año: 2026,
-    precio: 1500,
+    precio: 1250,
     incremento_puja: 25, // Incremento de puja en USD (moto)
     imagen: "/Autos/Hunk/1.jpeg",
     imagenes: [
@@ -336,7 +336,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-05-22T18:50:00",
+    fecha_fin: "2026-06-26T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
@@ -1458,7 +1458,7 @@ export const subastaData = [
   { 
     id: 34,
     marca: "Renault",
-    modelo: "Logam",
+    modelo: "Logan",
     año: 2022,
     precio: 5500,
     incremento_puja: 50, 
@@ -1479,7 +1479,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-19T9:00:00",
+    fecha_fin: "2026-06-26T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Renault/harry/BNO-527.pdf",
     descripcion:  [
@@ -1506,6 +1506,131 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  },//33 renault harry
+  },//34 renault harry
+
+  { 
+    id: 35,
+    marca: "Depositos San Isidro",
+    modelo: ".",
+    año: 2026,
+    precio: 1500,
+    incremento_puja: 50, 
+    imagen: "/Autos/depositos/1.png",
+    imagenes: [
+      "/Autos/depositos/1.png",
+      "/Autos/depositos/2.png",
+    ],  
+    kilometraje: "9 km",  
+    estado: "Bueno",
+    transmision: "",
+    combustible: "",
+    color: "",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-06-26T19:00:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/depositos/BNO-527.pdf",
+    descripcion:  [
+      "<strong>30 depositos disponibles en San Isidro</strong>",
+      "<strong>Nota importante:</strong> Los despositos tienen un area de 5m2 aproximadamente",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Version full 2022 ", 
+      "sunroof panoramico",
+      "4x4 motor v6 3.5",
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//35 depositos san isidro
+
+  { 
+    id: 36,
+    marca: "Cocheras San Isidro",
+    modelo: ".",
+    año: 2026,
+    precio: 9500,
+    incremento_puja: 50, 
+    imagen: "/Autos/depositos/6.png",
+    imagenes: [
+      "/Autos/depositos/6.png",
+      "/Autos/depositos/5.png",
+      "/Autos/depositos/4.png",
+      "/Autos/depositos/3.png",
+    ],  
+    kilometraje: "9 km",  
+    estado: "Bueno",
+    transmision: "",
+    combustible: "",
+    color: "",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-06-26T19:20:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/depositos/BNO-527.pdf",
+    descripcion:  [
+      "<strong>20 cocheras disponibles en San Isidro</strong>",
+      "<strong>Nota importante:</strong> Las cocheras dobles tienen un area de 25m2 aproximadamente",
+      "<strong>Nota importante:</strong> Las cocheras simples tienen un area de 14m2 aproximadamente",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Version full 2022 ", 
+      "sunroof panoramico",
+      "4x4 motor v6 3.5",
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//36 cocheras san isidro
+
+  { 
+    id: 37,
+    marca: "Lote en La Molina",
+    modelo: ".",
+    año: 2026,
+    precio: 19000,
+    incremento_puja: 50, 
+    imagen: "/Autos/depositos/7.png",
+    imagenes: [
+      "/Autos/depositos/7.png",
+      "/Autos/depositos/8.png",
+    ],  
+    kilometraje: "9 km",  
+    estado: "Bueno",
+    transmision: "",
+    combustible: "",
+    color: "",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-06-26T19:40:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/depositos/BNO-527.pdf",
+    descripcion:  [
+      "<strong>Lotes disponibles en La Molina</strong>",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Version full 2022 ", 
+      "sunroof panoramico",
+      "4x4 motor v6 3.5",
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//37 dlote la molina
 ];
 
