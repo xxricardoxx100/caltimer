@@ -336,7 +336,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T18:50:00",
+    fecha_fin: "2026-06-26T19:25:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
@@ -1426,7 +1426,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T18:45:00",
+    fecha_fin: "2026-06-26T19:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Kia/BN0528/BNO-527.pdf",
     descripcion:  [
@@ -1479,7 +1479,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T18:30:00",
+    fecha_fin: "2026-06-26T18:10:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Renault/harry/BNO-527.pdf",
     descripcion:  [
@@ -1527,7 +1527,7 @@ export const subastaData = [
     color: "",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:00:00",
+    fecha_fin: "2026-06-26T19:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
@@ -1570,7 +1570,7 @@ export const subastaData = [
     color: "",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:20:00",
+    fecha_fin: "2026-06-26T19:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
@@ -1654,7 +1654,7 @@ export const subastaData = [
     color: "",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:20:00",
+    fecha_fin: "2026-06-26T19:40:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
@@ -1675,6 +1675,99 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  },//36 cocheras san isidro
+  },//38 cocheras san isidro
+
+  { 
+    id: 39,
+    marca: "Chevrolet",
+    modelo: "Prisma",
+    año: 2017,
+    precio: 4500,
+    incremento_puja: 50, 
+    imagen: "/Autos/taller/1.png",
+    imagenes: [
+      "/Autos/taller/1.png",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Negro",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-06-26T18:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/taller/AXX-288.pdf",
+    descripcion:  [
+      "<strong>PLACA: AXX288</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en Lima</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "sunroof panoramico",
+      "4x4 motor v6 3.5",
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//39 prisma taller
+
+  { 
+    id: 40,
+    marca: "Toyota",
+    modelo: "Hilux",
+    año: 2013,
+    precio: 11200,
+    incremento_puja: 50, 
+    imagen: "/Autos/taller/2.png",
+    imagenes: [
+      "/Autos/taller/2.png",
+      "/Autos/taller/3.png",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Diesel",
+    color: "Plata",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-06-26T18:50:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/taller/F2P-852.pdf",
+    descripcion:  [
+      "<strong>PLACA: F2P852</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en Lima</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "sunroof panoramico",
+      "4x4 motor v6 3.5",
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//40 hilux taller
 ];
 
