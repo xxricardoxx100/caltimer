@@ -1529,7 +1529,7 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-06-26T19:00:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/depositos/BNO-527.pdf",
+    boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
       "<strong>30 depositos disponibles en San Isidro</strong>",
       "<strong>Nota importante:</strong> Los despositos tienen un area de 5m2 aproximadamente",
@@ -1551,7 +1551,7 @@ export const subastaData = [
 
   { 
     id: 36,
-    marca: "Cocheras San Isidro",
+    marca: "Cocheras simples San Isidro",
     modelo: ".",
     año: 2026,
     precio: 9500,
@@ -1572,7 +1572,7 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-06-26T19:20:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/depositos/BNO-527.pdf",
+    boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
       "<strong>20 cocheras disponibles en San Isidro</strong>",
       "<strong>Nota importante:</strong> Las cocheras dobles tienen un area de 25m2 aproximadamente",
@@ -1632,5 +1632,49 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//37 dlote la molina
+
+  { 
+    id: 38,
+    marca: "Cocheras dobles San Isidro",
+    modelo: ".",
+    año: 2026,
+    precio: 13500,
+    incremento_puja: 50, 
+    imagen: "/Autos/depositos/6.png",
+    imagenes: [
+      "/Autos/depositos/6.png",
+      "/Autos/depositos/5.png",
+      "/Autos/depositos/4.png",
+      "/Autos/depositos/3.png",
+    ],  
+    kilometraje: "9 km",  
+    estado: "Bueno",
+    transmision: "",
+    combustible: "",
+    color: "",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-06-26T19:20:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/depositos",
+    descripcion:  [
+      "<strong>20 cocheras disponibles en San Isidro</strong>",
+      "<strong>Nota importante:</strong> Las cocheras dobles tienen un area de 25m2 aproximadamente",
+      "<strong>Nota importante:</strong> Las cocheras simples tienen un area de 14m2 aproximadamente",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Version full 2022 ", 
+      "sunroof panoramico",
+      "4x4 motor v6 3.5",
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//36 cocheras san isidro
 ];
 
