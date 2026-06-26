@@ -336,7 +336,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:25:00",
+    fecha_fin: "2026-06-26T19:45:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
@@ -1426,7 +1426,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:15:00",
+    fecha_fin: "2026-06-26T19:35:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Kia/BN0528/BNO-527.pdf",
     descripcion:  [
@@ -1479,7 +1479,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T18:10:00",
+    fecha_fin: "2026-06-26T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Renault/harry/BNO-527.pdf",
     descripcion:  [
@@ -1527,7 +1527,7 @@ export const subastaData = [
     color: "",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:30:00",
+    fecha_fin: "2026-06-26T19:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
@@ -1570,7 +1570,7 @@ export const subastaData = [
     color: "",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:30:00",
+    fecha_fin: "2026-06-26T20:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
@@ -1612,7 +1612,7 @@ export const subastaData = [
     color: "",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:40:00",
+    fecha_fin: "2026-06-26T20:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/depositos/BNO-527.pdf",
     descripcion:  [
@@ -1654,7 +1654,7 @@ export const subastaData = [
     color: "",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:40:00",
+    fecha_fin: "2026-06-26T20:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
@@ -1695,7 +1695,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T18:30:00",
+    fecha_fin: "2026-06-26T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/AXX-288.pdf",
     descripcion:  [
@@ -1742,7 +1742,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T18:50:00",
+    fecha_fin: "2026-06-26T19:10:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/F2P-852.pdf",
     descripcion:  [
