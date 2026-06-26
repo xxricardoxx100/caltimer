@@ -1647,7 +1647,7 @@ export const subastaData = [
       "/Autos/depositos/4.png",
       "/Autos/depositos/3.png",
     ],  
-    kilometraje: "9 km",  
+    kilometraje: "90 km",  
     estado: "Bueno",
     transmision: "",
     combustible: "",
