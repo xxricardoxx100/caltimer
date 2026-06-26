@@ -1426,7 +1426,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-19T18:45:00",
+    fecha_fin: "2026-06-26T18:45:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Kia/BN0528/BNO-527.pdf",
     descripcion:  [
@@ -1598,7 +1598,7 @@ export const subastaData = [
     marca: "Lote en La Molina",
     modelo: ".",
     año: 2026,
-    precio: 19000,
+    precio: 190000,
     incremento_puja: 50, 
     imagen: "/Autos/depositos/7.png",
     imagenes: [
