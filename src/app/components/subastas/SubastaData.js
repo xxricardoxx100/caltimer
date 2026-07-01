@@ -1773,9 +1773,9 @@ export const subastaData = [
   {
     id: 41,
     marca: "Chevrolet",
-    modelo: "Sail",
+    modelo: "Prisma",
     año: 2017,
-    precio: 1800,
+    precio: 2500,
     incremento_puja: 50, 
     imagen: "/Autos/Chevrolet/BEG179/1.jpeg",
     imagenes: [
