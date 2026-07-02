@@ -336,7 +336,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:45:00",
+    fecha_fin: "2026-07-03T19:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
@@ -811,7 +811,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-04-24T18:00:00",
+    fecha_fin: "2026-07-03T19:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Volkswagen/BSG794/BSG-794.pdf",
     descripcion:  [
@@ -1527,7 +1527,7 @@ export const subastaData = [
     color: "",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:50:00",
+    fecha_fin: "2026-07-03T19:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
@@ -1570,7 +1570,7 @@ export const subastaData = [
     color: "",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T20:00:00",
+    fecha_fin: "2026-07-03T19:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
@@ -1654,7 +1654,7 @@ export const subastaData = [
     color: "",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T20:00:00",
+    fecha_fin: "2026-07-03T19:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/depositos",
     descripcion:  [
@@ -1823,5 +1823,51 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//41 chevrolet
+
+  {
+    id: 42,
+    marca: "Foton",
+    modelo: "Ollin",
+    año: 2010,
+    precio: 6000,
+    incremento_puja: 50, 
+    imagen: "/Autos/Taller/4.jpg",
+    imagenes: [
+      "/Autos/Taller/4.jpg",
+      "/Autos/Taller/5.jpg",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Diesel",
+    color: "Blanco",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-07-03T19:20:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/Taller/C4T-912.pdf",
+    descripcion:  [
+      "<strong>PLACA: C4T912</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      "Para poder participar en la subasta, el comprador debe haber depositado su garantia de s/300.00 en la cuenta bancaria indicada por la empresa."
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Aros de Serie", 
+      "Diesel",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//42 Foton
 ];
 
