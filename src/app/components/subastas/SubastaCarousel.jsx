@@ -32,7 +32,7 @@ const defaultSlides = [
 const dotBaseClasses =
   "h-2 w-2 rounded-full bg-white/60 hover:bg-white transition";
 
-const waNumber = "51952308501";
+const waNumber = "51928430066";
 const buildWaUrl = (bannerIndex) => {
   const message = `Quiero informacion de su proximo evento`;
   return `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;

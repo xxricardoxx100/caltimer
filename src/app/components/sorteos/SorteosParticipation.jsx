@@ -31,7 +31,7 @@ const SorteosParticipation = () => {
       </div>
 
       <a
-        href="https://wa.me/51952308501"
+        href="https://wa.me/51928430066"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-6 inline-flex rounded-full bg-[#f59b23] px-7 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-[#062252] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-[#ffac3a]"

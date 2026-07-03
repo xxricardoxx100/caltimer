@@ -4,7 +4,7 @@ const VirtualAgent = () => {
   return (
     <>
       <a
-        href="https://wa.me/51952308501?text=Tengo%20dudas%20sobre%20la%20pagina%20Web,%20quiero%20informacion%20sobre..."
+        href="https://wa.me/51928430066?text=Tengo%20dudas%20sobre%20la%20pagina%20Web,%20quiero%20informacion%20sobre..."
         target="_blank"
         rel="noreferrer"
         aria-label="Escríbenos por WhatsApp"
@@ -25,7 +25,7 @@ const VirtualAgent = () => {
       </a>
 
       <a
-        href="https://wa.me/51952308501?text=Solicito informacion, vengo de la pagina web"
+        href="https://wa.me/51928430066?text=Solicito informacion, vengo de la pagina web"
         target="_blank"
         rel="noreferrer"
         aria-label="WhatsApp"
