@@ -335,7 +335,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-03T19:30:00",
+    fecha_fin: "2026-07-10T19:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
@@ -1323,7 +1323,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-03T19:10:00",
+    fecha_fin: "2026-07-10T19:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Hyundai/AWE310/AWE-310.pdf",
     descripcion:  [
@@ -1694,7 +1694,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T18:50:00",
+    fecha_fin: "2026-07-10T19:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/AXX-288.pdf",
     descripcion:  [
@@ -1741,7 +1741,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-06-26T19:10:00",
+    fecha_fin: "2026-07-10T19:40:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/F2P-852.pdf",
     descripcion:  [
@@ -1886,7 +1886,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-03T19:40:00",
+    fecha_fin: "2026-07-10T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/CCF-875.pdf",
     descripcion:  [
@@ -1911,6 +1911,7 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//43 Mitsubishi
+  
   {
     id: 44,
     marca: "Susuki",
@@ -1932,7 +1933,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-03T19:50:00",
+    fecha_fin: "2026-07-10T19:10:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/AKD-166.pdf",
     descripcion:  [
@@ -1957,5 +1958,55 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//44 Susuki
+
+  {
+    id: 45,
+    marca: "Chevrolet",
+    modelo: "Sail",
+    año: 2011,
+    precio: 1100,
+    incremento_puja: 50, 
+    imagen: "/Autos/Chevrolet/C9N602/1.jpeg",
+    imagenes: [
+      "/Autos/Chevrolet/C9N602/1.jpeg",
+      "/Autos/Chevrolet/C9N602/2.jpeg",
+      "/Autos/Chevrolet/C9N602/3.jpeg",
+      "/Autos/Chevrolet/C9N602/4.jpeg",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina ",
+    color: "negro",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-07-10T18:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/Chevrolet/C9N602/C9N-602.pdf",
+    descripcion:  [
+      "<strong>PLACA: C9N602</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en  El tambo, Huancayo</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Cuero",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision mecanica ",
+      "Frenos ABS"
+    ]
+  },//45 chevrolet sail
+
+
 ];
 
