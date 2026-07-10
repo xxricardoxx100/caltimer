@@ -705,7 +705,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-03T18:50:00",
+    fecha_fin: "2026-07-10T19:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Toyota/BBS471/BBS-471.pdf",
     descripcion:  [
