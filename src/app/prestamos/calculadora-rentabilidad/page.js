@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-const COMISIONES = [3, 5, 10];
+const COMISIONES = [0, 3, 5, 10];
 
 const numero = (valor) => Number(valor) || 0;
 
