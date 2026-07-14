@@ -42,6 +42,10 @@ const prestamosSubmenu = [
     name: "Calculadora",
     href: "/prestamos/calculadora",
   },
+  {
+    name: "Calculadora de rentabilidad",
+    href: "/prestamos/calculadora-rentabilidad",
+  },
 ];
 
 function Navbar() {
@@ -106,7 +110,7 @@ function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
               </Link>
-              <div className="absolute right-0 top-full pt-2 w-56 opacity-0 invisible translate-y-2 scale-95 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:scale-100 transition-all duration-200 ease-out z-50">
+              <div className="absolute right-0 top-full pt-2 w-64 opacity-0 invisible translate-y-2 scale-95 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:scale-100 transition-all duration-200 ease-out z-50">
                 <div className="overflow-hidden rounded-xl border border-slate-200/80 bg-white/95 backdrop-blur-sm shadow-[0_12px_35px_rgba(15,23,42,0.15)] ring-1 ring-slate-100/80 py-2">
                   {prestamosSubmenu.map((item) => (
                     <Link
