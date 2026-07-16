@@ -1980,7 +1980,7 @@ export const subastaData = [
     color: "negro",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-10T18:30:00",
+    fecha_fin: "2026-07-17T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/C9N602/ASH-305.pdf",
     descripcion:  [
