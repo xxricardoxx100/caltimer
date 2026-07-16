@@ -2059,7 +2059,7 @@ export const subastaData = [
     marca: "Renault",
     modelo: "Oroch",
     año: 2022,
-    precio: 9100,
+    precio: 9200,
     incremento_puja: 50, 
     imagen: "/Autos/Renault/BPB792/1.jpeg",
     imagenes: [
