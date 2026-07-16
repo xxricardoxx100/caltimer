@@ -1963,7 +1963,7 @@ export const subastaData = [
     id: 45,
     marca: "Chevrolet",
     modelo: "Sail",
-    año: 2011,
+    año: 2016,
     precio: 1100,
     incremento_puja: 50, 
     imagen: "/Autos/Chevrolet/C9N602/1.jpeg",
