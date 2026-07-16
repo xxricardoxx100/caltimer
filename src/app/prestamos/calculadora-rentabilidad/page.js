@@ -75,9 +75,16 @@ export default function CalculadoraRentabilidadPage() {
     const precioMercadoNumerico = numero(precioMercado);
     const tipoCambioNumerico = numero(tipoCambio);
 
+    const aDolares = (soles) => (tipoCambioNumerico > 0 ? soles / tipoCambioNumerico : 0);
+
+    const pujaMaximaDolares = aDolares(pujaNumerica);
+    const totalDeudasDolares = aDolares(totalDeudas);
+    const totalGastosDolares = aDolares(totalGastos);
+    const comisionDolares = aDolares(comisionMonto);
+    const subtotalDolares = aDolares(subtotal);
+
     const rentabilidadSoles = precioMercadoNumerico - subtotal;
-    const rentabilidadDolares =
-      tipoCambioNumerico > 0 ? rentabilidadSoles / tipoCambioNumerico : 0;
+    const rentabilidadDolares = aDolares(rentabilidadSoles);
     const rentabilidadPorcentual =
       subtotal > 0 ? (rentabilidadSoles / subtotal) * 100 : 0;
 
@@ -87,6 +94,11 @@ export default function CalculadoraRentabilidadPage() {
       totalDeudasGastos,
       comisionMonto,
       subtotal,
+      pujaMaximaDolares,
+      totalDeudasDolares,
+      totalGastosDolares,
+      comisionDolares,
+      subtotalDolares,
       rentabilidadSoles,
       rentabilidadDolares,
       rentabilidadPorcentual,
@@ -369,19 +381,36 @@ export default function CalculadoraRentabilidadPage() {
           <div>
             <h2 className="mb-4 text-lg font-bold text-[#1f3f58]">Resumen</h2>
 
-            <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-slate-700 sm:px-6">
-              <p className="flex items-center justify-between gap-3 border-b border-slate-200 py-1.5">
-                <span>Total deudas:</span>
-                <span className="font-semibold text-[#1f3f58]">
-                  {formatearSoles(totales.totalDeudas)}
-                </span>
-              </p>
-              <p className="flex items-center justify-between gap-3 py-1.5">
-                <span>Total gastos:</span>
-                <span className="font-semibold text-[#1f3f58]">
-                  {formatearSoles(totales.totalGastos)}
-                </span>
-              </p>
+            <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+              <table className="w-full text-sm text-slate-700">
+                <thead>
+                  <tr className="border-b border-slate-200 text-xs uppercase tracking-wide text-slate-500">
+                    <th className="px-4 py-2 text-left font-semibold sm:px-6">Concepto</th>
+                    <th className="px-4 py-2 text-right font-semibold sm:px-6">Soles</th>
+                    <th className="px-4 py-2 text-right font-semibold sm:px-6">Dólares</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-200">
+                    <td className="px-4 py-2 sm:px-6">Total deudas</td>
+                    <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
+                      {formatearSoles(totales.totalDeudas)}
+                    </td>
+                    <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
+                      {formatearDolares(totales.totalDeudasDolares)}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 sm:px-6">Total gastos</td>
+                    <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
+                      {formatearSoles(totales.totalGastos)}
+                    </td>
+                    <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
+                      {formatearDolares(totales.totalGastosDolares)}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <div className="mt-5 grid gap-5 sm:grid-cols-2">
@@ -414,19 +443,45 @@ export default function CalculadoraRentabilidadPage() {
               </div>
             </div>
 
-            <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-slate-700 sm:px-6">
-              <p className="flex items-center justify-between gap-3 border-b border-slate-200 py-1.5">
-                <span>Monto de comisión:</span>
-                <span className="font-semibold text-[#1f3f58]">
-                  {formatearSoles(totales.comisionMonto)}
-                </span>
-              </p>
-              <p className="flex items-center justify-between gap-3 py-1.5">
-                <span>Subtotal (puja + comisión + deudas + gastos):</span>
-                <span className="font-semibold text-[#1f3f58]">
-                  {formatearSoles(totales.subtotal)}
-                </span>
-              </p>
+            <div className="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+              <table className="w-full text-sm text-slate-700">
+                <thead>
+                  <tr className="border-b border-slate-200 text-xs uppercase tracking-wide text-slate-500">
+                    <th className="px-4 py-2 text-left font-semibold sm:px-6">Concepto</th>
+                    <th className="px-4 py-2 text-right font-semibold sm:px-6">Soles</th>
+                    <th className="px-4 py-2 text-right font-semibold sm:px-6">Dólares</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-200">
+                    <td className="px-4 py-2 sm:px-6">Puja máxima</td>
+                    <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
+                      {formatearSoles(pujaMaxima)}
+                    </td>
+                    <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
+                      {formatearDolares(totales.pujaMaximaDolares)}
+                    </td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="px-4 py-2 sm:px-6">Monto de comisión ({comisionPct}%)</td>
+                    <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
+                      {formatearSoles(totales.comisionMonto)}
+                    </td>
+                    <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
+                      {formatearDolares(totales.comisionDolares)}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 sm:px-6">Subtotal (puja + comisión + deudas + gastos)</td>
+                    <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
+                      {formatearSoles(totales.subtotal)}
+                    </td>
+                    <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
+                      {formatearDolares(totales.subtotalDolares)}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <div className="mt-5 grid gap-5 sm:grid-cols-2">
