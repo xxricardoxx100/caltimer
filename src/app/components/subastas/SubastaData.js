@@ -1982,9 +1982,9 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-07-10T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/Chevrolet/C9N602/C9N-602.pdf",
+    boletaInformativaUrl: "/Autos/Chevrolet/C9N602/ASH-305.pdf",
     descripcion:  [
-      "<strong>PLACA: C9N602</strong>",
+      "<strong>PLACA: ASH305</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en  El tambo, Huancayo</strong>",
       "",
