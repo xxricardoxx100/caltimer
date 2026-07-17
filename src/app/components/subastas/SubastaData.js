@@ -1841,7 +1841,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-17T16:20:00",
+    fecha_fin: "2026-07-17T18:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/C4T-912.pdf",
     descripcion:  [
