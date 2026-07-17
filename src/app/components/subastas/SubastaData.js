@@ -1425,7 +1425,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-17T19:30:00",
+    fecha_fin: "2026-07-17T18:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Kia/BN0528/BNO-527.pdf",
     descripcion:  [
@@ -1841,7 +1841,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-17T19:40:00",
+    fecha_fin: "2026-07-17T16:20:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/C4T-912.pdf",
     descripcion:  [
@@ -1980,7 +1980,7 @@ export const subastaData = [
     color: "negro",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-17T18:30:00",
+    fecha_fin: "2026-07-17T18:45:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Chevrolet/C9N602/ASH-305.pdf",
     descripcion:  [
@@ -2028,7 +2028,7 @@ export const subastaData = [
     color: "Nardo Gray",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-17T18:50:00",
+    fecha_fin: "2026-07-17T18:35:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Honda/AUC103/AUC-103.pdf",
     descripcion:  [
@@ -2077,7 +2077,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-17T19:10:00",
+    fecha_fin: "2026-07-17T18:35:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Renault/BPB792/BPB-792.pdf",
     descripcion:  [
@@ -2126,7 +2126,7 @@ export const subastaData = [
     color: "Gris",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-17T19:50:00",
+    fecha_fin: "2026-07-17T18:55:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Kia/T7D603/T7D-603.pdf",
     descripcion:  [
