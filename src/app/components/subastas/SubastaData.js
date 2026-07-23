@@ -1697,9 +1697,9 @@ export const subastaData = [
     // Fecha de finalización de la subasta (formato ISO 8601)
     fecha_fin: "2026-07-24T19:10:00",
     anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/taller/Z06-004.pdf",
+    boletaInformativaUrl: "/Autos/taller/Z6O-004.pdf",
     descripcion:  [
-      "<strong>PLACA: Z06004</strong>",
+      "<strong>PLACA: Z6O004</strong>",
       "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
       "<strong>UBICACION: El vehiculo se encuentra en Lima</strong>",
       "",
@@ -1726,7 +1726,7 @@ export const subastaData = [
     id: 40,
     marca: "Toyota",
     modelo: "Hilux",
-    año: 2013,
+    año: 2024,
     precio: 11200,
     incremento_puja: 50, 
     imagen: "/Autos/taller/8.jpeg",
