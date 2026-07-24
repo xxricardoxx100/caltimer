@@ -179,6 +179,7 @@ export function SubastaDetailsContent() {
   }
 
   const imagenActual = vehiculo.imagenes[imagenSeleccionada];
+  const isLocalImage = (src) => typeof src === "string" && src.startsWith("/");
   const hasAnexo = Boolean(vehiculo.anexoUrl);
   const anexoUrl = hasAnexo ? encodeURI(vehiculo.anexoUrl) : "";
   const anexoFileName = hasAnexo ? vehiculo.anexoUrl.split("/").pop() : "";
@@ -252,6 +253,7 @@ export function SubastaDetailsContent() {
               fill
               sizes="100vw"
               quality={85}
+              unoptimized={isLocalImage(imagenActual)}
               className="object-contain"
             />
             <button
@@ -299,6 +301,7 @@ export function SubastaDetailsContent() {
                 sizes="(min-width: 1024px) 66vw, 100vw"
                 quality={80}
                 priority
+                unoptimized={isLocalImage(imagenActual)}
                 className="object-contain" 
               />
             </div>
@@ -320,6 +323,7 @@ export function SubastaDetailsContent() {
                     sizes="(min-width: 1024px) 140px, (min-width: 768px) 120px, 33vw"
                     quality={60}
                     loading="lazy"
+                    unoptimized={isLocalImage(img)}
                     className="object-cover" 
                   />
                 </div>

@@ -2212,6 +2212,8 @@ export const subastaData = [
     imagenes: [
       "/Autos/taller/13.jpeg",
       "/Autos/taller/14.jpeg",
+      "/Autos/taller/22.jpeg",
+      "/Autos/taller/23.jpeg",
 
     ],  
     kilometraje: "000,000 km",  

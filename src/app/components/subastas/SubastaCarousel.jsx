@@ -39,6 +39,7 @@ const buildWaUrl = (bannerIndex) => {
 };
 
 export default function SubastaCarousel({ slides = defaultSlides, intervalMs = 12000 }) {
+  const isLocalImage = (src) => typeof src === "string" && src.startsWith("/");
   const sanitized = useMemo(
     () =>
       slides
@@ -125,6 +126,7 @@ export default function SubastaCarousel({ slides = defaultSlides, intervalMs = 1
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
+                    unoptimized={isLocalImage(slide.image)}
                     priority={idx === 0}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
