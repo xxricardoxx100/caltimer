@@ -1679,7 +1679,7 @@ export const subastaData = [
   { 
     id: 39,
     marca: "Chevrolet",
-    modelo: "Prisma",
+    modelo: "Onix Joy",
     año: 2022,
     precio: 4500,
     incremento_puja: 50, 
@@ -1695,7 +1695,7 @@ export const subastaData = [
     color: "blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-24T19:10:00",
+    fecha_fin: "2026-08-07T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/Z6O-004.pdf",
     descripcion:  [
@@ -1720,7 +1720,7 @@ export const subastaData = [
       "Transmision mecanica ",
       "Frenos ABS"
     ]
-  },//39 prisma taller
+  },//39 onix joy taller
 
   { 
     id: 40,
@@ -1741,7 +1741,7 @@ export const subastaData = [
     color: "blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-08-07T18:50:00",
+    fecha_fin: "2026-07-24T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/BUZ-931.pdf",
     descripcion:  [
@@ -2209,7 +2209,7 @@ export const subastaData = [
     modelo: "T110",
     año: 2012,
     precio: 200,
-    incremento_puja: 50, 
+    incremento_puja: 20, 
     imagen: "/Autos/taller/15.jpeg",
     imagenes: [
       "/Autos/taller/15.jpeg",
@@ -2224,7 +2224,7 @@ export const subastaData = [
     color: "negro",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-24T20:00:00",
+    fecha_fin: "2026-08-07T19:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/C50-913.pdf",
     descripcion:  [
@@ -2340,6 +2340,55 @@ export const subastaData = [
       "Compatible con iPhone, Android y cámara"
     ]
   },//53 DJI Microfono
+
+  {
+    id: 54,
+    marca: "Susuki",
+    modelo: "Jimmy",
+    año: 2016,
+    precio: 3000,
+    incremento_puja: 50, 
+    imagen: "/Autos/taller/27.png",
+    imagenes: [
+      "/Autos/taller/27.png",
+      "/Autos/taller/28.png",
+      "/Autos/taller/29.png",
+      "/Autos/taller/30.png",
+    ],  
+    kilometraje: "00,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanica",
+    combustible: "Gasolina",
+    color: "Gris",
+    puertas: 4,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-08-07T19:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: null,
+    descripcion:  [
+      "<strong>PLACA: AKD166</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en Lima.</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Tela",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision mecanica",
+      "Frenos ABS"
+    ]
+  },//54 suzuki jimmy taller
 
 
 
