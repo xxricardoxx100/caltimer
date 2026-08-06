@@ -684,7 +684,7 @@ export const subastaData = [
     marca: "Toyota",
     modelo: "Etios",
     año: 2018,
-    precio: 4500,
+    precio: 4900,
     incremento_puja: 50, 
     imagen: "/Autos/Toyota/BBS471/1.jpeg",
     imagenes: [
@@ -705,7 +705,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-10T19:30:00",
+    fecha_fin: "2026-08-07T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Toyota/BBS471/BBS-471.pdf",
     descripcion:  [
@@ -1741,7 +1741,7 @@ export const subastaData = [
     color: "blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-24T19:20:00",
+    fecha_fin: "2026-08-07T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/BUZ-931.pdf",
     descripcion:  [
@@ -1829,10 +1829,10 @@ export const subastaData = [
     año: 2010,
     precio: 6000,
     incremento_puja: 50, 
-    imagen: "/Autos/taller/4.jpg",
+    imagen: "/Autos/taller/24.jpeg",
     imagenes: [
-      "/Autos/taller/4.jpg",
-      "/Autos/taller/5.jpg",
+      "/Autos/taller/24.jpeg",
+      "/Autos/taller/25.jpeg",
     ],  
     kilometraje: "000,000 km",  
     estado: "Bueno",
@@ -1911,53 +1911,6 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//43 Mitsubishi
-  
-  {
-    id: 44,
-    marca: "Susuki",
-    modelo: "Jimmy",
-    año: 2016,
-    precio: 3500,
-    incremento_puja: 50, 
-    imagen: "/Autos/taller/8.jpeg",
-    imagenes: [
-      "/Autos/taller/8.jpeg",
-      "/Autos/taller/9.jpeg",
-      "/Autos/taller/10.jpeg",
-      "/Autos/taller/11.jpeg",
-    ],  
-    kilometraje: "000,000 km",  
-    estado: "Bueno",
-    transmision: "Mecanica",
-    combustible: "Gasolina",
-    color: "Gris",
-    puertas: 5,
-    // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-10T19:10:00",
-    anexoUrl: "/anexo/TyC.pdf",
-    boletaInformativaUrl: "/Autos/taller/AKD-166.pdf",
-    descripcion:  [
-      "<strong>PLACA: AKD166</strong>",
-      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
-      "<strong>UBICACION: El vehiculo se encuentra en  Lima</strong>",
-      "",
-      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
-      "Los datos y fotografías son referenciales.",
-      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
-      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
-      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
-      "",
-      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
-    ].join("\n"),
-    caracteristicas: [
-      "Sistema de sonido premium",
-      "Asientos de Cuero",
-      "Aros de Serie", 
-      "Gasolina",
-      "Transmision mecanica ",
-      "Frenos ABS"
-    ]
-  },//44 Susuki
 
   {
     id: 45,
@@ -2012,7 +1965,7 @@ export const subastaData = [
     marca: "Honda",
     modelo: "Civic",
     año: 2016,
-    precio: 9000,
+    precio: 11000,
     incremento_puja: 50, 
     imagen: "/Autos/Honda/AUC103/1.jpeg",
     imagenes: [
@@ -2028,7 +1981,7 @@ export const subastaData = [
     color: "Nardo Gray",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-17T18:35:00",
+    fecha_fin: "2026-08-07T19:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Honda/AUC103/AUC-103.pdf",
     descripcion:  [
@@ -2077,7 +2030,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-24T19:40:00",
+    fecha_fin: "2026-08-07T19:10:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Renault/BPB792/BPB-792.pdf",
     descripcion:  [
@@ -2346,6 +2299,43 @@ export const subastaData = [
       "Frenos ABS"
     ]
   },//52 KIA CERATO TALLER
+
+  {
+    id: 53,
+    marca: "DJI",
+    modelo: "Mic 2",
+    año: 2026,
+    precio: 100,
+    incremento_puja: 5, 
+    imagen: "/Autos/taller/26.png",
+    imagenes: [
+      "/Autos/taller/26.png",
+
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Nuevo",
+    transmision: "null",
+    combustible: "null",
+    color: "negro",
+    puertas: 5,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-08-07T19:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/taller/53.pdf",
+    descripcion:  [
+      "<strong>PLACA: </strong>",
+      "<strong>UBICACION: El bien se encuentra en  Lima</strong>",
+      "",
+      "DJI Mic 2 (2 TX + 1 RX + estuche de carga), micrófono de solapa inalámbrico, cancelación inteligente de ruido, grabación interna flotante de 32 bits, rango de 820 pies (250 m), micrófono para iPhone, Android, cámara",
+      "Los datos y fotografías son referenciales.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+    ].join("\n"),
+    caracteristicas: [
+      
+    ]
+  },//53 DJI Microfono
 
 
 
