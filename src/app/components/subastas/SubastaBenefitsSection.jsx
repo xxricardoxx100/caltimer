@@ -20,13 +20,13 @@ export default function SubastaBenefitsSection() {
 
   return (
     <motion.section
-      className="bg-[#1F3F58] text-white rounded-3xl shadow-xl overflow-hidden"
+      className="bg-[#1F3F58] text-white rounded-3xl border border-white/5 shadow-xl overflow-hidden"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="flex flex-col lg:flex-row items-start justify-between px-8 md:px-12 py-12 gap-10 lg:gap-16">
+      <div className="flex flex-col lg:flex-row items-start justify-between px-8 md:px-12 py-14 gap-10 lg:gap-16">
         <motion.div
           className="space-y-4 lg:max-w-lg flex-shrink-0"
           initial={{ opacity: 0, x: -30 }}

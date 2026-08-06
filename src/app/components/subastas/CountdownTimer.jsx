@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { SubastaOfertasService } from "@/lib/supabase/subasta-ofertas";
 import { parseSubastaDateToMs } from "@/lib/utils";
 
@@ -19,6 +19,13 @@ export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
   
   // Estabilizar endDate para evitar cambios en dependencias
   const stableEndDate = useMemo(() => endDate, [endDate]);
+  const hasFiredExpireRef = useRef(false);
+
+  // Si la fecha de fin cambia (ej. se extendió el tiempo), permitir que
+  // onExpire pueda volver a dispararse cuando la subasta vuelva a terminar
+  useEffect(() => {
+    hasFiredExpireRef.current = false;
+  }, [stableEndDate]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -50,7 +57,8 @@ export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
       const newTimeLeft = calculateTimeLeft(stableEndDate, timeOffset);
       setTimeLeft(newTimeLeft);
 
-      if (newTimeLeft.total <= 0 && onExpire) {
+      if (newTimeLeft.total <= 0 && onExpire && !hasFiredExpireRef.current) {
+        hasFiredExpireRef.current = true;
         onExpire();
       }
     }, 1000);
@@ -66,7 +74,7 @@ export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
   // Placeholder durante SSR
   if (!isMounted) {
     return (
-      <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-4">
+      <div className="bg-gradient-to-r from-[#1F3F58]/5 to-[#F29F05]/5 border border-[#1F3F58]/10 rounded-xl p-4">
         <p className="text-center text-gray-700 font-medium mb-3 text-sm">
           ⏰ Tiempo restante
         </p>
@@ -103,7 +111,7 @@ export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
   }
 
   return (
-    <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-4">
+    <div className="bg-gradient-to-r from-[#1F3F58]/5 to-[#F29F05]/5 border border-[#1F3F58]/10 rounded-xl p-4">
       {wasExtended && (
         <div className="mb-3 bg-green-500 text-white text-center py-2 px-3 rounded-lg text-sm font-semibold animate-pulse">
           Puja actualizada
@@ -136,10 +144,10 @@ export function CountdownTimer({ endDate, onExpire, showExtendedMessage }) {
 function TimeUnit({ value, label }) {
   return (
     <div className="bg-white rounded-lg p-2 shadow-sm text-center">
-      <div className="text-2xl font-bold text-gray-900">
+      <div className="text-2xl font-bold text-[#1F3F58]">
         {String(value).padStart(2, '0')}
       </div>
-      <div className="text-xs text-gray-600 mt-1">
+      <div className="text-xs text-gray-500 mt-1">
         {label}
       </div>
     </div>

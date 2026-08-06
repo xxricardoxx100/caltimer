@@ -46,22 +46,22 @@ export function UserNameModal({ isOpen, onSave, currentName = "" }) {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 p-4">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-fade-in">
         <div className="text-center mb-6">
-          <div className="mb-4 inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full">
-            <svg 
-              className="w-8 h-8 text-orange-600" 
-              fill="none" 
-              stroke="currentColor" 
+          <div className="mb-4 inline-flex items-center justify-center w-16 h-16 bg-[#F29F05]/10 rounded-full">
+            <svg
+              className="w-8 h-8 text-[#F29F05]"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
               />
             </svg>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <h2 className="text-2xl font-bold text-[#1F3F58] mb-2">
             {currentName ? "Cambiar nombre" : "¡Bienvenido a la Subasta!"}
           </h2>
           <p className="text-gray-600">
@@ -89,7 +89,7 @@ export function UserNameModal({ isOpen, onSave, currentName = "" }) {
                 setError("");
               }}
               placeholder="Ej: Juan Pérez"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F29F05] focus:border-[#F29F05] outline-none transition"
               maxLength={30}
               autoFocus
             />
@@ -101,7 +101,7 @@ export function UserNameModal({ isOpen, onSave, currentName = "" }) {
           <button
             type="button"
             onClick={handleGenerateRandom}
-            className="w-full text-sm text-gray-600 hover:text-orange-600 transition"
+            className="w-full text-sm text-gray-600 hover:text-[#F29F05] transition"
           >
             o generar nombre aleatorio
           </button>
@@ -109,7 +109,7 @@ export function UserNameModal({ isOpen, onSave, currentName = "" }) {
           <div className="flex gap-3 pt-2">
             <button
               type="submit"
-              className="flex-1 bg-orange-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-orange-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="flex-1 bg-gradient-to-r from-[#F29F05] to-[#E36C09] text-white py-3 px-6 rounded-lg font-semibold hover:brightness-105 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               {currentName ? "Actualizar" : "Comenzar"}
             </button>

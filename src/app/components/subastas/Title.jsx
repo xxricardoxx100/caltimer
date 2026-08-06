@@ -1,47 +1,32 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGavel, FaCar, FaTrophy } from "react-icons/fa";
-import { MdVerified } from "react-icons/md";
+import { FaGavel } from "react-icons/fa";
 
 const Title = () => {
   return (
-    <motion.div 
-      className="container mx-auto px-4 pt-6 pb-0"
-      initial={{ opacity: 0, y: 30 }}
+    <motion.div
+      className="container mx-auto max-w-7xl px-4 pt-4 pb-1"
+      initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.5 }}
     >
-      <div className="text-center max-w-4xl mx-auto">
-        {/* Badge superior */}
-        <motion.div 
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full mb-6 shadow-lg"
+      <div className="flex flex-col items-center gap-2 text-center">
+        <motion.div
+          className="inline-flex items-center gap-2 bg-[#1F3F58] text-white px-4 py-1.5 rounded-full shadow"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
+          transition={{ delay: 0.1, duration: 0.4 }}
         >
-          <FaGavel className="text-xl" />
-          <span className="font-semibold text-sm uppercase tracking-wider">Subastas en Vivo</span>
-          <MdVerified className="text-xl" />
+          <FaGavel className="text-[#F29F05] text-sm" />
+          <span className="font-semibold text-xs uppercase tracking-wider">Subastas en Vivo</span>
         </motion.div>
 
-        {/* Título principal */}
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 via-orange-600 to-red-600 bg-clip-text text-transparent">
-          Vehículos en Subasta
+        <h2 className="text-3xl md:text-5xl font-extrabold text-[#1F3F58]">
+          Vehículos en <span className="text-[#F29F05]">Subasta</span>
         </h2>
-
-        {/* Separador decorativo */}
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <div className="h-0.5 w-16 bg-gradient-to-r from-transparent to-orange-500"></div>
-          <FaCar className="text-orange-500 text-2xl" />
-          <div className="h-0.5 w-16 bg-gradient-to-l from-transparent to-orange-500"></div>
-        </div>
-
-        {/* Descripción */}
-        <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-          Encuentra las mejores oportunidades en vehículos de calidad. 
-          Participa en nuestras subastas y llévate el auto de tus sueños 
-          al mejor precio.
+        <p className="text-sm text-gray-500">
+          Puja en línea y llévate el vehículo al mejor precio.
         </p>
       </div>
     </motion.div>

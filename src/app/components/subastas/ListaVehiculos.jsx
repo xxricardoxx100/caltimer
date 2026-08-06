@@ -5,6 +5,28 @@ import { subastaData } from "./SubastaData";
 
 const GRACE_PERIOD_MS = 2 * 60 * 60 * 1000;
 
+const WEEKDAYS = ["DOM", "LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB"];
+const MONTHS = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
+
+const formatGroupLabel = (fechaISO) => {
+  const d = new Date(fechaISO);
+  return `${WEEKDAYS[d.getDay()]}. ${String(d.getDate()).padStart(2, "0")} ${MONTHS[d.getMonth()]}.`;
+};
+
+const formatHora = (fechaISO) =>
+  new Date(fechaISO).toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" });
+
+const agruparPorFecha = (items) => {
+  const map = new Map();
+  items.forEach((item) => {
+    const d = new Date(item.fecha_fin);
+    const key = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+    if (!map.has(key)) map.set(key, []);
+    map.get(key).push(item);
+  });
+  return Array.from(map.entries()).map(([key, items]) => ({ key, items }));
+};
+
 const ListaVehiculos = () => {
   const [ahora, setAhora] = useState(() => new Date());
 
@@ -44,7 +66,7 @@ const ListaVehiculos = () => {
 
   if (subastaData.length === 0) {
     return (
-      <div className="container mx-auto px-4 py-16 text-center">
+      <div className="container mx-auto max-w-7xl px-4 py-16 text-center">
         <p className="text-xl font-semibold text-gray-600">
           Vehículos no disponibles por el momento 😔
         </p>
@@ -53,35 +75,31 @@ const ListaVehiculos = () => {
   }
 
   const listaActiva = activeTab === "proximas" ? proximas : finalizadas;
+  const grupos = agruparPorFecha(listaActiva);
 
   return (
-    <div className="container mx-auto px-4 py-8 mb-16">
-      <div className="mb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+    <div className="container mx-auto max-w-7xl px-4 py-6 mb-16">
+      <div className="mb-6 flex justify-center">
+        <div className="inline-flex items-center gap-1 rounded-full bg-[#1F3F58]/5 p-1.5">
           <button
             type="button"
             onClick={() => setActiveTab("proximas")}
             className={
               activeTab === "proximas"
-                ? "group rounded-2xl border border-[#F29F05] bg-[#FFF7ED] px-6 py-5 text-left shadow-sm transition"
-                : "group rounded-2xl border border-gray-200 bg-white px-6 py-5 text-left shadow-sm transition hover:border-[#F29F05]/60"
+                ? "flex items-center gap-2 rounded-full bg-[#1F3F58] px-5 py-2.5 text-sm font-semibold text-white shadow transition"
+                : "flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-[#1F3F58]/60 transition hover:text-[#1F3F58]"
             }
           >
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-base font-semibold">Próximas subastas</p>
-                <p className="text-sm text-gray-500">{proximas.length} disponibles</p>
-              </div>
-              <span
-                className={
-                  activeTab === "proximas"
-                    ? "inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#F29F05] text-white"
-                    : "inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gray-100 text-gray-500"
-                }
-              >
-                🕒
-              </span>
-            </div>
+            🕒 Próximas
+            <span
+              className={
+                activeTab === "proximas"
+                  ? "rounded-full bg-white/20 px-2 py-0.5 text-xs"
+                  : "rounded-full bg-[#1F3F58]/10 px-2 py-0.5 text-xs"
+              }
+            >
+              {proximas.length}
+            </span>
           </button>
 
           <button
@@ -89,37 +107,54 @@ const ListaVehiculos = () => {
             onClick={() => setActiveTab("finalizadas")}
             className={
               activeTab === "finalizadas"
-                ? "group rounded-2xl border border-[#F29F05] bg-[#FFF7ED] px-6 py-5 text-left shadow-sm transition"
-                : "group rounded-2xl border border-gray-200 bg-white px-6 py-5 text-left shadow-sm transition hover:border-[#F29F05]/60"
+                ? "flex items-center gap-2 rounded-full bg-[#1F3F58] px-5 py-2.5 text-sm font-semibold text-white shadow transition"
+                : "flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-[#1F3F58]/60 transition hover:text-[#1F3F58]"
             }
           >
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-base font-semibold">Subastas finalizadas</p>
-                <p className="text-sm text-gray-500">{finalizadas.length} disponibles</p>
-              </div>
-              <span
-                className={
-                  activeTab === "finalizadas"
-                    ? "inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#F29F05] text-white"
-                    : "inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gray-100 text-gray-500"
-                }
-              >
-                ✅
-              </span>
-            </div>
+            ✅ Finalizadas
+            <span
+              className={
+                activeTab === "finalizadas"
+                  ? "rounded-full bg-white/20 px-2 py-0.5 text-xs"
+                  : "rounded-full bg-[#1F3F58]/10 px-2 py-0.5 text-xs"
+              }
+            >
+              {finalizadas.length}
+            </span>
           </button>
         </div>
       </div>
 
-      {listaActiva.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {listaActiva.map((vehiculo) => (
-            <SubastaCard key={vehiculo.id} vehiculo={vehiculo} />
+      {grupos.length > 0 ? (
+        <div className="space-y-10">
+          {grupos.map(({ key, items }) => (
+            <div key={key}>
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-2 border-b border-[#1F3F58]/10 pb-2">
+                <span className="rounded-lg bg-[#1F3F58] px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                  {formatGroupLabel(items[0].fecha_fin)}
+                </span>
+                <div className="flex items-center gap-3 text-xs text-gray-500">
+                  <span>
+                    {items.length} vehículo{items.length !== 1 ? "s" : ""}
+                  </span>
+                  {activeTab === "proximas" && (
+                    <span className="font-semibold text-[#F29F05]">
+                      Cierra desde {formatHora(items[0].fecha_fin)}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                {items.map((vehiculo) => (
+                  <SubastaCard key={vehiculo.id} vehiculo={vehiculo} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       ) : (
-        <div className="rounded-2xl border border-dashed border-gray-300 bg-gray-50 px-6 py-12 text-center text-gray-500">
+        <div className="rounded-2xl border border-dashed border-[#1F3F58]/20 bg-[#1F3F58]/[0.03] px-6 py-12 text-center text-gray-500">
           No hay vehículos para esta sección.
         </div>
       )}

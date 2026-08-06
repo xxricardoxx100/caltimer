@@ -9,7 +9,10 @@ import { useSubastaOfertas } from "@/lib/hooks/useSubastaOfertas";
 import { SubastaOfertasService } from "@/lib/supabase/subasta-ofertas";
 import { parseSubastaDateToMs } from "@/lib/utils";
 import { AuthModal } from "../components/subastas/AuthModal";
-import { CountdownTimer, useSubastaActive } from "../components/subastas/CountdownTimer"; 
+import { CountdownTimer, useSubastaActive } from "../components/subastas/CountdownTimer";
+import VehiculoAIChat from "../components/subastas/VehiculoAIChat";
+import { playBidSound, playAuctionEndSound } from "@/lib/sounds";
+import { FaArrowLeft } from "react-icons/fa";
 
 // AHORA ESTE ES UN COMPONENTE SEPARADO
 export function SubastaDetailsContent() {
@@ -161,6 +164,10 @@ export function SubastaDetailsContent() {
       return;
     }
 
+    if (resultado) {
+      playBidSound();
+    }
+
     if (resultado && nuevaFechaFin) {
       setFechaFin(nuevaFechaFin);
       setMostrarMensajeExtension(true);
@@ -169,9 +176,9 @@ export function SubastaDetailsContent() {
 
   if (!vehiculo) {
     return (
-      <div className="container mx-auto px-4 py-16 text-center">
-        <h1 className="text-2xl font-bold mb-4">Vehículo no encontrado</h1>
-        <Link href="/subasta" className="text-blue-600 hover:underline">
+      <div className="container mx-auto max-w-7xl px-4 py-16 text-center">
+        <h1 className="text-2xl font-bold mb-4 text-[#1F3F58]">Vehículo no encontrado</h1>
+        <Link href="/subasta" className="text-[#F29F05] hover:underline font-semibold">
           Volver a Subastas
         </Link>
       </div>
@@ -217,6 +224,8 @@ export function SubastaDetailsContent() {
     // Todo tu JSX de detalles del vehículo va aquí
     // ... (El resto de tu código original: MODAL, Breadcrumb, Título, Grids, etc.)
     <div data-scroll-section className="pt-25 pb-16">
+      <VehiculoAIChat vehiculo={vehiculo} />
+
       {/* MODAL DE AUTENTICACIÓN */}
       <AuthModal 
         isOpen={mostrarAuthModal}
@@ -258,7 +267,7 @@ export function SubastaDetailsContent() {
             />
             <button
               onClick={() => setMostrarModal(false)}
-              className="absolute top-4 right-4 text-white text-3xl font-bold p-2 bg-gray-800 rounded-full hover:bg-gray-700 z-50"
+              className="absolute top-4 right-4 text-white text-3xl font-bold p-2 bg-[#1F3F58]/80 rounded-full hover:bg-[#1F3F58] z-50"
               aria-label="Cerrar"
             >
               &times;
@@ -268,31 +277,40 @@ export function SubastaDetailsContent() {
       )}
       {/* FIN DEL MODAL */}
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-7xl px-4">
         {/* Breadcrumb */}
         <div className="mb-6">
-          <Link href="/subasta" className="text-blue-600 hover:underline">
-            ← Volver a Subastas
+          <Link
+            href="/subasta"
+            className="inline-flex items-center gap-2 text-sm font-medium text-[#1F3F58]/70 hover:text-[#1F3F58] transition"
+          >
+            <FaArrowLeft className="text-xs" /> Volver a Subastas
           </Link>
         </div>
 
         {/* Título */}
         <div className="mb-6">
-          <h1 className="text-4xl font-bold mb-2">
+          <h1 className="text-4xl font-bold mb-2 text-[#1F3F58]">
             {vehiculo.marca} {vehiculo.modelo} {vehiculo.año}
           </h1>
-          <div className="inline-block bg-red-600 text-white px-4 py-2 rounded-full">
-            En Subasta Activa
-          </div>
+          {isSubastaActive ? (
+            <div className="inline-block bg-[#BF9056] text-white px-4 py-2 rounded-full font-semibold shadow">
+              En Subasta
+            </div>
+          ) : (
+            <div className="inline-block bg-[#1F3F58]/10 text-[#1F3F58] px-4 py-2 rounded-full font-semibold">
+              Subasta Finalizada
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Columna izquierda - Imágenes */}
           <div className="lg:col-span-2">
             {/* Imagen principal */}
-            <div 
-              className="bg-gray-100 rounded-lg shadow-lg mb-4 flex items-center justify-center h-96 p-2 cursor-pointer relative" 
-              onClick={() => setMostrarModal(true)} 
+            <div
+              className="bg-[#1F3F58]/5 border border-black/5 rounded-2xl shadow-lg mb-4 flex items-center justify-center h-96 p-2 cursor-pointer relative"
+              onClick={() => setMostrarModal(true)}
             >
               <Image 
                 src={imagenActual}
@@ -302,18 +320,18 @@ export function SubastaDetailsContent() {
                 quality={80}
                 priority
                 unoptimized={isLocalImage(imagenActual)}
-                className="object-contain" 
+                className="object-contain"
               />
             </div>
-            
+
             {/* Galería de miniaturas */}
             <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
               {vehiculo.imagenes.map((img, index) => (
                 <div 
                   key={index} 
                   onClick={() => setImagenSeleccionada(index)}
-                  className={`relative w-full h-24 bg-white rounded-lg shadow overflow-hidden cursor-pointer transition-all ${
-                    imagenSeleccionada === index ? 'ring-2 ring-blue-500 ring-offset-2' : 'hover:ring-2 hover:ring-gray-300'
+                  className={`relative w-full h-24 bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer transition-all ${
+                    imagenSeleccionada === index ? 'ring-2 ring-[#F29F05] ring-offset-2' : 'hover:ring-2 hover:ring-[#1F3F58]/30'
                   }`}
                 >
                   <Image 
@@ -331,7 +349,7 @@ export function SubastaDetailsContent() {
             </div>
 
             {/* Descripción y anexo */}
-            <div className="bg-white rounded-lg shadow-lg p-6 mt-6">
+            <div className="bg-white rounded-2xl border border-black/5 shadow-md p-6 mt-6">
               <div
                 role="tablist"
                 aria-label="Detalles del vehículo"
@@ -347,7 +365,7 @@ export function SubastaDetailsContent() {
                   className={`rounded-md px-4 py-2 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-[#F29F05] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
                     activeDetailTab === "descripcion"
                       ? "bg-[#F29F05] text-white shadow"
-                      : "text-gray-600 hover:text-gray-900"
+                      : "text-[#1F3F58]/60 hover:text-[#1F3F58]"
                   }`}
                 >
                   Descripción
@@ -362,7 +380,7 @@ export function SubastaDetailsContent() {
                   className={`rounded-md px-4 py-2 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-[#F29F05] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
                     activeDetailTab === "anexo"
                       ? "bg-[#F29F05] text-white shadow"
-                      : "text-gray-600 hover:text-gray-900"
+                      : "text-[#1F3F58]/60 hover:text-[#1F3F58]"
                   }`}
                 >
                   Anexo
@@ -429,8 +447,8 @@ export function SubastaDetailsContent() {
             </div>
 
             {/* Características */}
-            <div className="bg-white rounded-lg shadow-lg p-6 mt-6">
-              <h2 className="text-2xl font-bold mb-4">Características</h2>
+            <div className="bg-white rounded-2xl border border-black/5 shadow-md p-6 mt-6">
+              <h2 className="text-2xl font-bold mb-4 text-[#1F3F58]">Características</h2>
               <div className="grid grid-cols-2 gap-3">
                 {vehiculo.caracteristicas.map((caracteristica, index) => (
                   <div key={index} className="flex items-center">
@@ -444,7 +462,7 @@ export function SubastaDetailsContent() {
 
           {/* Columna derecha - Información y precio */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-lg p-6 sticky top-4">
+            <div className="bg-white rounded-2xl border border-black/5 border-t-4 border-t-[#BF9056] shadow-lg p-6 sticky top-4">
               {/* Información del usuario */}
               {!isMounted ? (
                 // Placeholder durante SSR para evitar hidratación
@@ -455,8 +473,8 @@ export function SubastaDetailsContent() {
                 <div className="mb-4 pb-4 border-b border-gray-200">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                        <span className="text-orange-600 font-semibold text-sm">
+                      <div className="w-8 h-8 bg-[#1F3F58]/10 rounded-full flex items-center justify-center">
+                        <span className="text-[#1F3F58] font-semibold text-sm">
                           {userName?.charAt(0).toUpperCase()}
                         </span>
                       </div>
@@ -511,13 +529,13 @@ export function SubastaDetailsContent() {
                 </div>
               ) : (
                 <div className="mb-4 pb-4 border-b border-gray-200">
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
-                    <p className="text-sm font-semibold text-blue-800 mb-2">
+                  <div className="bg-[#1F3F58]/5 border border-[#1F3F58]/15 rounded-xl p-3 text-center">
+                    <p className="text-sm font-semibold text-[#1F3F58] mb-2">
                       🔑 Inicia sesión para participar
                     </p>
                     <button
                       onClick={() => setMostrarAuthModal(true)}
-                      className="text-xs bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                      className="text-xs bg-[#1F3F58] text-white px-4 py-2 rounded-lg hover:bg-[#15304a] transition"
                     >
                       Iniciar Sesión / Registrarse
                     </button>
@@ -526,8 +544,8 @@ export function SubastaDetailsContent() {
               )}
 
               <div className="mb-6">
-                <p className="text-gray-600 mb-2">Precio actual</p>
-                <p className="text-4xl font-bold text-orange-600 mb-2"> 
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Precio actual</p>
+                <p className="text-4xl font-bold text-[#F29F05] mb-2">
                   {precioFormateado}
                 </p>
                 {ultimoPostor && !precioEnCarga && (
@@ -553,15 +571,15 @@ export function SubastaDetailsContent() {
                 <div className="mb-4">
                   <CountdownTimer 
                     endDate={fechaFin}
-                    onExpire={() => console.log('Subasta finalizada')}
+                    onExpire={() => playAuctionEndSound()}
                     showExtendedMessage={mostrarMensajeExtension}
                   />
                 </div>
 
-                <button 
+                <button
                   onClick={handleClickPujar}
                   disabled={!isSubastaActive}
-                  className="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition text-lg font-semibold disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
+                  className="w-full bg-gradient-to-r from-[#F29F05] to-[#E36C09] text-white py-3 rounded-xl shadow hover:shadow-lg hover:brightness-105 transition-all text-lg font-semibold disabled:bg-gray-400 disabled:from-gray-400 disabled:to-gray-400 disabled:cursor-not-allowed disabled:shadow-none disabled:hover:brightness-100"
                 >
                   {!isSubastaActive 
                     ? 'Subasta Finalizada' 
@@ -597,15 +615,15 @@ export function SubastaDetailsContent() {
                     {ofertas.map((oferta, index) => {
                       const ofertaKey = oferta.id ?? `${oferta.subasta_id}-${oferta.created_at}-${index}`;
                       return (
-                        <div 
+                        <div
                           key={ofertaKey}
-                          className={`flex items-center justify-between p-3 rounded-lg ${
-                            index === 0 ? 'bg-green-50 border border-green-200' : 'bg-gray-50'
+                          className={`flex items-center justify-between p-3 rounded-xl ${
+                            index === 0 ? 'bg-green-50 border border-green-200' : 'bg-[#1F3F58]/[0.03]'
                           }`}
                         >
                         <div className="flex items-center gap-2">
                           <div className={`w-7 h-7 rounded-full flex items-center justify-center ${
-                            index === 0 ? 'bg-green-500' : 'bg-gray-400'
+                            index === 0 ? 'bg-green-500' : 'bg-[#1F3F58]/40'
                           }`}>
                             <span className="text-white text-xs font-semibold">
                               {oferta.user_name.charAt(0).toUpperCase()}
@@ -643,42 +661,42 @@ export function SubastaDetailsContent() {
                 </div>
               )}
 
-              <div className="border-t pt-6 space-y-4">
-                <h3 className="font-bold text-lg mb-4">Especificaciones</h3>
-                
-                <div className="flex justify-between">
+              <div className="border-t pt-6 space-y-1 divide-y divide-[#1F3F58]/5">
+                <h3 className="font-bold text-lg mb-3 text-[#1F3F58]">Especificaciones</h3>
+
+                <div className="flex justify-between py-2">
                   <span className="text-gray-600">Año:</span>
-                  <span className="font-semibold">{vehiculo.año}</span>
+                  <span className="font-semibold text-[#1F3F58]">{vehiculo.año}</span>
                 </div>
-                
-                <div className="flex justify-between">
+
+                <div className="flex justify-between py-2">
                   <span className="text-gray-600">Kilometraje:</span>
-                  <span className="font-semibold">{vehiculo.kilometraje}</span>
+                  <span className="font-semibold text-[#1F3F58]">{vehiculo.kilometraje}</span>
                 </div>
-                
-                <div className="flex justify-between">
+
+                <div className="flex justify-between py-2">
                   <span className="text-gray-600">Transmisión:</span>
-                  <span className="font-semibold">{vehiculo.transmision}</span>
+                  <span className="font-semibold text-[#1F3F58]">{vehiculo.transmision}</span>
                 </div>
-                
-                <div className="flex justify-between">
+
+                <div className="flex justify-between py-2">
                   <span className="text-gray-600">Combustible:</span>
-                  <span className="font-semibold">{vehiculo.combustible}</span>
+                  <span className="font-semibold text-[#1F3F58]">{vehiculo.combustible}</span>
                 </div>
-                
-                <div className="flex justify-between">
+
+                <div className="flex justify-between py-2">
                   <span className="text-gray-600">Color:</span>
-                  <span className="font-semibold">{vehiculo.color}</span>
+                  <span className="font-semibold text-[#1F3F58]">{vehiculo.color}</span>
                 </div>
-                
-                <div className="flex justify-between">
+
+                <div className="flex justify-between py-2">
                   <span className="text-gray-600">Puertas:</span>
-                  <span className="font-semibold">{vehiculo.puertas}</span>
+                  <span className="font-semibold text-[#1F3F58]">{vehiculo.puertas}</span>
                 </div>
-                
-                <div className="flex justify-between">
+
+                <div className="flex justify-between py-2">
                   <span className="text-gray-600">Estado:</span>
-                  <span className="font-semibold">{vehiculo.estado}</span>
+                  <span className="font-semibold text-[#1F3F58]">{vehiculo.estado}</span>
                 </div>
               </div>
 
@@ -687,7 +705,7 @@ export function SubastaDetailsContent() {
                   href="https://wa.me/51928430066?text=Hola%20vengo%20de%20su%20p%C3%A1gina%20para%20que%20me%20den%20el%20acceso"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center rounded-lg bg-green-500 py-2 text-sm font-semibold text-white transition hover:bg-green-600 focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                  className="flex w-full items-center justify-center rounded-xl bg-green-500 py-2 text-sm font-semibold text-white transition hover:bg-green-600 focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                 >
                   Contactar al Administrador
                 </a>

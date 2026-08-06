@@ -2320,7 +2320,7 @@ export const subastaData = [
     color: "rojo",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-07-24T20:00:00",
+    fecha_fin: "2026-08-05T21:29:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/AUX-418.pdf",
     descripcion:  [

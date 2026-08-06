@@ -124,11 +124,11 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
-      <div className="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="p-6 border-b border-gray-200">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-2xl font-bold text-[#1F3F58]">
               {tab === "login" ? "Iniciar Sesión" : "Crear Cuenta"}
             </h2>
             <button
@@ -148,7 +148,7 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
               }}
               className={`flex-1 py-2 px-4 rounded-lg font-medium transition ${
                 tab === "login"
-                  ? "bg-orange-500 text-white"
+                  ? "bg-gradient-to-r from-[#F29F05] to-[#E36C09] text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
@@ -161,7 +161,7 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
               }}
               className={`flex-1 py-2 px-4 rounded-lg font-medium transition ${
                 tab === "registro"
-                  ? "bg-orange-500 text-white"
+                  ? "bg-gradient-to-r from-[#F29F05] to-[#E36C09] text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
@@ -190,7 +190,7 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
                   type="email"
                   value={loginEmail}
                   onChange={(e) => setLoginEmail(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F29F05] focus:border-transparent"
                   placeholder="tu@email.com"
                   required
                 />
@@ -204,7 +204,7 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
                   type="password"
                   value={loginPassword}
                   onChange={(e) => setLoginPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F29F05] focus:border-transparent"
                   placeholder="Tu contraseña"
                   required
                 />
@@ -213,7 +213,7 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-[#F29F05] to-[#E36C09] text-white py-3 rounded-lg font-semibold hover:brightness-105 transition disabled:bg-gray-400 disabled:from-gray-400 disabled:to-gray-400 disabled:cursor-not-allowed"
               >
                 {isLoading ? "Iniciando sesión..." : "Iniciar Sesión"}
               </button>
@@ -231,7 +231,7 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
                   type="text"
                   value={regNombre}
                   onChange={(e) => setRegNombre(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F29F05] focus:border-transparent"
                   placeholder="Juan Pérez"
                   required
                 />
@@ -245,7 +245,7 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
                   type="email"
                   value={regEmail}
                   onChange={(e) => setRegEmail(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F29F05] focus:border-transparent"
                   placeholder="tu@email.com"
                   required
                 />
@@ -259,7 +259,7 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
                   type="tel"
                   value={regTelefono}
                   onChange={(e) => setRegTelefono(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F29F05] focus:border-transparent"
                   placeholder="999888777"
                 />
               </div>
@@ -272,7 +272,7 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
                   type="text"
                   value={regDni}
                   onChange={(e) => setRegDni(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F29F05] focus:border-transparent"
                   placeholder="12345678"
                 />
               </div>
@@ -285,7 +285,7 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
                   type="password"
                   value={regPassword}
                   onChange={(e) => setRegPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F29F05] focus:border-transparent"
                   placeholder="Mínimo 6 caracteres"
                   required
                 />
@@ -299,20 +299,20 @@ export function AuthModal({ isOpen, onClose, onSuccess }) {
                   type="password"
                   value={regConfirmPassword}
                   onChange={(e) => setRegConfirmPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F29F05] focus:border-transparent"
                   placeholder="Repite tu contraseña"
                   required
                 />
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-xs text-blue-800">
+              <div className="bg-[#1F3F58]/5 border border-[#1F3F58]/15 rounded-lg p-3 text-xs text-[#1F3F58]">
                 💡 <strong>Nota:</strong> Después de registrarte, deberás contactar al administrador para pagar la garantía y poder realizar pujas.
               </div>
 
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-[#F29F05] to-[#E36C09] text-white py-3 rounded-lg font-semibold hover:brightness-105 transition disabled:bg-gray-400 disabled:from-gray-400 disabled:to-gray-400 disabled:cursor-not-allowed"
               >
                 {isLoading ? "Registrando..." : "Crear Cuenta"}
               </button>
