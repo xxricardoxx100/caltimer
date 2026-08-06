@@ -2326,14 +2326,18 @@ export const subastaData = [
       "<strong>PLACA: </strong>",
       "<strong>UBICACION: El bien se encuentra en  Lima</strong>",
       "",
-      "DJI Mic 2 (2 TX + 1 RX + estuche de carga), micrófono de solapa inalámbrico, cancelación inteligente de ruido, grabación interna flotante de 32 bits, rango de 820 pies (250 m), micrófono para iPhone, Android, cámara",
+      "DJI Mic 2 (2 Transmisores + 1 Receptor + estuche de carga), micrófono de solapa inalámbrico, cancelación inteligente de ruido, grabación interna flotante de 32 bits, rango de 820 pies (250 m), micrófono para iPhone, Android, cámara",
       "Los datos y fotografías son referenciales.",
       "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
       "",
       "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
     ].join("\n"),
     caracteristicas: [
-      
+      "Micrófono de solapa inalámbrico",
+      "Cancelación inteligente de ruido",
+      "Grabación interna flotante de 32 bits",
+      "Rango de 820 pies (250 m)",
+      "Compatible con iPhone, Android y cámara"
     ]
   },//53 DJI Microfono
 
