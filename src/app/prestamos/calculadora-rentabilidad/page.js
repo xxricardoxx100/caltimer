@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 
-const COMISIONES = [0, 3, 5, 10];
+const COMISIONES = [0, 3, 5, 10, 11.8];
+const COMISION_PERSONALIZADA = "personalizado";
 
 const numero = (valor) => Number(valor) || 0;
 
@@ -29,6 +30,7 @@ export default function CalculadoraRentabilidadPage() {
 
   const [pujaMaxima, setPujaMaxima] = useState("");
   const [comisionPct, setComisionPct] = useState(5);
+  const [comisionPersonalizada, setComisionPersonalizada] = useState(false);
   const [precioMercado, setPrecioMercado] = useState("");
   const [tipoCambio, setTipoCambio] = useState("3.75");
 
@@ -430,8 +432,17 @@ export default function CalculadoraRentabilidadPage() {
               <div>
                 <label className={labelClase}>Comisión (sobre la puja máxima)</label>
                 <select
-                  value={comisionPct}
-                  onChange={(e) => setComisionPct(Number(e.target.value))}
+                  value={comisionPersonalizada ? COMISION_PERSONALIZADA : comisionPct}
+                  onChange={(e) => {
+                    const valor = e.target.value;
+                    if (valor === COMISION_PERSONALIZADA) {
+                      setComisionPersonalizada(true);
+                      setComisionPct("");
+                    } else {
+                      setComisionPersonalizada(false);
+                      setComisionPct(Number(valor));
+                    }
+                  }}
                   className={inputClase}
                 >
                   {COMISIONES.map((pct) => (
@@ -439,7 +450,25 @@ export default function CalculadoraRentabilidadPage() {
                       {pct}%
                     </option>
                   ))}
+                  <option value={COMISION_PERSONALIZADA}>Personalizado</option>
                 </select>
+                {comisionPersonalizada && (
+                  <div className="mt-3">
+                    <label className="mb-1 block text-xs font-semibold text-slate-700">
+                      Ingresa el porcentaje de comisión
+                    </label>
+                    <input
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      inputMode="decimal"
+                      value={comisionPct}
+                      onChange={(e) => setComisionPct(e.target.value)}
+                      placeholder="Ej: 7.5"
+                      className={inputClase}
+                    />
+                  </div>
+                )}
               </div>
             </div>
 
@@ -463,7 +492,7 @@ export default function CalculadoraRentabilidadPage() {
                     </td>
                   </tr>
                   <tr className="border-b border-slate-200">
-                    <td className="px-4 py-2 sm:px-6">Monto de comisión ({comisionPct}%)</td>
+                    <td className="px-4 py-2 sm:px-6">Monto de comisión ({numero(comisionPct)}%)</td>
                     <td className="px-4 py-2 text-right font-semibold text-[#1f3f58] sm:px-6">
                       {formatearSoles(totales.comisionMonto)}
                     </td>
