@@ -2030,7 +2030,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-08-07T19:10:00",
+    fecha_fin: "2026-08-14T18:30:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Renault/BPB792/BPB-792.pdf",
     descripcion:  [
@@ -2414,7 +2414,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-08-07T19:50:00",
+    fecha_fin: "2026-08-14T18:50:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: null,
     descripcion:  [
