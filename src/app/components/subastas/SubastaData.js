@@ -2595,6 +2595,58 @@ export const subastaData = [
     ]
   },//58 kia taller
 
+  {
+    id: 59,
+    marca: "JMC",
+    modelo: "Vigus Pro",
+    año: 2024,
+    precio: 8000,
+    incremento_puja: 50, 
+    imagen: "/Autos/taller/jmc/1.png",
+    imagenes: [
+      "/Autos/taller/jmc/1.png",
+      "/Autos/taller/jmc/2.png",
+      "/Autos/taller/jmc/3.png",
+      "/Autos/taller/jmc/4.png",
+      "/Autos/taller/jmc/5.png",
+      "/Autos/taller/jmc/6.png",
+      "/Autos/taller/jmc/7.png",
+    ],  
+    kilometraje: "63,000 km",  
+    estado: "Bueno",
+    transmision: "Mecanico",
+    combustible: "Gasolina",
+    color: "Blanco",
+    puertas: 4,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-08-14T19:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/taller/jmc/BYR-880.pdf",
+    descripcion:  [
+      "<strong>PLACA: BYR880</strong>",
+      "<strong>Nota importante:</strong> El comprador acepta que el vehículo podría tener papeletas, multas o cargas desconocidas por el vendedor al momento de la venta, y asume toda responsabilidad por cualquier afectación que aparezca después de la transferencia.",
+      "<strong>UBICACION: El vehiculo se encuentra en Lima.</strong>",
+      "",
+      "La venta de los vehículos se realiza en la modalidad de \"donde está y como está\".",
+      "Los datos y fotografías son referenciales.",
+      "Es responsabilidad del comprador verificar que el número de serie y número de motor correspondan a la unidad.",
+      "El trámite de cambio de placas y entrega del SOAT vigente no está a cargo de la compañía, SI CORRESPONDIERA.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      
+    ].join("\n"),
+    caracteristicas: [
+      "Sistema de sonido premium",
+      "Asientos de Tela",
+      "Pantalla Digital",
+      "Aros de Serie", 
+      "Gasolina",
+      "Transmision Mecanica",
+      "Frenos ABS"
+    ]
+  },//59 jmc taller
+
 
 ];
 
