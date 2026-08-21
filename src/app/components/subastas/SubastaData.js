@@ -2724,7 +2724,7 @@ export const subastaData = [
     color: "Negro",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-08-21T18:30:00",
+    fecha_fin: "2026-08-21T19:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/kia/rio/BLW-198.pdf",
     descripcion:  [
@@ -2774,7 +2774,7 @@ export const subastaData = [
     color: "Plata",
     puertas: 4,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-08-21T18:30:00",
+    fecha_fin: "2026-08-21T19:10:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/taller/mitsubishi/BWX-469.pdf",
     descripcion:  [
