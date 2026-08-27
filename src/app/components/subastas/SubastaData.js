@@ -1981,7 +1981,7 @@ export const subastaData = [
     color: "Nardo Gray",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-08-07T19:30:00",
+    fecha_fin: "2026-08-28T19:15:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Honda/AUC103/AUC-103.pdf",
     descripcion:  [
@@ -2013,15 +2013,17 @@ export const subastaData = [
     marca: "Renault",
     modelo: "Oroch",
     año: 2022,
-    precio: 9200,
+    precio: 11000,
     incremento_puja: 50, 
-    imagen: "/Autos/Renault/BPB792/1.jpeg",
+    imagen: "/Autos/Renault/BPB792/1.png",
     imagenes: [
-      "/Autos/Renault/BPB792/1.jpeg",
-      "/Autos/Renault/BPB792/2.jpeg",
-      "/Autos/Renault/BPB792/3.jpeg",
-      "/Autos/Renault/BPB792/4.jpeg",
-      "/Autos/Renault/BPB792/5.jpeg",
+      "/Autos/Renault/BPB792/1.png",
+      "/Autos/Renault/BPB792/2.png",
+      "/Autos/Renault/BPB792/3.png",
+      "/Autos/Renault/BPB792/4.png",
+      "/Autos/Renault/BPB792/5.png",
+      "/Autos/Renault/BPB792/6.png",
+      "/Autos/Renault/BPB792/7.png",
     ],  
     kilometraje: "85,000 km",  
     estado: "Bueno",
@@ -2030,7 +2032,7 @@ export const subastaData = [
     color: "Blanco",
     puertas: 5,
     // Fecha de finalización de la subasta (formato ISO 8601)
-    fecha_fin: "2026-08-14T18:30:00",
+    fecha_fin: "2026-08-28T19:00:00",
     anexoUrl: "/anexo/TyC.pdf",
     boletaInformativaUrl: "/Autos/Renault/BPB792/BPB-792.pdf",
     descripcion:  [
