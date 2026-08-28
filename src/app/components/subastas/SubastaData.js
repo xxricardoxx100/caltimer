@@ -1044,9 +1044,9 @@ export const subastaData = [
     año: 2017,
     precio: 1800,
     incremento_puja: 50, 
-    imagen: "/Autos/Chevrolet/BFE008/1.png",
+    imagen: "/Autos/Chevrolet/BFE008/9.png",
     imagenes: [
-      "/Autos/Chevrolet/BFE008/1.png",
+      "/Autos/Chevrolet/BFE008/9.png",
       "/Autos/Chevrolet/BFE008/2.png",
       "/Autos/Chevrolet/BFE008/3.png",
       "/Autos/Chevrolet/BFE008/4.png",
