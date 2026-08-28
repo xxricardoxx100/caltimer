@@ -2862,7 +2862,7 @@ export const subastaData = [
     modelo: "SEIKO 5 SPORTS GMT AUTOMÁTICO",
     año: 2026,
     precio: 190,
-    incremento_puja: 50, 
+    incremento_puja: 10, 
     imagen: "/Autos/reloj/1.png",
     imagenes: [
       "/Autos/reloj/1.png",
@@ -2905,7 +2905,7 @@ export const subastaData = [
     modelo: "SEIKO 5 SPORTS GMT AUTOMÁTICO",
     año: 2026,
     precio: 190,
-    incremento_puja: 50, 
+    incremento_puja: 10, 
     imagen: "/Autos/reloj/2.png",
     imagenes: [
       "/Autos/reloj/2.png",
@@ -2948,7 +2948,7 @@ export const subastaData = [
     modelo: "SEIKO 5 SPORTS GMT AUTOMÁTICO",
     año: 2026,
     precio: 190,
-    incremento_puja: 50, 
+    incremento_puja: 10, 
     imagen: "/Autos/reloj/3.png",
     imagenes: [
       "/Autos/reloj/3.png",
