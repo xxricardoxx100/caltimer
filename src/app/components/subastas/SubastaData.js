@@ -1965,7 +1965,7 @@ export const subastaData = [
     marca: "Honda",
     modelo: "Civic",
     año: 2016,
-    precio: 11000,
+    precio: 10500,
     incremento_puja: 50, 
     imagen: "/Autos/Honda/AUC103/1.jpeg",
     imagenes: [
@@ -2013,7 +2013,7 @@ export const subastaData = [
     marca: "Renault",
     modelo: "Oroch",
     año: 2022,
-    precio: 11000,
+    precio: 10900,
     incremento_puja: 50, 
     imagen: "/Autos/Renault/BPB792/1.png",
     imagenes: [
