@@ -2856,6 +2856,117 @@ export const subastaData = [
     ]
   },//63 ford escape
 
+  {
+    id: 64,
+    marca: "Reloj",
+    modelo: "Seiko",
+    año: 2026,
+    precio: 350,
+    incremento_puja: 50, 
+    imagen: "/Autos/reloj/1.png",
+    imagenes: [
+      "/Autos/reloj/1.png",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Nuevo",
+    transmision: "-",
+    combustible: "-",
+    color: "-",
+    puertas: 4,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-08-28T19:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/reloj/1.pdf",
+    descripcion:  [
+      "<strong>PLACA: </strong>",
+
+      "<strong>UBICACION: El bien se encuentra en Lima.</strong>",
+      "",
+      "Los datos y fotografías son referenciales.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      
+    ].join("\n"),
+    caracteristicas: [
+      "Pantalla ",
+    ]
+  },//64
+
+  {
+    id: 65,
+    marca: "Reloj",
+    modelo: "Seiko",
+    año: 2026,
+    precio: 350,
+    incremento_puja: 50, 
+    imagen: "/Autos/reloj/2.png",
+    imagenes: [
+      "/Autos/reloj/2.png",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Nuevo",
+    transmision: "-",
+    combustible: "-",
+    color: "-",
+    puertas: 4,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-08-28T19:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/reloj/1.pdf",
+    descripcion:  [
+      "<strong>PLACA: </strong>",
+
+      "<strong>UBICACION: El bien se encuentra en Lima.</strong>",
+      "",
+      "Los datos y fotografías son referenciales.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      
+    ].join("\n"),
+    caracteristicas: [
+      "Pantalla ",
+    ]
+  },//65
+
+  {
+    id: 66,
+    marca: "Reloj",
+    modelo: "Seiko",
+    año: 2026,
+    precio: 350,
+    incremento_puja: 50, 
+    imagen: "/Autos/reloj/3.png",
+    imagenes: [
+      "/Autos/reloj/3.png",
+    ],  
+    kilometraje: "000,000 km",  
+    estado: "Nuevo",
+    transmision: "-",
+    combustible: "-",
+    color: "-",
+    puertas: 4,
+    // Fecha de finalización de la subasta (formato ISO 8601)
+    fecha_fin: "2026-08-28T19:30:00",
+    anexoUrl: "/anexo/TyC.pdf",
+    boletaInformativaUrl: "/Autos/reloj/1.pdf",
+    descripcion:  [
+      "<strong>PLACA: </strong>",
+
+      "<strong>UBICACION: El bien se encuentra en Lima.</strong>",
+      "",
+      "Los datos y fotografías son referenciales.",
+      "Todos los gastos relacionados a la logística, transporte o cualquier otro, serán pagados por el comprador y deben ser cancelados antes de la entrega del vehículo.",
+      "",
+      "El precio no incluye IGV. Debe agregar 5% de comisión al precio mostrado.",
+      
+    ].join("\n"),
+    caracteristicas: [
+      "Pantalla ",
+    ]
+  },//66
+
 
 ];
 
